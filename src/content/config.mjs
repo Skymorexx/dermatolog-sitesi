@@ -1,5 +1,6 @@
 import { defineCollection, z } from 'astro:content';
 
+// Blog koleksiyonu şeması
 const blog = defineCollection({
   schema: z.object({
     title: z.string(),
@@ -10,4 +11,5 @@ const blog = defineCollection({
   }),
 });
 
+// Koleksiyonları export et
 export const collections = { blog };

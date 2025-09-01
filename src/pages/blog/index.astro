@@ -1,7 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 
-const title = "Blog - Dermatoloji ve Cilt Sağlığı Yazıları";
+const title = "Blog - Dermatoloji ve Cilt Sağlığı Yazıları - Uzm. Dr. Umut Mert Yıldırım";
 const description = "Dermatoloji, cilt sağlığı ve güzellik konularında uzman hekimin bilgilendirici yazıları.";
 
 // Blog yazılarını çek ve tarihe göre sırala
@@ -28,6 +28,10 @@ const sortedPosts = blogPosts.sort((a, b) =>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
       {
         sortedPosts.map((post) => {
+          // Güvenli şekilde file özelliğinden slug'ı çıkar
+          const fileName = post.file?.split('/').pop() || '';
+          const slug = fileName.replace('.md', '');
+          
           const formattedDate = new Date(post.frontmatter.pubDate).toLocaleDateString('tr-TR', {
             year: 'numeric',
             month: 'long',
@@ -36,7 +40,7 @@ const sortedPosts = blogPosts.sort((a, b) =>
           
           return (
             <a 
-              href={`/blog/${post.slug}/`} 
+              href={`/blog/${slug}/`} 
               class="block bg-white rounded-lg shadow-md overflow-hidden border border-gray-100 transition-all duration-300 hover:shadow-xl"
             >
               {post.frontmatter.heroImage && (

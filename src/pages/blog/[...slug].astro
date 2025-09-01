@@ -72,7 +72,8 @@ const jsonLd = {
       </header>
       
       <div class="prose prose-lg text-text-primary max-w-none">
-        <Content />
+        {/* Doğru kullanım: post.render() metodunu çağır */}
+        {(await post.render()).Content}
       </div>
     </article>
   </main>
