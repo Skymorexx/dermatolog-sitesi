@@ -25,6 +25,9 @@ const formattedDate = new Date(post.data.pubDate).toLocaleDateString('tr-TR', {
   day: 'numeric'
 });
 
+// İçeriği render et
+const { Content } = await post.render();
+
 // JSON-LD için yapılandırılmış veri
 const jsonLd = {
   "@context": "https://schema.org",
@@ -32,18 +35,18 @@ const jsonLd = {
   "headline": post.data.title,
   "description": post.data.description,
   "datePublished": post.data.pubDate,
-  "image": post.data.heroImage ? `https://www.dr-adsoyadi.com${post.data.heroImage}` : undefined,
+  "image": post.data.heroImage ? `https://drumutmertyildirim.com${post.data.heroImage}` : undefined,
   "author": {
     "@type": "Person",
     "name": "Dr. Umut Mert Yıldırım",
-    "url": "https://www.dr-adsoyadi.com"
+    "url": "https://drumutmertyildirim.com"
   },
   "publisher": {
     "@type": "Organization",
     "name": "Dr. Umut Mert Yıldırım - Dermatoloji",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://www.dr-adsoyadi.com/images/logo.png"
+      "url": "https://drumutmertyildirim.com/images/logo.png"
     }
   }
 };
@@ -72,8 +75,8 @@ const jsonLd = {
       </header>
       
       <div class="prose prose-lg text-text-primary max-w-none">
-        {/* Doğru kullanım: post.render() metodunu çağır */}
-        {(await post.render()).Content}
+        <!-- Doğru kullanım: Önceden render edilmiş Content bileşeni -->
+        <Content />
       </div>
     </article>
   </main>
