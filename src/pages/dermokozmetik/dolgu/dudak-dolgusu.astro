@@ -1,0 +1,123 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+
+const title = "Dudak Dolgusu - Uzm. Dr. Umut Mert Yıldırım";
+const description = "Dudaklara hacim kazandırma ve şekillendirme için uygulanan dudak dolgusu işlemi hakkında detaylı bilgi, uygulama süreci ve sıkça sorulan sorular.";
+---
+
+<BaseLayout title={title} description={description}>
+  
+  <main id="main-content" class="container mx-auto px-4 py-12">
+    <div class="max-w-4xl mx-auto">
+      <h1 class="text-4xl font-bold text-primary mb-8">
+        Dudak Dolgusu
+      </h1>
+      
+      <div class="prose prose-lg text-text-primary max-w-none">
+        <p class="mb-8 leading-relaxed">
+          Dudak dolgusu, hyaluronik asit bazlı dolgu maddeleri kullanılarak dudaklara hacim kazandırılması 
+          ve şekillendirilmesi amacıyla uygulanan estetik bir işlemdir. Doğal bir görünüm elde etmek için 
+          dudakların konturları ve iç kısımları belirlenen miktarlarda doldurularak istenen estetik hedefe 
+          ulaşılır. Bu işlem, yaşlanma sonucu hacmini kaybetmiş dudakları gençleştirmek veya doğuştan ince 
+          dudaklara hacim kazandırmak için tercih edilir.
+        </p>
+        
+        <h2 class="text-2xl font-bold text-primary mt-12 mb-6">
+          Dudak Dolgusu Nedir ve Kimler İçin Uygundur?
+        </h2>
+        
+        <p class="mb-6 leading-relaxed">
+          Dudak dolgusu, hyaluronik asit içerikli dolgu maddelerinin steril koşullarda ve lokal anestezi 
+          altında dudaklara enjekte edilmesiyle uygulanan minimal invaziv bir işlemdir. 18 yaşını tamamlamış, 
+          genel sağlık durumu iyi olan ve dudaklarında estetik iyileşme isteyen her yetişkin birey için 
+          uygundur. Hamilelik veya emzirme döneminde olan kadınlar, otomatik bağışıklık hastalığı olanlar 
+          ve kan sulandırıcı ilaç kullananlar için uygun değildir.
+        </p>
+        
+        <h2 class="text-2xl font-bold text-primary mt-12 mb-6">
+          Uygulama Süreci Nasıldır?
+        </h2>
+        
+        <p class="mb-6 leading-relaxed">
+          Dudak dolgusu işlemi öncesinde hastanın beklentileri detaylı şekilde alınır ve dudakların 
+          şekillendirilmesi planlanır. İşlem öncesi dudaklara lokal anestezik krem uygulanır. Ardından 
+          steril koşullarda ve tek kullanımlık iğnelerle hyaluronik asit dolgu maddesi belirlenen alanlara 
+          enjekte edilir. İşlem 15-30 dakika sürer. Hastalar işlem sonrası hemen günlük yaşamlarına 
+          dönebilirler.
+        </p>
+        
+        <h2 class="text-2xl font-bold text-primary mt-12 mb-6">
+          İşlem Sonrası Dikkat Edilmesi Gerekenler
+        </h2>
+        
+        <p class="mb-6 leading-relaxed">
+          Dudak dolgusu sonrası ilk 24 saat içinde dudaklara masaj uygulanmamalı, sıcak içecekler 
+          tüketilmemeli ve aşırı sıcak ortamlardan (sauna, hamam) uzak durulmalıdır. İlk günlerde 
+          dudaklarda şişlik, kızarıklık ve hafif morarma normaldir. Bu belirtiler genellikle 3-7 gün 
+          içinde geçer. Sigara ve alkol tüketimi iyileşme sürecini yavaşlatabilir.
+        </p>
+        
+        <h2 class="text-2xl font-bold text-primary mt-12 mb-6">
+          Sıkça Sorulan Sorular
+        </h2>
+        
+        <div class="space-y-6 mb-12">
+          <div>
+            <h3 class="text-xl font-semibold text-text-primary mb-2">
+              Dudak dolgusu ağrılı bir işlem midir?
+            </h3>
+            <p class="leading-relaxed">
+              İşlem öncesi lokal anestezik krem uygulandığı için hastalar minimal düzeyde rahatsızlık 
+              hissederler. Dolgu maddesinin içinde de lokal anestezik bulunması ağrıyı daha da azaltır.
+            </p>
+          </div>
+          
+          <div>
+            <h3 class="text-xl font-semibold text-text-primary mb-2">
+              Dudak dolgusunun etkisi ne kadar sürer?
+            </h3>
+            <p class="leading-relaxed">
+              Hyaluronik asit bazlı dolgu maddeleri vücut tarafından doğal olarak yıkıldığı için 
+              etkisi 6-18 ay arasında sürer. Ortalama süre 12 aydır. Etkinin uzun sürmesi için 
+              sağlıklı yaşam tarzı benimsenmelidir.
+            </p>
+          </div>
+          
+          <div>
+            <h3 class="text-xl font-semibold text-text-primary mb-2">
+              Dudak dolgusu kalıcı mıdır?
+            </h3>
+            <p class="leading-relaxed">
+              Hayır, dudak dolgusu kalıcı değildir. Hyaluronik asit vücut tarafından zamanla 
+              parçalandığı için etkisi kaybolur. Kalıcılık istenirse cerrahi yöntemler tercih edilmelidir.
+            </p>
+          </div>
+          
+          <div>
+            <h3 class="text-xl font-semibold text-text-primary mb-2">
+              Dudak dolgusundan memnun kalmazsam ne olur?
+            </h3>
+            <p class="leading-relaxed">
+              Hyaluronik asit bazlı dolgulara özel olarak uygulanabilen hyaluronidaz enzimi ile 
+              dolgu maddesi vücuttan hızlıca uzaklaştırılabilir. Bu nedenle işlem geri alınabilir niteliktedir.
+            </p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Randevu Butonu -->
+      <div class="text-center mt-12">
+        <a 
+          href="/iletisim" 
+          class="inline-block bg-accent hover:bg-orange-600 text-white font-semibold py-4 px-8 rounded-lg transition-colors duration-300 transform hover:scale-105 shadow-lg"
+        >
+          📅 Randevu Al
+        </a>
+        <p class="mt-4 text-text-secondary">
+          Uzman dermatoloğun gözetiminde kişiselleştirilmiş dudak dolgusu işlemi için randevu alın.
+        </p>
+      </div>
+    </div>
+  </main>
+  
+</BaseLayout>

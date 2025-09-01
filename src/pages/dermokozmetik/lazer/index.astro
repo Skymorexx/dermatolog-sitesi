@@ -1,0 +1,55 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import IslemKarti from '../../components/IslemKarti.astro';
+
+const title = "Lazer Tedavileri - Uzm. Dr. Umut Mert Yıldırım";
+const description = "Cilt yenileme, leke tedavisi, kırışıklık giderme ve anti-aging için lazer tedavileri. Leke Lazeri, Kırışıklık Lazeri, Fotona ve BBL Hero seçenekleri.";
+---
+
+<BaseLayout title={title} description={description}>
+  
+  <main id="main-content" class="container mx-auto px-4 py-16">
+    <div class="max-w-4xl mx-auto mb-12 text-center">
+      <h1 class="text-4xl font-bold text-primary mb-6">
+        Lazer Tedavileri
+      </h1>
+      <p class="text-text-primary text-lg leading-relaxed">
+        Lazer tedavileri, cilt yüzeyindeki çeşitli estetik sorunların giderilmesi 
+        amacıyla kullanılan ileri teknoloji cilt bakım yöntemleridir. Farklı 
+        dalga boylarına sahip lazer sistemleri, ciltteki lekeleri, kırışıklıkları, 
+        gözenek genişlemelerini ve diğer yaşlanma belirtilerini tedavi eder. 
+        Her bir lazer uygulaması, bireysel cilt ihtiyaçlarına özel olarak 
+        seçilmekte ve uygulanmaktadır. Uzman hekim gözetiminde uygulanan 
+        lazer tedavileri ile cildinizi yenileyebilir, genç görünümünüzü 
+        koruyabilir ve estetik hedeflerinize ulaşabilirsiniz.
+      </p>
+    </div>
+    
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+      <IslemKarti 
+        title="Leke Lazeri"
+        linkUrl="/dermokozmetik/lazer-tedavileri/leke-lazeri/"
+        imageUrl="/images/islemler/lazer-leke.jpg"
+      />
+      
+      <IslemKarti 
+        title="Kırışıklık Lazeri"
+        linkUrl="/dermokozmetik/lazer-tedavileri/kirisiklik-lazeri/"
+        imageUrl="/images/islemler/lazer-kirisiklik.jpg"
+      />
+      
+      <IslemKarti 
+        title="Fotona Lazer"
+        linkUrl="/dermokozmetik/lazer-tedavileri/fotona/"
+        imageUrl="/images/islemler/lazer-fotona.jpg"
+      />
+      
+      <IslemKarti 
+        title="BBL Hero"
+        linkUrl="/dermokozmetik/lazer-tedavileri/bbl-hero/"
+        imageUrl="/images/islemler/lazer-bbl-hero.jpg"
+      />
+    </div>
+  </main>
+  
+</BaseLayout>

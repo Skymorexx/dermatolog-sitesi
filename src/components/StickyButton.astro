@@ -1,0 +1,65 @@
+<div class="fixed bottom-6 right-6 z-50">
+  <div class="relative">
+    <!-- Açılır menü -->
+    <div 
+      id="appointment-dropdown"
+      class="absolute bottom-16 right-0 mb-2 w-48 bg-white rounded-lg shadow-lg border border-gray-200 py-2 hidden"
+    >
+      <a 
+        href="tel:+901234567890" 
+        class="block px-4 py-2 text-text-primary hover:bg-background-soft transition-colors duration-200"
+      >
+        📞 Telefonla Ara
+      </a>
+      <a 
+        href="https://wa.me/901234567890" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        class="block px-4 py-2 text-text-primary hover:bg-background-soft transition-colors duration-200"
+      >
+        💬 WhatsApp'tan Yaz
+      </a>
+      <a 
+        href="/iletisim" 
+        class="block px-4 py-2 text-text-primary hover:bg-background-soft transition-colors duration-200"
+      >
+        📝 Form Doldur
+      </a>
+    </div>
+    
+    <!-- Ana buton -->
+    <button
+      id="appointment-toggle"
+      class="bg-accent hover:bg-orange-600 text-white font-semibold py-4 px-6 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 flex items-center"
+      aria-haspopup="true"
+      aria-expanded="false"
+    >
+      <span class="mr-2">📅</span>
+      Randevu Al
+    </button>
+  </div>
+</div>
+
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', () => {
+    const toggleButton = document.getElementById('appointment-toggle');
+    const dropdown = document.getElementById('appointment-dropdown');
+    
+    if (toggleButton && dropdown) {
+      toggleButton.addEventListener('click', (e) => {
+        e.stopPropagation();
+        dropdown.classList.toggle('hidden');
+        const isExpanded = toggleButton.getAttribute('aria-expanded') === 'true';
+        toggleButton.setAttribute('aria-expanded', !isExpanded);
+      });
+      
+      // Dropdown dışına tıklanırsa kapat
+      document.addEventListener('click', (e) => {
+        if (!toggleButton.contains(e.target) && !dropdown.contains(e.target)) {
+          dropdown.classList.add('hidden');
+          toggleButton.setAttribute('aria-expanded', 'false');
+        }
+      });
+    }
+  });
+</script>

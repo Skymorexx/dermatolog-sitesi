@@ -1,0 +1,69 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import IslemKarti from '../components/IslemKarti.astro';
+
+const title = "Dermokozmetik İşlemler ve Uygulamalar - Uzm. Dr. Umut Mert Yıldırım";
+const description = "Modern estetik dermatoloji uygulamaları. Dolgu, botoks, mezoterapi, lazer tedavileri, altın iğne ve diğer yenilikçi işlemler.";
+---
+
+<BaseLayout title={title} description={description}>
+  
+  <main id="main-content" class="container mx-auto px-4 py-16">
+    <div class="max-w-4xl mx-auto mb-12 text-center">
+      <h1 class="text-4xl font-bold text-primary mb-6">
+        Dermokozmetik İşlemler
+      </h1>
+      <p class="text-text-primary text-lg leading-relaxed">
+        Modern estetik dermatoloji, doğal güzelliğinizi ortaya çıkarmak 
+        ve cilt sağlığınızı artırmak için çeşitli ileri teknoloji 
+        uygulamalar sunar. Klinikte sunulan tüm işlemler, bireysel 
+        ihtiyaçlarınıza özel olarak planlanmakta ve uzman hekim 
+        gözetiminde uygulanmaktadır. İster cilt yenileme, ister 
+        hacim kazandırma, isterse sıkılaştırma hedefiniz olsun, 
+        size en uygun tedavi seçeneği belirlenerek doğal ve 
+        estetik sonuçlar elde edilmesi hedeflenir. Her işlem, 
+        güvenli, etkili ve minimal invaziv yöntemlerle 
+        gerçekleştirilir.
+      </p>
+    </div>
+    
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+      <IslemKarti 
+        title="Dolgu Uygulamaları"
+        linkUrl="/dermokozmetik/dolgu/"
+        imageUrl="/images/islemler/kategori-dolgu.jpg"
+      />
+      
+      <IslemKarti 
+        title="Botoks Uygulamaları"
+        linkUrl="/dermokozmetik/botoks/"
+        imageUrl="/images/islemler/kategori-botoks.jpg"
+      />
+      
+      <IslemKarti 
+        title="Mezoterapi Uygulamaları"
+        linkUrl="/dermokozmetik/mezoterapi/"
+        imageUrl="/images/islemler/kategori-mezoterapi.jpg"
+      />
+      
+      <IslemKarti 
+        title="Lazer Tedavileri"
+        linkUrl="/dermokozmetik/lazer-tedavileri/"
+        imageUrl="/images/islemler/kategori-lazer.jpg"
+      />
+      
+      <IslemKarti 
+        title="Altın İğne (Radyofrekans)"
+        linkUrl="/dermokozmetik/altin-igne/"
+        imageUrl="/images/islemler/kategori-altin-igne.jpg"
+      />
+      
+      <IslemKarti 
+        title="Diğer Yenilikçi İşlemler"
+        linkUrl="/dermokozmetik/diger-islemler/"
+        imageUrl="/images/islemler/kategori-diger.jpg"
+      />
+    </div>
+  </main>
+  
+</BaseLayout>

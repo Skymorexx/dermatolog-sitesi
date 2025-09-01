@@ -1,0 +1,60 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import IslemKarti from '../../components/IslemKarti.astro';
+
+const title = "Deri Kanserleri: Erken Tanı ve Tedavi - Uzm. Dr. Umut Mert Yıldırım";
+const description = "Malign melanom, bazal hücreli karsinom ve skuamöz hücreli karsinom hakkında bilgiler. Erken tanı ve dermatoskopik muayene ile ben takibi.";
+---
+
+<BaseLayout title={title} description={description}>
+  
+  <main id="main-content" class="container mx-auto px-4 py-16">
+    <div class="max-w-4xl mx-auto mb-12 text-center">
+      <h1 class="text-4xl font-bold text-primary mb-6">
+        Deri Kanserleri
+      </h1>
+      <p class="text-text-primary text-lg leading-relaxed">
+        Deri kanserleri, erken teşhisi yapıldığında başarı 
+        oranı çok yüksek olan hastalıklardır. Ancak zaman 
+        kaybedildiğinde ciddi sağlık sorunlarına ve 
+        yaşam kaybına neden olabilirler. Dermatoskopik 
+        muayene ve düzenli ben takibi ile şüpheli 
+        lezyonlar erken dönemde saptanabilir. 
+        Kendi benlerinizi düzenli olarak 
+        gözlemek ve herhangi bir değişiklik 
+        durumunda uzman bir dermatoloğa 
+        başvurmak, hayati önem 
+        taşımaktadır. Koruyucu 
+        dermatolojik muayene 
+        hayat kurtarabilir.
+      </p>
+    </div>
+    
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+      <IslemKarti 
+        title="Malign Melanom"
+        linkUrl="/deri-kanserleri/malign-melanom/"
+        imageUrl="/images/kanser/malign-melanom.jpg"
+      />
+      
+      <IslemKarti 
+        title="Bazal Hücreli Kanser"
+        linkUrl="/deri-kanserleri/bazal-hucreli-kanser/"
+        imageUrl="/images/kanser/bazal-hucreli.jpg"
+      />
+      
+      <IslemKarti 
+        title="Skuamöz Hücreli Kanser"
+        linkUrl="/deri-kanserleri/skuamoz-hucreli-kanser/"
+        imageUrl="/images/kanser/skuamoz-hucreli.jpg"
+      />
+      
+      <IslemKarti 
+        title="Ben Takibi ve Dermoskopi"
+        linkUrl="/deri-kanserleri/ben-takibi-ve-dermoskopi/"
+        imageUrl="/images/kanser/dermoskopi.jpg"
+      />
+    </div>
+  </main>
+  
+</BaseLayout>

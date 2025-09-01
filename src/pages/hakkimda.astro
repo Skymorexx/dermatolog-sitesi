@@ -1,0 +1,199 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const title = "Hakkımda - Uzm. Dr. Umut Mert Yıldırım";
+const description = "Uzm. Dr. Umut Mert Yıldırım hakkında detaylı bilgiler, eğitim geçmişi, uzmanlık alanları ve bilimsel faaliyetler.";
+---
+
+<BaseLayout title={title} description={description}>
+  
+  <main id="main-content" class="container mx-auto px-4 py-12">
+    <div class="max-w-4xl mx-auto">
+      <h1 class="text-4xl font-bold text-primary mb-8">
+        Hakkımda
+      </h1>
+      
+      <div class="prose prose-lg text-text-primary max-w-none">
+        <div class="bg-white rounded-lg shadow-md p-8 mb-12">
+          <img 
+            src="/images/dr-umut-mert-yildirim-profil.jpg" 
+            alt="Uzm. Dr. Umut Mert Yıldırım" 
+            class="w-48 h-48 rounded-full mx-auto mb-6 object-cover border-4 border-primary"
+          />
+          
+          <p class="text-center text-xl leading-relaxed mb-6">
+            "Cilt sağlığı, sadece estetik değil, aynı zamanda yaşam kalitesiyle doğrudan ilişkili 
+            önemli bir sağlık alanıdır. Derinizi dermatoloğunuza emanet ediniz."
+          </p>
+          
+          <p class="text-center text-text-secondary">
+            - Uzm. Dr. Umut Mert Yıldırım
+          </p>
+        </div>
+        
+        <h2 class="text-2xl font-bold text-primary mt-12 mb-6">
+          Uzmanlık Alanları
+        </h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+          <div class="bg-background-soft p-6 rounded-lg border border-gray-200">
+            <h3 class="text-xl font-semibold text-primary mb-3">Genel Dermatoloji</h3>
+            <ul class="list-disc list-inside space-y-1">
+              <li>Deri ve Zührevi Hastalıklar</li>
+              <li>Akne ve Rosacea</li>
+              <li>Egzema ve Dermatitis</li>
+              <li>Sedef Hastalığı</li>
+              <li>Mantar ve Viral Enfeksiyonlar</li>
+              <li>Ürtiker ve Allerjik Hastalıklar</li>
+            </ul>
+          </div>
+          
+          <div class="bg-background-soft p-6 rounded-lg border border-gray-200">
+            <h3 class="text-xl font-semibold text-primary mb-3">Dermatoonkoloji</h3>
+            <ul class="list-disc list-inside space-y-1">
+              <li>Dermoskopi & Ben (Nevüs) Takibi</li>
+              <li>Deri Tümörlerinin Tanı ve Tedavisi</li>
+              <li>Malign Melanom</li>
+              <li>Bazal ve Skuamöz Hücreli Karsinomlar</li>
+              <li>Prekanseröz Lezyonlar</li>
+            </ul>
+          </div>
+          
+          <div class="bg-background-soft p-6 rounded-lg border border-gray-200">
+            <h3 class="text-xl font-semibold text-primary mb-3">Dermatocerrahi</h3>
+            <ul class="list-disc list-inside space-y-1">
+              <li>Deri & Tırnak Cerrahisi</li>
+              <li>Biyopsi ve Eksizyon İşlemleri</li>
+              <li>Kriyoterapi ve Elektrokoterizasyon</li>
+              <li>Tırnak Batması Cerrahisi</li>
+              <li>Kist ve Lipom Çıkarma</li>
+            </ul>
+          </div>
+          
+          <div class="bg-background-soft p-6 rounded-lg border border-gray-200">
+            <h3 class="text-xl font-semibold text-primary mb-3">Dermokozmetik</h3>
+            <ul class="list-disc list-inside space-y-1">
+              <li>Dolgu Uygulamaları</li>
+              <li>Botoks Tedavileri</li>
+              <li>Mezoterapi ve Ekzosom Enjeksiyonları</li>
+              <li>Lazer Tedavileri</li>
+              <li>Altın İğne ve Radyofrekans</li>
+            </ul>
+          </div>
+        </div>
+        
+        <h2 class="text-2xl font-bold text-primary mt-12 mb-6">
+          Eğitim
+        </h2>
+        
+        <div class="bg-white p-6 rounded-lg shadow-md mb-8">
+          <h3 class="text-xl font-semibold text-primary mb-2">
+            İstanbul Üniversitesi İstanbul Tıp Fakültesi
+          </h3>
+          <p class="text-text-primary mb-1">
+            <strong>Tıp Doktoru</strong> (2013–2019)
+          </p>
+        </div>
+        
+        <h2 class="text-2xl font-bold text-primary mt-12 mb-6">
+          Uzmanlık Eğitimi
+        </h2>
+        
+        <div class="bg-white p-6 rounded-lg shadow-md mb-8">
+          <h3 class="text-xl font-semibold text-primary mb-2">
+            İstanbul Göztepe E.A.H
+          </h3>
+          <p class="text-text-primary mb-1">
+            <strong>Dermatoloji Uzmanı</strong> (2020–2025)
+          </p>
+          <p class="text-text-secondary">
+            4 yıllık uzmanlık eğitimi • Klinik ve patoloji rotasyonları • 
+            Dermatoskopi ve dermatoonkoloji üzerine  çalışmalar • 
+            Ulusal ve uluslararası bilimsel toplantılarda konuşmacı ve katılımcı
+          </p>
+        </div>
+        
+        <h2 class="text-2xl font-bold text-primary mt-12 mb-6">
+          Görev Yerleri
+        </h2>
+        
+        <div class="space-y-6 mb-12">
+          <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-primary">
+            <h3 class="text-xl font-semibold text-primary mb-2">
+              Şırnak Devlet Hastanesi
+            </h3>
+            <p class="text-text-primary mb-1">
+              <strong>Dermatoloji Uzmanı</strong> (2025)
+            </p>
+            <p class="text-text-secondary">
+              Halk sağlığına yönelik dermatolojik hizmetler • Endemik dermatolojik hastalıkların 
+              tanısı ve tedavisi • Koruyucu dermatoloji uygulamaları
+            </p>
+          </div>
+          
+          <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-accent">
+            <h3 class="text-xl font-semibold text-primary mb-2">
+              İstanbul Acıbadem Bölge Hastanesi
+            </h3>
+            <p class="text-text-primary mb-1">
+              <strong>Dermatoloji Uzmanı</strong> (halen)
+            </p>
+            <p class="text-text-secondary">
+              Uzaktan görüntülü muayene hizmetleri • Estetik ve kozmetik dermatoloji uygulamaları • 
+              İleri düzey tıbbi lazer uygulamaları • Multidisipliner yaklaşım
+            </p>
+          </div>
+        </div>
+        
+        <h2 class="text-2xl font-bold text-primary mt-12 mb-6">
+          Sertifikalar
+        </h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+          <div class="bg-background-soft p-6 rounded-lg border border-gray-200">
+            <h3 class="text-xl font-semibold text-primary mb-3">Profesyonel Belgeler</h3>
+            <ul class="list-disc list-inside space-y-2">
+              <li>Türk Dermatoloji Derneği Yeterlilik Belgesi</li>
+              <li>Hasta Hakları ve Güvenliği Eğitimi</li>
+            </ul>
+          </div>
+          
+          <div class="bg-background-soft p-6 rounded-lg border border-gray-200">
+            <h3 class="text-xl font-semibold text-primary mb-3">Araştırma ve Uygulama</h3>
+            <ul class="list-disc list-inside space-y-2">
+              <li>İyi Klinik Uygulamalar Sertifikası (ICH-GCP)</li>
+              <li>Klinik Araştırma Eğitimi</li>
+              <li>Tıbbi İstatistik ve Veri Analizi</li>
+            </ul>
+          </div>
+        </div>
+        
+        <h2 class="text-2xl font-bold text-primary mt-12 mb-6">
+          Bilimsel Faaliyetler
+        </h2>
+        
+        <div class="bg-white p-6 rounded-lg shadow-md mb-12">
+          <ul class="list-disc list-inside space-y-3">
+            <li>
+              <strong>Uluslararası dermatoloji toplantılarında katılımcı & konuşmacı</strong> - 
+              Avrupa Dermatoloji Kongresi, Türk Dermatoloji Kongresi gibi prestijli toplantılarda 
+              güncel dermatolojik yaklaşımlar üzerine sunumlar
+            </li>
+            <li>
+              <strong>Bilimsel araştırma çalışmaları</strong> - 
+              Akne tedavisinde yeni yaklaşımlar, dermoskopik değerlendirme yöntemleri ve 
+              onkodermatoloji üzerine yayınlanmış makaleler
+            </li>
+            <li>
+              <strong>Peer-review süreçleri</strong> - 
+              Uluslararası dermatoloji dergilerinde hakemlik faaliyetleri
+            </li>
+            <li>
+              <strong>Sürekli tıbbi eğitim</strong> - 
+              Güncel dermatoloji eğilimleri ve tedavi yöntemleri üzerine düzenli katılımlar
+            </li>
+          </ul>
+        </div>
+  </main>
+  
+</BaseLayout>

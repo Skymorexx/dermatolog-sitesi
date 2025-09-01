@@ -1,0 +1,70 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = "Blog - Dermatoloji ve Cilt Sağlığı Yazıları";
+const description = "Dermatoloji, cilt sağlığı ve güzellik konularında uzman hekimin bilgilendirici yazıları.";
+
+// Blog yazılarını çek ve tarihe göre sırala
+const blogPosts = await Astro.glob('../../content/blog/*.md');
+const sortedPosts = blogPosts.sort((a, b) => 
+  new Date(b.frontmatter.pubDate).getTime() - new Date(a.frontmatter.pubDate).getTime()
+);
+---
+
+<BaseLayout title={title} description={description}>
+  
+  <main id="main-content" class="container mx-auto px-4 py-16">
+    <div class="max-w-4xl mx-auto mb-12 text-center">
+      <h1 class="text-4xl font-bold text-primary mb-6">
+        Blog
+      </h1>
+      <p class="text-text-primary text-lg leading-relaxed">
+        Dermatoloji, cilt sağlığı ve güzellik konularında uzman hekimin bilgilendirici yazıları. 
+        Güncel bilgiler, doğru uygulamalar ve cilt bakımında dikkat edilmesi gereken noktalar 
+        hakkında kapsamlı rehberler.
+      </p>
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      {
+        sortedPosts.map((post) => {
+          const formattedDate = new Date(post.frontmatter.pubDate).toLocaleDateString('tr-TR', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+          });
+          
+          return (
+            <a 
+              href={`/blog/${post.slug}/`} 
+              class="block bg-white rounded-lg shadow-md overflow-hidden border border-gray-100 transition-all duration-300 hover:shadow-xl"
+            >
+              {post.frontmatter.heroImage && (
+                <img 
+                  src={post.frontmatter.heroImage} 
+                  alt={post.frontmatter.imageAlt || post.frontmatter.title}
+                  class="w-full h-48 object-cover"
+                />
+              )}
+              
+              <div class="p-6">
+                <h2 class="text-xl font-bold text-primary mb-2 line-clamp-2">
+                  {post.frontmatter.title}
+                </h2>
+                
+                <p class="text-sm text-text-secondary mb-3">
+                  {formattedDate}
+                </p>
+                
+                <p class="text-text-primary leading-relaxed line-clamp-3">
+                  {post.frontmatter.description}
+                </p>
+              </div>
+            </a>
+          );
+        })
+      }
+    </div>
+  </main>
+  
+</BaseLayout>

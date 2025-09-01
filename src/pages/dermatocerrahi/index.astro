@@ -1,0 +1,68 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import IslemKarti from '../../components/IslemKarti.astro';
+
+const title = "Dermatocerrahi (Cerrahi Dermatoloji) - Uzm. Dr. Umut Mert Yıldırım";
+const description = "Küçük cerrahi müdahaleler, ben ve siğil çıkarma, kriyoterapi, tırnak cerrahisi ve diğer dermatolojik cerrahi işlemler.";
+---
+
+<BaseLayout title={title} description={description}>
+  
+  <main id="main-content" class="container mx-auto px-4 py-16">
+    <div class="max-w-4xl mx-auto mb-12 text-center">
+      <h1 class="text-4xl font-bold text-primary mb-6">
+        Dermatocerrahi İşlemler
+      </h1>
+      <p class="text-text-primary text-lg leading-relaxed">
+        Dermatocerrahi, cilt üzerindeki lezyonların, kistlerin, 
+        benign tümörlerin ve diğer dermatolojik sorunların 
+        cerrahi olarak çıkarılması amacıyla uygulanan 
+        minimal invaziv müdahalelerdir. Klinikte 
+        uygulanan tüm cerrahi işlemler, lokal 
+        anestezi altında ve steril koşullarda 
+        gerçekleştirilir. Deneyimli hekim 
+        gözetiminde yapılan bu işlemlerle 
+        hem tanı hem tedavi amaçlı 
+        müdahaleler güvenli ve etkili 
+        şekilde yürütülür. Her işlem 
+        sonrası uygun bakım 
+        önerileri ile 
+        iyileşme süreci 
+        desteklenir.
+      </p>
+    </div>
+    
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+      <IslemKarti 
+        title="Ben Alımı (Nevüs Eksizyonu)"
+        linkUrl="/dermatocerrahi/ben-tedavisi/"
+        imageUrl="/images/islemler/cerrahi-ben-alimi.jpg"
+      />
+      
+      <IslemKarti 
+        title="Kriyoterapi (Dondurma Tedavisi)"
+        linkUrl="/dermatocerrahi/kriyoterapi/"
+        imageUrl="/images/islemler/cerrahi-kriyoterapi.jpg"
+      />
+      
+      <IslemKarti 
+        title="Elektrokoterizasyon (Yakma Ted.)"
+        linkUrl="/dermatocerrahi/elektrokoterizasyon/"
+        imageUrl="/images/islemler/cerrahi-yakma.jpg"
+      />
+      
+      <IslemKarti 
+        title="Tırnak Cerrahisi (Tırnak Batması)"
+        linkUrl="/dermatocerrahi/tirnak-cerrahisi/"
+        imageUrl="/images/islemler/cerrahi-tirnak.jpg"
+      />
+      
+      <IslemKarti 
+        title="Kist ve Lipom Alımı"
+        linkUrl="/dermatocerrahi/kist-tedavisi/"
+        imageUrl="/images/islemler/cerrahi-kist.jpg"
+      />
+    </div>
+  </main>
+  
+</BaseLayout>

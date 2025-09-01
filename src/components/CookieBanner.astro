@@ -1,0 +1,90 @@
+<div 
+  id="cookie-banner" 
+  class="fixed bottom-0 left-0 right-0 bg-text-primary text-white p-4 z-50 hidden"
+>
+  <div class="container mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+    <p class="text-center md:text-left text-sm">
+      Web sitemizdeki kullanıcı deneyimini iyileştirmek için çerezler kullanıyoruz. 
+      Sitemizi kullanmaya devam ederek çerez kullanımını kabul etmiş olursunuz.
+    </p>
+    
+    <div class="flex flex-col sm:flex-row items-center gap-4">
+      <a 
+        href="/kvkk/" 
+        class="text-white hover:text-background-soft underline text-sm transition-colors duration-200"
+      >
+        Daha Fazla Bilgi
+      </a>
+      
+      <button 
+        id="accept-cookies" 
+        class="bg-white text-text-primary hover:bg-background-soft px-6 py-2 rounded-lg font-semibold transition-colors duration-200 text-sm"
+      >
+        Kabul Et
+      </button>
+    </div>
+  </div>
+</div>
+
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', () => {
+    const cookieBanner = document.getElementById('cookie-banner');
+    const acceptButton = document.getElementById('accept-cookies');
+    
+    // Cookie consent kontrolü
+    const hasConsent = localStorage.getItem('cookie_consent') || getCookie('cookie_consent');
+    
+    if (!hasConsent) {
+      // Consent yoksa banner'ı göster
+      setTimeout(() => {
+        if (cookieBanner) {
+          cookieBanner.classList.remove('hidden');
+          cookieBanner.classList.add('animate-fade-in-up');
+        }
+      }, 1000);
+    }
+    
+    // Kabul et butonu event
+    if (acceptButton && cookieBanner) {
+      acceptButton.addEventListener('click', () => {
+        // LocalStorage'a consent kaydet
+        localStorage.setItem('cookie_consent', 'true');
+        // Cookie olarak da kaydet (30 gün süreyle)
+        setCookie('cookie_consent', 'true', 30);
+        // Banner'ı gizle
+        cookieBanner.classList.add('hidden');
+      });
+    }
+    
+    // Yardımcı fonksiyon: Cookie okuma
+    function getCookie(name) {
+      const value = `; ${document.cookie}`;
+      const parts = value.split(`; ${name}=`);
+      if (parts.length === 2) return parts.pop().split(';').shift();
+    }
+    
+    // Yardımcı fonksiyon: Cookie yazma
+    function setCookie(name, value, days) {
+      const expires = new Date();
+      expires.setTime(expires.getTime() + (days * 24 * 60 * 60 * 1000));
+      document.cookie = `${name}=${value};expires=${expires.toUTCString()};path=/;SameSite=Lax`;
+    }
+  });
+</script>
+
+<style>
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .animate-fade-in-up {
+    animation: fade-in-up 0.5s ease-out forwards;
+  }
+</style>

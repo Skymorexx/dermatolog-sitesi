@@ -1,0 +1,80 @@
+---
+import SEOMeta from '../components/SEOMeta.astro';
+import TopBar from '../components/TopBar.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import StickyButton from '../components/StickyButton.astro';
+import CookieBanner from '../components/CookieBanner.astro'; // CookieBanner import
+
+const { title, description, image, url, type } = Astro.props;
+
+// Varsayılan değerler
+const pageTitle = title;
+const pageDescription = description;
+const pageImage = image || '/images/default-og-image.jpg';
+const pageUrl = url || `https://www.dr-adsoyadi.com${Astro.url.pathname}`;
+const pageType = type || 'website';
+---
+
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{pageTitle}</title>
+    
+    <!-- SEO Meta Bileşeni -->
+    <SEOMeta 
+      title={pageTitle}
+      description={pageDescription}
+      image={pageImage}
+      url={pageUrl}
+      type={pageType}
+    />
+    
+    <link rel="stylesheet" href="/src/styles/global.css" />
+  </head>
+  <body>
+    <a href="#main-content" class="skip-link">
+      Ana içeriğe atla
+    </a>
+    
+    <!-- TopBar bileşeni -->
+    <TopBar />
+    
+    <!-- Header bileşeni -->
+    <Header />
+    
+    <main id="main-content">
+      <slot />
+    </main>
+    
+    <!-- Footer bileşeni -->
+    <Footer />
+    
+    <!-- Sticky Randevu Butonu -->
+    <StickyButton />
+    
+    <!-- Cookie Banner -->
+    <CookieBanner />
+    
+    <style>
+      .skip-link {
+        position: absolute;
+        top: -40px;
+        left: 6px;
+        background: #005A8D;
+        color: white;
+        padding: 8px;
+        text-decoration: none;
+        border-radius: 4px;
+        z-index: 1000;
+        transition: top 0.3s;
+      }
+      
+      .skip-link:focus {
+        top: 6px;
+      }
+    </style>
+  </body>
+</html>

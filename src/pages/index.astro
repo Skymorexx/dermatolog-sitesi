@@ -1,16 +1,141 @@
 ---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import JsonLD from '../components/JsonLD.astro';
 
+const title = "Uzm. Dr. Umut Mert Yıldırım - Dermatoloji Uzmanı";
+const description = "Profesyonel dermatoloji hizmetleri. Deri hastalıkları, dermokozmetik uygulamalar ve dermocerrahi konularında uzman hekim hizmeti.";
+const url = "https://drumutmertyildirim.com";
+
+// JSON-LD Schema objesi
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Physician",
+      "@id": `${url}/#physician`,
+      "name": "Uzm. Dr. Umut Mert Yıldırım",
+      "alternateName": "Dr. Umut Mert Yıldırım",
+      "url": url,
+      "telephone": "+90-000-000-0000",
+      "priceRange": "Varies by service",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Acıbadem, Şht. Emin Çölen Sokağı No:18",
+        "addressLocality": "İstanbul",
+        "addressRegion": "Kadıköy",
+        "postalCode": "[34718]",
+        "addressCountry": "TR"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 40.9887,
+        "longitude": 29.0236
+      },
+      "medicalSpecialty": "Dermatology",
+      "availableService": [
+        "Skin Disease Treatment",
+        "Dermatologic Surgery",
+        "Cosmetic Dermatology"
+      ],
+      "medicalAudience": {
+        "@type": "PeopleAudience",
+        "suggestedGender": "Unisex",
+        "suggestedMinAge": 0
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${url}/#website`,
+      "url": url,
+      "name": "Uzm. Dr. Umut Mert Yıldırım - Dermatoloji Uzmanı",
+      "description": description,
+      "publisher": {
+        "@id": `${url}/#physician`
+      }
+    }
+  ]
+};
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout 
+  title={title} 
+  description={description}
+  url={url}
+>
+  <JsonLD schema={schema} />
+  
+  <!-- Hero Section -->
+  <section class="bg-background-soft py-16 px-6">
+    <div class="max-w-4xl mx-auto text-center">
+      <h1 class="text-4xl md:text-5xl font-bold text-primary mb-6">
+		Uzm. Dr. Umut Mert Yıldırım
+      </h1>
+      <p class="text-xl text-text-secondary mb-10 max-w-2xl mx-auto">
+        Deri ve Zührevi Hastalıklar uzmanı olarak Medikal Dermatoloji, Dermokozmetik İşlemler ve Dermatocerrahi alanlarında hizmet vermektedir.
+      </p>
+      <button class="bg-accent hover:bg-orange-600 text-white font-semibold py-3 px-8 rounded-lg transition-colors duration-300 transform hover:scale-105">
+        Randevu Alın
+      </button>
+    </div>
+  </section>
+
+  <!-- Uzmanlık Alanlarım Section -->
+  <section class="py-16 px-6">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-3xl font-bold text-center text-primary mb-12">
+        Uzmanlık Alanlarım
+      </h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Deri Hastalıkları Kartı -->
+        <div class="bg-white p-8 rounded-lg shadow-md border border-gray-100 hover:shadow-lg transition-shadow duration-300">
+          <h3 class="text-xl font-semibold text-primary mb-4">Deri Hastalıkları</h3>
+          <p class="text-text-secondary">
+            Sedef hastalığı, egzama, akne, mantar enfeksiyonları ve diğer yaygın deri hastalıklarının teşhisi ve tedavisi.
+          </p>
+        </div>
+        
+        <!-- Dermokozmetik Uygulamalar Kartı -->
+        <div class="bg-white p-8 rounded-lg shadow-md border border-gray-100 hover:shadow-lg transition-shadow duration-300">
+          <h3 class="text-xl font-semibold text-primary mb-4">Dermokozmetik Uygulamalar</h3>
+          <p class="text-text-secondary">
+            Lazer uygulamaları, mezoterapi, kimyasal peeling ve cilt gençleştirme prosedürleri ile estetik hedeflerinize ulaşın.
+          </p>
+        </div>
+
+        <!-- Dermatocerrahi Kartı -->
+        <div class="bg-white p-8 rounded-lg shadow-md border border-gray-100 hover:shadow-lg transition-shadow duration-300">
+          <h3 class="text-xl font-semibold text-primary mb-4">Dermatocerrahi</h3>
+          <p class="text-text-secondary">
+            Siğil, ben ve leke çıkarımları, cerrahi onarım işlemleri ve minimal invaziv dermatolojik cerrahi uygulamalar.
+          </p>
+        </div>
+
+        <!-- Deri Kanserleri Kartı -->
+        <div class="bg-white p-8 rounded-lg shadow-md border border-gray-100 hover:shadow-lg transition-shadow duration-300">
+          <h3 class="text-xl font-semibold text-primary mb-4">Deri Kanserleri</h3>
+          <p class="text-text-secondary">
+            Dolgu ve botoks uygulamaları, mezoterapi, kimyasal peeling ve cilt gençleştirme prosedürleri ile estetik hedeflerinize ulaşın.
+          </p>
+        </div>
+
+        <!-- Nevüs (Ben) Takibi Kartı -->
+        <div class="bg-white p-8 rounded-lg shadow-md border border-gray-100 hover:shadow-lg transition-shadow duration-300">
+          <h3 class="text-xl font-semibold text-primary mb-4">Nevüs (Ben) Takibi</h3>
+          <p class="text-text-secondary">
+            Şüpheli benlerin dermatoskop yardımıyla takip ve tedavisi.
+          </p>
+        </div>
+
+        <!-- Lazer Tedavileri Kartı -->
+        <div class="bg-white p-8 rounded-lg shadow-md border border-gray-100 hover:shadow-lg transition-shadow duration-300">
+          <h3 class="text-xl font-semibold text-primary mb-4">Lazer Tedavileri</h3>
+          <p class="text-text-secondary">
+            Fotona, BBL Hero ile leke, kırışıklık ve cilt gençleştirme tedavileri.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>

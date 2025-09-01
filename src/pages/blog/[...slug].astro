@@ -1,0 +1,85 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+// Dinamik sayfa üretimi için static paths
+export async function getStaticPaths() {
+  const blogPosts = await getCollection('blog');
+  return blogPosts.map((post) => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+
+// Props'tan gelen veriler
+const { post } = Astro.props;
+
+// Sayfa başlığı ve açıklaması
+const title = post.data.title;
+const description = post.data.description;
+
+// Yayın tarihi formatlama
+const formattedDate = new Date(post.data.pubDate).toLocaleDateString('tr-TR', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric'
+});
+
+// JSON-LD için yapılandırılmış veri
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": post.data.title,
+  "description": post.data.description,
+  "datePublished": post.data.pubDate,
+  "image": post.data.heroImage ? `https://www.dr-adsoyadi.com${post.data.heroImage}` : undefined,
+  "author": {
+    "@type": "Person",
+    "name": "Dr. Umut Mert Yıldırım",
+    "url": "https://www.dr-adsoyadi.com"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Dr. Umut Mert Yıldırım - Dermatoloji",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.dr-adsoyadi.com/images/logo.png"
+    }
+  }
+};
+---
+
+<BaseLayout title={title} description={description}>
+  
+  <main id="main-content" class="container mx-auto px-4 py-12">
+    <article class="max-w-4xl mx-auto">
+      {post.data.heroImage && (
+        <img 
+          src={post.data.heroImage} 
+          alt={post.data.imageAlt || post.data.title}
+          class="w-full h-64 md:h-96 object-cover rounded-lg mb-8"
+        />
+      )}
+      
+      <header class="mb-8">
+        <h1 class="text-4xl font-bold text-primary mb-4">
+          {post.data.title}
+        </h1>
+        
+        <p class="text-text-secondary text-lg">
+          {formattedDate}
+        </p>
+      </header>
+      
+      <div class="prose prose-lg text-text-primary max-w-none">
+        <Content />
+      </div>
+    </article>
+  </main>
+  
+  
+  <!-- JSON-LD Yapılandırılmış Veri -->
+  <script type="application/ld+json">
+    {JSON.stringify(jsonLd)}
+  </script>
+</BaseLayout>

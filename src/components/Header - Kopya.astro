@@ -1,0 +1,565 @@
+<header class="bg-background-soft border-b border-gray-200 py-4 px-6">
+  <nav class="max-w-6xl mx-auto flex items-center justify-between">
+    <div class="text-primary font-bold text-xl">
+      Dr. Umut Mert Yıldırım
+    </div>
+    
+<ul class="flex space-x-8">
+  <li>
+    <a href="/hakkimda/" class="text-text-primary hover:text-primary transition-colors duration-200 hover:underline">Hakkımda</a>
+  </li>
+      
+      <!-- Deri Hastalıkları Dropdown Menü -->
+      <li class="relative" id="deri-hastaliklari-menu">
+        <button 
+          id="deri-hastaliklari-button"
+          class="text-text-primary hover:text-primary transition-colors duration-200 flex items-center focus:outline-none"
+          aria-haspopup="true"
+          aria-expanded="false"
+        >
+          Deri Hastalıkları
+          <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </button>
+        
+        <div 
+          id="deri-hastaliklari-dropdown"
+          class="absolute hidden bg-white rounded-md shadow-lg mt-2 py-2 w-48 z-10 border border-gray-100 right-0"
+        >
+          <a href="/deri-hastaliklari/akne/" class="block px-4 py-2 text-text-primary hover:bg-background-soft transition-colors duration-200">Akne (Sivilce) Tedavisi</a>
+          <a href="/deri-hastaliklari/egzema/" class="block px-4 py-2 text-text-primary hover:bg-background-soft transition-colors duration-200">Egzema Tedavisi</a>
+          <a href="/deri-hastaliklari/sedef/" class="block px-4 py-2 text-text-primary hover:bg-background-soft transition-colors duration-200">Sedef Hastalığı</a>
+          <a href="/deri-hastaliklari/sac-dokulmesi/" class="block px-4 py-2 text-text-primary hover:bg-background-soft transition-colors duration-200">Saç Dökülmesi Tedavisi</a>
+          <a href="/deri-hastaliklari/vitiligo/" class="block px-4 py-2 text-text-primary hover:bg-background-soft transition-colors duration-200">Vitiligo Tedavisi</a>
+          <a href="/deri-hastaliklari/rozase/" class="block px-4 py-2 text-text-primary hover:bg-background-soft transition-colors duration-200">Rozase (Gül Hastalığı)</a>
+          <a href="/deri-hastaliklari/urtiker/" class="block px-4 py-2 text-text-primary hover:bg-background-soft transition-colors duration-200">Ürtiker (Kurdeşen) Tedavisi</a>
+          <a href="/deri-hastaliklari/herpes/" class="block px-4 py-2 text-text-primary hover:bg-background-soft transition-colors duration-200">Herpes (Uçuk) Tedavisi</a>
+          <a href="/deri-hastaliklari/liken/" class="block px-4 py-2 text-text-primary hover:bg-background-soft transition-colors duration-200">Liken Tedavisi</a>
+          <a href="/deri-hastaliklari/mantar/" class="block px-4 py-2 text-text-primary hover:bg-background-soft transition-colors duration-200">Mantar Tedavisi</a>
+        </div>
+      </li>
+      
+      <!-- Dermokozmetik İşlemler Dropdown Menü -->
+      <li class="relative" id="dermokozmetik-menu">
+        <button 
+          id="dermokozmetik-button"
+          class="text-text-primary hover:text-primary transition-colors duration-200 flex items-center focus:outline-none"
+          aria-haspopup="true"
+          aria-expanded="false"
+        >
+          Dermokozmetik İşlemler
+          <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </button>
+        
+        <div 
+          id="dermokozmetik-dropdown"
+          class="absolute hidden bg-white rounded-md shadow-lg mt-2 py-2 w-64 z-10 border border-gray-100 right-0"
+        >
+          <!-- Dolgu Dropdown -->
+          <div class="relative" id="dolgu-menu">
+            <button 
+              id="dolgu-button"
+              class="w-full text-left px-4 py-2 text-text-primary hover:bg-background-soft transition-colors duration-200 flex items-center justify-between"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              Dolgu
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+              </svg>
+            </button>
+            
+            <div 
+              id="dolgu-submenu"
+              class="absolute hidden bg-white rounded-md shadow-lg py-2 w-48 z-20 border border-gray-100 left-full top-0 ml-1"
+            >
+              <a href="/dermokozmetik/dolgu/dudak-dolgusu/" class="block px-4 py-2 text-text-primary hover:bg-background-soft transition-colors duration-200">Dudak Dolgusu</a>
+              <a href="/dermokozmetik/dolgu/burun-dolgusu/" class="block px-4 py-2 text-text-primary hover:bg-background-soft transition-colors duration-200">Burun Dolgusu</a>
+              <a href="/dermokozmetik/dolgu/gozalti-isik-dolgusu/" class="block px-4 py-2 text-text-primary hover:bg-background-soft transition-colors duration-200">Gözaltı Işık Dolgusu</a>
+              <a href="/dermokozmetik/dolgu/cene-dolgusu/" class="block px-4 py-2 text-text-primary hover:bg-background-soft transition-colors duration-200">Çene Dolgusu</a>
+              <a href="/dermokozmetik/dolgu/elmacik-dolgusu/" class="block px-4 py-2 text-text-primary hover:bg-background-soft transition-colors duration-200">Elmacık Dolgusu</a>
+            </div>
+          </div>
+          
+          <!-- Botoks Dropdown -->
+          <div class="relative" id="botoks-menu">
+            <button 
+              id="botoks-button"
+              class="w-full text-left px-4 py-2 text-text-primary hover:bg-background-soft transition-colors duration-200 flex items-center justify-between"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              Botoks
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+              </svg>
+            </button>
+            
+            <div 
+              id="botoks-submenu"
+              class="absolute hidden bg-white rounded-md shadow-lg py-2 w-48 z-20 border border-gray-100 left-full top-0 ml-1"
+            >
+              <a href="/dermokozmetik/botoks/kirisiklik-tedavisi/" class="block px-4 py-2 text-text-primary hover:bg-background-soft transition-colors duration-200">Kırışıklık Tedavisi</a>
+              <a href="/dermokozmetik/botoks/dis-sikma-tedavisi/" class="block px-4 py-2 text-text-primary hover:bg-background-soft transition-colors duration-200">Diş Sıkma Tedavisi</a>
+              <a href="/dermokozmetik/botoks/terleme-tedavisi/" class="block px-4 py-2 text-text-primary hover:bg-background-soft transition-colors duration-200">Terleme Tedavisi</a>
+            </div>
+          </div>
+          
+          <!-- Mezoterapi Dropdown -->
+          <div class="relative" id="mezoterapi-menu">
+            <button 
+              id="mezoterapi-button"
+              class="w-full text-left px-4 py-2 text-text-primary hover:bg-background-soft transition-colors duration-200 flex items-center justify-between"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              Mezoterapi
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+              </svg>
+            </button>
+            
+            <div 
+              id="mezoterapi-submenu"
+              class="absolute hidden bg-white rounded-md shadow-lg py-2 w-48 z-20 border border-gray-100 left-full top-0 ml-1"
+            >
+              <a href="/dermokozmetik/mezoterapi/paris-isiltisi/" class="block px-4 py-2 text-text-primary hover:bg-background-soft transition-colors duration-200">Paris Işıltısı</a>
+              <a href="/dermokozmetik/mezoterapi/leke-mezoterapisi/" class="block px-4 py-2 text-text-primary hover:bg-background-soft transition-colors duration-200">Leke Mezoterapisi</a>
+              <a href="/dermokozmetik/mezoterapi/kristal-asi/" class="block px-4 py-2 text-text-primary hover:bg-background-soft transition-colors duration-200">Kristal Aşı</a>
+              <a href="/dermokozmetik/mezoterapi/somon-dna/" class="block px-4 py-2 text-text-primary hover:bg-background-soft transition-colors duration-200">Somon DNA</a>
+            </div>
+          </div>
+          
+          <!-- Lazer Tedavileri Dropdown -->
+          <div class="relative" id="lazer-menu">
+            <button 
+              id="lazer-button"
+              class="w-full text-left px-4 py-2 text-text-primary hover:bg-background-soft transition-colors duration-200 flex items-center justify-between"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              Lazer Tedavileri
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+              </svg>
+            </button>
+            
+            <div 
+              id="lazer-submenu"
+              class="absolute hidden bg-white rounded-md shadow-lg py-2 w-48 z-20 border border-gray-100 left-full top-0 ml-1"
+            >
+              <a href="/dermokozmetik/lazer/leke-lazeri/" class="block px-4 py-2 text-text-primary hover:bg-background-soft transition-colors duration-200">Leke Lazeri</a>
+              <a href="/dermokozmetik/lazer/kirisiklik-lazeri/" class="block px-4 py-2 text-text-primary hover:bg-background-soft transition-colors duration-200">Kırışıklık Lazeri</a>
+              <a href="/dermokozmetik/lazer/fotona/" class="block px-4 py-2 text-text-primary hover:bg-background-soft transition-colors duration-200">Fotona</a>
+              <a href="/dermokozmetik/lazer/bbl-hero/" class="block px-4 py-2 text-text-primary hover:bg-background-soft transition-colors duration-200">BBL Hero</a>
+            </div>
+          </div>
+          
+          <!-- Altın İğne (Alt menü olmadan) -->
+          <a href="/dermokozmetik/altin-igne/" class="block px-4 py-2 text-text-primary hover:bg-background-soft transition-colors duration-200">Altın İğne</a>
+          
+          <!-- Diğer İşlemler Dropdown -->
+          <div class="relative border-t border-gray-100 mt-2 pt-2" id="diger-islemler-menu">
+            <button 
+              id="diger-islemler-button"
+              class="w-full text-left px-4 py-2 text-text-primary hover:bg-background-soft transition-colors duration-200 flex items-center justify-between"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              Diğer İşlemler
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+              </svg>
+            </button>
+            
+            <div 
+              id="diger-islemler-submenu"
+              class="absolute hidden bg-white rounded-md shadow-lg py-2 w-48 z-20 border border-gray-100 left-full top-0 ml-1"
+            >
+              <a href="/dermokozmetik/diger-tedaviler/harmonyca/" class="block px-4 py-2 text-text-primary hover:bg-background-soft transition-colors duration-200">HarmonyCA</a>
+              <a href="/dermokozmetik/diger-tedaviler/radiesse/" class="block px-4 py-2 text-text-primary hover:bg-background-soft transition-colors duration-200">Radiesse</a>
+              <a href="/dermokozmetik/diger-tedaviler/sivi-yuz-germe/" class="block px-4 py-2 text-text-primary hover:bg-background-soft transition-colors duration-200">Sıvı Yüz Germe</a>
+              <a href="/dermokozmetik/diger-tedaviler/gidi-eritme/" class="block px-4 py-2 text-text-primary hover:bg-background-soft transition-colors duration-200">Gıdı Eritme</a>
+            </div>
+          </div>
+        </div>
+      </li>
+      
+      <!-- Dermatocerrahi Dropdown Menü -->
+      <li class="relative" id="dermatocerrahi-menu">
+        <button 
+          id="dermatocerrahi-button"
+          class="text-text-primary hover:text-primary transition-colors duration-200 flex items-center focus:outline-none"
+          aria-haspopup="true"
+          aria-expanded="false"
+        >
+          Dermatocerrahi
+          <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </button>
+        
+        <div 
+          id="dermatocerrahi-dropdown"
+          class="absolute hidden bg-white rounded-md shadow-lg mt-2 py-2 w-48 z-10 border border-gray-100 right-0"
+        >
+          <a href="/dermatocerrahi/ben-tedavisi/" class="block px-4 py-2 text-text-primary hover:bg-background-soft transition-colors duration-200">Ben Tedavisi</a>
+          <a href="/dermatocerrahi/sigil-tedavisi/" class="block px-4 py-2 text-text-primary hover:bg-background-soft transition-colors duration-200">Siğil Tedavisi</a>
+          <a href="/dermatocerrahi/kist-tedavisi/" class="block px-4 py-2 text-text-primary hover:bg-background-soft transition-colors duration-200">Kist Tedavisi</a>
+          <a href="/dermatocerrahi/kriyoterapi/" class="block px-4 py-2 text-text-primary hover:bg-background-soft transition-colors duration-200">Kriyoterapi</a>
+          <a href="/dermatocerrahi/deri-biyopsisi/" class="block px-4 py-2 text-text-primary hover:bg-background-soft transition-colors duration-200">Deri Biyopsisi</a>
+          <a href="/dermatocerrahi/tirnak-cerrahisi/" class="block px-4 py-2 text-text-primary hover:bg-background-soft transition-colors duration-200">Tırnak Cerrahisi</a>
+        </div>
+      </li>
+      
+      <!-- Deri Kanserleri Dropdown Menü -->
+      <li class="relative" id="deri-kanserleri-menu">
+        <button 
+          id="deri-kanserleri-button"
+          class="text-text-primary hover:text-primary transition-colors duration-200 flex items-center focus:outline-none"
+          aria-haspopup="true"
+          aria-expanded="false"
+        >
+          Deri Kanserleri
+          <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </button>
+        
+        <div 
+          id="deri-kanserleri-dropdown"
+          class="absolute hidden bg-white rounded-md shadow-lg mt-2 py-2 w-56 z-10 border border-gray-100 right-0"
+        >
+          <a href="/deri-kanserleri/malign-melanom/" class="block px-4 py-2 text-text-primary hover:bg-background-soft transition-colors duration-200">Malign Melanom</a>
+          <a href="/deri-kanserleri/bazal-hucreli-kanser/" class="block px-4 py-2 text-text-primary hover:bg-background-soft transition-colors duration-200">Bazal Hücreli Kanser</a>
+          <a href="/deri-kanserleri/skuamoz-hucreli-kanser/" class="block px-4 py-2 text-text-primary hover:bg-background-soft transition-colors duration-200">Skuamöz Hücreli Kanser</a>
+          <a href="/deri-kanserleri/ben-takibi-ve-dermoskopi/" class="block px-4 py-2 text-text-primary hover:bg-background-soft transition-colors duration-200">Ben Takibi ve Dermoskopi</a>
+        </div>
+      </li>
+      
+  <li>
+    <a href="/blog/" class="text-text-primary hover:text-primary transition-colors duration-200 hover:underline">Blog</a>
+  </li>
+  <li>
+    <a href="/iletisim/" class="text-text-primary hover:text-primary transition-colors duration-200 hover:underline">İletişim</a>
+  </li>
+    </ul>
+  </nav>
+</header>
+
+<script is:inline>
+document.addEventListener('DOMContentLoaded', () => {
+  // Deri Hastalıkları Dropdown
+  const deriMenu = document.getElementById('deri-hastaliklari-menu');
+  const deriButton = document.getElementById('deri-hastaliklari-button');
+  const deriDropdown = document.getElementById('deri-hastaliklari-dropdown');
+  
+  if (deriMenu && deriButton && deriDropdown) {
+    deriMenu.addEventListener('mouseenter', () => {
+      deriDropdown.classList.remove('hidden');
+      deriButton.setAttribute('aria-expanded', 'true');
+    });
+    
+    deriMenu.addEventListener('mouseleave', () => {
+      setTimeout(() => {
+        if (!deriDropdown.matches(':hover') && !deriButton.matches(':hover')) {
+          deriDropdown.classList.add('hidden');
+          deriButton.setAttribute('aria-expanded', 'false');
+        }
+      }, 100);
+    });
+    
+    deriButton.addEventListener('click', (e) => {
+      e.stopPropagation();
+      e.preventDefault();
+      const isExpanded = deriButton.getAttribute('aria-expanded') === 'true';
+      deriDropdown.classList.toggle('hidden');
+      deriButton.setAttribute('aria-expanded', !isExpanded);
+    });
+  }
+  
+  // Dermokozmetik Dropdown
+  const dermokozmetikMenu = document.getElementById('dermokozmetik-menu');
+  const dermokozmetikButton = document.getElementById('dermokozmetik-button');
+  const dermokozmetikDropdown = document.getElementById('dermokozmetik-dropdown');
+  
+  if (dermokozmetikMenu && dermokozmetikButton && dermokozmetikDropdown) {
+    dermokozmetikMenu.addEventListener('mouseenter', () => {
+      dermokozmetikDropdown.classList.remove('hidden');
+      dermokozmetikButton.setAttribute('aria-expanded', 'true');
+    });
+    
+    dermokozmetikMenu.addEventListener('mouseleave', () => {
+      setTimeout(() => {
+        if (!dermokozmetikDropdown.matches(':hover') && !dermokozmetikButton.matches(':hover')) {
+          dermokozmetikDropdown.classList.add('hidden');
+          dermokozmetikButton.setAttribute('aria-expanded', 'false');
+          closeAllSubmenus();
+        }
+      }, 100);
+    });
+    
+    dermokozmetikButton.addEventListener('click', (e) => {
+      e.stopPropagation();
+      e.preventDefault();
+      const isExpanded = dermokozmetikButton.getAttribute('aria-expanded') === 'true';
+      dermokozmetikDropdown.classList.toggle('hidden');
+      dermokozmetikButton.setAttribute('aria-expanded', !isExpanded);
+    });
+  }
+  
+  // Dolgu Submenu
+  const dolguMenu = document.getElementById('dolgu-menu');
+  const dolguButton = document.getElementById('dolgu-button');
+  const dolguSubmenu = document.getElementById('dolgu-submenu');
+  
+  if (dolguMenu && dolguButton && dolguSubmenu) {
+    dolguMenu.addEventListener('mouseenter', () => {
+      dolguSubmenu.classList.remove('hidden');
+      dolguButton.setAttribute('aria-expanded', 'true');
+    });
+    
+    dolguMenu.addEventListener('mouseleave', () => {
+      setTimeout(() => {
+        if (!dolguSubmenu.matches(':hover') && !dolguButton.matches(':hover')) {
+          dolguSubmenu.classList.add('hidden');
+          dolguButton.setAttribute('aria-expanded', 'false');
+        }
+      }, 100);
+    });
+    
+    dolguButton.addEventListener('click', (e) => {
+      e.stopPropagation();
+      e.preventDefault();
+      const isExpanded = dolguButton.getAttribute('aria-expanded') === 'true';
+      dolguSubmenu.classList.toggle('hidden');
+      dolguButton.setAttribute('aria-expanded', !isExpanded);
+    });
+  }
+  
+  // Botoks Submenu
+  const botoksMenu = document.getElementById('botoks-menu');
+  const botoksButton = document.getElementById('botoks-button');
+  const botoksSubmenu = document.getElementById('botoks-submenu');
+  
+  if (botoksMenu && botoksButton && botoksSubmenu) {
+    botoksMenu.addEventListener('mouseenter', () => {
+      botoksSubmenu.classList.remove('hidden');
+      botoksButton.setAttribute('aria-expanded', 'true');
+    });
+    
+    botoksMenu.addEventListener('mouseleave', () => {
+      setTimeout(() => {
+        if (!botoksSubmenu.matches(':hover') && !botoksButton.matches(':hover')) {
+          botoksSubmenu.classList.add('hidden');
+          botoksButton.setAttribute('aria-expanded', 'false');
+        }
+      }, 100);
+    });
+    
+    botoksButton.addEventListener('click', (e) => {
+      e.stopPropagation();
+      e.preventDefault();
+      const isExpanded = botoksButton.getAttribute('aria-expanded') === 'true';
+      botoksSubmenu.classList.toggle('hidden');
+      botoksButton.setAttribute('aria-expanded', !isExpanded);
+    });
+  }
+  
+  // Mezoterapi Submenu
+  const mezoterapiMenu = document.getElementById('mezoterapi-menu');
+  const mezoterapiButton = document.getElementById('mezoterapi-button');
+  const mezoterapiSubmenu = document.getElementById('mezoterapi-submenu');
+  
+  if (mezoterapiMenu && mezoterapiButton && mezoterapiSubmenu) {
+    mezoterapiMenu.addEventListener('mouseenter', () => {
+      mezoterapiSubmenu.classList.remove('hidden');
+      mezoterapiButton.setAttribute('aria-expanded', 'true');
+    });
+    
+    mezoterapiMenu.addEventListener('mouseleave', () => {
+      setTimeout(() => {
+        if (!mezoterapiSubmenu.matches(':hover') && !mezoterapiButton.matches(':hover')) {
+          mezoterapiSubmenu.classList.add('hidden');
+          mezoterapiButton.setAttribute('aria-expanded', 'false');
+        }
+      }, 100);
+    });
+    
+    mezoterapiButton.addEventListener('click', (e) => {
+      e.stopPropagation();
+      e.preventDefault();
+      const isExpanded = mezoterapiButton.getAttribute('aria-expanded') === 'true';
+      mezoterapiSubmenu.classList.toggle('hidden');
+      mezoterapiButton.setAttribute('aria-expanded', !isExpanded);
+    });
+  }
+  
+  // Lazer Tedavileri Submenu
+  const lazerMenu = document.getElementById('lazer-menu');
+  const lazerButton = document.getElementById('lazer-button');
+  const lazerSubmenu = document.getElementById('lazer-submenu');
+  
+  if (lazerMenu && lazerButton && lazerSubmenu) {
+    lazerMenu.addEventListener('mouseenter', () => {
+      lazerSubmenu.classList.remove('hidden');
+      lazerButton.setAttribute('aria-expanded', 'true');
+    });
+    
+    lazerMenu.addEventListener('mouseleave', () => {
+      setTimeout(() => {
+        if (!lazerSubmenu.matches(':hover') && !lazerButton.matches(':hover')) {
+          lazerSubmenu.classList.add('hidden');
+          lazerButton.setAttribute('aria-expanded', 'false');
+        }
+      }, 100);
+    });
+    
+    lazerButton.addEventListener('click', (e) => {
+      e.stopPropagation();
+      e.preventDefault();
+      const isExpanded = lazerButton.getAttribute('aria-expanded') === 'true';
+      lazerSubmenu.classList.toggle('hidden');
+      lazerButton.setAttribute('aria-expanded', !isExpanded);
+    });
+  }
+  
+  // Diğer İşlemler Submenu
+  const digerIslemlerMenu = document.getElementById('diger-islemler-menu');
+  const digerIslemlerButton = document.getElementById('diger-islemler-button');
+  const digerIslemlerSubmenu = document.getElementById('diger-islemler-submenu');
+  
+  if (digerIslemlerMenu && digerIslemlerButton && digerIslemlerSubmenu) {
+    digerIslemlerMenu.addEventListener('mouseenter', () => {
+      digerIslemlerSubmenu.classList.remove('hidden');
+      digerIslemlerButton.setAttribute('aria-expanded', 'true');
+    });
+    
+    digerIslemlerMenu.addEventListener('mouseleave', () => {
+      setTimeout(() => {
+        if (!digerIslemlerSubmenu.matches(':hover') && !digerIslemlerButton.matches(':hover')) {
+          digerIslemlerSubmenu.classList.add('hidden');
+          digerIslemlerButton.setAttribute('aria-expanded', 'false');
+        }
+      }, 100);
+    });
+    
+    digerIslemlerButton.addEventListener('click', (e) => {
+      e.stopPropagation();
+      e.preventDefault();
+      const isExpanded = digerIslemlerButton.getAttribute('aria-expanded') === 'true';
+      digerIslemlerSubmenu.classList.toggle('hidden');
+      digerIslemlerButton.setAttribute('aria-expanded', !isExpanded);
+    });
+  }
+  
+  // Dermatocerrahi Dropdown
+  const cerrahiMenu = document.getElementById('dermatocerrahi-menu');
+  const cerrahiButton = document.getElementById('dermatocerrahi-button');
+  const cerrahiDropdown = document.getElementById('dermatocerrahi-dropdown');
+  
+  if (cerrahiMenu && cerrahiButton && cerrahiDropdown) {
+    cerrahiMenu.addEventListener('mouseenter', () => {
+      cerrahiDropdown.classList.remove('hidden');
+      cerrahiButton.setAttribute('aria-expanded', 'true');
+    });
+    
+    cerrahiMenu.addEventListener('mouseleave', () => {
+      setTimeout(() => {
+        if (!cerrahiDropdown.matches(':hover') && !cerrahiButton.matches(':hover')) {
+          cerrahiDropdown.classList.add('hidden');
+          cerrahiButton.setAttribute('aria-expanded', 'false');
+        }
+      }, 100);
+    });
+    
+    cerrahiButton.addEventListener('click', (e) => {
+      e.stopPropagation();
+      e.preventDefault();
+      const isExpanded = cerrahiButton.getAttribute('aria-expanded') === 'true';
+      cerrahiDropdown.classList.toggle('hidden');
+      cerrahiButton.setAttribute('aria-expanded', !isExpanded);
+    });
+  }
+  
+  // Deri Kanserleri Dropdown
+  const kanserMenu = document.getElementById('deri-kanserleri-menu');
+  const kanserButton = document.getElementById('deri-kanserleri-button');
+  const kanserDropdown = document.getElementById('deri-kanserleri-dropdown');
+  
+  if (kanserMenu && kanserButton && kanserDropdown) {
+    kanserMenu.addEventListener('mouseenter', () => {
+      kanserDropdown.classList.remove('hidden');
+      kanserButton.setAttribute('aria-expanded', 'true');
+    });
+    
+    kanserMenu.addEventListener('mouseleave', () => {
+      setTimeout(() => {
+        if (!kanserDropdown.matches(':hover') && !kanserButton.matches(':hover')) {
+          kanserDropdown.classList.add('hidden');
+          kanserButton.setAttribute('aria-expanded', 'false');
+        }
+      }, 100);
+    });
+    
+    kanserButton.addEventListener('click', (e) => {
+      e.stopPropagation();
+      e.preventDefault();
+      const isExpanded = kanserButton.getAttribute('aria-expanded') === 'true';
+      kanserDropdown.classList.toggle('hidden');
+      kanserButton.setAttribute('aria-expanded', !isExpanded);
+    });
+  }
+  
+  // Tüm alt menüleri kapatma fonksiyonu
+  function closeAllSubmenus() {
+    const submenus = [
+      'dolgu-submenu', 'botoks-submenu', 'mezoterapi-submenu', 'lazer-submenu', 'diger-islemler-submenu'
+    ];
+    const buttons = [
+      'dolgu-button', 'botoks-button', 'mezoterapi-button', 'lazer-button', 'diger-islemler-button'
+    ];
+    
+    submenus.forEach(id => {
+      const submenu = document.getElementById(id);
+      if (submenu) submenu.classList.add('hidden');
+    });
+    
+    buttons.forEach(id => {
+      const button = document.getElementById(id);
+      if (button) button.setAttribute('aria-expanded', 'false');
+    });
+  }
+  
+  // Dropdown dışına tıklanırsa kapat
+  document.addEventListener('click', (e) => {
+    // Deri Hastalıkları dropdown'ını kapat
+    if (deriMenu && !deriMenu.contains(e.target)) {
+      deriDropdown?.classList.add('hidden');
+      deriButton?.setAttribute('aria-expanded', 'false');
+    }
+    
+    // Dermokozmetik dropdown'ını kapat
+    if (dermokozmetikMenu && !dermokozmetikMenu.contains(e.target)) {
+      dermokozmetikDropdown?.classList.add('hidden');
+      dermokozmetikButton?.setAttribute('aria-expanded', 'false');
+      closeAllSubmenus();
+    }
+    
+    // Dermatocerrahi dropdown'ını kapat
+    if (cerrahiMenu && !cerrahiMenu.contains(e.target)) {
+      cerrahiDropdown?.classList.add('hidden');
+      cerrahiButton?.setAttribute('aria-expanded', 'false');
+    }
+    
+    // Deri Kanserleri dropdown'ını kapat
+    if (kanserMenu && !kanserMenu.contains(e.target)) {
+      kanserDropdown?.classList.add('hidden');
+      kanserButton?.setAttribute('aria-expanded', 'false');
+    }
+  });
+});
+</script>

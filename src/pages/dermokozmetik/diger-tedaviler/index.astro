@@ -1,0 +1,56 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import IslemKarti from '../../components/IslemKarti.astro';
+
+const title = "Diğer Dermokozmetik İşlemler - Uzm. Dr. Umut Mert Yıldırım";
+const description = "Yenilikçi ve özel dermokozmetik uygulamalar. HarmonyCA, Radiesse, Sıvı Yüz Germe ve Gıdı Eritme işlemleri.";
+---
+
+<BaseLayout title={title} description={description}>
+  
+  <main id="main-content" class="container mx-auto px-4 py-16">
+    <div class="max-w-4xl mx-auto mb-12 text-center">
+      <h1 class="text-4xl font-bold text-primary mb-6">
+        Diğer Dermokozmetik İşlemler
+      </h1>
+      <p class="text-text-primary text-lg leading-relaxed">
+        Geleneksel kategorilere girmeyen yenilikçi ve özel dermokozmetik 
+        uygulamalar, bireysel estetik hedeflerinize yönelik kapsamlı 
+        çözümler sunar. Bu ileri teknoloji tedavileri, cilt yenileme, 
+        hacim kazandırma, kontur düzenleme ve yerel yağ azaltma 
+        gibi çeşitli estetik ihtiyaçları karşılar. Her bir işlem, 
+        bireysel cilt yapınıza ve hedeflerinize özel olarak 
+        planlanmakta ve uygulanmaktadır. Uzman hekim gözetiminde 
+        uygulanan bu özel işlemlerle estetik hedeflerinize 
+        ulaşabilirsiniz.
+      </p>
+    </div>
+    
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+      <IslemKarti 
+        title="HarmonyCA"
+        linkUrl="/dermokozmetik/diger-islemler/harmonyca/"
+        imageUrl="/images/islemler/harmonyca.jpg"
+      />
+      
+      <IslemKarti 
+        title="Radiesse (Akıllı Dolgu)"
+        linkUrl="/dermokozmetik/diger-islemler/radiesse/"
+        imageUrl="/images/islemler/radiesse.jpg"
+      />
+      
+      <IslemKarti 
+        title="Sıvı Yüz Germe"
+        linkUrl="/dermokozmetik/diger-islemler/sivi-yuz-germe/"
+        imageUrl="/images/islemler/sivi-yuz-germe.jpg"
+      />
+      
+      <IslemKarti 
+        title="Gıdı Eritme (Enjeksiyon Lipoliz)"
+        linkUrl="/dermokozmetik/diger-islemler/gidi-eritme/"
+        imageUrl="/images/islemler/gidi-eritme.jpg"
+      />
+    </div>
+  </main>
+
+</BaseLayout>
