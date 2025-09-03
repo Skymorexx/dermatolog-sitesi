@@ -1,20 +1,51 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import BreadcrumbSchema from '../../components/BreadcrumbSchema.astro';
+import FaqSchema from '../../components/FaqSchema.astro';
 
 const title = "Akne Tedavisi - Uzm. Dr. Umut Mert Yıldırım";
 const description = "Akne (sivilce) nedir, nasıl oluşur ve tedavi yöntemleri nelerdir? Uzman dermatoloğun gözetiminde modern akne tedavileri hakkında detaylı bilgi.";
+
+// SSS için soru-cevaplar
+const faqQuestions = [
+  {
+    question: "Akne kalıcı bir hastalık mıdır?",
+    answer: "Akne genellikle ergenlikle sınırlı olsa da bazı bireylerde yetişkinlik döneminde de devam edebilir. Uygun tedavi ile kontrol altına alınabilir. Tedavinin düzenli ve uzun süreli sürdürülmesi çok önemlidir."
+  },
+  {
+    question: "Akne izlerinden kurtulmak mümkün mü?",
+    answer: "Evet, modern dermatolojik yöntemlerle akne izleri büyük oranda azaltılabilir. Lazer tedavileri, mikroiğneleme ve kimyasal peeling gibi yöntemler etkilidir. Erken dönemde tedavi edilen akne izleri daha kolay düzelir."
+  },
+  {
+    question: "Akne tedavisi ne kadar sürer?",
+    answer: "Tedavi süresi akne şiddetine göre değişir. Genellikle 6-12 hafta içinde iyileşme görülür, ancak cilt yenilenmesi süreci nedeniyle tam sonuç 3-6 ayda ortaya çıkar. Kronik aknelerde daha uzun süreli tedavi gerekebilir."
+  },
+  {
+    question: "Akne tedavisinde hangi ilaçlar kullanılır?",
+    answer: "Akne tedavisinde hafif aknelerde topikal retinoidler, antibiyotikler ve benzoyl peroksit; orta-ağır aknelerde sistemik antibiyotikler ve izotretinoin gibi güçlü ilaçlar kullanılır. Tedavi kişiselleştirilir."
+  },
+  {
+    question: "Akne tedavisinde lazer etkili midir?",
+    answer: "Evet, lazer tedavileri akne tedavisinde oldukça etkilidir. Özellikle ışık tedavileri, lazer peelings ve fraksiyonel lazer tedavileri akne ve akne izlerinin tedavisinde kullanılır. Lazer tedavileri ilaç tedavisiyle kombine edilerek daha etkili sonuçlar elde edilebilir."
+  },
+  {
+    question: "Akne tedavisinde diyet önemli midir?",
+    answer: "Diyet akne tedavisinde önemli rol oynar. Şeker, süt ürünleri ve yüksek glisemik indeksli gıdaların tüketimi akneyi tetikleyebilir. Dengeli beslenme, bol su tüketimi ve sağlıklı yaşam tarzı akne tedavisini destekler."
+  }
+];
 ---
 
 <BaseLayout title={title} description={description}>
   
-    <BreadcrumbSchema 
+  <BreadcrumbSchema 
     links={[
       { name: "Ana Sayfa", url: "/" },
       { name: "Deri Hastalıkları", url: "/deri-hastaliklari/" },
       { name: "Akne (Sivilce) Tedavisi", url: "/deri-hastaliklari/akne/" },
     ]}
   />
+  
+  <FaqSchema questions={faqQuestions} />
 
   <main id="main-content" class="container mx-auto px-4 py-12">
     <div class="max-w-4xl mx-auto">
@@ -93,6 +124,10 @@ const description = "Akne (sivilce) nedir, nasıl oluşur ve tedavi yöntemleri 
               Tedavi süresi akne şiddetine göre değişir. Genellikle 6-12 hafta içinde iyileşme görülür, 
               ancak cilt yenilenmesi süreci nedeniyle tam sonuç 3-6 ayda ortaya çıkar.
             </p>
+          </div>
+        </div>
+      </div>
+      
       <!-- Etik ve Yasal Uyarı -->
       <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 my-12">
         <div class="flex">
@@ -108,6 +143,7 @@ const description = "Akne (sivilce) nedir, nasıl oluşur ve tedavi yöntemleri 
           </div>
         </div>
       </div>
+      
       <!-- Randevu Butonu -->
       <div class="text-center mt-12">
         <a 
