@@ -15,8 +15,6 @@ const pageDescription = description;
 const pageImage = image || '/images/default-og-image.jpg';
 const pageUrl = url || `https://drumutmertyildirim.com${Astro.url.pathname}`;
 const pageType = type || 'website';
-
-/ WebSite ve Organization şemaları
 const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
@@ -28,7 +26,6 @@ const websiteSchema = {
     "@id": "https://drumutmertyildirim.com/#organization"
   }
 };
-
 const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
