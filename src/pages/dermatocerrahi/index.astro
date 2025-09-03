@@ -1,6 +1,12 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import IslemKarti from '../../components/IslemKarti.astro';
+// Resim importları
+import KategoriBen from '../../assets/images/cerrahi/ben-alimi.jpg';
+import KategoriKriyo from '../../assets/images/cerrahi/kriyoterapi.jpg';
+import KategoriElektro from '../../assets/images/cerrahi/elektrokoterizasyon.jpg';
+import KategoriTirnak from '../../assets/images/cerrahi/tirnak-cerrahisi.jpg';
+import KategoriKist from '../../assets/images/cerrahi/kist-lipom.jpg';
 
 const title = "Dermatocerrahi (Cerrahi Dermatoloji) - Uzm. Dr. Umut Mert Yıldırım";
 const description = "Küçük cerrahi müdahaleler, ben ve siğil çıkarma, kriyoterapi, tırnak cerrahisi ve diğer dermatolojik cerrahi işlemler.";
@@ -36,31 +42,31 @@ const description = "Küçük cerrahi müdahaleler, ben ve siğil çıkarma, kri
       <IslemKarti 
         title="Ben Alımı (Nevüs Eksizyonu)"
         linkUrl="/dermatocerrahi/ben-tedavisi/"
-        imageUrl="/images/islemler/cerrahi-ben-alimi.jpg"
+        imageUrl={KategoriBen}
       />
       
       <IslemKarti 
         title="Kriyoterapi (Dondurma Tedavisi)"
         linkUrl="/dermatocerrahi/kriyoterapi/"
-        imageUrl="/images/islemler/cerrahi-kriyoterapi.jpg"
+        imageUrl={KategoriKriyo}
       />
       
       <IslemKarti 
-        title="Elektrokoterizasyon (Yakma Ted.)"
+        title="Elektrokoterizasyon (Yakma Tedavisi)"
         linkUrl="/dermatocerrahi/elektrokoterizasyon/"
-        imageUrl="/images/islemler/cerrahi-yakma.jpg"
+        imageUrl={KategoriElektro}
       />
       
       <IslemKarti 
         title="Tırnak Cerrahisi (Tırnak Batması)"
         linkUrl="/dermatocerrahi/tirnak-cerrahisi/"
-        imageUrl="/images/islemler/cerrahi-tirnak.jpg"
+        imageUrl={KategoriTirnak}
       />
       
       <IslemKarti 
         title="Kist ve Lipom Alımı"
         linkUrl="/dermatocerrahi/kist-tedavisi/"
-        imageUrl="/images/islemler/cerrahi-kist.jpg"
+        imageUrl={KategoriKist}
       />
     </div>
   </main>

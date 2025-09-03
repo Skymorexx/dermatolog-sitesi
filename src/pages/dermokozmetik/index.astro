@@ -1,6 +1,12 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import IslemKarti from '../../components/IslemKarti.astro';
+import KategoriDolgu from '../../assets/images/islemler/kategori-dolgu.jpg';
+import KategoriBotoks from '../../assets/images/islemler/kategori-botoks.jpg';
+import KategoriMezoterapi from '../../assets/images/islemler/kategori-mezoterapi.jpg';
+import KategoriLazer from '../../assets/images/islemler/kategori-lazer.jpg';
+import KategoriAltinigne from '../../assets/images/islemler/kategori-altin-igne.jpg';
+import KategoriDiger from '../../assets/images/islemler/kategori-diger.jpg';
 
 const title = "Dermokozmetik İşlemler ve Uygulamalar - Uzm. Dr. Umut Mert Yıldırım";
 const description = "Modern estetik dermatoloji uygulamaları. Dolgu, botoks, mezoterapi, lazer tedavileri, altın iğne ve diğer yenilikçi işlemler.";
@@ -43,37 +49,37 @@ const description = "Modern estetik dermatoloji uygulamaları. Dolgu, botoks, me
       <IslemKarti 
         title="Dolgu Uygulamaları"
         linkUrl="/dermokozmetik/dolgu/"
-        imageUrl="/images/islemler/kategori-dolgu.jpg"
+        imageUrl={KategoriDolgu}
       />
       
       <IslemKarti 
         title="Botoks Uygulamaları"
         linkUrl="/dermokozmetik/botoks/"
-        imageUrl="/images/islemler/kategori-botoks.jpg"
+        imageUrl={KategoriBotoks}
       />
       
       <IslemKarti 
         title="Mezoterapi Uygulamaları"
         linkUrl="/dermokozmetik/mezoterapi/"
-        imageUrl="/images/islemler/kategori-mezoterapi.jpg"
+        imageUrl={KategoriMezoterapi}
       />
       
       <IslemKarti 
         title="Lazer Tedavileri"
         linkUrl="/dermokozmetik/lazer-tedavileri/"
-        imageUrl="/images/islemler/kategori-lazer.jpg"
+        imageUrl={KategoriLazer}
       />
       
       <IslemKarti 
         title="Altın İğne (Radyofrekans)"
         linkUrl="/dermokozmetik/altin-igne/"
-        imageUrl="/images/islemler/kategori-altin-igne.jpg"
+        imageUrl={KategoriAltinigne}
       />
       
       <IslemKarti 
         title="Diğer Yenilikçi İşlemler"
         linkUrl="/dermokozmetik/diger-islemler/"
-        imageUrl="/images/islemler/kategori-diger.jpg"
+        imageUrl={KategoriDiger}
       />
     </div>
   </main>

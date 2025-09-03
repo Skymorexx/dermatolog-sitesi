@@ -1,6 +1,17 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import HastalikKarti from '../../components/HastalikKarti.astro';
+// Resim importları
+import KategoriAkne from '../../assets/images/hastaliklar/akne.jpg';
+import KategoriEgzema from '../../assets/images/hastaliklar/egzema.jpg';
+import KategoriSedef from '../../assets/images/hastaliklar/sedef.jpg';
+import KategoriSac from '../../assets/images/hastaliklar/sac-dokulmesi.jpg';
+import KategoriVitiligo from '../../assets/images/hastaliklar/vitiligo.jpg';
+import KategoriRozase from '../../assets/images/hastaliklar/rozase.jpg';
+import KategoriUrtiker from '../../assets/images/hastaliklar/urtiker.jpg';
+import KategoriHerpes from '../../assets/images/hastaliklar/herpes.jpg';
+import KategoriLiken from '../../assets/images/hastaliklar/liken.jpg';
+import KategoriMantar from '../../assets/images/hastaliklar/mantar.jpg';
 
 const title = "Deri Hastalıkları - Uzm. Dr. Umut Mert Yıldırım";
 const description = "En yaygın deri hastalıkları hakkında detaylı bilgi, belirtiler, teşhis ve tedavi yöntemleri. Akne, egzama, sedef hastalığı, vitiligo ve daha fazlası.";
@@ -24,56 +35,56 @@ const description = "En yaygın deri hastalıkları hakkında detaylı bilgi, be
       <HastalikKarti 
         title="Akne (Sivilce)"
         linkUrl="/deri-hastaliklari/akne/"
-        imageUrl="/images/hastaliklar/akne.jpg"
+        imageUrl={KategoriAkne}
       />
       
       <HastalikKarti 
         title="Egzema"
         linkUrl="/deri-hastaliklari/egzema/"
-        imageUrl="/images/hastaliklar/egzema.jpg"
+        imageUrl={KategoriEgzema}
       />
       
       <HastalikKarti 
         title="Sedef Hastalığı"
         linkUrl="/deri-hastaliklari/sedef/"
-        imageUrl="/images/hastaliklar/sedef.jpg"
+        imageUrl={KategoriSedef}
       />
       
       <HastalikKarti 
         title="Saç Dökülmesi"
         linkUrl="/deri-hastaliklari/sac-dokulmesi/"
-        imageUrl="/images/hastaliklar/sac-dokulmesi.jpg"
+        imageUrl={KategoriSac}
       />
 
       <HastalikKarti 
         title="Vitiligo"
         linkUrl="/deri-hastaliklari/vitiligo/"
-        imageUrl="/images/hastaliklar/vitiligo.jpg"
+        imageUrl={KategoriVitiligo}
       />
       <HastalikKarti 
         title="Rozase (Gül Hastalığı)"
         linkUrl="/deri-hastaliklari/rozase/"
-        imageUrl="/images/hastaliklar/rozase.jpg"
+        imageUrl={KategoriRozase}
       />
       <HastalikKarti 
         title="Liken Planus"
         linkUrl="/deri-hastaliklari/liken/"
-        imageUrl="/images/hastaliklar/liken.jpg"
+        imageUrl={KategoriLiken}
       />
       <HastalikKarti 
         title="Ürtiker (Kurdeşen)"
         linkUrl="/deri-hastaliklari/urtiker/"
-        imageUrl="/images/hastaliklar/urtiker.jpg"
+        imageUrl={KategoriUrtiker}
       />
       <HastalikKarti 
         title="Cilt Mantarı"
         linkUrl="/deri-hastaliklari/vitiligo/"
-        imageUrl="/images/hastaliklar/vitiligo.jpg"
+        imageUrl={KategoriMantar}
       />
       <HastalikKarti 
         title="Herpes (Uçuk) Hastalığı"
         linkUrl="/deri-hastaliklari/Herpes/"
-        imageUrl="/images/hastaliklar/vitiligo.jpg"
+        imageUrl={KategoriHerpes}
       />
     </div>
   </main>

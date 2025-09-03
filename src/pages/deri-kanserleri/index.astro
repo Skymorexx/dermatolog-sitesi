@@ -1,6 +1,11 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import IslemKarti from '../../components/IslemKarti.astro';
+// Resim importları
+import KategoriMalign from '../../assets/images/kanser/malign-melanom.jpg';
+import KategoriBazal from '../../assets/images/kanser/bazal-hucreli.jpg';
+import KategoriSkuamoz from '../../assets/images/kanser/skuamoz-hucreli.jpg';
+import KategoriDermoskopi from '../../assets/images/kanser/dermoskopi.jpg';
 
 const title = "Deri Kanserleri: Erken Tanı ve Tedavi - Uzm. Dr. Umut Mert Yıldırım";
 const description = "Malign melanom, bazal hücreli karsinom ve skuamöz hücreli karsinom hakkında bilgiler. Erken tanı ve dermatoskopik muayene ile ben takibi.";
@@ -34,25 +39,25 @@ const description = "Malign melanom, bazal hücreli karsinom ve skuamöz hücrel
       <IslemKarti 
         title="Malign Melanom"
         linkUrl="/deri-kanserleri/malign-melanom/"
-        imageUrl="/images/kanser/malign-melanom.jpg"
+        imageUrl={KategoriMalign} 
       />
       
       <IslemKarti 
         title="Bazal Hücreli Kanser"
         linkUrl="/deri-kanserleri/bazal-hucreli-kanser/"
-        imageUrl="/images/kanser/bazal-hucreli.jpg"
+        imageUrl={KategoriBazal}
       />
       
       <IslemKarti 
         title="Skuamöz Hücreli Kanser"
         linkUrl="/deri-kanserleri/skuamoz-hucreli-kanser/"
-        imageUrl="/images/kanser/skuamoz-hucreli.jpg"
+        imageUrl={KategoriSkuamoz}
       />
       
       <IslemKarti 
         title="Ben Takibi ve Dermoskopi"
         linkUrl="/deri-kanserleri/ben-takibi-ve-dermoskopi/"
-        imageUrl="/images/kanser/dermoskopi.jpg"
+        imageUrl={KategoriDermoskopi}
       />
     </div>
   </main>
