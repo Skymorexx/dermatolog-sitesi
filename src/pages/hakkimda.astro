@@ -1,5 +1,9 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { Image } from 'astro:assets';
+// Profil resmini import et
+import ProfilResmi from '../assets/images/dr-umut-mert-yildirim-profil.jpg';
+import IstanbulUniversitesiLogo from '../assets/images/logos/istanbul-universitesi-logo.jpg';
 
 const title = "Hakkımda - Uzm. Dr. Umut Mert Yıldırım";
 const description = "Uzm. Dr. Umut Mert Yıldırım hakkında detaylı bilgiler, eğitim geçmişi, uzmanlık alanları ve bilimsel faaliyetler.";
@@ -15,34 +19,36 @@ const description = "Uzm. Dr. Umut Mert Yıldırım hakkında detaylı bilgiler,
       
       <div class="prose prose-lg text-text-primary max-w-none">
         <div class="bg-white rounded-lg shadow-md p-8 mb-12">
-          <img 
-            src="/images/dr-umut-mert-yildirim-profil.jpg" 
-            alt="Uzm. Dr. Umut Mert Yıldırım" 
+          <Image 
+            src={ProfilResmi}
+            alt="Uzm. Dr. Umut Mert Yıldırım"
+            widths={[192, 384, 576]}
+            sizes="(max-width: 768px) 100vw, 192px"
+            loading="eager"
             class="w-48 h-48 rounded-full mx-auto mb-6 object-cover border-4 border-primary"
           />
           
-          <div class="text-left">
-  <p class="text-xl leading-relaxed mb-6">
-    Dr. Umut Mert Yıldırım, 1994 doğumlu olup tıp eğitimini 2013-2019 yılları arasında İstanbul Üniversitesi İstanbul Tıp Fakültesi'nde almıştır. 2020-2024 yılları arasında İstanbul Göztepe Eğitim ve Araştırma Hastanesi Deri ve Zührevi Hastalıklar Anabilim Dalı'nda uzmanlık eğitimini tamamlamıştır.
-  </p>
-  
-  <p class="text-xl leading-relaxed mb-6">
-    Uzmanlığını aldıktan sonra Şırnak Devlet Hastanesi'nde devlet hizmet yükümlülüğünü tamamlamış olup 2025 yılında İstanbul Medipol Acıbadem Bölge Hastanesi'nde hasta kabulüne başlamıştır.
-  </p>
-  
-  <p class="text-xl leading-relaxed mb-6">
-    Uzmanlık eğitimi ve sonrasında çok sayıda ulusal ve uluslararası bilimsel toplantıda katılımcı ve konuşmacı olarak bulunmuştur. Ayrıca Türk Dermatoloji Derneği tarafından verilen pek çok eğitime katılmıştır. Uzmanlık sonrası yeterlilik sınavlarına katılım sağlayarak Türk Dermatoloji Derneği Deri ve Zührevi Hastalıklar Yeterlilik Belgesini almaya hak kazanmıştır.
-  </p>
-  
-  <p class="text-xl leading-relaxed mb-6">
-    Deri tümörleri, dermatoskopi, ben takibi gibi konular başta olmak üzere tüm deri ve zührevi hastalıklar, dermokozmetik işlemler (dolgu, botoks, mezoterapi ve lazer tedavileri), temel deri cerrahisi konusunda bilgi ve beceri sahibidir.
-  </p>
-  
-  <p class="text-xl leading-relaxed mb-6">
-    Güncel eğitimleri ve bilimsel yenilikleri takip etmekte, hızla gelişen tıp ve dermatoloji dünyasına uyum sağlamak için sürdürülebilirliğe önem vermektedir.
-  </p>
-</div>
-
+          <div class="text-center">
+            <p class="text-xl leading-relaxed mb-6">
+              Dr. Umut Mert Yıldırım, 1994 doğumlu olup tıp eğitimini 2013-2019 yılları arasında İstanbul Üniversitesi İstanbul Tıp Fakültesi'nde almıştır. 2020-2024 yılları arasında İstanbul Göztepe Eğitim ve Araştırma Hastanesi Deri ve Zührevi Hastalıklar Anabilim Dalı'nda uzmanlık eğitimini tamamlamıştır.
+            </p>
+            
+            <p class="text-xl leading-relaxed mb-6">
+              Uzmanlığını aldıktan sonra Şırnak Devlet Hastanesi'nde devlet hizmet yükümlülüğünü tamamlamış olup 2025 yılında İstanbul Medipol Acıbadem Bölge Hastanesi'nde hasta kabulüne başlamıştır.
+            </p>
+            
+            <p class="text-xl leading-relaxed mb-6">
+              Uzmanlık eğitimi ve sonrasında çok sayıda ulusal ve uluslararası bilimsel toplantıda katılımcı ve konuşmacı olarak bulunmuştur. Ayrıca Türk Dermatoloji Derneği tarafından verilen pek çok eğitime katılmıştır. Uzmanlık sonrası yeterlilik sınavlarına katılım sağlayarak Türk Dermatoloji Derneği Deri ve Zührevi Hastalıklar Yeterlilik Belgesini almaya hak kazanmıştır.
+            </p>
+            
+            <p class="text-xl leading-relaxed mb-6">
+              Deri tümörleri, dermatoskopi, ben takibi gibi konular başta olmak üzere tüm deri ve zührevi hastalıklar, dermokozmetik işlemler (dolgu, botoks, mezoterapi ve lazer tedavileri), temel deri cerrahisi konusunda bilgi ve beceri sahibidir.
+            </p>
+            
+            <p class="text-xl leading-relaxed mb-6">
+              Güncel eğitimleri ve bilimsel yenilikleri takip etmekte, hızla gelişen tıp ve dermatoloji dünyasına uyum sağlamak için sürdürülebilirliğe önem vermektedir.
+            </p>
+          </div>
         </div>
         
         <h2 class="text-2xl font-bold text-primary mt-12 mb-6">
@@ -58,7 +64,7 @@ const description = "Uzm. Dr. Umut Mert Yıldırım hakkında detaylı bilgiler,
               <li>Egzema (Dermatit)</li>
               <li>Sedef Hastalığı</li>
               <li>Mantar ve Viral Enfeksiyonlar</li>
-              <li>Ürtiker ve Allerjik Hastalıklar</li>
+              <li>Ürtiker (Kurdeşen) ve Allerjik Hastalıklar</li>
             </ul>
           </div>
           
@@ -68,8 +74,8 @@ const description = "Uzm. Dr. Umut Mert Yıldırım hakkında detaylı bilgiler,
               <li>Dermoskopi & Ben (Nevüs) Takibi</li>
               <li>Deri Tümörlerinin Tanı ve Tedavisi</li>
               <li>Malign Melanom</li>
-              <li>Bazal ve Skuamöz Hücreli Karsinomlar</li>
-              <li>Prekanseröz Lezyonlar</li>
+              <li>Bazal Hücreli Karsinom</li>
+              <li>Skuamöz Hücreli Karsinom</li>
             </ul>
           </div>
           
@@ -77,9 +83,10 @@ const description = "Uzm. Dr. Umut Mert Yıldırım hakkında detaylı bilgiler,
             <h3 class="text-xl font-semibold text-primary mb-3">Dermatocerrahi</h3>
             <ul class="list-disc list-inside space-y-1">
               <li>Deri & Tırnak Cerrahisi</li>
-              <li>Nevüs Eksizyonu (Ben Tedavisi)</li>
+              <li>Nevüs Eksizoyonu (Ben Alma)</li>
               <li>Biyopsi ve Eksizyon İşlemleri</li>
-              <li>Kriyoterapi ve Elektrokoterizasyon</li>
+              <li>Kriyoterapi (Dondurma Tedavisi)</li>
+              <li>Elektrokoterizasyon (Yakma Tedavisi)</li>
               <li>Tırnak Batması</li>
               <li>Kist ve Lipom Çıkarma</li>
             </ul>
@@ -89,9 +96,9 @@ const description = "Uzm. Dr. Umut Mert Yıldırım hakkında detaylı bilgiler,
             <h3 class="text-xl font-semibold text-primary mb-3">Dermokozmetik</h3>
             <ul class="list-disc list-inside space-y-1">
               <li>Dolgu ve Botoks Uygulamaları</li>
-              <li>Mezoterapi ve Ekzosom Tedavileri</li>
+              <li>Mezoterapi ve Ekzosom Enjeksiyonları</li>
               <li>Lazer Tedavileri</li>
-              <li>Altın İğne ve Radyofrekans</li>
+              <li>Altın İğne (Radyofrekans)</li>
             </ul>
           </div>
         </div>
@@ -99,7 +106,17 @@ const description = "Uzm. Dr. Umut Mert Yıldırım hakkında detaylı bilgiler,
         <h2 class="text-2xl font-bold text-primary mt-12 mb-6">
           Eğitim
         </h2>
-        
+
+        <div class="bg-white p-6 rounded-lg shadow-md mb-8">
+  <div class="flex items-start gap-6">
+    <Image 
+      src={IstanbulUniversitesiLogo}
+      alt="İstanbul Üniversitesi Logo"
+      widths={[64, 128]}
+      sizes="64px"
+      loading="lazy"
+      class="w-16 h-16 object-contain self-center"
+    />
         <div class="bg-white p-6 rounded-lg shadow-md mb-8">
           <h3 class="text-xl font-semibold text-primary mb-2">
             İstanbul Üniversitesi İstanbul Tıp Fakültesi
@@ -115,15 +132,15 @@ const description = "Uzm. Dr. Umut Mert Yıldırım hakkında detaylı bilgiler,
         
         <div class="bg-white p-6 rounded-lg shadow-md mb-8">
           <h3 class="text-xl font-semibold text-primary mb-2">
-            İstanbul Göztepe E.A.H
+            İstanbul Göztepe Eğitim ve Araştırma Hastanesi
           </h3>
           <p class="text-text-primary mb-1">
             <strong>Dermatoloji Uzmanı</strong> (2020–2024)
           </p>
           <p class="text-text-secondary">
             4 yıllık uzmanlık eğitimi • Klinik ve patoloji rotasyonları • 
-            Dermatoskopi ve dermatoonkoloji üzerine  çalışmalar • 
-            Ulusal ve uluslararası bilimsel toplantılarda konuşmacı ve katılımcı
+            Dermatoskopi ve dermatoonkoloji üzerine çalışmalar • 
+            Ulusal ve uluslararası bilimsel toplantılarda katılımcı ve konuşmacı
           </p>
         </div>
         
@@ -153,8 +170,8 @@ const description = "Uzm. Dr. Umut Mert Yıldırım hakkında detaylı bilgiler,
               <strong>Dermatoloji Uzmanı</strong> (2025-halen)
             </p>
             <p class="text-text-secondary">
-              Uzaktan görüntülü muayene hizmetleri • Estetik ve kozmetik dermatoloji uygulamaları • 
-              İleri düzey tıbbi lazer uygulamaları • Multidisipliner yaklaşım
+              Uzaktan görüntülü muayene hizmetleri • Estetik dermatoloji uygulamaları • 
+              İleri düzey dermokozmetik işlemler • Multidisipliner yaklaşım
             </p>
           </div>
         </div>
@@ -168,7 +185,7 @@ const description = "Uzm. Dr. Umut Mert Yıldırım hakkında detaylı bilgiler,
             <h3 class="text-xl font-semibold text-primary mb-3">Profesyonel Belgeler</h3>
             <ul class="list-disc list-inside space-y-2">
               <li>Türk Dermatoloji Derneği Yeterlilik Belgesi</li>
-              <li>Hasta Hakları ve Güvenliği Eğitimi</li>
+
             </ul>
           </div>
           
@@ -191,18 +208,30 @@ const description = "Uzm. Dr. Umut Mert Yıldırım hakkında detaylı bilgiler,
             <li>
               <strong>Uluslararası dermatoloji toplantılarında katılımcı & konuşmacı</strong> - 
               Ulusal ve Uluslararası toplantılarda 
-              güncel dermatolojik yaklaşımlar üzerine sunumlar
+             güncel dermatolojik yaklaşımlar üzerine sunumlar
             </li>
             <li>
               <strong>Bilimsel araştırmalar</strong> - 
-              Deri tümörleri, Yara iyileşmesi ve  Covid-19'un saç dökülmesi ile ilişkisi üzerine akademik çalışmalar
+               Deri tümörleri, Yara iyileşmesi ve Covid-19'un saç dökülmesi ile ilişkisi üzerine akademik çalışmalar
             </li>
             <li>
-              <strong>Sürdürülebilir mesleki eğitim</strong> - 
-              Güncel dermatoloji eğilimleri ve bilimsel faaliyetlere düzenli katılım
+              <strong>Sürdürebilir mesleki eğitim</strong> - 
+              GGüncel dermatoloji eğilimleri ve bilimsel faaliyetlere düzenli katılım
             </li>
           </ul>
         </div>
+        
+        <div class="bg-accent text-white p-8 rounded-lg text-center">
+          <h3 class="text-2xl font-bold mb-4">Misyonum</h3>
+          <p class="text-lg leading-relaxed">
+            "Her hastamı bireysel olarak değerlendirmek, onların cilt sağlığı sorunlarını 
+            anlayabilmek ve onlara en uygun, güvenli ve etkili tedavi yöntemlerini sunmak 
+            benim için bir meslek erdemidir. Tıbbi bilgimi her gün yenileyerek, 
+            hastalarıma en iyi hizmeti vermek için çalışıyorum."
+          </p>
+        </div>
+      </div>
+    </div>
   </main>
   
 </BaseLayout>
