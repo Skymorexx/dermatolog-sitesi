@@ -16,12 +16,21 @@
         Daha Fazla Bilgi
       </a>
       
-      <button 
-        id="accept-cookies" 
-        class="bg-white text-text-primary hover:bg-background-soft px-6 py-2 rounded-lg font-semibold transition-colors duration-200 text-sm"
-      >
-        Kabul Et
-      </button>
+      <div class="flex flex-col sm:flex-row gap-2">
+        <button 
+          id="reject-cookies" 
+          class="bg-gray-200 text-text-primary hover:bg-gray-300 px-4 py-2 rounded-lg font-semibold transition-colors duration-200 text-sm"
+        >
+          Reddet
+        </button>
+        
+        <button 
+          id="accept-cookies" 
+          class="bg-white text-text-primary hover:bg-background-soft px-4 py-2 rounded-lg font-semibold transition-colors duration-200 text-sm"
+        >
+          Kabul Et
+        </button>
+      </div>
     </div>
   </div>
 </div>
@@ -30,6 +39,7 @@
   document.addEventListener('DOMContentLoaded', () => {
     const cookieBanner = document.getElementById('cookie-banner');
     const acceptButton = document.getElementById('accept-cookies');
+    const rejectButton = document.getElementById('reject-cookies');
     
     // Cookie consent kontrolü
     const hasConsent = localStorage.getItem('cookie_consent') || getCookie('cookie_consent');
@@ -51,6 +61,18 @@
         localStorage.setItem('cookie_consent', 'true');
         // Cookie olarak da kaydet (30 gün süreyle)
         setCookie('cookie_consent', 'true', 30);
+        // Banner'ı gizle
+        cookieBanner.classList.add('hidden');
+      });
+    }
+    
+    // Reddet butonu event
+    if (rejectButton && cookieBanner) {
+      rejectButton.addEventListener('click', () => {
+        // LocalStorage'a red kaydet
+        localStorage.setItem('cookie_consent', 'false');
+        // Cookie olarak da kaydet (30 gün süreyle)
+        setCookie('cookie_consent', 'false', 30);
         // Banner'ı gizle
         cookieBanner.classList.add('hidden');
       });
