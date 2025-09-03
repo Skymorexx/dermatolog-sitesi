@@ -14,16 +14,37 @@ const schema = {
       "@type": "Physician",
       "@id": `${url}/#physician`,
       "name": "Uzm. Dr. Umut Mert Yıldırım",
-      "alternateName": "Dr. Umut Mert Yıldırım",
+      "image": "/images/dr-umut-mert-yildirim-profil.jpg", // Profil fotoğrafınızın yolu
       "url": url,
-      "telephone": "+90-216-544-1111",
-      "priceRange": "Varies by service",
+      "telephone": "+902165441111",
+      "address": { "@id": `${url}/#address` },
+      "medicalSpecialty": "Dermatology",
+      "availableService": [
+        "Akne Tedavisi",
+        "Egzema Tedavisi", 
+        "Sedef Hastalığı Tedavisi",
+        "Saç Dökülmesi Tedavisi",
+        "Vitiligo Tedavisi",
+        "Rozase Tedavisi",
+        "Ürtiker Tedavisi",
+        "Herpes Tedavisi",
+        "Liken Tedavisi",
+        "Mantar Tedavisi"
+      ]
+    },
+    {
+      "@type": "MedicalClinic",
+      "@id": `${url}/#clinic`,
+      "name": "Uzm. Dr. Umut Mert Yıldırım Kliniği",
+      "url": url,
+      "telephone": "+902165441111",
       "address": {
         "@type": "PostalAddress",
+        "@id": `${url}/#address",
         "streetAddress": "Acıbadem, Şht. Emin Çölen Sokağı No:18",
-        "addressLocality": "İstanbul",
-        "addressRegion": "Kadıköy",
-        "postalCode": "[34718]",
+        "addressLocality": "Kadıköy",
+        "addressRegion": "İstanbul",
+        "postalCode": "34718",
         "addressCountry": "TR"
       },
       "geo": {
@@ -31,17 +52,8 @@ const schema = {
         "latitude": 40.9887,
         "longitude": 29.0236
       },
-      "medicalSpecialty": "Dermatology",
-      "availableService": [
-        "Skin Disease Treatment",
-        "Dermatologic Surgery",
-        "Cosmetic Dermatology"
-      ],
-      "medicalAudience": {
-        "@type": "PeopleAudience",
-        "suggestedGender": "Unisex",
-        "suggestedMinAge": 0
-      }
+      "openingHours": "Mo,Tu,We,Th,Fr 09:00-18:00",
+      "doctor": { "@id": `${url}/#physician` }
     },
     {
       "@type": "WebSite",
@@ -49,14 +61,11 @@ const schema = {
       "url": url,
       "name": "Uzm. Dr. Umut Mert Yıldırım - Dermatoloji Uzmanı",
       "description": description,
-      "publisher": {
-        "@id": `${url}/#physician`
-      }
+      "publisher": { "@id": `${url}/#clinic` }
     }
   ]
 };
 ---
-
 <BaseLayout 
   title={title} 
   description={description}
