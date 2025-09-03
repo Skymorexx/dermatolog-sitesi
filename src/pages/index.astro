@@ -1,10 +1,70 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import JsonLD from '../components/JsonLD.astro';
 
 const title = "Uzm. Dr. Umut Mert Yıldırım - Dermatoloji Uzmanı";
 const description = "İstanbulda dermatoloji uzmanı; Deri hastalıkları, dermokozmetik uygulamalar ve dermocerrahi konularında uzman hekim hizmeti.";
 const url = "https://drumutmertyildirim.com";
 
+// JSON-LD Schema objesi
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Physician",
+      "@id": `${url}/#physician`,
+      "name": "Uzm. Dr. Umut Mert Yıldırım",
+      "image": "/images/dr-umut-mert-yildirim-profil.jpg",
+      "url": url,
+      "telephone": "+902165441111",
+      "address": { "@id": `${url}/#address` },
+      "medicalSpecialty": "Dermatology",
+      "availableService": [
+        "Akne Tedavisi",
+        "Egzema Tedavisi", 
+        "Sedef Hastalığı Tedavisi",
+        "Saç Dökülmesi Tedavisi",
+        "Vitiligo Tedavisi",
+        "Rozase Tedavisi",
+        "Ürtiker Tedavisi",
+        "Herpes Tedavisi",
+        "Liken Tedavisi",
+        "Mantar Tedavisi"
+      ]
+    },
+    {
+      "@type": "MedicalClinic",
+      "@id": `${url}/#clinic`,
+      "name": "Uzm. Dr. Umut Mert Yıldırım Kliniği",
+      "url": url,
+      "telephone": "+902165441111",
+      "address": {
+        "@type": "PostalAddress",
+        "@id": `${url}/#address`,
+        "streetAddress": "Acıbadem, Şht. Emin Çölen Sokağı No:18",
+        "addressLocality": "Kadıköy",
+        "addressRegion": "İstanbul",
+        "postalCode": "34718",
+        "addressCountry": "TR"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 40.9887,
+        "longitude": 29.0236
+      },
+      "openingHours": "Mo,Tu,We,Th,Fr 09:00-18:00",
+      "doctor": { "@id": `${url}/#physician` }
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${url}/#website`,
+      "url": url,
+      "name": "Uzm. Dr. Umut Mert Yıldırım - Dermatoloji Uzmanı",
+      "description": description,
+      "publisher": { "@id": `${url}/#clinic` }
+    }
+  ]
+};
 ---
 
 <BaseLayout 
@@ -12,7 +72,8 @@ const url = "https://drumutmertyildirim.com";
   description={description}
   url={url}
 >
-
+  <JsonLD schema={schema} />
+  
   <!-- Hero Section -->
   <section class="bg-background-soft py-16 px-6">
     <div class="max-w-4xl mx-auto text-center">
