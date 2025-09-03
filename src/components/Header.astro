@@ -1,7 +1,23 @@
-<header class="bg-background-soft border-b border-gray-200 py-4 px-6">
+import { Image } from 'astro:assets';
+import KlinikLogo from '../assets/images/logos/klinik-logo.jpg';
+
+<header class="bg-blue-900 border-b border-blue-700 py-4 px-6">
   <nav class="max-w-6xl mx-auto flex items-center justify-between">
-    <div class="text-primary font-bold text-xl">
-      Dr. Umut Mert Yıldırım
+    <div class="flex items-center gap-4">
+      <!-- Klinik Logosu -->
+      <Image 
+        src={KlinikLogo}
+        alt="Klinik Logo"
+        widths={[48, 96]}
+        sizes="48px"
+        loading="eager"
+        class="w-12 h-12 object-contain"
+      />
+      
+      <!-- Doktor İsmi -->
+      <div class="text-white font-bold text-xl">
+        Dr. Umut Mert Yıldırım
+      </div>
     </div>
     
     <ul class="flex space-x-8">
