@@ -5,6 +5,7 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import StickyButton from '../components/StickyButton.astro';
 import CookieBanner from '../components/CookieBanner.astro'; // CookieBanner import
+import JsonLD from '../components/JsonLD.astro';
 
 const { title, description, image, url, type } = Astro.props;
 
@@ -14,6 +15,38 @@ const pageDescription = description;
 const pageImage = image || '/images/default-og-image.jpg';
 const pageUrl = url || `https://drumutmertyildirim.com${Astro.url.pathname}`;
 const pageType = type || 'website';
+
+/ WebSite ve Organization şemaları
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://drumutmertyildirim.com/#website",
+  "url": "https://drumutmertyildirim.com",
+  "name": "Uzm. Dr. Umut Mert Yıldırım - Dermatoloji Uzmanı",
+  "description": "İstanbul'da profesyonel dermatoloji hizmetleri. Deri hastalıkları, dermokozmetik uygulamalar ve dermatocerrahi konularında uzman hekim hizmeti.",
+  "publisher": {
+    "@id": "https://drumutmertyildirim.com/#organization"
+  }
+};
+
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://drumutmertyildirim.com/#organization",
+  "name": "Uzm. Dr. Umut Mert Yıldırım - Dermatoloji Uzmanı",
+  "url": "https://drumutmertyildirim.com",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://drumutmertyildirim.com/images/logo.png",
+    "width": 120,
+    "height": 120
+  },
+  "sameAs": [
+    "https://www.instagram.com/uzm.dr.umutmertyildirim/",
+    "https://wa.me/900000000000",
+    "https://www.facebook.com/dr.umutmertyildirim"
+  ]
+};
 ---
 
 <!DOCTYPE html>
