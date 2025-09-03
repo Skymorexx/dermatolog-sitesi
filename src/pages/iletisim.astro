@@ -75,20 +75,26 @@ const description = "İletişim bilgilerimiz ve randevu talebiniz için iletişi
             ></textarea>
           </div>
           
-          <div class="mb-6">
-            <div class="flex items-start">
-              <input 
-                type="checkbox" 
-                id="kvkk" 
-                name="kvkk" 
-                required 
-                class="mt-1 mr-3 h-5 w-5 text-accent rounded focus:ring-secondary"
-              />
-              <label for="kvkk" class="text-text-primary">
-                <span class="font-medium">KVKK Aydınlatma Metni</span>'ni okudum ve kişisel verilerimin işlenmesini kabul ediyorum. *
-              </label>
-            </div>
-          </div>
+<div class="mb-6">
+  <div class="flex items-start">
+    <input 
+      type="checkbox" 
+      id="kvkk" 
+      name="kvkk" 
+      required 
+      class="mt-1 mr-3 h-5 w-5 text-accent rounded focus:ring-secondary"
+    />
+    <label for="kvkk" class="text-text-primary">
+      <span class="font-medium">
+        <a href="/kvkk/" class="underline hover:text-primary transition-colors duration-200">
+          KVKK Aydınlatma Metni
+        </a>
+      </span>
+      'ni okudum ve kişisel verilerimin işlenmesini kabul ediyorum. 
+      (<a href="/kvkk/" class="text-text-primary hover:text-primary transition-colors duration-200 no-underline">*</a>)
+    </label>
+  </div>
+</div>
           
           <!-- reCAPTCHA Kutusu -->
           <div data-netlify-recaptcha="true" class="mb-6"></div>
