@@ -1,0 +1,62 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { Image } from 'astro:assets';
+import HastalikKarti from '../components/HastalikKarti.astro';
+
+// Resim importları
+import YayinlarImg from '../assets/images/akademik/yayinlar.jpg';
+import KongrelerImg from '../assets/images/akademik/kongreler.jpg';
+import OdullerImg from '../assets/images/akademik/oduller.jpg';
+import BasindaImg from '../assets/images/akademik/basinda.jpg';
+
+const title = "Akademik Çalışmalar - Uzm. Dr. Umut Mert Yıldırım";
+const description = "Bilimsel yayınlar, uluslararası kongre sunumları, alınan ödüller ve basında yer alan çalışmalar hakkında bilgiler.";
+---
+
+<BaseLayout title={title} description={description}>
+  
+  <main id="main-content" class="container mx-auto px-4 py-16">
+    <div class="max-w-4xl mx-auto mb-12">
+      <h1 class="text-4xl font-bold text-primary mb-8">
+        Akademik ve Bilimsel Çalışmalarım
+      </h1>
+      
+      <p class="text-text-primary text-lg leading-relaxed">
+        Bu 
+        sayfada 
+        bilimsel 
+        çalışmalarımı, 
+        yayınlarımı 
+        ve 
+        katıldığım 
+        uluslararası 
+        toplantıları 
+        bulabilirsiniz.
+      </p>
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <!-- Yayınlar Bölümü -->
+      <HastalikKarti 
+        title="Bilimsel Yayınlar"
+        linkUrl="/akademik/yayinlar/"
+        imageUrl={YayinlarImg}
+      />
+      
+      <!-- Uluslararası Kongreler -->
+      <HastalikKarti 
+        title="Uluslararası Kongreler"
+        linkUrl="/akademik/kongreler/"
+        imageUrl={KongrelerImg}
+      />
+      
+      <!-- Basında Yer Alanlar -->
+      <HastalikKarti 
+        title="Basında Yer Alanlar"
+        linkUrl="/akademik/basinda/"
+        imageUrl={BasindaImg}
+      />
+    </div>
+  </main>
+  
+</BaseLayout>
