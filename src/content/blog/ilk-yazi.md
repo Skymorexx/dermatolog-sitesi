@@ -1,7 +1,7 @@
 ---
 title: 'Cilt Bakımında Doğru Bilinen 5 Yanlış'
 description: 'Günlük cilt bakım rutininizde farkında olmadan yaptığınız ve cildinize zarar veren 5 yaygın hatayı açıklıyoruz.'
-pubDate: 2025-09-15T00:00:00.000Z
+pubDate: 2025-09-02T00:00:00.000Z
 heroImage: '/images/blog/cilt-bakimi-hatalari.jpg'
 imageAlt: 'Cilt bakım ürünleri ve bir büyüteç'
 ---

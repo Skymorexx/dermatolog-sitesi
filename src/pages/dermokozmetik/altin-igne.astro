@@ -1,11 +1,20 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import BreadcrumbSchema from '../../components/BreadcrumbSchema.astro';
 
 const title = "Altın İğne (Radyofrekans) Tedavisi - Uzm. Dr. Umut Mert Yıldırım";
 const description = "Cilt gençleştirme, leke ve skar tedavisi için kullanılan Altın İğne (İğneli Radyofrekans) uygulaması hakkında detaylı bilgi, uygulama alanları ve sıkça sorulan sorular.";
 ---
 
 <BaseLayout title={title} description={description}>
+
+    <BreadcrumbSchema 
+    links={[
+      { name: "Ana Sayfa", url: "/" },
+      { name: "Dermokozmetik İşlemler", url: "/dermokozmetik/" },
+      { name: "Altın İğne (Radyofrekans)", url: "/dermokozmetik/altin-igne/" },
+    ]}
+  />
   
   <main id="main-content" class="container mx-auto px-4 py-12">
     <div class="max-w-4xl mx-auto">

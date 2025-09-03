@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
+import BreadcrumbSchema from '../../../components/BreadcrumbSchema.astro';
 
 const title = "Paris Işıltısı (Mezoterapi) - Uzm. Dr. Umut Mert Yıldırım";
 const description = "Cildinize doğal ışıltı kazandırmak için uygulanan Paris Işıltısı mezoterapi işlemi hakkında detaylı bilgi, uygulama süreci ve sıkça sorulan sorular.";
@@ -7,6 +8,15 @@ const description = "Cildinize doğal ışıltı kazandırmak için uygulanan Pa
 
 <BaseLayout title={title} description={description}>
   
+    <BreadcrumbSchema 
+    links={[
+      { name: "Ana Sayfa", url: "/" },
+      { name: "Dermokozmetik İşlemler", url: "/dermokozmetik/" },
+      { name: "Mezoterapi", url: "/dermokozmetik/mezoterapi/" },
+      { name: "Paris Işıltısı", url: "/dermokozmetik/lazer/paris-isiltisi/" }
+    ]}
+  />
+
   <main id="main-content" class="container mx-auto px-4 py-12">
     <div class="max-w-4xl mx-auto">
       <h1 class="text-4xl font-bold text-primary mb-8">

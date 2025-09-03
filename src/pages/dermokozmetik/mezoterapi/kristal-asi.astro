@@ -1,11 +1,21 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
+import BreadcrumbSchema from '../../../components/BreadcrumbSchema.astro';
 
 const title = "Kristal Gençlik Aşısı - Uzm. Dr. Umut Mert Yıldırım";
 const description = "Cildin yaşlanma belirtilerine karşı uygulanan Kristal Gençlik Aşısı hakkında detaylı bilgi, uygulama süreci ve sıkça sorulan sorular.";
 ---
 
 <BaseLayout title={title} description={description}>
+
+  <BreadcrumbSchema 
+    links={[
+      { name: "Ana Sayfa", url: "/" },
+      { name: "Dermokozmetik İşlemler", url: "/dermokozmetik/" },
+      { name: "Mezoterapi", url: "/dermokozmetik/mezoterapi/" },
+      { name: "Kristal Gençlik Aşısı", url: "/dermokozmetik/lazer/kristal-asi/" }
+    ]}
+  />
   
   <main id="main-content" class="container mx-auto px-4 py-12">
     <div class="max-w-4xl mx-auto">

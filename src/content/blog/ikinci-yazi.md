@@ -1,7 +1,7 @@
 ---
 title: 'Güneş Hasarından Korunma ve Onarma Yöntemleri'
 description: 'Güneş hasarının önemi, korunma yöntemleri ve oluşmuş hasarı onarma teknikleri hakkında kapsamlı rehber.'
-pubDate: 2025-09-22T00:00:00.000Z
+pubDate: 2025-09-03T00:00:00.000Z
 heroImage: '/images/blog/gunes-hasari.jpg'
 imageAlt: 'Güneş koruyucu krem ve şapka'
 ---

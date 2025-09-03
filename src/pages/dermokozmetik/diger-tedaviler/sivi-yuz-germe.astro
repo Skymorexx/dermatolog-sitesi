@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
+import BreadcrumbSchema from '../../../components/BreadcrumbSchema.astro';
 
 const title = "Sıvı Yüz Germe (PLLA) - Uzm. Dr. Umut Mert Yıldırım";
 const description = "Doğal kolajen üretimini uyaran sıvı yüz germe (PLLA) tedavisi hakkında detaylı bilgi, uygulama süreci ve sıkça sorulan sorular.";
@@ -7,6 +8,15 @@ const description = "Doğal kolajen üretimini uyaran sıvı yüz germe (PLLA) t
 
 <BaseLayout title={title} description={description}>
   
+    <BreadcrumbSchema 
+    links={[
+      { name: "Ana Sayfa", url: "/" },
+      { name: "Dermokozmetik İşlemler", url: "/dermokozmetik/" },
+      { name: "Diğer Dermokozmetik İşlemler", url: "/dermokozmetik/diger-tedaviler/" },
+      { name: "Sıvı Yüz Germe (PLLA)", url: "/dermokozmetik/diger-tedaviler/sivi-yüz-germe/" }
+    ]}
+  />
+
   <main id="main-content" class="container mx-auto px-4 py-12">
     <div class="max-w-4xl mx-auto">
       <h1 class="text-4xl font-bold text-primary mb-8">
