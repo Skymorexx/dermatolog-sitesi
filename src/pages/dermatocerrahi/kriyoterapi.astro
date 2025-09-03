@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import BreadcrumbSchema from '../../components/BreadcrumbSchema.astro';
 
 const title = "Kriyoterapi (Dondurma Tedavisi) - Uzm. Dr. Umut Mert Yıldırım";
 const description = "Siğil, basur ve diğer cilt lezyonlarının dondurma yöntemiyle tedavisi. Kriyoterapi (dondurma tedavisi) işlemi nasıl yapılır? İşlem süreci ve sonrası bakım hakkında detaylı bilgi.";
@@ -7,6 +8,14 @@ const description = "Siğil, basur ve diğer cilt lezyonlarının dondurma yönt
 
 <BaseLayout title={title} description={description}>
   
+    <BreadcrumbSchema 
+    links={[
+      { name: "Ana Sayfa", url: "/" },
+      { name: "Dermatocerrahi", url: "/dermatocerrahi/" },
+      { name: "Kriyoterapi", url: "/dermatocerrahi/kriyoterapi/" },
+    ]}
+  />
+
   <main id="main-content" class="container mx-auto px-4 py-12">
     <div class="max-w-4xl mx-auto">
       <h1 class="text-4xl font-bold text-primary mb-8">

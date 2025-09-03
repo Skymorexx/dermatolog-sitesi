@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import BreadcrumbSchema from '../../components/BreadcrumbSchema.astro';
 
 const title = "Malign Melanom: Belirtileri, Tanı ve Tedavisi - Uzm. Dr. Umut Mert Yıldırım";
 const description = "En ciddi deri kanseri türü olan Malign Melanom'un belirtileri (ABCDE kuralı), risk faktörleri, erken tanı ve tedavi yöntemleri hakkında bilimsel bilgiler.";
@@ -7,6 +8,14 @@ const description = "En ciddi deri kanseri türü olan Malign Melanom'un belirti
 
 <BaseLayout title={title} description={description}>
   
+     <BreadcrumbSchema 
+    links={[
+      { name: "Ana Sayfa", url: "/" },
+      { name: "Deri Kanserleri", url: "/deri-kanserleri/" },
+      { name: "Malign Melanom", url: "/deri-kanserleri/malign-melanom/" },
+    ]}
+  />
+
   <main id="main-content" class="container mx-auto px-4 py-12">
     <div class="max-w-4xl mx-auto">
       <h1 class="text-4xl font-bold text-primary mb-8">

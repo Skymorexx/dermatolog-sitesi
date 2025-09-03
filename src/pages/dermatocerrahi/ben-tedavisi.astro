@@ -1,11 +1,20 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import BreadcrumbSchema from '../../components/BreadcrumbSchema.astro';
 
 const title = "Ben Aldırma (Nevüs Eksizyonu) - Uzm. Dr. Umut Mert Yıldırım";
 const description = "Cerrahi yöntemlerle ben aldırma (nevüs eksizyonu) işlemi nasıl yapılır? İşlem süreci, sonrası bakım ve iyileşme süreci hakkında detaylı bilgi.";
 ---
 
 <BaseLayout title={title} description={description}>
+
+  <BreadcrumbSchema 
+    links={[
+      { name: "Ana Sayfa", url: "/" },
+      { name: "Dermatocerrahi", url: "/dermatocerrahi/" },
+      { name: "Nevüs Eksizyonu (Ben Alımı)", url: "/dermatocerrahi/ben-tedavisi/" },
+    ]}
+  />
   
   <main id="main-content" class="container mx-auto px-4 py-12">
     <div class="max-w-4xl mx-auto">

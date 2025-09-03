@@ -1,11 +1,20 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import BreadcrumbSchema from '../../components/BreadcrumbSchema.astro';
 
 const title = "Saç Dökülmesi (Telogen Effluvium ve Androgenetik Alopesi) Tedavisi - Uzm. Dr. Umut Mert Yıldırım";
 const description = "Ani saç dökülmesi (telogen effluvium) ve kalıtsal saç kaybı (androgenetik alopesi) belirtileri, nedenleri ve Uzm. Dr. Umut Mert Yıldırım tarafından uygulanan modern tedavi yöntemleri hakkında bilgi alın.";
 ---
 
 <BaseLayout title={title} description={description}>
+
+      <BreadcrumbSchema 
+    links={[
+      { name: "Ana Sayfa", url: "/" },
+      { name: "Deri Hastalıkları", url: "/deri-hastaliklari/" },
+      { name: "Saç Dökülmesi Tedavisi", url: "/deri-hastaliklari/sac-dokulmesi/" },
+    ]}
+  />
   
   <main id="main-content" class="container mx-auto px-4 py-12">
     <div class="max-w-4xl mx-auto">

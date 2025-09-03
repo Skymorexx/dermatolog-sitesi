@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import BreadcrumbSchema from '../../components/BreadcrumbSchema.astro';
 
 const title = "Vitiligo Tedavisi - Uzm. Dr. Umut Mert Yıldırım";
 const description = "Ciltte beyaz lekelere neden olan vitiligo hastalığı, tanı ve tedavi süreçleri hakkında detaylı bilgilendirme.";
@@ -7,6 +8,14 @@ const description = "Ciltte beyaz lekelere neden olan vitiligo hastalığı, tan
 
 <BaseLayout title={title} description={description}>
   
+    <BreadcrumbSchema 
+    links={[
+      { name: "Ana Sayfa", url: "/" },
+      { name: "Deri Hastalıkları", url: "/deri-hastaliklari/" },
+      { name: "Vitiligo Tedavisi", url: "/deri-hastaliklari/vitiligo/" },
+    ]}
+  />
+
   <main id="main-content" class="container mx-auto px-4 py-12">
     <div class="max-w-4xl mx-auto">
       <h1 class="text-4xl font-bold text-primary mb-8">

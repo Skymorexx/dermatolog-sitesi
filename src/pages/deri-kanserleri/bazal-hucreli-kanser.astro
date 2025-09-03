@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import BreadcrumbSchema from '../../components/BreadcrumbSchema.astro';
 
 const title = "Bazal Hücreli Kanser: Belirtileri, Tanı ve Tedavisi - Uzm. Dr. Umut Mert Yıldırım";
 const description = "En sık görülen deri kanseri türü olan Bazal Hücreli Karsinom'un belirtileri, risk faktörleri, erken tanı ve tedavi yöntemleri hakkında bilimsel bilgiler.";
@@ -7,6 +8,14 @@ const description = "En sık görülen deri kanseri türü olan Bazal Hücreli K
 
 <BaseLayout title={title} description={description}>
   
+    <BreadcrumbSchema 
+    links={[
+      { name: "Ana Sayfa", url: "/" },
+      { name: "Deri Kanserleri", url: "/deri-kanserleri/" },
+      { name: "Bazal Hücreli Kanser", url: "/dermokozmetik/bazal-hucreli-kanser/" },
+    ]}
+  />
+
   <main id="main-content" class="container mx-auto px-4 py-12">
     <div class="max-w-4xl mx-auto">
       <h1 class="text-4xl font-bold text-primary mb-8">

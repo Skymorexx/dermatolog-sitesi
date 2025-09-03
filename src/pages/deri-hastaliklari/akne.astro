@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import BreadcrumbSchema from '../../components/BreadcrumbSchema.astro';
 
 const title = "Akne Tedavisi - Uzm. Dr. Umut Mert Yıldırım";
 const description = "Akne (sivilce) nedir, nasıl oluşur ve tedavi yöntemleri nelerdir? Uzman dermatoloğun gözetiminde modern akne tedavileri hakkında detaylı bilgi.";
@@ -7,6 +8,14 @@ const description = "Akne (sivilce) nedir, nasıl oluşur ve tedavi yöntemleri 
 
 <BaseLayout title={title} description={description}>
   
+    <BreadcrumbSchema 
+    links={[
+      { name: "Ana Sayfa", url: "/" },
+      { name: "Deri Hastalıkları", url: "/deri-hastaliklari/" },
+      { name: "Akne (Sivilce) Tedavisi", url: "/deri-hastaliklari/akne/" },
+    ]}
+  />
+
   <main id="main-content" class="container mx-auto px-4 py-12">
     <div class="max-w-4xl mx-auto">
       <h1 class="text-4xl font-bold text-primary mb-8">

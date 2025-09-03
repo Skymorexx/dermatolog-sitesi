@@ -1,16 +1,25 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import BreadcrumbSchema from '../../components/BreadcrumbSchema.astro';
 
 const title = "Sedef Hastalığı (Psoriasis) Tedavisi - Uzm. Dr. Umut Mert Yıldırım";
 const description = "Sedef hastalığı (psoriasis) hakkında bilgi, belirtileri ve kliniğimizde uygulanan güncel tedavi seçenekleri.";
 ---
 
 <BaseLayout title={title} description={description}>
+
+      <BreadcrumbSchema 
+    links={[
+      { name: "Ana Sayfa", url: "/" },
+      { name: "Deri Hastalıkları", url: "/deri-hastaliklari/" },
+      { name: "Sedef Hastalığı (Psöriyasis) Tedavisi", url: "/deri-hastaliklari/sedef/" },
+    ]}
+  />
   
   <main id="main-content" class="container mx-auto px-4 py-12">
     <div class="max-w-4xl mx-auto">
       <h1 class="text-4xl font-bold text-primary mb-8">
-        Sedef Hastalığı (Psoriasis) ve Tedavi Yöntemleri
+        Sedef Hastalığı (Psöriyasis) ve Tedavi Yöntemleri
       </h1>
       
       <div class="prose prose-lg text-text-primary max-w-none">

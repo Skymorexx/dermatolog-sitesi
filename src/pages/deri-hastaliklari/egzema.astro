@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import BreadcrumbSchema from '../../components/BreadcrumbSchema.astro';
 
 const title = "Egzama (Dermatit) Tedavisi - Uzm. Dr. Umut Mert Yıldırım";
 const description = "Egzama (dermatit) belirtileri, nedenleri ve Uzm. Dr. Umut Mert Yıldırım tarafından uygulanan modern tedavi yöntemleri hakkında bilgi alın.";
@@ -7,37 +8,45 @@ const description = "Egzama (dermatit) belirtileri, nedenleri ve Uzm. Dr. Umut M
 
 <BaseLayout title={title} description={description}>
   
+      <BreadcrumbSchema 
+    links={[
+      { name: "Ana Sayfa", url: "/" },
+      { name: "Deri Hastalıkları", url: "/deri-hastaliklari/" },
+      { name: "Egzema (Dermatit) Tedavisi", url: "/deri-hastaliklari/egzema/" },
+    ]}
+  />
+
   <main id="main-content" class="container mx-auto px-4 py-12">
     <div class="max-w-4xl mx-auto">
       <h1 class="text-4xl font-bold text-primary mb-8">
-        Egzama (Dermatit) ve Tedavi Yöntemleri
+        Egzema (Dermatit) ve Tedavi Yöntemleri
       </h1>
       
       <div class="prose prose-lg text-text-primary max-w-none">
         <p class="mb-8 leading-relaxed">
-          Egzama, özellikle çocukluk döneminde sık görülen, cildin kuruluğuna, kızarıklığına ve 
+          Egzema, özellikle çocukluk döneminde sık görülen, cildin kuruluğuna, kızarıklığına ve 
           kaşıntılı lezyonlara neden olan kronik iltihabi bir deri hastalığıdır. Genetik yatkınlık, 
           çevresel faktörler ve bağışıklık sistemi bozuklukları egzamanın gelişiminde rol oynar. 
           Hastalık genellikle yinelenen ataklar şeklinde seyreder.
         </p>
         
         <h2 class="text-2xl font-bold text-primary mt-12 mb-6">
-          Egzama Nedir ve Belirtileri Nelerdir?
+          Egzema Nedir ve Belirtileri Nelerdir?
         </h2>
         
         <p class="mb-6 leading-relaxed">
-          Egzama, cilt bariyerinin bozulması sonucu ortaya çıkan, kaşıntılı, kızarık ve pullu lezyonlarla 
+          Egzema, cilt bariyerinin bozulması sonucu ortaya çıkan, kaşıntılı, kızarık ve pullu lezyonlarla 
           karakterize edilen kronik bir deri hastalığıdır. En sık belirtileri arasında cilt kuruluğu, 
           kızarıklık, kabarcıklar, sızıntı ve kalınlaşma yer alır. Hastalar genellikle yoğun kaşıntıdan 
           şikayet eder ve bu kaşıntı uyku düzenini de olumsuz etkileyebilir.
         </p>
         
         <h2 class="text-2xl font-bold text-primary mt-12 mb-6">
-          Egzama Tedavisinde Neler Yapılır?
+          Egzema Tedavisinde Neler Yapılır?
         </h2>
         
         <p class="mb-6 leading-relaxed">
-          Egzama tedavisi, hastalığın şiddeti ve tipine göre kişiselleştirilir. Temel tedavi prensipleri 
+          Egzema tedavisi, hastalığın şiddeti ve tipine göre kişiselleştirilir. Temel tedavi prensipleri 
           cilt bariyerinin onarılması, iltihabın kontrolü ve tetikleyici faktörlerin ortadan kaldırılmasıdır. 
           Nemlendiriciler, topikal kortikosteroidler, kalsinörin inhibitörleri ve yeni nesil biyolojik 
           ilaçlar kullanılır. Ayrıca yaşam tarzı değişiklikleri ve tetikleyici faktörlerin yönetimi önemlidir.
@@ -59,30 +68,30 @@ const description = "Egzama (dermatit) belirtileri, nedenleri ve Uzm. Dr. Umut M
         <div class="space-y-6 mb-12">
           <div>
             <h3 class="text-xl font-semibold text-text-primary mb-2">
-              Egzama kalıcı bir hastalık mıdır?
+              Egzema kalıcı bir hastalık mıdır?
             </h3>
             <p class="leading-relaxed">
-              Egzama genellikle çocuklukta başlar ve zamanla iyileşebilir. Ancak bazı bireylerde yetişkinlik 
+              Egzema genellikle çocuklukta başlar ve zamanla iyileşebilir. Ancak bazı bireylerde yetişkinlik 
               döneminde de devam edebilir. Uygun tedavi ve cilt bakımı ile semptomlar kontrol altına alınabilir.
             </p>
           </div>
           
           <div>
             <h3 class="text-xl font-semibold text-text-primary mb-2">
-              Egzama bulaşıcı mıdır?
+              Egzema bulaşıcı mıdır?
             </h3>
             <p class="leading-relaxed">
-              Hayır, egzama bulaşıcı bir hastalık değildir. Genetik yatkınlık ve çevresel faktörlerin 
+              Hayır, egzema bulaşıcı bir hastalık değildir. Genetik yatkınlık ve çevresel faktörlerin 
               etkileşimi sonucu gelişir. Başka kişilere temas yoluyla geçmez.
             </p>
           </div>
           
           <div>
             <h3 class="text-xl font-semibold text-text-primary mb-2">
-              Egzama tedavisi ne kadar sürer?
+              Egzema tedavisi ne kadar sürer?
             </h3>
             <p class="leading-relaxed">
-              Tedavi süresi egzamanın şiddeti ve bireysel yanıta göre değişir. Akut ataklar genellikle 
+              Tedavi süresi egzemanın şiddeti ve bireysel yanıta göre değişir. Akut ataklar genellikle 
               2-4 hafta içinde kontrol altına alınabilir, ancak kronik bakım ve önleme tedbirleri 
               uzun vadeli uygulanmalıdır.
             </p>

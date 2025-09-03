@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import BreadcrumbSchema from '../../components/BreadcrumbSchema.astro';
 
 const title = "Deri Mantarı (Dermatofitoz) Tedavisi - Uzm. Dr. Umut Mert Yıldırım";
 const description = "Cilt, tırnak ve saçta mantar enfeksiyonları nedeniyle oluşan dermatofitoz belirtileri, nedenleri ve Uzm. Dr. Umut Mert Yıldırım tarafından uygulanan modern tedavi yöntemleri hakkında bilgi alın.";
@@ -7,10 +8,18 @@ const description = "Cilt, tırnak ve saçta mantar enfeksiyonları nedeniyle ol
 
 <BaseLayout title={title} description={description}>
   
+      <BreadcrumbSchema 
+    links={[
+      { name: "Ana Sayfa", url: "/" },
+      { name: "Deri Hastalıkları", url: "/deri-hastaliklari/" },
+      { name: "Deri Mantarı (Tinea) Tedavisi", url: "/deri-hastaliklari/mantar/" },
+    ]}
+  />
+
   <main id="main-content" class="container mx-auto px-4 py-12">
     <div class="max-w-4xl mx-auto">
       <h1 class="text-4xl font-bold text-primary mb-8">
-        Deri Mantarı (Dermatofitoz) ve Tedavi Yöntemleri
+        Deri Mantarı (Tinea) ve Tedavi Yöntemleri
       </h1>
       
       <div class="prose prose-lg text-text-primary max-w-none">

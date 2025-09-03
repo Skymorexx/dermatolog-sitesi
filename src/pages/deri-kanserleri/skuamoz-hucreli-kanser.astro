@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import BreadcrumbSchema from '../../components/BreadcrumbSchema.astro';
 
 const title = "Derinin Skuamöz Hücreli Kanseri: Belirtileri, Tanı ve Tedavisi - Uzm. Dr. Umut Mert Yıldırım";
 const description = "İkinci sıklıkta görülen deri kanseri türü olan Skuamöz Hücreli Karsinom'un belirtileri, risk faktörleri, erken tanı ve tedavi yöntemleri hakkında bilimsel bilgiler.";
@@ -7,6 +8,14 @@ const description = "İkinci sıklıkta görülen deri kanseri türü olan Skuam
 
 <BaseLayout title={title} description={description}>
   
+     <BreadcrumbSchema 
+    links={[
+      { name: "Ana Sayfa", url: "/" },
+      { name: "Deri Kanserleri", url: "/deri-kanserleri/" },
+      { name: "Skuamöz (Yassı) Hücreli Kanser", url: "/deri-kanserleri/skuamoz-hucreli-kanser/" },
+    ]}
+  />
+
   <main id="main-content" class="container mx-auto px-4 py-12">
     <div class="max-w-4xl mx-auto">
       <h1 class="text-4xl font-bold text-primary mb-8">

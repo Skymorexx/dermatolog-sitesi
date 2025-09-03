@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import BreadcrumbSchema from '../../components/BreadcrumbSchema.astro';
 
 const title = "Tırnak Cerrahisi - Uzm. Dr. Umut Mert Yıldırım";
 const description = "Tırnak batması, tırnak çıkıntısı ve diğer tırnak sorunlarının cerrahi tedavisi. Tırnak cerrahisi işlemi nasıl yapılır? İşlem süreci ve sonrası bakım hakkında detaylı bilgi.";
@@ -7,6 +8,14 @@ const description = "Tırnak batması, tırnak çıkıntısı ve diğer tırnak 
 
 <BaseLayout title={title} description={description}>
   
+    <BreadcrumbSchema 
+    links={[
+      { name: "Ana Sayfa", url: "/" },
+      { name: "Dermatocerrahi", url: "/dermatocerrahi/" },
+      { name: "Tırnak Cerrahisi", url: "/dermatocerrahi/tirnak-cerrahisi/" },
+    ]}
+  />
+
   <main id="main-content" class="container mx-auto px-4 py-12">
     <div class="max-w-4xl mx-auto">
       <h1 class="text-4xl font-bold text-primary mb-8">

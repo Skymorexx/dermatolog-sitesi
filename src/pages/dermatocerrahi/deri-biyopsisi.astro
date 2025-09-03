@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import BreadcrumbSchema from '../../components/BreadcrumbSchema.astro';
 
 const title = "Deri Biyopsisi - Uzm. Dr. Umut Mert Yıldırım";
 const description = "Şüpheli cilt lezyonlarının tanımlanması için deri biyopsisi işlemi. Cerrahi deri biyopsisi nasıl yapılır? İşlem süreci, sonrası bakım ve sonuçların değerlendirilmesi hakkında detaylı bilgi.";
@@ -7,6 +8,14 @@ const description = "Şüpheli cilt lezyonlarının tanımlanması için deri bi
 
 <BaseLayout title={title} description={description}>
   
+    <BreadcrumbSchema 
+    links={[
+      { name: "Ana Sayfa", url: "/" },
+      { name: "Dermatocerrahi", url: "/dermatocerrahi/" },
+      { name: "Deri Biyopsisi", url: "/dermatocerrahi/deri-biyopsisi/" },
+    ]}
+  />
+
   <main id="main-content" class="container mx-auto px-4 py-12">
     <div class="max-w-4xl mx-auto">
       <h1 class="text-4xl font-bold text-primary mb-8">
