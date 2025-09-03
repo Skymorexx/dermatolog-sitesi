@@ -1,37 +1,10 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import JsonLD from '../components/JsonLD.astro';
 
 const title = "Uzm. Dr. Umut Mert Yıldırım - Dermatoloji Uzmanı";
 const description = "İstanbulda dermatoloji uzmanı; Deri hastalıkları, dermokozmetik uygulamalar ve dermocerrahi konularında uzman hekim hizmeti.";
 const url = "https://drumutmertyildirim.com";
 
-// JSON-LD Schema objesi
-const schema = {
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Physician",
-      "@id": `${url}/#physician`,
-      "name": "Uzm. Dr. Umut Mert Yıldırım",
-      "image": "/images/dr-umut-mert-yildirim-profil.jpg",
-      "url": url,
-      "telephone": "+902165441111",
-      "address": { "@id": `${url}/#address` },
-      "medicalSpecialty": "Dermatology",
-      "availableService": [
-        "Akne Tedavisi",
-        "Egzema Tedavisi", 
-        "Sedef Hastalığı Tedavisi",
-        "Saç Dökülmesi Tedavisi",
-        "Vitiligo Tedavisi",
-        "Rozase Tedavisi",
-        "Ürtiker Tedavisi",
-        "Herpes Tedavisi",
-        "Liken Tedavisi",
-        "Mantar Tedavisi"
-      ]
-    }
 ---
 
 <BaseLayout 
@@ -39,8 +12,7 @@ const schema = {
   description={description}
   url={url}
 >
-  <JsonLD schema={schema} />
-  
+
   <!-- Hero Section -->
   <section class="bg-background-soft py-16 px-6">
     <div class="max-w-4xl mx-auto text-center">
