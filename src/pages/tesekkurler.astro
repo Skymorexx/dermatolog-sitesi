@@ -1,0 +1,41 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const title = "Teşekkürler - Uzm. Dr. Umut Mert Yıldırım";
+const description = "Mesajınız başarıyla gönderildi. En kısa sürede size geri dönüş yapacağız.";
+---
+
+<BaseLayout title={title} description={description}>
+  
+  <main id="main-content" class="container mx-auto px-4 py-16">
+    <div class="max-w-2xl mx-auto text-center py-20">
+      <div class="mb-8">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-24 w-24 mx-auto text-green-500 mb-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+        
+        <h1 class="text-4xl font-bold text-primary mb-6">
+          Teşekkürler!
+        </h1>
+        
+        <p class="text-xl text-text-primary leading-relaxed mb-8">
+          Mesajınız başarıyla gönderildi. En kısa sürede size geri dönüş yapacağız.
+        </p>
+      </div>
+      
+      <div class="mt-12">
+        <a 
+          href="/" 
+          class="inline-block bg-primary hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-lg transition-colors duration-300 transform hover:scale-105 shadow-lg"
+        >
+          Anasayfaya Dön
+        </a>
+        
+        <p class="mt-6 text-text-secondary">
+          İletişim kurmaya devam etmek için <a href="/iletisim/" class="text-primary hover:text-secondary underline">iletişim formunu</a> da kullanabilirsiniz.
+        </p>
+      </div>
+    </div>
+  </main>
+  
+</BaseLayout>
