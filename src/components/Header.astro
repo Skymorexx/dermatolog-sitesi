@@ -2,9 +2,10 @@
 import { Image } from 'astro:assets';
 import KlinikLogo from '../assets/images/logos/klinik-logo.png';
 ---
-<header class="bg-background-soft border-b border-gray-200 py-4 px-6">
-  <nav class="max-w-6xl mx-auto flex items-center justify-between">
-    <div class="flex items-center gap-4">
+
+<header class="bg-background-soft border-b border-gray-200 py-6 px-8">
+  <nav class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-6">
+    <div class="flex items-center gap-6">
       <!-- Klinik Logosu -->
       <Image 
         src={KlinikLogo}
@@ -12,11 +13,15 @@ import KlinikLogo from '../assets/images/logos/klinik-logo.png';
         widths={[120, 240]}
         sizes="120px"
         loading="eager"
-        class="w-30 h-30 object-contain"
+        class="w-32 h-32 object-contain"
       />
       
+      <div class="text-primary font-bold text-2xl">
+        Dr. Umut Mert Yıldırım
+      </div>
+    </div>
     
-    <ul class="flex space-x-8">
+    <ul class="flex flex-wrap justify-center gap-6 lg:gap-8">
       <li>
         <a href="/hakkimda/" class="text-text-primary hover:text-primary transition-colors duration-200 hover:underline">Hakkımda</a>
       </li>
@@ -256,300 +261,332 @@ import KlinikLogo from '../assets/images/logos/klinik-logo.png';
         </div>
       </li>
       
-  <li>
-    <a href="/teledermatoloji/" class="text-text-primary hover:text-primary transition-colors duration-200 hover:underline">Online Muayene</a>
-  </li>
-  <li>
-    <a href="/akademik/" class="text-text-primary hover:text-primary transition-colors duration-200 hover:underline">Akademik</a>
-  </li>
-  <li>
-    <a href="/blog/" class="text-text-primary hover:text-primary transition-colors duration-200 hover:underline">Blog</a>
-  </li>
-  <li>
-    <a href="/iletisim/" class="text-text-primary hover:text-primary transition-colors duration-200 hover:underline">İletişim</a>
-  </li>
+      <li>
+        <a href="/teledermatoloji/" class="text-text-primary hover:text-primary transition-colors duration-200 hover:underline">Online Muayene</a>
+      </li>
+      <li>
+        <a href="/akademik/" class="text-text-primary hover:text-primary transition-colors duration-200 hover:underline">Akademik</a>
+      </li>
+      <li>
+        <a href="/blog/" class="text-text-primary hover:text-primary transition-colors duration-200 hover:underline">Blog</a>
+      </li>
+      <li>
+        <a href="/iletisim/" class="text-text-primary hover:text-primary transition-colors duration-200 hover:underline">İletişim</a>
+      </li>
     </ul>
   </nav>
 </header>
 
 <script is:inline>
-document.addEventListener('DOMContentLoaded', () => {
-  // Deri Hastalıkları Dropdown
-  const deriMenu = document.getElementById('deri-hastaliklari-menu');
-  const deriButton = document.getElementById('deri-hastaliklari-button');
-  const deriDropdown = document.getElementById('deri-hastaliklari-dropdown');
-  
-  if (deriMenu && deriButton && deriDropdown) {
-    deriMenu.addEventListener('mouseenter', () => {
-      deriDropdown.classList.remove('hidden');
-      deriButton.setAttribute('aria-expanded', 'true');
-    });
+  document.addEventListener('DOMContentLoaded', () => {
+    // Deri Hastalıkları Dropdown
+    const deriMenu = document.getElementById('deri-hastaliklari-menu');
+    const deriButton = document.getElementById('deri-hastaliklari-button');
+    const deriDropdown = document.getElementById('deri-hastaliklari-dropdown');
     
-    deriMenu.addEventListener('mouseleave', () => {
-      setTimeout(() => {
-        if (!deriDropdown.matches(':hover') && !deriButton.matches(':hover')) {
-          deriDropdown.classList.add('hidden');
-          deriButton.setAttribute('aria-expanded', 'false');
-        }
-      }, 100);
-    });
-  }
-  
-  // Dermokozmetik Dropdown
-  const dermokozmetikMenu = document.getElementById('dermokozmetik-menu');
-  const dermokozmetikButton = document.getElementById('dermokozmetik-button');
-  const dermokozmetikDropdown = document.getElementById('dermokozmetik-dropdown');
-  
-  if (dermokozmetikMenu && dermokozmetikButton && dermokozmetikDropdown) {
-    dermokozmetikMenu.addEventListener('mouseenter', () => {
-      dermokozmetikDropdown.classList.remove('hidden');
-      dermokozmetikButton.setAttribute('aria-expanded', 'true');
-    });
-    
-    dermokozmetikMenu.addEventListener('mouseleave', () => {
-      setTimeout(() => {
-        if (!dermokozmetikDropdown.matches(':hover') && !dermokozmetikButton.matches(':hover')) {
-          dermokozmetikDropdown.classList.add('hidden');
-          dermokozmetikButton.setAttribute('aria-expanded', 'false');
-          closeAllSubmenus();
-        }
-      }, 100);
-    });
-  }
-  
-  // Dolgu Submenu
-  const dolguMenu = document.getElementById('dolgu-menu');
-  const dolguButton = document.getElementById('dolgu-button');
-  const dolguSubmenu = document.getElementById('dolgu-submenu');
-  
-  if (dolguMenu && dolguButton && dolguSubmenu) {
-    dolguMenu.addEventListener('mouseenter', () => {
-      dolguSubmenu.classList.remove('hidden');
-      dolguButton.setAttribute('aria-expanded', 'true');
-    });
-    
-    dolguMenu.addEventListener('mouseleave', () => {
-      setTimeout(() => {
-        if (!dolguSubmenu.matches(':hover') && !dolguButton.matches(':hover')) {
-          dolguSubmenu.classList.add('hidden');
-          dolguButton.setAttribute('aria-expanded', 'false');
-        }
-      }, 100);
-    });
-    
-    dolguButton.addEventListener('click', (e) => {
-      e.stopPropagation();
-      e.preventDefault();
-      const isExpanded = dolguButton.getAttribute('aria-expanded') === 'true';
-      dolguSubmenu.classList.toggle('hidden');
-      dolguButton.setAttribute('aria-expanded', !isExpanded);
-    });
-  }
-  
-  // Botoks Submenu
-  const botoksMenu = document.getElementById('botoks-menu');
-  const botoksButton = document.getElementById('botoks-button');
-  const botoksSubmenu = document.getElementById('botoks-submenu');
-  
-  if (botoksMenu && botoksButton && botoksSubmenu) {
-    botoksMenu.addEventListener('mouseenter', () => {
-      botoksSubmenu.classList.remove('hidden');
-      botoksButton.setAttribute('aria-expanded', 'true');
-    });
-    
-    botoksMenu.addEventListener('mouseleave', () => {
-      setTimeout(() => {
-        if (!botoksSubmenu.matches(':hover') && !botoksButton.matches(':hover')) {
-          botoksSubmenu.classList.add('hidden');
-          botoksButton.setAttribute('aria-expanded', 'false');
-        }
-      }, 100);
-    });
-    
-    botoksButton.addEventListener('click', (e) => {
-      e.stopPropagation();
-      e.preventDefault();
-      const isExpanded = botoksButton.getAttribute('aria-expanded') === 'true';
-      botoksSubmenu.classList.toggle('hidden');
-      botoksButton.setAttribute('aria-expanded', !isExpanded);
-    });
-  }
-  
-  // Mezoterapi Submenu
-  const mezoterapiMenu = document.getElementById('mezoterapi-menu');
-  const mezoterapiButton = document.getElementById('mezoterapi-button');
-  const mezoterapiSubmenu = document.getElementById('mezoterapi-submenu');
-  
-  if (mezoterapiMenu && mezoterapiButton && mezoterapiSubmenu) {
-    mezoterapiMenu.addEventListener('mouseenter', () => {
-      mezoterapiSubmenu.classList.remove('hidden');
-      mezoterapiButton.setAttribute('aria-expanded', 'true');
-    });
-    
-    mezoterapiMenu.addEventListener('mouseleave', () => {
-      setTimeout(() => {
-        if (!mezoterapiSubmenu.matches(':hover') && !mezoterapiButton.matches(':hover')) {
-          mezoterapiSubmenu.classList.add('hidden');
-          mezoterapiButton.setAttribute('aria-expanded', 'false');
-        }
-      }, 100);
-    });
-    
-    mezoterapiButton.addEventListener('click', (e) => {
-      e.stopPropagation();
-      e.preventDefault();
-      const isExpanded = mezoterapiButton.getAttribute('aria-expanded') === 'true';
-      mezoterapiSubmenu.classList.toggle('hidden');
-      mezoterapiButton.setAttribute('aria-expanded', !isExpanded);
-    });
-  }
-  
-  // Lazer Tedavileri Submenu
-  const lazerMenu = document.getElementById('lazer-menu');
-  const lazerButton = document.getElementById('lazer-button');
-  const lazerSubmenu = document.getElementById('lazer-submenu');
-  
-  if (lazerMenu && lazerButton && lazerSubmenu) {
-    lazerMenu.addEventListener('mouseenter', () => {
-      lazerSubmenu.classList.remove('hidden');
-      lazerButton.setAttribute('aria-expanded', 'true');
-    });
-    
-    lazerMenu.addEventListener('mouseleave', () => {
-      setTimeout(() => {
-        if (!lazerSubmenu.matches(':hover') && !lazerButton.matches(':hover')) {
-          lazerSubmenu.classList.add('hidden');
-          lazerButton.setAttribute('aria-expanded', 'false');
-        }
-      }, 100);
-    });
-    
-    lazerButton.addEventListener('click', (e) => {
-      e.stopPropagation();
-      e.preventDefault();
-      const isExpanded = lazerButton.getAttribute('aria-expanded') === 'true';
-      lazerSubmenu.classList.toggle('hidden');
-      lazerButton.setAttribute('aria-expanded', !isExpanded);
-    });
-  }
-  
-  // Diğer İşlemler Submenu
-  const digerIslemlerMenu = document.getElementById('diger-islemler-menu');
-  const digerIslemlerButton = document.getElementById('diger-islemler-button');
-  const digerIslemlerSubmenu = document.getElementById('diger-islemler-submenu');
-  
-  if (digerIslemlerMenu && digerIslemlerButton && digerIslemlerSubmenu) {
-    digerIslemlerMenu.addEventListener('mouseenter', () => {
-      digerIslemlerSubmenu.classList.remove('hidden');
-      digerIslemlerButton.setAttribute('aria-expanded', 'true');
-    });
-    
-    digerIslemlerMenu.addEventListener('mouseleave', () => {
-      setTimeout(() => {
-        if (!digerIslemlerSubmenu.matches(':hover') && !digerIslemlerButton.matches(':hover')) {
-          digerIslemlerSubmenu.classList.add('hidden');
-          digerIslemlerButton.setAttribute('aria-expanded', 'false');
-        }
-      }, 100);
-    });
-    
-    digerIslemlerButton.addEventListener('click', (e) => {
-      e.stopPropagation();
-      e.preventDefault();
-      const isExpanded = digerIslemlerButton.getAttribute('aria-expanded') === 'true';
-      digerIslemlerSubmenu.classList.toggle('hidden');
-      digerIslemlerButton.setAttribute('aria-expanded', !isExpanded);
-    });
-  }
-  
-  // Dermatocerrahi Dropdown
-  const cerrahiMenu = document.getElementById('dermatocerrahi-menu');
-  const cerrahiButton = document.getElementById('dermatocerrahi-button');
-  const cerrahiDropdown = document.getElementById('dermatocerrahi-dropdown');
-  
-  if (cerrahiMenu && cerrahiButton && cerrahiDropdown) {
-    cerrahiMenu.addEventListener('mouseenter', () => {
-      cerrahiDropdown.classList.remove('hidden');
-      cerrahiButton.setAttribute('aria-expanded', 'true');
-    });
-    
-    cerrahiMenu.addEventListener('mouseleave', () => {
-      setTimeout(() => {
-        if (!cerrahiDropdown.matches(':hover') && !cerrahiButton.matches(':hover')) {
-          cerrahiDropdown.classList.add('hidden');
-          cerrahiButton.setAttribute('aria-expanded', 'false');
-        }
-      }, 100);
-    });
-  }
-  
-  // Deri Kanserleri Dropdown
-  const kanserMenu = document.getElementById('deri-kanserleri-menu');
-  const kanserButton = document.getElementById('deri-kanserleri-button');
-  const kanserDropdown = document.getElementById('deri-kanserleri-dropdown');
-  
-  if (kanserMenu && kanserButton && kanserDropdown) {
-    kanserMenu.addEventListener('mouseenter', () => {
-      kanserDropdown.classList.remove('hidden');
-      kanserButton.setAttribute('aria-expanded', 'true');
-    });
-    
-    kanserMenu.addEventListener('mouseleave', () => {
-      setTimeout(() => {
-        if (!kanserDropdown.matches(':hover') && !kanserButton.matches(':hover')) {
-          kanserDropdown.classList.add('hidden');
-          kanserButton.setAttribute('aria-expanded', 'false');
-        }
-      }, 100);
-    });
-  }
-  
-  // Tüm alt menüleri kapatma fonksiyonu
-  function closeAllSubmenus() {
-    const submenus = [
-      'dolgu-submenu', 'botoks-submenu', 'mezoterapi-submenu', 'lazer-submenu', 'diger-islemler-submenu'
-    ];
-    const buttons = [
-      'dolgu-button', 'botoks-button', 'mezoterapi-button', 'lazer-button', 'diger-islemler-button'
-    ];
-    
-    submenus.forEach(id => {
-      const submenu = document.getElementById(id);
-      if (submenu) submenu.classList.add('hidden');
-    });
-    
-    buttons.forEach(id => {
-      const button = document.getElementById(id);
-      if (button) button.setAttribute('aria-expanded', 'false');
-    });
-  }
-  
-  // Dropdown dışına tıklanırsa kapat
-  document.addEventListener('click', (e) => {
-    // Deri Hastalıkları dropdown'ını kapat
-    if (deriMenu && !deriMenu.contains(e.target)) {
-      deriDropdown?.classList.add('hidden');
-      deriButton?.setAttribute('aria-expanded', 'false');
+    if (deriMenu && deriButton && deriDropdown) {
+      deriMenu.addEventListener('mouseenter', () => {
+        deriDropdown.classList.remove('hidden');
+        deriButton.setAttribute('aria-expanded', 'true');
+      });
+      
+      deriMenu.addEventListener('mouseleave', () => {
+        setTimeout(() => {
+          if (!deriDropdown.matches(':hover') && !deriButton.matches(':hover')) {
+            deriDropdown.classList.add('hidden');
+            deriButton.setAttribute('aria-expanded', 'false');
+          }
+        }, 100);
+      });
+      
+      deriButton.addEventListener('click', (e) => {
+        e.stopPropagation();
+        e.preventDefault();
+        const isExpanded = deriButton.getAttribute('aria-expanded') === 'true';
+        deriDropdown.classList.toggle('hidden');
+        deriButton.setAttribute('aria-expanded', !isExpanded);
+      });
     }
     
-    // Dermokozmetik dropdown'ını kapat
-    if (dermokozmetikMenu && !dermokozmetikMenu.contains(e.target)) {
-      dermokozmetikDropdown?.classList.add('hidden');
-      dermokozmetikButton?.setAttribute('aria-expanded', 'false');
-      closeAllSubmenus();
+    // Dermokozmetik Dropdown
+    const dermokozmetikMenu = document.getElementById('dermokozmetik-menu');
+    const dermokozmetikButton = document.getElementById('dermokozmetik-button');
+    const dermokozmetikDropdown = document.getElementById('dermokozmetik-dropdown');
+    
+    if (dermokozmetikMenu && dermokozmetikButton && dermokozmetikDropdown) {
+      dermokozmetikMenu.addEventListener('mouseenter', () => {
+        dermokozmetikDropdown.classList.remove('hidden');
+        dermokozmetikButton.setAttribute('aria-expanded', 'true');
+      });
+      
+      dermokozmetikMenu.addEventListener('mouseleave', () => {
+        setTimeout(() => {
+          if (!dermokozmetikDropdown.matches(':hover') && !dermokozmetikButton.matches(':hover')) {
+            dermokozmetikDropdown.classList.add('hidden');
+            dermokozmetikButton.setAttribute('aria-expanded', 'false');
+            closeAllSubmenus();
+          }
+        }, 100);
+      });
+      
+      dermokozmetikButton.addEventListener('click', (e) => {
+        e.stopPropagation();
+        e.preventDefault();
+        const isExpanded = dermokozmetikButton.getAttribute('aria-expanded') === 'true';
+        dermokozmetikDropdown.classList.toggle('hidden');
+        dermokozmetikButton.setAttribute('aria-expanded', !isExpanded);
+      });
     }
     
-    // Dermatocerrahi dropdown'ını kapat
-    if (cerrahiMenu && !cerrahiMenu.contains(e.target)) {
-      cerrahiDropdown?.classList.add('hidden');
-      cerrahiButton?.setAttribute('aria-expanded', 'false');
+    // Dolgu Submenu
+    const dolguMenu = document.getElementById('dolgu-menu');
+    const dolguButton = document.getElementById('dolgu-button');
+    const dolguSubmenu = document.getElementById('dolgu-submenu');
+    
+    if (dolguMenu && dolguButton && dolguSubmenu) {
+      dolguMenu.addEventListener('mouseenter', () => {
+        dolguSubmenu.classList.remove('hidden');
+        dolguButton.setAttribute('aria-expanded', 'true');
+      });
+      
+      dolguMenu.addEventListener('mouseleave', () => {
+        setTimeout(() => {
+          if (!dolguSubmenu.matches(':hover') && !dolguButton.matches(':hover')) {
+            dolguSubmenu.classList.add('hidden');
+            dolguButton.setAttribute('aria-expanded', 'false');
+          }
+        }, 100);
+      });
+      
+      dolguButton.addEventListener('click', (e) => {
+        e.stopPropagation();
+        e.preventDefault();
+        const isExpanded = dolguButton.getAttribute('aria-expanded') === 'true';
+        dolguSubmenu.classList.toggle('hidden');
+        dolguButton.setAttribute('aria-expanded', !isExpanded);
+      });
     }
     
-    // Deri Kanserleri dropdown'ını kapat
-    if (kanserMenu && !kanserMenu.contains(e.target)) {
-      kanserDropdown?.classList.add('hidden');
-      kanserButton?.setAttribute('aria-expanded', 'false');
+    // Botoks Submenu
+    const botoksMenu = document.getElementById('botoks-menu');
+    const botoksButton = document.getElementById('botoks-button');
+    const botoksSubmenu = document.getElementById('botoks-submenu');
+    
+    if (botoksMenu && botoksButton && botoksSubmenu) {
+      botoksMenu.addEventListener('mouseenter', () => {
+        botoksSubmenu.classList.remove('hidden');
+        botoksButton.setAttribute('aria-expanded', 'true');
+      });
+      
+      botoksMenu.addEventListener('mouseleave', () => {
+        setTimeout(() => {
+          if (!botoksSubmenu.matches(':hover') && !botoksButton.matches(':hover')) {
+            botoksSubmenu.classList.add('hidden');
+            botoksButton.setAttribute('aria-expanded', 'false');
+          }
+        }, 100);
+      });
+      
+      botoksButton.addEventListener('click', (e) => {
+        e.stopPropagation();
+        e.preventDefault();
+        const isExpanded = botoksButton.getAttribute('aria-expanded') === 'true';
+        botoksSubmenu.classList.toggle('hidden');
+        botoksButton.setAttribute('aria-expanded', !isExpanded);
+      });
     }
+    
+    // Mezoterapi Submenu
+    const mezoterapiMenu = document.getElementById('mezoterapi-menu');
+    const mezoterapiButton = document.getElementById('mezoterapi-button');
+    const mezoterapiSubmenu = document.getElementById('mezoterapi-submenu');
+    
+    if (mezoterapiMenu && mezoterapiButton && mezoterapiSubmenu) {
+      mezoterapiMenu.addEventListener('mouseenter', () => {
+        mezoterapiSubmenu.classList.remove('hidden');
+        mezoterapiButton.setAttribute('aria-expanded', 'true');
+      });
+      
+      mezoterapiMenu.addEventListener('mouseleave', () => {
+        setTimeout(() => {
+          if (!mezoterapiSubmenu.matches(':hover') && !mezoterapiButton.matches(':hover')) {
+            mezoterapiSubmenu.classList.add('hidden');
+            mezoterapiButton.setAttribute('aria-expanded', 'false');
+          }
+        }, 100);
+      });
+      
+      mezoterapiButton.addEventListener('click', (e) => {
+        e.stopPropagation();
+        e.preventDefault();
+        const isExpanded = mezoterapiButton.getAttribute('aria-expanded') === 'true';
+        mezoterapiSubmenu.classList.toggle('hidden');
+        mezoterapiButton.setAttribute('aria-expanded', !isExpanded);
+      });
+    }
+    
+    // Lazer Tedavileri Submenu
+    const lazerMenu = document.getElementById('lazer-menu');
+    const lazerButton = document.getElementById('lazer-button');
+    const lazerSubmenu = document.getElementById('lazer-submenu');
+    
+    if (lazerMenu && lazerButton && lazerSubmenu) {
+      lazerMenu.addEventListener('mouseenter', () => {
+        lazerSubmenu.classList.remove('hidden');
+        lazerButton.setAttribute('aria-expanded', 'true');
+      });
+      
+      lazerMenu.addEventListener('mouseleave', () => {
+        setTimeout(() => {
+          if (!lazerSubmenu.matches(':hover') && !lazerButton.matches(':hover')) {
+            lazerSubmenu.classList.add('hidden');
+            lazerButton.setAttribute('aria-expanded', 'false');
+          }
+        }, 100);
+      });
+      
+      lazerButton.addEventListener('click', (e) => {
+        e.stopPropagation();
+        e.preventDefault();
+        const isExpanded = lazerButton.getAttribute('aria-expanded') === 'true';
+        lazerSubmenu.classList.toggle('hidden');
+        lazerButton.setAttribute('aria-expanded', !isExpanded);
+      });
+    }
+    
+    // Diğer İşlemler Submenu
+    const digerIslemlerMenu = document.getElementById('diger-islemler-menu');
+    const digerIslemlerButton = document.getElementById('diger-islemler-button');
+    const digerIslemlerSubmenu = document.getElementById('diger-islemler-submenu');
+    
+    if (digerIslemlerMenu && digerIslemlerButton && digerIslemlerSubmenu) {
+      digerIslemlerMenu.addEventListener('mouseenter', () => {
+        digerIslemlerSubmenu.classList.remove('hidden');
+        digerIslemlerButton.setAttribute('aria-expanded', 'true');
+      });
+      
+      digerIslemlerMenu.addEventListener('mouseleave', () => {
+        setTimeout(() => {
+          if (!digerIslemlerSubmenu.matches(':hover') && !digerIslemlerButton.matches(':hover')) {
+            digerIslemlerSubmenu.classList.add('hidden');
+            digerIslemlerButton.setAttribute('aria-expanded', 'false');
+          }
+        }, 100);
+      });
+      
+      digerIslemlerButton.addEventListener('click', (e) => {
+        e.stopPropagation();
+        e.preventDefault();
+        const isExpanded = digerIslemlerButton.getAttribute('aria-expanded') === 'true';
+        digerIslemlerSubmenu.classList.toggle('hidden');
+        digerIslemlerButton.setAttribute('aria-expanded', !isExpanded);
+      });
+    }
+    
+    // Dermatocerrahi Dropdown
+    const cerrahiMenu = document.getElementById('dermatocerrahi-menu');
+    const cerrahiButton = document.getElementById('dermatocerrahi-button');
+    const cerrahiDropdown = document.getElementById('dermatocerrahi-dropdown');
+    
+    if (cerrahiMenu && cerrahiButton && cerrahiDropdown) {
+      cerrahiMenu.addEventListener('mouseenter', () => {
+        cerrahiDropdown.classList.remove('hidden');
+        cerrahiButton.setAttribute('aria-expanded', 'true');
+      });
+      
+      cerrahiMenu.addEventListener('mouseleave', () => {
+        setTimeout(() => {
+          if (!cerrahiDropdown.matches(':hover') && !cerrahiButton.matches(':hover')) {
+            cerrahiDropdown.classList.add('hidden');
+            cerrahiButton.setAttribute('aria-expanded', 'false');
+          }
+        }, 100);
+      });
+      
+      cerrahiButton.addEventListener('click', (e) => {
+        e.stopPropagation();
+        e.preventDefault();
+        const isExpanded = cerrahiButton.getAttribute('aria-expanded') === 'true';
+        cerrahiDropdown.classList.toggle('hidden');
+        cerrahiButton.setAttribute('aria-expanded', !isExpanded);
+      });
+    }
+    
+    // Deri Kanserleri Dropdown
+    const kanserMenu = document.getElementById('deri-kanserleri-menu');
+    const kanserButton = document.getElementById('deri-kanserleri-button');
+    const kanserDropdown = document.getElementById('deri-kanserleri-dropdown');
+    
+    if (kanserMenu && kanserButton && kanserDropdown) {
+      kanserMenu.addEventListener('mouseenter', () => {
+        kanserDropdown.classList.remove('hidden');
+        kanserButton.setAttribute('aria-expanded', 'true');
+      });
+      
+      kanserMenu.addEventListener('mouseleave', () => {
+        setTimeout(() => {
+          if (!kanserDropdown.matches(':hover') && !kanserButton.matches(':hover')) {
+            kanserDropdown.classList.add('hidden');
+            kanserButton.setAttribute('aria-expanded', 'false');
+          }
+        }, 100);
+      });
+      
+      kanserButton.addEventListener('click', (e) => {
+        e.stopPropagation();
+        e.preventDefault();
+        const isExpanded = kanserButton.getAttribute('aria-expanded') === 'true';
+        kanserDropdown.classList.toggle('hidden');
+        kanserButton.setAttribute('aria-expanded', !isExpanded);
+      });
+    }
+    
+    // Tüm alt menüleri kapatma fonksiyonu
+    function closeAllSubmenus() {
+      const submenus = [
+        'dolgu-submenu', 'botoks-submenu', 'mezoterapi-submenu', 'lazer-submenu', 'diger-islemler-submenu'
+      ];
+      const buttons = [
+        'dolgu-button', 'botoks-button', 'mezoterapi-button', 'lazer-button', 'diger-islemler-button'
+      ];
+      
+      submenus.forEach(id => {
+        const submenu = document.getElementById(id);
+        if (submenu) submenu.classList.add('hidden');
+      });
+      
+      buttons.forEach(id => {
+        const button = document.getElementById(id);
+        if (button) button.setAttribute('aria-expanded', 'false');
+      });
+    }
+    
+    // Dropdown dışına tıklanırsa kapat
+    document.addEventListener('click', (e) => {
+      // Deri Hastalıkları dropdown'ını kapat
+      if (deriMenu && !deriMenu.contains(e.target)) {
+        deriDropdown?.classList.add('hidden');
+        deriButton?.setAttribute('aria-expanded', 'false');
+      }
+      
+      // Dermokozmetik dropdown'ını kapat
+      if (dermokozmetikMenu && !dermokozmetikMenu.contains(e.target)) {
+        dermokozmetikDropdown?.classList.add('hidden');
+        dermokozmetikButton?.setAttribute('aria-expanded', 'false');
+        closeAllSubmenus();
+      }
+      
+      // Dermatocerrahi dropdown'ını kapat
+      if (cerrahiMenu && !cerrahiMenu.contains(e.target)) {
+        cerrahiDropdown?.classList.add('hidden');
+        cerrahiButton?.setAttribute('aria-expanded', 'false');
+      }
+      
+      // Deri Kanserleri dropdown'ını kapat
+      if (kanserMenu && !kanserMenu.contains(e.target)) {
+        kanserDropdown?.classList.add('hidden');
+        kanserButton?.setAttribute('aria-expanded', 'false');
+      }
+    });
   });
-});
 </script>
