@@ -1,15 +1,20 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import TopBar from '../components/TopBar.acro';
-import StickyButton from '../components/StickyButton.astro';
+import { Image } from 'astro:assets';
+import KlinikLogo from '../assets/images/logos/klinik-logo.png';
 ---
 
-<header class="bg-background-soft border-b border-gray-200 py-4 px-6">
-  <nav class="max-w-6xl mx-auto flex items-center justify-between">
-    <div class="text-primary font-bold text-xl">
-      Dr. Umut Mert Yıldırım
-    </div>
-    
+<header class="bg-background-soft border-b border-gray-200 py-0 px-6">
+  <nav class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-6">
+    <div class="flex items-center gap-6">
+      <!-- Klinik Logosu -->
+      <Image 
+        src={KlinikLogo}
+        alt="Klinik Logo"
+        widths={[120, 240]}
+        sizes="120px"
+        loading="eager"
+        class="w-32 h-32 object-contain"
+      />
     <ul class="flex space-x-8">
       <li>
         <a href="/hakkimda/" class="text-text-primary hover:text-primary transition-colors duration-200 hover:underline">Hakkımda</a>
@@ -121,6 +126,12 @@ import StickyButton from '../components/StickyButton.astro';
         </div>
       </li>
       
+      <li>
+        <a href="/teledermatoloji/" class="text-text-primary hover:text-primary transition-colors duration-200 hover:underline">Online Muayene</a>
+      </li>
+      <li>
+        <a href="/akademik/" class="text-text-primary hover:text-primary transition-colors duration-200 hover:underline">Akademik</a>
+      </li>
       <li>
         <a href="/blog/" class="text-text-primary hover:text-primary transition-colors duration-200 hover:underline">Blog</a>
       </li>
