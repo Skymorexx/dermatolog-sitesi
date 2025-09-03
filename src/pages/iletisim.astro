@@ -14,13 +14,14 @@ const description = "İletişim bilgilerimiz ve randevu talebiniz için iletişi
       <!-- İletişim Formu -->
       <section class="mb-16">
         <form 
-          name="iletisim" 
+          name="contact" 
           method="POST" 
           data-netlify="true" 
+          data-netlify-recaptcha="true"
           netlify-honeypot="bot-field"
           class="bg-white p-8 rounded-lg shadow-md border border-gray-100"
         >
-          <input type="hidden" name="form-name" value="iletisim" />
+          <input type="hidden" name="form-name" value="contact" />
           
           <p class="hidden">
             <label>
@@ -87,6 +88,9 @@ const description = "İletişim bilgilerimiz ve randevu talebiniz için iletişi
               </label>
             </div>
           </div>
+          
+          <!-- reCAPTCHA Kutusu -->
+          <div data-netlify-recaptcha="true" class="mb-6"></div>
           
           <button 
             type="submit" 
