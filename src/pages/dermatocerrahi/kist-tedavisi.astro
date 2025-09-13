@@ -1,9 +1,38 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import BreadcrumbSchema from '../../components/BreadcrumbSchema.astro';
+import FaqSchema from '../../components/FaqSchema.astro';
 
 const title = "Deri Kisti ve Lipom Tedavisi - Uzm. Dr. Umut Mert Yıldırım";
 const description = "Cilt altı kistlerin ve lipomların cerrahi tedavisi. Deri kisti ve lipom çıkarma işlemi nasıl yapılır? İşlem süreci, sonrası bakım ve iyileşme süreci hakkında detaylı bilgi.";
+
+// SSS için soru-cevaplar
+const faqQuestions = [
+  {
+    question: "Deri kisti ve lipom tedavisi nedir ve nasıl çalışır?",
+    answer: "Deri kisti ve lipom tedavisi, cilt altında gelişen benign kitlelerin cerrahi olarak çıkarılması amacıyla uygulanan minimal invaziv bir işlemdir. Epidermoid kistler, sebase kistler ve lipomlar gibi iyi huylu oluşumlar, estetik kaygılar, rahatsızlık veya enfeksiyon riski nedeniyle cerrahi olarak çıkarılabilir. İşlem lokal anestezi altında ve steril koşullarda güvenli bir şekilde gerçekleştirilir. Bu yöntem sayesinde kitleler tamamen kaldırılır ve tekrarlama riski minimize edilir."
+  },
+  {
+    question: "Deri kisti ve lipom tedavisi kimler için uygundur?",
+    answer: "Deri kisti ve lipom tedavisi, cilt altında gelişen iyi huylu kitlelerin cerrahi olarak çıkarılması işlemidir. Epidermoid kistler, sebase kistler ve lipomlar genellikle yavaş büyür ve ağrısız olurlar. Ancak estetik kaygılar, travmaya uğrama riski, enfeksiyon gelişme olasılığı veya hızlı büyüme gibi durumlarda cerrahi tedavi gerekebilir. 18 yaşını tamamlamış, genel sağlık durumu iyi olan ve cilt altında kitle sorunu yaşayan her yetişkin birey için uygundur. Hamilelik veya emzirme döneminde olan kadınlar için uygun değildir."
+  },
+  {
+    question: "Deri kisti ve lipom tedavisi ağrılı bir işlem midir?",
+    answer: "İşlem lokal anestezi altında yapıldığı için hastalar işlem sırasında herhangi bir ağrı hissetmezler. Anestezi enjeksiyonu sırasında hafif bir battı hissi olabilir. İşlem süresi biraz uzun olabilir ancak genellikle kolayca tolere edilir. Hassas ciltli bireylerde daha fazla rahatsızlık hissedilebilir. Anestezi etkisi geçtikten sonra hafif ağrı olabilir."
+  },
+  {
+    question: "Deri kisti ve lipom tedavisi etkisi ne zaman görülür?",
+    answer: "Kitle çıkarımı işlemi hemen etkili olur ve kitle anında ortadan kalkar. İyileşme süresi kitlenin boyutuna bağlıdır."
+  },
+  {
+    question: "Deri kisti ve lipom tedavisi kaç seans yapılır?",
+    answer: "Optimal sonuçlar için genellikle tek seansta kitle çıkarımı yeterlidir. Kitlenin boyutuna ve konumuna göre hekim tarafından bireysel planlama yapılır. İlk seans sonrası kitlede belirgin bir iyileşme görülür, ancak büyük kitlelerde birden fazla seansta çıkarım yapılabilir. Tekrarlayan kitleler için yeni uygulamalar gerekebilir."
+  },
+  {
+    question: "Deri kisti ve lipom tedavisi kalıcı mıdır?",
+    answer: "Evet, deri kisti ve lipom tedavisi kalıcıdır. Kitle kapsül bütünlüğü korunarak tamamen çıkarılırsa tekrarlama riski çok düşüktür. Ancak kapsül bütünlüğü bozulmuş veya parça parça çıkarılmış oluşumlar tekrar oluşabilir. Bu nedenle deneyimli hekimler tarafından doğru teknikle çıkarım önemlidir. Etki kaybolduğunda tekrar uygulama yapılabilir."
+  }
+];
 ---
 
 <BaseLayout title={title} description={description}>
@@ -15,6 +44,8 @@ const description = "Cilt altı kistlerin ve lipomların cerrahi tedavisi. Deri 
       { name: "Kist ve Lipom Tedavisi", url: "/dermatocerrahi/kist-tedavisi/" },
     ]}
   />
+
+   <FaqSchema questions={faqQuestions} />
 
   <main id="main-content" class="container mx-auto px-4 py-12">
     <div class="max-w-4xl mx-auto">
@@ -124,14 +155,8 @@ const description = "Cilt altı kistlerin ve lipomların cerrahi tedavisi. Deri 
               bu iz minimum düzeyde 
               olur. Kitlenin boyutu 
               ve konumuna göre 
-              iz kalıcılığı 
-              değişebilir. 
-              İyileşme 
-              süreci 
-              sonrası 
-              izler 
-              zamanla 
-              soler.
+              iz boyutu 
+              değişebilir.
             </p>
           </div>
           
@@ -144,7 +169,7 @@ const description = "Cilt altı kistlerin ve lipomların cerrahi tedavisi. Deri 
               için hastalar işlem sırasında 
               herhangi bir ağrı hissetmezler. 
               Anestezi enjeksiyonu sırasında 
-              hafif bir battı hissi 
+              hafif bir batma hissi 
               olabilir. İşlem sonrası 
               ilk birkaç saat 
               hafif ağrı 
@@ -176,11 +201,11 @@ const description = "Cilt altı kistlerin ve lipomların cerrahi tedavisi. Deri 
             <p class="leading-relaxed">
               Kist veya lipom kapsül bütünlüğü 
               korunarak tamamen çıkarılırsa 
-              tekrarlanma riski çok düşüktür. 
+              tekrarlama riski çok düşüktür. 
               Ancak kapsül bütünlüğü 
               bozulmuş veya parça 
               parça çıkarılmış oluşumlar 
-              tekrar çıkabilir. Bu 
+              tekrar oluşabilir. Bu 
               nedenle deneyimli 
               hekimler tarafından 
               doğru teknikle 

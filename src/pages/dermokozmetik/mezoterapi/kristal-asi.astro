@@ -1,9 +1,46 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import BreadcrumbSchema from '../../../components/BreadcrumbSchema.astro';
+import FaqSchema from '../../../components/FaqSchema.astro';
 
 const title = "Kristal Gençlik Aşısı - Uzm. Dr. Umut Mert Yıldırım";
 const description = "Cildin yaşlanma belirtilerine karşı uygulanan Kristal Gençlik Aşısı hakkında detaylı bilgi, uygulama süreci ve sıkça sorulan sorular.";
+
+// SSS için soru-cevaplar
+const faqQuestions = [
+  {
+    question: "Kristal Gençlik Aşısı nedir ve nasıl çalışır?",
+    answer: "Kristal Gençlik Aşısı, cildin yaşlanma belirtilerini geciktirmek ve tersine çevirmek amacıyla uygulanan kapsamlı bir mezoterapi uygulamasıdır. Özel formüllü bu anti-aging karışım, yüksek yoğunlukta çapraz bağsız hyaluronik asit ve kalsiyum hidroksiapatit kristalleri içerir. Bu formulün cilt yüzeyine mikro enjeksiyonlarla uygulanmasıyla cilt yenilenir, elastikiyet kazanır ve genç bir görünüme kavuşulur. Bu işlem sayesinde ince çizgiler azalır, cilt sıkılaşır ve genel cilt yapısı iyileştirilir. Hem önleyici hem de tedavi edici etkiler sunar."
+  },
+  {
+    question: "Kristal Gençlik Aşısı kimler için uygundur?",
+    answer: "Kristal Gençlik Aşısı, anti-aging maddelerin cilt yüzeyine mikro enjeksiyonlarla uygulanan minimal invaziv bir işlemdir. 25 yaşını geçmiş, genel sağlık durumu iyi olan ve cildinde erken yaşlanma belirtileri görülen her yetişkin birey için uygundur. Özellikle ince çizgiler, cilt matlığı, elastikiyet kaybı ve genel cilt yorgunluğu ile uğraşan bireylerde tercih edilir. Hamilelik veya emzirme döneminde olan kadınlar için uygun değildir."
+  },
+  {
+    question: "Kristal Gençlik Aşısı ağrılı bir işlem midir?",
+    answer: "İşlem öncesi lokal anestezik krem uygulanabilir. İğneler çok ince olduğu için hastalar genellikle hafif bir batma hissi yaşarlar. İşlem süresi biraz uzun olabilir ancak genellikle kolayca tolere edilir. Hassas ciltli bireylerde daha fazla rahatsızlık hissedilebilir."
+  },
+  {
+    question: "Kristal Gençlik Aşısı etkisi ne zaman görülür?",
+    answer: "Ciltteki parlaklık ve sıkılaşma etkisi genellikle işlem sonrası hemen görülür. Ancak maksimum etki 2-3 hafta içinde ortaya çıkar. Cilt yenilenmesi süreci devam ettiği için etki 4-6 hafta boyunca gelişmeye devam eder. Düzenli uygulamalar ile etki daha kalıcı ve belirgin hale gelir."
+  },
+  {
+    question: "Kristal Gençlik Aşısı kaç seans yapılır?",
+    answer: "Optimal sonuçlar için genellikle 2-3 haftada bir olmak üzere 4-6 seans önerilir. Cilt durumuna göre hekim tarafından bireysel planlama yapılır. İlk seans sonrası ciltte belirgin bir iyileşme görülür, ancak seri uygulamalar ile etki daha kalıcı olur."
+  },
+  {
+    question: "Kristal Gençlik Aşısı sonrası ne zaman makyaj yapabilirim?",
+    answer: "İşlem sonrası ilk 24 saat içinde makyaj yapılması önerilmez. 24 saat sonra normal makyaj yapabilirsiniz. Ancak ilk birkaç gün boyunca hafif, doğal tonlarda makyaj tercih edilmelidir. Göz ve dudak makyajı yapılabilir."
+  },
+  {
+    question: "Kristal Gençlik Aşısı diğer işlemlerle birlikte uygulanabilir mi?",
+    answer: "Evet, Kristal Gençlik Aşısı diğer cilt bakım uygulamalarıyla birlikte uygulanabilir. Özellikle lazer tedavileri, kimyasal peeling ve diğer mezoterapi uygulamalarıyla kombine edilebilir. Ancak uygulama sırası ve zamanlaması hekim tarafından planlanmalıdır."
+  },
+  {
+    question: "Kristal Gençlik Aşısı tedavisi ne kadar sürer?",
+    answer: "Kristal Gençlik Aşısı işlemi genellikle 45-60 dakika sürer. Uygulama alanına göre işlem süresi değişebilir. Hastalar işlem sonrası hemen günlük yaşamlarına dönebilirler. Ancak işlem yapılan bölgede hafif kızarıklık ve şişlik görülebilir, bu belirtiler genellikle 1-2 saat içinde geçer."
+  }
+];
 ---
 
 <BaseLayout title={title} description={description}>
@@ -17,6 +54,8 @@ const description = "Cildin yaşlanma belirtilerine karşı uygulanan Kristal Ge
     ]}
   />
   
+    <FaqSchema questions={faqQuestions} />
+    
   <main id="main-content" class="container mx-auto px-4 py-12">
     <div class="max-w-4xl mx-auto">
       <h1 class="text-4xl font-bold text-primary mb-8">
@@ -27,11 +66,11 @@ const description = "Cildin yaşlanma belirtilerine karşı uygulanan Kristal Ge
         <p class="mb-8 leading-relaxed">
           Kristal Gençlik Aşısı, cildin yaşlanma belirtilerini geciktirmek ve tersine 
           çevirmek amacıyla uygulanan kapsamlı bir mezoterapi uygulamasıdır. Özel 
-          formüllü anti-aging karışımlar, hyaluronik asit, vitaminler ve aminoasitlerin 
-          cilt yüzeyine mikro enjeksiyonlarla uygulanmasıyla cilt yenilenir, 
+          formüllü bu anti-aging karışım, yüksek yoğunlukta çapraz bağsız hyaluronik asit ve kalsiyum hidroapatit kristalleri 
+          içerir. Bu formülün cilt yüzeyine mikro enjeksiyonlarla uygulanmasıyla cilt yenilenir, 
           elastikiyet kazanır ve genç bir görünüme kavuşulur. Bu işlem sayesinde 
           ince çizgiler azalır, cilt sıkılaşır ve genel cilt yapısı 
-          iyileştirilir. Hem önleyici hem de tedavi edici etkiler sunar.
+          iyileştirilir. Hem yaşlanma önleyici hem de ince kırışıklıkları tedavi edici etkiler sunar.
         </p>
         
         <h2 class="text-2xl font-bold text-primary mt-12 mb-6">
@@ -43,7 +82,7 @@ const description = "Cildin yaşlanma belirtilerine karşı uygulanan Kristal Ge
           uygulanan minimal invaziv bir işlemdir. 25 yaşını geçmiş, genel sağlık durumu 
           iyi olan ve cildinde erken yaşlanma belirtileri görülen her yetişkin birey 
           için uygundur. Özellikle ince çizgiler, cilt matlığı, elastikiyet kaybı 
-          ve genel cilt yorgunluğu ile uğraşan bireylerde tercih edilir. 
+          ve genel cilt yorgunluğu şikayeti olan bireylerde tercih edilir. 
           Hamilelik veya emzirme döneminde olan kadınlar için uygun değildir.
         </p>
         
@@ -55,9 +94,9 @@ const description = "Cildin yaşlanma belirtilerine karşı uygulanan Kristal Ge
           Kristal Gençlik Aşısı işlemi öncesinde cilt temizlenir ve gerekirse yerel 
           anestezik krem uygulanır. Steril koşullarda ve çok ince iğnelerle özel 
           formüllü gençlik aşısı maddesi cilt yüzeyine belirlenen desene göre 
-          enjekte edilir. İşlem 45-60 dakika sürer. Hastalar işlem sonrası 
-          hemen günlük yaşamlarına dönebilirler. Ciltte hafif kızarıklık 
-          görülebilir ancak bu genellikle 1-2 saat içinde geçer.
+          enjekte edilir. İşlem 20-30 dakika sürer. Hastalar işlem sonrası 
+          hemen günlük yaşamlarına dönebilirler. Ciltte hafif kızarıklık ve morluklar 
+          görülebilir ancak genellikle kısa sürede geçer.
         </p>
         
         <h2 class="text-2xl font-bold text-primary mt-12 mb-6">
@@ -83,8 +122,8 @@ const description = "Cildin yaşlanma belirtilerine karşı uygulanan Kristal Ge
               Kristal Gençlik Aşısı ağrılı bir işlem midir?
             </h3>
             <p class="leading-relaxed">
-              İşlem öncesi lokal anestezik krem uygulanabilir. İğneler çok 
-              ince olduğu için hastalar genellikle hafif bir battı hissi 
+              İşlem öncesi lokal anestezik krem uygulanır. İğneler çok 
+              ince olduğu için hastalar genellikle hafif bir batma hissi 
               yaşarlar. İşlem süresi biraz uzun olabilir ancak genellikle 
               kolayca tolere edilir. Hassas ciltli bireylerde daha fazla 
               rahatsızlık hissedilebilir.

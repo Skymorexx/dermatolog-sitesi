@@ -1,9 +1,38 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import BreadcrumbSchema from '../../components/BreadcrumbSchema.astro';
+import FaqSchema from '../../components/FaqSchema.astro';
 
 const title = "Kriyoterapi (Dondurma Tedavisi) - Uzm. Dr. Umut Mert Yıldırım";
-const description = "Siğil, basur ve diğer cilt lezyonlarının dondurma yöntemiyle tedavisi. Kriyoterapi (dondurma tedavisi) işlemi nasıl yapılır? İşlem süreci ve sonrası bakım hakkında detaylı bilgi.";
+const description = "Siğil, seboreik keratoz ve diğer cilt lezyonlarının dondurma yöntemiyle tedavisi. Kriyoterapi (dondurma tedavisi) işlemi nasıl yapılır? İşlem süreci ve sonrası bakım hakkında detaylı bilgi.";
+
+// SSS için soru-cevaplar
+const faqQuestions = [
+  {
+    question: "Kriyoterapi (dondurma tedavisi) nedir ve nasıl çalışır?",
+    answer: "Kriyoterapi, cilt üzerindeki lezyonların sıvı nitrojen kullanılarak dondurulmasıyla uygulanan minimal invaziv bir tedavi yöntemidir. Bu tedavi, lezyon hücrelerini dondurarak yok etmeyi amaçlar. Bu işlem özellikle siğiller, seboreik ve aktinik keratozlar ve diğer benign cilt lezyonlarının tedavisinde etkili sonuçlar verir. İşlem hızlı, etkili ve genellikle lokal anestezi gerektirmez."
+  },
+  {
+    question: "Kriyoterapi (dondurma tedavisi) kimler için uygundur?",
+    answer: "Kriyoterapi, cilt lezyonlarının dondurularak tedavi edilmesi amacıyla uygulanan bir işlemdir. Sıvı azot (-196°C) gibi soğutucu maddeler, lezyon hücrelerini dondurarak yok eder. Bu işlem özellikle viral kaynaklı siğiller, yaşlılık lekeleri, seboreik keratozlar gibi durumların tedavisinde tercih edilir. 18 yaşını tamamlamış, genel sağlık durumu iyi olan ve cilt lezyonları ile uğraşan her yetişkin birey için uygundur. Hamilelik veya emzirme döneminde olan kadınlar için uygun değildir."
+  },
+  {
+    question: "Kriyoterapi (dondurma tedavisi) ağrılı bir işlem midir?",
+    answer: "Kriyoterapi işlemi sırasında hafif bir yanma ve batma hissi olabilir. Ancak işlem çok kısa sürdüğü için genellikle iyi tolere edilir. Hassas bireylerde lokal anestezik krem uygulanabilir. Sıvı azot uygulanırken lezyon üzerinde hafif bir soğukluk ve yanma hissi yaşanabilir. İşlem süresi kısa olduğu için genellikle kolayca tolere edilir."
+  },
+  {
+    question: "Kriyoterapi (dondurma tedavisi) etkisi ne zaman görülür?",
+    answer: "Kriyoterapi etkisi genellikle işlem sonrası hemen görünür olur. Lezyon üzerinde kabuklaşma başlar ve 1-2 hafta içinde kabuklar dökülür. Ancak maksimum etki 2-3 hafta içinde ortaya çıkar. Lezyonun boyutuna ve derinliğine bağlı olarak bu süre değişebilir. Düzenli uygulamalar ile etki daha kalıcı olur."
+  },
+  {
+    question: "Kriyoterapi (dondurma tedavisi) kaç seans yapılır?",
+    answer: "Optimal sonuçlar için genellikle 2-3 haftada bir olmak üzere 2-4 seans önerilir. Lezyonun boyutuna, sayısına ve derinliğine göre hekim tarafından bireysel planlama yapılır. İlk seans sonrası lezyonda belirgin bir iyileşme görülür, ancak seri uygulamalar ile etki daha kalıcı hale gelir."
+  },
+  {
+    question: "Kriyoterapi (dondurma tedavisi) kalıcı mıdır?",
+    answer: "Evet, kriyoterapi çoğu durumda kalıcıdır. Lezyonlar sıvı azotla dondurularak yok edilir. Ancak bazı durumlarda lezyonlar tekrar çıkabilir. Özellikle viral kaynaklı siğillerde bağışıklık sistemi zayıfladığında tekrarlanabilir. Etki kaybolduğunda tekrar uygulama yapılabilir."
+  }
+];
 ---
 
 <BaseLayout title={title} description={description}>
@@ -16,6 +45,8 @@ const description = "Siğil, basur ve diğer cilt lezyonlarının dondurma yönt
     ]}
   />
 
+   <FaqSchema questions={faqQuestions} />
+
   <main id="main-content" class="container mx-auto px-4 py-12">
     <div class="max-w-4xl mx-auto">
       <h1 class="text-4xl font-bold text-primary mb-8">
@@ -24,14 +55,14 @@ const description = "Siğil, basur ve diğer cilt lezyonlarının dondurma yönt
       
       <div class="prose prose-lg text-text-primary max-w-none">
         <p class="mb-8 leading-relaxed">
-          Kriyoterapi, cilt üzerindeki lezyonların aşırı 
-          soğuk kullanılarak dondurulmasıyla uygulanan 
+          Kriyoterapi, cilt üzerindeki lezyonların 
+          sıvı nitrojen kullanılarak dondurulmasıyla uygulanan 
           minimal invaziv bir tedavi yöntemidir. 
-          Sıvı azot gibi soğutucu maddeler, 
+          Bu tedavi, 
           lezyon hücrelerini dondurarak 
           yok etmeyi amaçlar. Bu işlem 
-          özellikle siğiller, basurlar, 
-          keratozlar ve diğer benign 
+          özellikle siğiller, seboreik ve aktinik keratozlar 
+          ve diğer benign 
           cilt lezyonlarının tedavisinde 
           etkili sonuçlar verir. 
           İşlem hızlı, etkili ve 
@@ -45,15 +76,15 @@ const description = "Siğil, basur ve diğer cilt lezyonlarının dondurma yönt
         </h2>
         
         <p class="mb-6 leading-relaxed">
-          Kriyoterapi, cilt lezyonlarının aşırı soğuk 
-          kullanılarak tedavi edilmesi amacıyla 
+          Kriyoterapi, cilt lezyonlarının dondurularak 
+          tedavi edilmesi amacıyla 
           uygulanan bir işlemdir. Sıvı azot 
           (-196°C) gibi soğutucu maddeler, 
           lezyon hücrelerini dondurarak 
           yok eder. Bu işlem özellikle 
           viral kaynaklı siğiller, 
           yaşlılık lekeleri, seboreik 
-          keratozlar ve basurlar 
+          keratozlar 
           gibi durumların tedavisinde 
           tercih edilir. İşlem 
           hızlı, etkili ve 
@@ -67,17 +98,16 @@ const description = "Siğil, basur ve diğer cilt lezyonlarının dondurma yönt
         </h2>
         
         <p class="mb-6 leading-relaxed">
-          Kriyoterapi işlemi genellikle lokal 
-          anestezi gerektirmez. İlk olarak 
+          İlk olarak 
           uygulama bölgesi temizlenir ve 
-          lezyon belirlenir. Sıvı azot 
+          lezyon işaretlenir. Sıvı azot 
           özel uygulayıcılarla lezyon 
-          üzerine uygulanır. Lezyonun 
+          üzerine genellikle sprey yöntemiyle uygulanır. Lezyonun 
           boyutuna göre 5-30 saniye 
           arasında dondurma yapılır. 
           Dondurma işlemi sırasında 
           hastalar hafif bir yanma 
-          ve battı hissi yaşayabilir. 
+          ve batma hissi yaşayabilir. 
           Gerekli görülmesi halinde 
           işlem 2-3 hafta arayla 
           tekrarlanabilir. İşlem 
@@ -116,10 +146,10 @@ const description = "Siğil, basur ve diğer cilt lezyonlarının dondurma yönt
               Kriyoterapi iz bırakır mı?
             </h3>
             <p class="leading-relaxed">
-              Kriyoterapi sonrası genellikle minimal 
-              iz kalır. Ancak lezyonun boyutu, 
+              Kriyoterapi sonrası minimal 
+              iz kalabilir. Ancak lezyonun boyutu, 
               derinliği ve bireysel iyileşme 
-              kapasitesine göre iz kalıcılığı 
+              kapasitesine göre iz kalma oranı 
               değişebilir. Koyu tenli 
               bireylerde geçici 
               hiperpigmentasyon 
@@ -133,9 +163,9 @@ const description = "Siğil, basur ve diğer cilt lezyonlarının dondurma yönt
             </h3>
             <p class="leading-relaxed">
               Kriyoterapi işlemi sırasında hafif 
-              bir yanma ve battı hissi 
+              bir yanma ve batma hissi 
               olabilir. Ancak işlem çok 
-              hızlı olduğu için genellikle 
+              kısa sürdüğü için genellikle 
               iyi tolere edilir. 
               Hassas bireylerde lokal 
               anestezik krem 

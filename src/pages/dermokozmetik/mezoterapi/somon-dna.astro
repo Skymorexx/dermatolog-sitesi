@@ -1,9 +1,46 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import BreadcrumbSchema from '../../../components/BreadcrumbSchema.astro';
+import FaqSchema from '../../../components/FaqSchema.astro';
 
 const title = "Somon DNA Mezoterapisi - Uzm. Dr. Umut Mert Yıldırım";
 const description = "Cilt yenileme ve rejenerasyon için uygulanan Somon DNA mezoterapisi hakkında detaylı bilgi, uygulama süreci ve sıkça sorulan sorular.";
+
+// SSS için soru-cevaplar
+const faqQuestions = [
+  {
+    question: "Somon DNA mezoterapisi nedir ve nasıl çalışır?",
+    answer: "Somon DNA mezoterapisi, cilt hücrelerinin yenilenmesini desteklemek amacıyla uygulanan ileri düzey bir biyolojik tedavidir. Somon balığı DNA'sından elde edilen polinükleotidler, cilt yüzeyine mikro enjeksiyonlarla uygulanarak hücrelerin metabolizmasını uyarır, kolajen üretimini artırır ve cilt yenilenmesini sağlar. Bu işlem sayesinde cilt daha genç, sıkı ve parlak bir görünüme kavuşur. Özellikle yaşlanma belirtileri, cilt incelmesi ve genel cilt yorgunluğu için etkili bir çözümdür."
+  },
+  {
+    question: "Somon DNA mezoterapisi kimler için uygundur?",
+    answer: "Somon DNA mezoterapisi, biyolojik olarak aktif polinükleotidlerin cilt yüzeyine mikro enjeksiyonlarla uygulanan minimal invaziv bir işlemdir. 25 yaşını geçmiş, genel sağlık durumu iyi olan ve cildinde yaşlanma belirtileri görülen her yetişkin birey için uygundur. Özellikle cilt incelmesi, elastikiyet kaybı, ince çizgiler ve genel cilt yorgunluğu ile uğraşan bireylerde tercih edilir. Hamilelik veya emzirme döneminde olan kadınlar için uygun değildir."
+  },
+  {
+    question: "Somon DNA mezoterapisi ağrılı bir işlem midir?",
+    answer: "İşlem öncesi lokal anestezik krem uygulanabilir. İğneler çok ince olduğu için hastalar genellikle hafif bir battı hissi yaşarlar. İşlem süresi biraz uzun olabilir ancak genellikle kolayca tolere edilir. Hassas ciltli bireylerde daha fazla rahatsızlık hissedilebilir."
+  },
+  {
+    question: "Somon DNA mezoterapisi etkisi ne zaman görülür?",
+    answer: "Ciltteki sıkılaşma ve parlaklık etkisi genellikle işlem sonrası 1-2 hafta içinde görülmeye başlanır. Ancak maksimum etki 4-6 hafta içinde ortaya çıkar. Hücre rejenerasyonu süreci devam ettiği için etki 6-8 hafta boyunca gelişmeye devam eder. Düzenli uygulamalar ile etki daha kalıcı ve belirgin hale gelir."
+  },
+  {
+    question: "Somon DNA mezoterapisi kaç seans yapılır?",
+    answer: "Optimal sonuçlar için genellikle 2-4 haftada bir olmak üzere 4-6 seans önerilir. Cilt durumuna göre hekim tarafından bireysel planlama yapılır. İlk seans sonrası ciltte belirgin bir iyileşme görülür, ancak seri uygulamalar ile etki daha kalıcı hale gelir."
+  },
+  {
+    question: "Somon DNA mezoterapisi diğer işlemlerle birlikte uygulanabilir mi?",
+    answer: "Evet, Somon DNA mezoterapisi diğer cilt bakım uygulamalarıyla birlikte uygulanabilir. Özellikle lazer tedavileri, kimyasal peeling ve diğer mezoterapi uygulamalarıyla kombine edilebilir. Ancak uygulama sırası ve zamanlaması hekim tarafından planlanmalıdır."
+  },
+  {
+    question: "Somon DNA mezoterapisi sonrası ne kadar sürede günlük yaşama dönebilirim?",
+    answer: "Hastalar Somon DNA mezoterapisi işlemi sonrası hemen günlük yaşamlarına dönebilirler. Ancak işlem yapılan bölgede hafif kızarıklık ve şişlik görülebilir. Bu belirtiler genellikle 1-2 saat içinde geçer. İlk 24 saat içinde makyaj yapılması önerilmez."
+  },
+  {
+    question: "Somon DNA mezoterapisi tedavisi ne sıklıkla yapılır?",
+    answer: "Somon DNA mezoterapisi genellikle 2-4 haftada bir olmak üzere uygulanır. Cilt yenilenmesi süreci nedeniyle her seanstan sonra yeterli iyileşme süresi verilmelidir. Toplamda 4-6 seans önerilir ancak cilt durumuna göre bu sayı değişebilir."
+  }
+];
 ---
 
 <BaseLayout title={title} description={description}>
@@ -17,6 +54,8 @@ const description = "Cilt yenileme ve rejenerasyon için uygulanan Somon DNA mez
     ]}
   />
 
+    <FaqSchema questions={faqQuestions} />
+
   <main id="main-content" class="container mx-auto px-4 py-12">
     <div class="max-w-4xl mx-auto">
       <h1 class="text-4xl font-bold text-primary mb-8">
@@ -25,7 +64,7 @@ const description = "Cilt yenileme ve rejenerasyon için uygulanan Somon DNA mez
       
       <div class="prose prose-lg text-text-primary max-w-none">
         <p class="mb-8 leading-relaxed">
-          Somon DNA mezoterapisi, cilt hücrelerinin yenilenmesini ve rejenerasyonunu 
+          Somon DNA mezoterapisi, cilt hücrelerinin yenilenmesini 
           desteklemek amacıyla uygulanan ileri düzey bir biyolojik tedavidir. 
           Somon balığı DNA'sından elde edilen polinükleotidler, cilt yüzeyine 
           mikro enjeksiyonlarla uygulanarak hücrelerin metabolizmasını 
@@ -58,7 +97,7 @@ const description = "Cilt yenileme ve rejenerasyon için uygulanan Somon DNA mez
           Somon DNA mezoterapisi işlemi öncesinde cilt temizlenir ve 
           gerekirse yerel anestezik krem uygulanır. Steril koşullarda 
           ve çok ince iğnelerle özel formüllü Somon DNA maddesi cilt 
-          yüzeyine belirlenen desene göre enjekte edilir. İşlem 45-60 
+          yüzeyine belirlenen desene göre enjekte edilir. İşlem 30-45 
           dakika sürer. Hastalar işlem sonrası hemen günlük 
           yaşamlarına dönebilirler. Ciltte hafif kızarıklık görülebilir 
           ancak bu genellikle 1-2 saat içinde geçer.
@@ -89,7 +128,7 @@ const description = "Cilt yenileme ve rejenerasyon için uygulanan Somon DNA mez
             </h3>
             <p class="leading-relaxed">
               İşlem öncesi lokal anestezik krem uygulanabilir. İğneler 
-              çok ince olduğu için hastalar genellikle hafif bir battı 
+              çok ince olduğu için hastalar genellikle hafif bir batma 
               hissi yaşarlar. İşlem süresi biraz uzun olabilir ancak 
               genellikle kolayca tolere edilir. Hassas ciltli bireylerde 
               daha fazla rahatsızlık hissedilebilir.
@@ -115,7 +154,7 @@ const description = "Cilt yenileme ve rejenerasyon için uygulanan Somon DNA mez
               Somon DNA mezoterapisi kaç seans yapılır?
             </h3>
             <p class="leading-relaxed">
-              Optimal sonuçlar için genellikle 3-4 haftada bir olmak 
+              Optimal sonuçlar için genellikle 2-4 haftada bir olmak 
               üzere 4-6 seans önerilir. Cilt durumuna göre hekim 
               tarafından bireysel planlama yapılır. İlk seans 
               sonrası ciltte belirgin bir iyileşme görülür, 

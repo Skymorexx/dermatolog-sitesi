@@ -1,12 +1,50 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import BreadcrumbSchema from '../components/BreadcrumbSchema.astro';
+import FaqSchema from '../components/FaqSchema.astro';
 
 const title = "Teledermatoloji (Online Muayene) - Uzm. Dr. Umut Mert Yıldırım";
-const description = "Konforunuzdan ayrılmadan, online görüntülü görüşme ile dermatolojik danışmanlık alın. Teledermatoloji süreci ve uygun durumlar hakkında bilgi.";
+const description = "Konforunuzdan ayrılmadan, online görüntülü görüşme ile cilt hastalıklarınız için uzman muayene hizmeti alın. Teledermatoloji süreci ve uygun durumlar hakkında bilgi.";
+
+// SSS için soru-cevaplar
+const faqQuestions = [
+  {
+    question: "Teledermatoloji nedir?",
+    answer: "Teledermatoloji, internet üzerinden yapılan görüntülü görüşme yoluyla dermatolojik danışmanlık ve değerlendirme hizmetidir. Hastalar, ev ortamında konforlu bir şekilde uzman hekimle görüşebilir, cilt problemlerini gösterebilir ve profesyonel öneriler alabilir. Bu hizmet, özellikle kontrol muayeneleri, danışmanlık ve reçete yenileme gibi durumlarda çok etkilidir."
+  },
+  {
+    question: "Teledermatoloji ile fiziksel muayene arasında fark var mı?",
+    answer: "Evet, teledermatoloji fiziksel muayenenin yerine geçmez. Fiziksel muayenede dokunsal değerlendirme ve dermatoskopik inceleme gibi detaylı tetkikler yapılabilir. Ancak teledermatoloji, kontrol muayeneleri, tedavi sürecinde danışmanlık ve reçete yenileme gibi durumlar için oldukça uygundur. Hekim, gerekli gördüğü durumlarda yüz yüze muayene talep edebilir."
+  },
+  {
+    question: "Teledermatoloji hangi durumlar için uygundur?",
+    answer: "Teledermatoloji özellikle kontrol muayeneleri, tedavi sürecinde danışmanlık ve reçete yenileme, cilt bakım önerileri, rutin kontroller, estetik dermatoloji danışmanlıkları, deri hastalıklarının seyrinde değerlendirme ve coğrafi veya fiziksel erişim sorunları olan hastalar için uygundur. Ancak acil durumlar ve ileri derecede fiziksel muayene gerektiren vakalar için uygun değildir."
+  },
+  {
+    question: "Teledermatoloji randevusu nasıl alınır?",
+    answer: "Teledermatoloji randevusu web sitemizden veya telefonla alınabilir. Size uygun bir tarih ve saat belirlenir. Randevu bilgileriniz size e-posta veya SMS ile iletilir. Görüşme öncesi cilt probleminizin net fotoğraflarını hazırlamanız önerilir."
+  },
+  {
+    question: "Teledermatoloji görüşmesi sırasında ne yapmalıyım?",
+    answer: "Görüşme öncesi cilt probleminizin net fotoğraflarını hazırlayın. Görüşme sırasında iyi aydınlatılmış bir ortamda olun. Probleminizi detaylı şekilde anlatın ve hekimin sorularına açık cevaplar verin. Gerekli görülmesi halinde reçete düzenlenir ve size e-reçete olarak iletilir."
+  },
+  {
+    question: "Teledermatoloji güvenli midir?",
+    answer: "Evet, teledermatoloji güvenli bir hizmettir. Hastaların kişisel verileri KVKK ve diğer gizlilik politikalarına uygun olarak korunur. Görüşmeler şifreli bağlantılar üzerinden gerçekleştirilir. Ancak bu hizmet fiziksel muayenenin yerine geçmez ve acil durumlar için uygun değildir."
+  }
+];
 ---
 
 <BaseLayout title={title} description={description}>
-  
+
+  <BreadcrumbSchema 
+    links={[
+      { name: "Ana Sayfa", url: "/" },
+      { name: "Online Muayene", url: "/teledermatoloji/" },
+    ]}
+  />
+    <FaqSchema questions={faqQuestions} />
+
   <main id="main-content" class="container mx-auto px-4 py-16">
     <div class="max-w-4xl mx-auto">
       <h1 class="text-4xl font-bold text-primary mb-8">
@@ -125,7 +163,7 @@ const description = "Konforunuzdan ayrılmadan, online görüntülü görüşme 
             <li>
               <strong>Görüşmeyi Yapın:</strong> 
               Belirlenen tarihte ve saatte 
-              uygulamamız üzerinden 
+              uygulama üzerinden 
               görüşmeye katılırsınız. 
               Görüşme öncesi cilt 
               probleminizin net 
@@ -136,7 +174,7 @@ const description = "Konforunuzdan ayrılmadan, online görüntülü görüşme 
               sırasında 
               hekimle 
               yüz yüze 
-              etkileşim 
+              iletişim 
               kurarsınız.
             </li>
             
@@ -184,21 +222,7 @@ const description = "Konforunuzdan ayrılmadan, online görüntülü görüşme 
             klinik 
             değerlendirme 
             yapması 
-            gerekebilir. 
-            Online 
-            görüşmelerde 
-            cilt 
-            problemlerinin 
-            net 
-            değerlendirilmesi 
-            için 
-            iyi 
-            aydınlatılmış 
-            ve 
-            net 
-            fotoğraflar 
-            çok 
-            önemlidir. 
+            gerekebilir.  
             Hekim, 
             gerekli 
             gördüğü 

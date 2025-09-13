@@ -1,9 +1,46 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import BreadcrumbSchema from '../../../components/BreadcrumbSchema.astro';
+import FaqSchema from '../../../components/FaqSchema.astro';
 
 const title = "Diş Sıkma Tedavisi (Botoks) - Uzm. Dr. Umut Mert Yıldırım";
-const description = "Bruksizm ve diş sıkma sorunları için uygulanan botoks diş sıkma tedavisi hakkında detaylı bilgi, uygulama süreci ve sıkça sorulan sorular.";
+const description = "Bruksizm ve diş sıkma sorunları için uygulanan botoks diş sıkma tedavisi (masseter botoksu) hakkında detaylı bilgi, uygulama süreci ve sıkça sorulan sorular.";
+
+// SSS için soru-cevaplar
+const faqQuestions = [
+  {
+    question: "Masseter botoksu nedir ve nasıl çalışır?",
+    answer: "Masseter botoksu, bruksizm (diş gıcırdatma) ve diş sıkma alışkanlığını tedavi etmek amacıyla uygulanan etkili bir işlemdir. Gece saatlerinde bilinçsiz olarak gerçekleşen bu durum, diş aşınmalarına, çene eklemi problemlerine, baş ve boyun ağrılarına neden olabilir. Botoks uygulaması ile çene kasları geçici olarak gevşetilerek bu semptomların giderilmesi sağlanır. Bu işlem sayesinde diş sağlığı korunur, ağrılar azaltılır ve yaşam kalitesi artırılır. Aynı zamanda masseter kası inceltilerek yüzde oval bir görünüm sağlanır."
+  },
+  {
+    question: "Masseter botoksu kimler için uygundur?",
+    answer: "Masseter Botoksu, botulinum toksin tip A'nın çene kaslarına (masseter kası) çok küçük dozlarda enjekte edilmesiyle uygulanan minimal invaziv bir işlemdir. 18 yaşını tamamlamış, genel sağlık durumu iyi olan ve diş sıkma veya gıcırdatma problemi yaşayan her yetişkin birey için uygundur. Özellikle sabahları baş ağrısı çeken, dişlerinde aşınma olan, çene eklemi ağrıları yaşayan bireylerde tercih edilir. Hamilelik veya emzirme döneminde olan kadınlar için uygun değildir."
+  },
+  {
+    question: "Masseter botoksu ağrılı bir işlem midir?",
+    answer: "Botoks enjeksiyonları çok ince iğnelerle yapıldığı için hastalar minimal düzeyde rahatsızlık hissederler. Çoğu hasta işlem sırasında hafif bir battı hissi yaşar. Anestezi enjeksiyonu sırasında hafif bir battı hissi olabilir. İşlem süresi kısa olduğu için genellikle kolayca tolere edilir. Hassas ciltli bireylerde daha fazla rahatsızlık hissedilebilir."
+  },
+  {
+    question: "Masseter botoks tedavisinin etkisi ne kadar sürer?",
+    answer: "Botoks etkisi genellikle 3-6 ay sürer. Kas aktivitesine ve bireysel faktörlere bağlı olarak bu süre kişiden kişiye değişebilir. Düzenli uygulamalar ile etki süresi uzatılabilir. Ortalama olarak 4-6 ayda bir tekrar uygulama gerekebilir. Etkinin uzun sürmesi için sağlıklı yaşam tarzı benimsenmelidir."
+  },
+  {
+    question: "Masseter botoksu yemek yemeyi etkiler mi?",
+    answer: "Doğru dozda uygulandığında botoks yeme alışkanlıklarınızı etkilemez. Aşırı dozlarda uygulama sonrası çiğneme kasları çok gevşeyebilir ve sert gıdaların yenmesi zorlaşabilir. Uzman hekimler tarafından bireysel ihtiyaçlara uygun planlanan uygulamalarla ve uygun dozlarda bu sorun yaşanmaz. Normal beslenme alışkanlıklarınıza 1-2 gün içinde dönebilirsiniz."
+  },
+  {
+    question: "Masseter botoksunun etkisi ne zaman başlar?",
+    answer: "Botoks etkisi genellikle 3-7 gün içinde başlar. Maksimum etki 2 hafta içinde görülür. Diş sıkma ve gıcırdatma alışkanlıklarında azalma hissedilmeye başlanır. Baş ve çene ağrılarında belirgin düzelme genellikle 1-2 hafta içinde görülür. Düzenli uygulamalar ile masseter kasında incelmeye bağlı olarak yüz oval bir görünüm alır."
+  },
+  {
+    question: "Masseter botoksu sonrası ne zaman makyaj yapabilirim?",
+    answer: "İşlem sonrası ilk 24 saat içinde makyaj yapılması önerilmez. 24 saat sonra normal makyaj yapabilirsiniz. Ancak ilk birkaç gün boyunca hafif, doğal tonlarda makyaj tercih edilmelidir. Göz ve dudak makyajı yapılabilir. Uygulama bölgesine baskı uygulanmamalıdır."
+  },
+  {
+    question: "Masseter botoksu diğer işlemlerle birlikte uygulanabilir mi?",
+    answer: "Evet, masseter botoksu diğer cilt bakım uygulamalarıyla birlikte uygulanabilir. Özellikle lazer tedavileri, mezoterapi ve diğer botoks uygulamalarıyla kombine edilebilir. Ancak uygulama sırası ve zamanlaması hekim tarafından planlanmalıdır. Bu konuda detaylı danışmanlık alınmalıdır."
+  }
+];
 ---
 
 <BaseLayout title={title} description={description}>
@@ -16,6 +53,8 @@ const description = "Bruksizm ve diş sıkma sorunları için uygulanan botoks d
       { name: "Diş Sıkma Tedavisi", url: "/dermokozmetik/botoks/dis-sikma-tedavisi/" }
     ]}
   />
+
+    <FaqSchema questions={faqQuestions} />
 
   <main id="main-content" class="container mx-auto px-4 py-12">
     <div class="max-w-4xl mx-auto">

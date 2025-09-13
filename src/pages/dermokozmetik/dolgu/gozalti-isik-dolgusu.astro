@@ -1,9 +1,46 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import BreadcrumbSchema from '../../../components/BreadcrumbSchema.astro';
+import FaqSchema from '../../../components/FaqSchema.astro';
 
 const title = "Gözaltı Işık Dolgusu - Uzm. Dr. Umut Mert Yıldırım";
 const description = "Gözaltı bölgesindeki çöküklük ve morlukları gidermek için uygulanan gözaltı ışık dolgusu işlemi hakkında detaylı bilgi, uygulama süreci ve sıkça sorulan sorular.";
+
+// SSS için soru-cevaplar
+const faqQuestions = [
+  {
+    question: "Gözaltı ışık dolgusu nedir ve nasıl çalışır?",
+    answer: "Gözaltı ışık dolgusu, hyaluronik asit bazlı özel formüllü dolgu maddeleri kullanılarak gözaltı bölgesindeki çöküklük, morluk ve ince çizgilerin giderilmesi amacıyla uygulanan estetik bir işlemdir. Bu işlem ile göz çevresi gençleştirilir ve yorgun, yaşlanmış bir görünümden arınarak daha dinç ve rested bir ifade kazandırılır. Işık dolgusu, daha akışkan konsistansı sayesinde bu hassas bölge için idealdir."
+  },
+  {
+    question: "Gözaltı ışık dolgusu kimler için uygundur?",
+    answer: "Gözaltı ışık dolgusu, hyaluronik asit içerikli özel formüllü dolgu maddelerinin steril koşullarda ve lokal anestezi altında gözaltı bölgesine enjekte edilmesiyle uygulanan minimal invaziv bir işlemdir. 18 yaşını tamamlamış, genel sağlık durumu iyi olan ve gözaltılarında çöküklük, torba veya morluk sorunu olan her yetişkin birey için uygundur. Özellikle erken yaşlanma belirtileri gösteren veya yorgun görünümden kurtulmak isteyen bireylerde tercih edilir. Hamilelik veya emzirme döneminde olan kadınlar için uygun değildir."
+  },
+  {
+    question: "Gözaltı ışık dolgusu ağrılı bir işlem midir?",
+    answer: "İşlem öncesi lokal anestezik krem uygulandığı için hastalar minimal düzeyde rahatsızlık hissederler. Gözaltı bölgesi hassas olduğu için çok ince iğneler kullanılır ve dolgu maddesinin içinde de lokal anestezik bulunur. İşlem süresi biraz uzun olabilir ancak genellikle kolayca tolere edilir. Hassas ciltli bireylerde daha fazla rahatsızlık hissedilebilir."
+  },
+  {
+    question: "Gözaltı ışık dolgusunun etkisi ne kadar sürer?",
+    answer: "Hyaluronik asit bazlı dolgu maddeleri vücut tarafından doğal olarak yıkıldığı için etkisi 6-12 ay arasında sürer. Gözaltı bölgesi çok hareketli olduğu için etki süresi diğer bölgelere göre daha kısa olabilir. Ortalama süre 9 aydır. Etkinin uzun sürmesi için sağlıklı yaşam tarzı benimsenmelidir."
+  },
+  {
+    question: "Gözaltı ışık dolgusu morlukları da giderir mi?",
+    answer: "Gözaltı ışık dolgusu, çöküklükleri doldurarak morluk görünümünü azaltır. Ancak derideki pigment değişiklikleri için özel lazer tedavileri daha etkili olabilir. Hekim muayenesi sonrası en uygun tedavi yöntemi belirlenir. Morlukların tamamen giderilmesi için kombine tedaviler gerekebilir."
+  },
+  {
+    question: "Gözaltı ışık dolgusundan memnun kalmazsam ne olur?",
+    answer: "Hyaluronik asit bazlı dolgulara özel olarak uygulanabilen hyaluronidaz enzimi ile dolgu maddesi vücuttan hızlıca uzaklaştırılabilir. Bu nedenle işlem geri alınabilir niteliktedir. Memnuniyetsizlik durumunda hekiminize başvurmanız yeterlidir."
+  },
+  {
+    question: "Gözaltı ışık dolgusu sonrası ne zaman makyaj yapabilirim?",
+    answer: "İşlem sonrası ilk 24 saat içinde makyaj yapılması önerilmez. 24 saat sonra normal makyaj yapabilirsiniz. Ancak ilk birkaç gün boyunca hafif, doğal tonlarda makyaj tercih edilmelidir. Göz ve dudak makyajı yapılabilir."
+  },
+  {
+    question: "Gözaltı ışık dolgusu diğer işlemlerle birlikte uygulanabilir mi?",
+    answer: "Evet, gözaltı ışık dolgusu diğer cilt bakım uygulamalarıyla birlikte uygulanabilir. Özellikle lazer tedavileri, mezoterapi ve diğer dolgu uygulamalarıyla kombine edilebilir. Ancak uygulama sırası ve zamanlaması hekim tarafından planlanmalıdır."
+  }
+];
 ---
 
 <BaseLayout title={title} description={description}>
@@ -17,6 +54,8 @@ const description = "Gözaltı bölgesindeki çöküklük ve morlukları giderme
     ]}
   />
   
+        <FaqSchema questions={faqQuestions} />
+
   <main id="main-content" class="container mx-auto px-4 py-12">
     <div class="max-w-4xl mx-auto">
       <h1 class="text-4xl font-bold text-primary mb-8">

@@ -1,9 +1,38 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import BreadcrumbSchema from '../../components/BreadcrumbSchema.astro';
+import FaqSchema from '../../components/FaqSchema.astro';
 
 const title = "Siğil (Verrü) Tedavisi - Uzm. Dr. Umut Mert Yıldırım";
-const description = "Viral kaynaklı siğil (verrü) tedavisi yöntemleri. Cerrahi siğil tedavisi nasıl yapılır? İşlem süreci, sonrası bakım ve iyileşme süreci hakkında detaylı bilgi.";
+const description = "Viral siğil (verrü) tedavisi yöntemleri. Lazerle siğil tedavisi nasıl yapılır? İşlem süreci, sonrası bakım ve iyileşme süreci hakkında detaylı bilgi.";
+
+// SSS için soru-cevaplar
+const faqQuestions = [
+  {
+    question: "Siğil (verrü) tedavisi nedir ve nasıl çalışır?",
+    answer: "Siğil (verrü), İnsan Papilloma Virüsü (HPV) nedeniyle ciltte oluşan iyi huylu lezyonlardır. Özellikle ellerde, ayak tabanında ve genital bölgede görülebilirler. Siğiller bulaşıcıdır ve doğrudan temas veya dolaylı yollarla yayılabilirler. Lazer, kriyoterapi tedavi yöntemleri, özellikle dirençli veya estetik açıdan problem yaratan siğillerde etkili sonuçlar verir. İşlem lokal anestezi altında güvenli bir şekilde gerçekleştirilir."
+  },
+  {
+    question: "Siğil (verrü) tedavisi kimler için uygundur?",
+    answer: "Siğil tedavisi, viral kaynaklı cilt lezyonlarının tedavi edilmesi amacıyla uygulanan bir işlemdir. HPV virüsü nedeniyle oluşan bu lezyonlar bulaşıcı olduğu için hem etrafa yayılım hem de başkalarına bulaştırma riski taşır. Estetik kaygılar, rahatsızlık ve travma riski nedeniyle de tedavi edilmeleri gerekebilir. Lazerle siğil tedavisi, özellikle dirençli vakalarda tercih edilir. 18 yaşını tamamlamış, genel sağlık durumu iyi olan her yetişkin birey için uygundur."
+  },
+  {
+    question: "Siğil tedavisi ağrılı bir işlem midir?",
+    answer: "İşlem lokal anestezi altında yapıldığı için hastalar işlem sırasında herhangi bir ağrı hissetmezler. Anestezi enjeksiyonu sırasında hafif bir battı hissi olabilir. Lazer ışınları uygulanırken lokal anestezik krem uygulanması ağrıyı daha da azaltır. İşlem kısa sürede tamamlandığı için genellikle kolayca tolere edilir. Hassas ciltli bireylerde daha fazla rahatsızlık hissedilebilir."
+  },
+  {
+    question: "Siğil tedavisi etkisi ne zaman görülür?",
+    answer: "Siğil tedavisi etkisi genellikle işlem sonrası hemen görülür. Ancak maksimum etki 1-2 hafta içinde ortaya çıkar. Lazer ışınları uygulanarak lezyon temizlenir ve yara yerine pansuman yapılır. İyileşme süreci devam ettiği için etki 2-3 hafta boyunca gelişmeye devam eder. Düzenli uygulamalar ile etki daha kalıcı olur."
+  },
+  {
+    question: "Siğil tedavisi kaç seans yapılır?",
+    answer: "Optimal sonuçlar için genellikle 2-3 haftada bir olmak üzere 2-4 seans önerilir. Siğilin boyutuna, sayısına ve konumuna göre hekim tarafından bireysel planlama yapılır. İlk seans sonrası ciltte belirgin bir iyileşme görülür, ancak seri uygulamalar ile etki daha kalıcı hale gelir. Dirençli vakalarda daha fazla seans gerekebilir."
+  },
+  {
+    question: "Siğil tedavisi kalıcı mıdır?",
+    answer: "Hayır, siğil tedavisi kalıcı değildir. HPV virüsü vücutta latent olarak kalabilir ve bağışıklık sistemi zayıfladığında tekrar aktivite olabilir. Ancak lazerle tamamen temizlenen siğiller genellikle tekrar etmez. Tedavi edilen bölgede iz kalabilir ancak bu minimal düzeydedir. Etki kaybolduğunda tekrar uygulama yapılabilir."
+  }
+];
 ---
 
 <BaseLayout title={title} description={description}>
@@ -16,6 +45,8 @@ const description = "Viral kaynaklı siğil (verrü) tedavisi yöntemleri. Cerra
     ]}
   />
 
+  <FaqSchema questions={faqQuestions} />
+
   <main id="main-content" class="container mx-auto px-4 py-12">
     <div class="max-w-4xl mx-auto">
       <h1 class="text-4xl font-bold text-primary mb-8">
@@ -25,12 +56,12 @@ const description = "Viral kaynaklı siğil (verrü) tedavisi yöntemleri. Cerra
       <div class="prose prose-lg text-text-primary max-w-none">
         <p class="mb-8 leading-relaxed">
           Siğil (verrü), İnsan Papilloma Virüsü (HPV) 
-          nedeniyle ciltte oluşan viral lezyonlardır. 
+          nedeniyle ciltte oluşan iyi huylu lezyonlardır. 
           Özellikle ellerde, ayak tabanında ve 
           genital bölgede görülebilirler. Siğiller 
           bulaşıcıdır ve doğrudan temas veya 
           dolaylı yollarla yayılabilirler. 
-          Cerrahi tedavi yöntemleri, 
+          Lazer, kriyoterapi tedavi yöntemleri, 
           özellikle dirençli veya 
           estetik açıdan 
           problem yaratan 
@@ -49,25 +80,25 @@ const description = "Viral kaynaklı siğil (verrü) tedavisi yöntemleri. Cerra
         
         <p class="mb-6 leading-relaxed">
           Siğil tedavisi, viral kaynaklı cilt 
-          lezyonlarının çıkarılması amacıyla 
+          lezyonlarının tedavi edilmesi amacıyla 
           uygulanan bir işlemdir. HPV virüsü 
           nedeniyle oluşan bu lezyonlar 
-          bulaşıcı olduğu için hem kendi 
-          vücuduna yayılım hem de 
+          bulaşıcı olduğu için hem etrafa 
+          yayılım hem de 
           başkalarına bulaştırma 
           riski taşır. Estetik kaygılar, 
           rahatsızlık ve travma 
           riski nedeniyle de 
           tedavi edilmeleri 
           gerekebilir. 
-          Cerrahi yöntemler, 
+          Lazerle siğil tedavisi, 
           özellikle dirençli 
           vakalarda tercih 
           edilir.
         </p>
         
         <h2 class="text-2xl font-bold text-primary mt-12 mb-6">
-          Cerrahi Siğil Tedavisi İşlemi Nasıl Yapılır?
+          Lazerle Siğil Tedavisi İşlemi Nasıl Yapılır?
         </h2>
         
         <p class="mb-6 leading-relaxed">
@@ -76,15 +107,8 @@ const description = "Viral kaynaklı siğil (verrü) tedavisi yöntemleri. Cerra
           bölgesi sterilize edilir ve lokal 
           anestezik enjekte edilir. Siğilin 
           boyutuna ve konumuna göre farklı 
-          teknikler uygulanabilir: Küçük 
-          siğiller doğrudan kesilerek 
-          çıkarılabilirken, daha büyük 
-          siğiller elektrokoterizasyon 
-          veya radyofrekans ile 
-          yok edilebilir. Çıkarılan 
-          doku patolojik inceleme 
-          için laboratuvara 
-          gönderilebilir. 
+          teknikler uygulanabilir, en sık kullanılan teknikler lazer ve kriyoterapidir.
+          Siğilin olduğu bölgeye lazer ışınları uygulanarak lezyon temizlenir.
           Yara yerine 
           gerekli pansuman 
           yapılır.
@@ -144,9 +168,7 @@ const description = "Viral kaynaklı siğil (verrü) tedavisi yöntemleri. Cerra
               İşlem lokal anestezi altında yapıldığı 
               için hastalar işlem sırasında 
               herhangi bir ağrı hissetmezler. 
-              Anestezi enjeksiyonu sırasında 
-              hafif bir battı hissi 
-              olabilir. İşlem sonrası 
+              İşlem sonrası 
               ilk birkaç saat 
               hafif ağrı 
               olabilir.
@@ -173,9 +195,9 @@ const description = "Viral kaynaklı siğil (verrü) tedavisi yöntemleri. Cerra
               Siğil tekrar çıkar mı?
             </h3>
             <p class="leading-relaxed">
-              Cerrahi olarak tamamen çıkarılan 
+              Lazerle tamamen temizlenen 
               siğiller genellikle tekrar 
-              çıkmaz. Ancak HPV virüsü 
+              etmez. Ancak HPV virüsü 
               vücutta latent olarak 
               kalabilir ve bağışıklık 
               sistemi zayıfladığında 

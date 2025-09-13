@@ -1,9 +1,46 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import BreadcrumbSchema from '../../../components/BreadcrumbSchema.astro';
+import FaqSchema from '../../../components/FaqSchema.astro';
 
 const title = "HarmonyCA - Uzm. Dr. Umut Mert Yıldırım";
-const description = "Yenilikçi cilt sıkılaştırma ve gençleştirme tedavisi olan HarmonyCA hakkında detaylı bilgi, uygulama süreci ve sıkça sorulan sorular.";
+const description = "Yenilikçi cilt sıkılaştırma ve gençleştirme tedavisi olan HarmonyCA (Hibrit Dolgu) hakkında detaylı bilgi, uygulama süreci ve sıkça sorulan sorular.";
+
+// SSS için soru-cevaplar
+const faqQuestions = [
+  {
+    question: "HarmonyCA nedir ve nasıl çalışır?",
+    answer: "HarmonyCA, hyalüronik asit (HA) ile kalsiyum hidroksiapatit (CaHA) kristallerini bir araya getiren hibrit bir enjeksiyon tedavisidir. HA bileşeni anında dolgunluk ve lifting sağlarken, CaHA bileşeni zamanla fibroblastları uyararak kolajen üretimini artırır ve cilt kalitesini güçlendirir. Bu sayede hem hızlı görülen bir tazelik hem de aylara yayılan sıkılaşma ve kontur belirginliği elde edilir."
+  },
+  {
+    question: "HarmonyCA kimler için uygundur?",
+    answer: "HarmonyCA, yüz yumuşak dokularının hacimlendirilmesi ve cilt mimarisinin desteklenmesi için yüze enjekte edilen bir dolgu uygulamasıdır. 30 yaş sonrası; yüz ovalinde belirsizlik, yanaklarda hacim kaybı, çene hattında gevşeme ve nazolabial/marionette oluklarında belirginleşme yaşayan, genel sağlık durumu uygun erişkinler için idealdir. Gebelik ve emzirme döneminde uygulanmaz; aktif enfeksiyon, uygulama bölgesinde cilt hastalığı veya bileşenlere karşı bilinen aşırı duyarlılık varlığında uygun değildir."
+  },
+  {
+    question: "HarmonyCA ağrılı bir işlem midir?",
+    answer: "İşlem çoğunlukla iyi tolere edilir. Ürün lidokain içerir; ayrıca işlem öncesi lokal anestezik krem uygulanabilir. Kanül veya ince iğne ile planlanan alanlara derin dermal/subdermal düzeye enjekte edilir. İşlem öncesi lokal anestezik krem uygulandığı için hastalar minimal düzeyde rahatsızlık hissederler."
+  },
+  {
+    question: "HarmonyCA etkisi ne zaman görülür?",
+    answer: "HA sayesinde anında tazelik ve lifting hissi oluşur. CaHA ile kolajen üretimi haftalar içinde başlar; 2-3 ayda cilt kalitesindeki artış daha belirginleşir. Kolajen oluşumu yaklaşık 12 aya kadar devam edebilir. Maksimum etki 3-4 ay içinde ortaya çıkar."
+  },
+  {
+    question: "HarmonyCA kaç seans yapılır?",
+    answer: "Çoğu hasta için tek seans yeterlidir. Hedefe ve doku yanıtına göre 4-6 hafta sonra kontrol planlanabilir; gerekirse ek dokunuş yapılabilir. Optimal sonuçlar için genellikle 1 seans önerilir ancak cilt durumuna göre hekim tarafından bireysel planlama yapılır."
+  },
+  {
+    question: "HarmonyCA diğer işlemlerle birlikte uygulanabilir mi?",
+    answer: "Evet, HarmonyCA diğer cilt bakım uygulamalarıyla birlikte uygulanabilir. Özellikle lazer tedavileri, mezoterapi ve diğer non-invaziv prosedürlerle kombine edilebilir. Ancak uygulama sırası ve zamanlaması hekim tarafından planlanmalıdır. Bu konuda detaylı danışmanlık alınmalıdır."
+  },
+  {
+    question: "HarmonyCA sonrası ne zaman makyaj yapabilirim?",
+    answer: "HarmonyCA sonrası ilk 24 saat içinde makyaj yapılması önerilmez. 24 saat sonra normal makyaj yapabilirsiniz. Ancak ilk birkaç gün boyunca hafif, doğal tonlarda makyaj tercih edilmelidir. Göz ve dudak makyajı yapılabilir."
+  },
+  {
+    question: "HarmonyCA kalıcı mıdır?",
+    answer: "Hayır, HarmonyCA kalıcı değildir. HA ve CaHA bileşenleri vücut tarafından 12-18 ay içinde doğal olarak parçalanır ve emilir. Ancak bu süreçte kolajen üretimini uyarması sayesinde uzun süreli sonuçlar elde edilir. Etki kaybolduğunda tekrar uygulama yapılabilir."
+  }
+];
 ---
 
 <BaseLayout title={title} description={description}>
@@ -17,23 +54,22 @@ const description = "Yenilikçi cilt sıkılaştırma ve gençleştirme tedavisi
     ]}
   />
 
+      <FaqSchema questions={faqQuestions} />
+
   <main id="main-content" class="container mx-auto px-4 py-12">
     <div class="max-w-4xl mx-auto">
       <h1 class="text-4xl font-bold text-primary mb-8">
-        HarmonyCA
+        HarmonyCA (Hibrit Dolgu)
       </h1>
       
       <div class="prose prose-lg text-text-primary max-w-none">
         <p class="mb-8 leading-relaxed">
-          HarmonyCA, cilt sıkılaştırması ve gençleştirme amacıyla uygulanan 
-          yenilikçi, non-invaziv bir cilt bakım teknolojisidir. Kombine 
-          lazer ve radiofrekans teknolojisinin eşsiz uyumu sayesinde 
-          dermal ve subdermal dokularda sıcaklık oluşturarak kolajen 
-          üretimini uyarır ve cilt yenilenmesini sağlar. Bu işlem 
-          sayesinde cilt daha sıkı, dolgun ve genç bir görünüme 
-          kavuşur. Özellikle yüz konturlarında düşüş, çene 
-          hattında gevşeklik ve genel cilt matlığı için 
-          etkili bir çözümdür.
+            HarmonyCA, hyalüronik asit (HA) ile kalsiyum hidroksiapatit (CaHA) kristallerini
+        bir araya getiren <strong>hibrit</strong> bir enjeksiyon tedavisidir. HA bileşeni
+        <strong>anında dolgunluk ve lifting</strong> sağlarken, CaHA bileşeni zamanla
+        fibroblastları uyararak <strong>kolajen üretimini artırır</strong> ve cilt kalitesini
+        güçlendirir. Bu sayede hem hızlı görülen bir tazelik hem de aylara yayılan
+        sıkılaşma ve kontur belirginliği elde edilir.
         </p>
         
         <h2 class="text-2xl font-bold text-primary mt-12 mb-6">
@@ -41,16 +77,14 @@ const description = "Yenilikçi cilt sıkılaştırma ve gençleştirme tedavisi
         </h2>
         
         <p class="mb-6 leading-relaxed">
-          HarmonyCA, kombine lazer ve radiofrekans teknolojisinin 
-          cilt yüzeyine uygulanmasıyla gerçekleştirilen non-invaziv 
-          bir işlemdir. 25 yaşını geçmiş, genel sağlık durumu iyi 
-          olan ve cildinde yaşlanma belirtileri görülen her 
-          yetişkin birey için uygundur. Özellikle cilt 
-          gevşekliği, elastikiyet kaybı, yüz kontur 
-          düşüklüğü ve genel cilt yorgunluğu ile 
-          uğraşan bireylerde tercih edilir. 
-          Hamilelik veya emzirme döneminde olan 
-          kadınlar için uygun değildir.
+          HarmonyCA, yüz yumuşak dokularının hacimlendirilmesi ve cilt mimarisinin
+        desteklenmesi için yüze enjekte edilen
+        bir dolgu uygulamasıdır. 30 yaş sonrası; yüz
+        ovalinde belirsizlik, yanaklarda hacim kaybı, çene hattında gevşeme ve nazolabial /
+        marionette oluklarında belirginleşme yaşayan, genel sağlık durumu uygun erişkinler
+        için idealdir. Gebelik ve emzirme döneminde uygulanmaz; aktif enfeksiyon,
+        uygulama bölgesinde cilt hastalığı veya bileşenlere karşı bilinen aşırı duyarlılık
+        varlığında uygun değildir.
         </p>
         
         <h2 class="text-2xl font-bold text-primary mt-12 mb-6">
@@ -58,14 +92,13 @@ const description = "Yenilikçi cilt sıkılaştırma ve gençleştirme tedavisi
         </h2>
         
         <p class="mb-6 leading-relaxed">
-          HarmonyCA işlemi öncesinde cilt temizlenir ve gerekirse 
-          yerel soğutma jeli uygulanır. Steril koşullarda lazer 
-          ve radiofrekans başlığı cilt yüzeyine uygulanır. 
-          İşlem sırasında hastalar hafif bir sıcaklık hissi 
-          yaşayabilirler. İşlem 45-60 dakika sürer. 
-          Hastalar işlem sonrası hemen günlük yaşamlarına 
-          dönebilirler. Ciltte hafif kızarıklık görülebilir 
-          ancak bu genellikle 1-2 saat içinde geçer.
+           İşlem öncesi bölge temizlenir ve gerekirse lokal anestezik krem uygulanır.
+        Ürün, <strong>kanül veya ince iğne</strong> ile planlanan alanlara derin
+        dermal/subdermal düzeye enjekte edilir. HarmonyCA’nın içeriğindeki
+        <strong>lidokain</strong> konforu artırır. Seans ortalama
+        <strong>30–45 dakika</strong> sürer ve çoğu kişi işlem sonrası
+        günlük yaşamına dönebilir. Uygulama alanında hafif şişlik/hassasiyet
+        görülebilir; genellikle <strong>2–3 gün</strong> içinde geriler.
         </p>
         
         <h2 class="text-2xl font-bold text-primary mt-12 mb-6">
@@ -94,14 +127,9 @@ const description = "Yenilikçi cilt sıkılaştırma ve gençleştirme tedavisi
               HarmonyCA ağrılı bir işlem midir?
             </h3>
             <p class="leading-relaxed">
-              HarmonyCA işlemi genellikle hafif sıcaklık 
-              hissi yaratır. Çoğu hasta bu hissi tolere 
-              edebilir. Hassas ciltli bireylerde daha 
-              fazla rahatsızlık hissedilebilir. 
-              Soğutma sistemleri ile konfor artırılabilir. 
-              İşlem sırasında sürekli olarak 
-              hasta ile iletişim halinde 
-              kalınır.
+             İşlem çoğunlukla iyi tolere edilir. Ürün <strong>lidokain</strong> içerir; ayrıca
+            işlem öncesi lokal anestezik krem uygulanabilir.
+
             </p>
           </div>
           
@@ -110,12 +138,10 @@ const description = "Yenilikçi cilt sıkılaştırma ve gençleştirme tedavisi
               HarmonyCA etkisi ne zaman görülür?
             </h3>
             <p class="leading-relaxed">
-              Ciltteki sıkılaşma etkisi genellikle işlem 
-              sonrası 2-3 hafta içinde görülmeye başlanır. 
-              Ancak maksimum etki 2-3 ay içinde ortaya çıkar. 
-              Kolajen yenilenmesi süreci devam ettiği için 
-              etki 3-6 ay boyunca gelişmeye devam eder. 
-              Düzenli uygulamalar ile etki daha kalıcı olur.
+              <strong>HA</strong> sayesinde <strong>anında</strong> tazelik ve lifting hissi
+            oluşur. <strong>CaHA</strong> ile kolajen üretimi <strong>haftalar içinde</strong>
+            başlar; <strong>2–3 ay</strong>da cilt kalitesindeki artış daha belirginleşir.
+            Kolajen oluşumu <strong>yaklaşık 12 aya kadar</strong> devam edebilir.
             </p>
           </div>
           
@@ -124,13 +150,9 @@ const description = "Yenilikçi cilt sıkılaştırma ve gençleştirme tedavisi
               HarmonyCA kaç seans yapılır?
             </h3>
             <p class="leading-relaxed">
-              Optimal sonuçlar için genellikle 3-4 haftada 
-              bir olmak üzere 4-6 seans önerilir. Cilt 
-              durumuna ve tedavi hedeflerine göre hekim 
-              tarafından bireysel planlama yapılır. İlk 
-              seans sonrası ciltte belirgin bir iyileşme 
-              görülür, ancak seri uygulamalar ile etki 
-              daha kalıcı hale gelir.
+             Çoğu hasta için <strong>tek seans</strong> yeterlidir. Hedefe ve doku yanıtına
+            göre <strong>4–6 hafta</strong> sonra kontrol planlanabilir; gerekirse ek
+            dokunuş yapılabilir.
             </p>
           </div>
           

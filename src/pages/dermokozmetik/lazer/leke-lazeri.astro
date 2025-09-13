@@ -1,9 +1,46 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import BreadcrumbSchema from '../../../components/BreadcrumbSchema.astro';
+import FaqSchema from '../../../components/FaqSchema.astro';
 
 const title = "Fotona Lazer ile Leke Tedavileri - Uzm. Dr. Umut Mert Yıldırım";
 const description = "Cilt lekelerinin giderilmesi için uygulanan Fotona lazer leke tedavisi hakkında detaylı bilgi, uygulama süreci ve sıkça sorulan sorular.";
+
+// SSS için soru-cevaplar
+const faqQuestions = [
+  {
+    question: "Fotona lazer kırışıklık tedavisi nedir ve nasıl çalışır?",
+    answer: "Fotona lazer kırışıklık tedavisi, cilt yüzeyindeki ince çizgiler ve kırışıklıkların giderilmesi amacıyla uygulanan ileri teknoloji lazer uygulamasıdır. Fraksaiyonel ve non-ablatif lazer teknolojisi sayesinde ciltte yeni kolajen sentezi uyarılır, elastikiyet kazanılır ve kırışıklıklar azaltılır. Bu işlem sayesinde cilt daha sıkı, dolgun ve genç bir görünüme kavuşur. Özellikle alın, yanak ve göz çevresi kırışıklıkları için etkili sonuçlar verir."
+  },
+  {
+    question: "Fotona lazer kırışıklık tedavisi kimler için uygundur?",
+    answer: "Fotona lazer kırışıklık tedavisi, kollajen üretimini uyaran özel dalga boylarının cilt yüzeyine uygulanmasıyla gerçekleştirilen non-invaziv bir işlemdir. 25 yaşını geçmiş, genel sağlık durumu iyi olan ve cildinde ince çizgiler veya kırışıklıklar görülen her yetişkin birey için uygundur. Özellikle erken yaşlanma belirtileri, cilt gevşekliği ve elastikiyet kaybı ile uğraşan bireylerde tercih edilir. Hamilelik veya emzirme döneminde olan kadınlar için uygun değildir."
+  },
+  {
+    question: "Fotona lazer kırışıklık tedavisi ağrılı bir işlem midir?",
+    answer: "İşlem öncesi lokal anestezik krem uygulanabilir. Lazer ışını ciltte hafif bir batma veya sıcaklık hissi yaratabilir. Çoğu hasta bu hissi tolere edebilir. Hassas ciltli bireylerde daha fazla rahatsızlık hissedilebilir. Soğutma sistemleri ile konfor artırılabilir."
+  },
+  {
+    question: "Fotona lazer kırışıklık tedavisi etkisi ne zaman görülür?",
+    answer: "Ciltteki sıkılaşma ve dolgunluk etkisi genellikle işlem sonrası 2-3 hafta içinde görülmeye başlanır. Ancak maksimum etki 2-3 ay içinde ortaya çıkar. Kolajen yenilenmesi süreci devam ettiği için etki 3-6 ay boyunca gelişmeye devam eder. Düzenli uygulamalar ile etki daha kalıcı olur."
+  },
+  {
+    question: "Fotona lazer kırışıklık tedavisi kaç seans yapılır?",
+    answer: "Optimal sonuçlar için genellikle 4-6 haftada bir olmak üzere 3-5 seans önerilir. Cilt durumuna ve kırışıklık derinliğine göre hekim tarafından bireysel planlama yapılır. İlk seans sonrası ciltte belirgin bir iyileşme görülür, ancak seri uygulamalar ile etki daha kalıcı hale gelir."
+  },
+  {
+    question: "Fotona lazer kırışıklık tedavisi sonrası ne zaman makyaj yapabilirim?",
+    answer: "İşlem sonrası ilk 48 saat içinde makyaj yapılması önerilmez. 48 saat sonra normal makyaj yapabilirsiniz. Ancak ilk 1 hafta boyunca hafif, doğal tonlarda makyaj tercih edilmelidir. Göz ve dudak makyajı yapılabilir."
+  },
+  {
+    question: "Fotona lazer kırışıklık tedavisi diğer işlemlerle birlikte uygulanabilir mi?",
+    answer: "Evet, Fotona lazer kırışıklık tedavisi diğer cilt bakım uygulamalarıyla birlikte uygulanabilir. Özellikle botoks, dolgu, mezoterapi ve diğer lazer tedavileriyle kombine edilebilir. Ancak uygulama sırası ve zamanlaması hekim tarafından planlanmalıdır."
+  },
+  {
+    question: "Fotona lazer kırışıklık tedavisi tedavi süresi ne kadardır?",
+    answer: "Fotona lazer kırışıklık tedavisi işlemi genellikle 45-60 dakika sürer. Uygulama alanına göre işlem süresi değişebilir. Hastalar işlem sonrası hemen günlük yaşamlarına dönebilirler. Ancak işlem yapılan bölgede hafif kızarıklık ve şişlik görülebilir, bu belirtiler genellikle 1-2 saat içinde geçer."
+  }
+];
 ---
 
 <BaseLayout title={title} description={description}>
@@ -17,6 +54,8 @@ const description = "Cilt lekelerinin giderilmesi için uygulanan Fotona lazer l
     ]}
   />
 
+    <FaqSchema questions={faqQuestions} />
+    
   <main id="main-content" class="container mx-auto px-4 py-12">
     <div class="max-w-4xl mx-auto">
       <h1 class="text-4xl font-bold text-primary mb-8">
@@ -25,14 +64,12 @@ const description = "Cilt lekelerinin giderilmesi için uygulanan Fotona lazer l
       
       <div class="prose prose-lg text-text-primary max-w-none">
         <p class="mb-8 leading-relaxed">
-          Fotona lazer leke tedavisi, cilt yüzeyindeki hiperpigmentasyon lekelerinin 
+          Fotona lazer ile leke tedavisi, cilt yüzeyindeki kahverengi lekelerin 
           giderilmesi amacıyla uygulanan ileri teknoloji lazer uygulamasıdır. 
-          Güneş lekeleri, yaş lekeleri, melazma ve diğer pigmentasyon bozuklukları 
+          Güneş lekeleri, yaşlılık lekeleri, melazma ve diğer pigmentasyon bozuklukları 
           için etkili bir tedavi seçeneğidir. 1064 nm ve 532 nm dalga boylarına 
-          sahip bu lazer sistemi, leke yapıcı hücreleri hedef alarak leke 
-          yapısını bozar ve cilt daha eşit bir ton kazanır. Bu işlem 
-          sayesinde ciltteki estetik sorunlar giderilir ve daha 
-          homojen bir görünüm elde edilir.
+          sahip bu lazer sistemi, leke moleküllerini hedef alarak leke 
+          yapısını bozar ve cilt daha eşit bir ton kazanır.
         </p>
         
         <h2 class="text-2xl font-bold text-primary mt-12 mb-6">
@@ -40,11 +77,11 @@ const description = "Cilt lekelerinin giderilmesi için uygulanan Fotona lazer l
         </h2>
         
         <p class="mb-6 leading-relaxed">
-          Fotona lazer leke tedavisi, pigment yapıcı hücreleri etkileyen 
-          özel dalga boylarının cilt yüzeyine uygulanmasıyla gerçekleştirilen 
+          Fotona lazer leke tedavisi, kahverengi pigment moleküllerini etkileyen 
+          özel dalga boyuna sahip lazer ışınlarının cilt yüzeyine uygulanmasıyla gerçekleştirilen 
           non-invaziv bir işlemdir. 18 yaşını tamamlamış, genel sağlık 
           durumu iyi olan ve cilt lekeleri ile uğraşan her yetişkin 
-          birey için uygundur. Özellikle güneş lekeleri, yaş lekeleri, 
+          birey için uygundur. Özellikle güneş lekeleri, yaşlılık lekeleri, 
           melazma ve post-inflamatuar hiperpigmentasyon ile uğraşan 
           bireylerde tercih edilir. Hamilelik veya emzirme döneminde 
           olan kadınlar için uygun değildir.
@@ -56,7 +93,7 @@ const description = "Cilt lekelerinin giderilmesi için uygulanan Fotona lazer l
         
         <p class="mb-6 leading-relaxed">
           Fotona lazer leke tedavisi işlemi öncesinde cilt temizlenir 
-          ve gerekirse yerel anestezik krem uygulanır. Lazer işlemi 
+          ve gerekirse lokal anestezik krem uygulanır. Lazer işlemi 
           sırasında hastalar koruyucu gözlük takarlar. Steril 
           koşullarda lazer başlığı cilt yüzeyine uygulanır ve 
           leke bölgeleri hedef alınır. İşlem 30-60 dakika sürer. 
@@ -91,7 +128,7 @@ const description = "Cilt lekelerinin giderilmesi için uygulanan Fotona lazer l
             </h3>
             <p class="leading-relaxed">
               İşlem öncesi lokal anestezik krem uygulanabilir. 
-              Lazer ışını ciltte hafif bir battı veya sıcaklık 
+              Lazer ışını ciltte hafif bir batma veya sıcaklık 
               hissi yaratabilir. Çoğu hasta bu hissi tolere 
               edebilir. Hassas ciltli bireylerde daha fazla 
               rahatsızlık hissedilebilir. Soğutma sistemleri 
@@ -118,8 +155,8 @@ const description = "Cilt lekelerinin giderilmesi için uygulanan Fotona lazer l
               Fotona lazer leke tedavisi kaç seans yapılır?
             </h3>
             <p class="leading-relaxed">
-              Optimal sonuçlar için genellikle 3-4 haftada 
-              bir olmak üzere 3-5 seans önerilir. Lekelerin 
+              Optimal sonuçlar için genellikle 2-4 haftada 
+              bir olmak üzere 4-15 seans önerilir. Lekelerin 
               tipine ve derinliğine göre hekim tarafından 
               bireysel planlama yapılır. Melazma gibi dirençli 
               lekelerde daha fazla seans gerekebilir.
@@ -136,7 +173,7 @@ const description = "Cilt lekelerinin giderilmesi için uygulanan Fotona lazer l
               tekrar oluşmasına neden olabilir. Günlük 
               SPF 50+ koruyucu kullanmak, tedavi sonuçlarının 
               kalıcılığı için çok önemlidir. Özellikle yaz 
-              aylarında ekstra dikkat gösterilmelidir.
+              aylarında ekstra dikkat edilmelidir.
             </p>
           </div>
         </div>

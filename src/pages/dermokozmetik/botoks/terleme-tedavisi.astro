@@ -1,9 +1,46 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import BreadcrumbSchema from '../../../components/BreadcrumbSchema.astro';
+import FaqSchema from '../../../components/FaqSchema.astro';
 
 const title = "Terleme Tedavisi (Botoks) - Uzm. Dr. Umut Mert Yıldırım";
 const description = "Aşırı terleme (hiperhidroz) sorunları için uygulanan botoks terleme tedavisi hakkında detaylı bilgi, uygulama süreci ve sıkça sorulan sorular.";
+
+// SSS için soru-cevaplar
+const faqQuestions = [
+  {
+    question: "Botoks terleme tedavisi nedir ve nasıl çalışır?",
+    answer: "Botoks terleme tedavisi, özellikle koltuk altı, el ve ayak bölgelerindeki aşırı terlemeyi (hiperhidroz) tedavi etmek amacıyla uygulanan etkili bir işlemdir. Bu durum günlük yaşamı ciddi şekilde etkileyebilir, sosyal ilişkilerde sıkıntılar yaratabilir ve psikolojik yük oluşturabilir. Botoks uygulaması ile ter bezlerinin aktivitesi geçici olarak engellenerek terleme miktarı büyük oranda azaltılır. Bu işlem sayesinde hastalar normal sosyal yaşamlarına dönebilir ve yaşam kalitelerini artırabilirler."
+  },
+  {
+    question: "Botoks terleme tedavisi kimler için uygundur?",
+    answer: "Botoks terleme tedavisi, botulinum toksin tip A'nın ter bezlerine çok küçük dozların enjekte edilmesiyle uygulanan minimal invaziv bir işlemdir. 18 yaşını tamamlamış, genel sağlık durumu iyi olan ve primer hiperhidroz problemi yaşayan her yetişkin birey için uygundur. Özellikle koltuk altı terlemesi, el terlemesi ve ayak terlemesi ile uğraşan bireylerde tercih edilir. Hamilelik veya emzirme döneminde olan kadınlar için uygun değildir."
+  },
+  {
+    question: "Botoks terleme tedavisi ağrılı bir işlem midir?",
+    answer: "Botoks terleme tedavisinde iğne sayısı daha fazla olduğu için hastalar diğer tedavileri kıyasla daha fazla rahatsızlık hissedebilirler. İşlem öncesi lokal anestezik krem uygulanarak ağrı büyük oranda azaltılabilir. Çoğu hasta işlem sırasında hafif bir battı ve yanma hissi yaşarlar. İşlem kısa sürede tamamlandığı için genellikle kolayca tolere edilir."
+  },
+  {
+    question: "Botoks terleme tedavisinin etkisi ne kadar sürer?",
+    answer: "Botoks etkisi genellikle 4-6 ay sürer. Ter bezlerinin yenilenme süresine ve bireysel faktörlere bağlı olarak bu süre kişiden kişiye değişebilir. Ortalama olarak 6-8 ayda bir tekrar uygulama gerekebilir. Etkinin uzun sürmesi için sağlıklı yaşam tarzı benimsenmelidir."
+  },
+  {
+    question: "Botoks terleme tedavisi vücudumun terlemesini tamamen durdurur mu?",
+    answer: "Hayır, botoks sadece uygulanan bölgeyi etkiler. Vücudun diğer bölgeleri normal şekilde terlemeye devam eder. Vücudun termal dengesini bozmaz. Sadece hedef alınan bölgede terleme büyük oranda azalır veya durur."
+  },
+  {
+    question: "Botoks terleme tedavisinden sonra ne zaman sonuçlar görülebilir?",
+    answer: "Botoks etkisi genellikle 2-4 gün içinde başlar. Maksimum etki 1-2 hafta içinde görülür. Hastalar terlemenin azaldığını hissetmeye başlarlar. Koltuk altı terlemesinde %80-90 azalma sağlanabilir. El ve ayak terlemesinde de belirgin düzelme görülür."
+  },
+  {
+    question: "Botoks terleme tedavisi sonrası ne zaman makyaj yapabilirim?",
+    answer: "İşlem sonrası ilk 24 saat içinde makyaj yapılması önerilmez. 24 saat sonra normal makyaj yapabilirsiniz. Ancak ilk birkaç gün boyunca hafif, doğal tonlarda makyaj tercih edilmelidir. Göz ve dudak makyajı yapılabilir."
+  },
+  {
+    question: "Botoks terleme tedavisi diğer işlemlerle birlikte uygulanabilir mi?",
+    answer: "Evet, botoks terleme tedavisi diğer cilt bakım uygulamalarıyla birlikte uygulanabilir. Özellikle lazer tedavileri, mezoterapi ve diğer botoks uygulamalarıyla kombine edilebilir. Ancak uygulama sırası ve zamanlaması hekim tarafından planlanmalıdır."
+  }
+];
 ---
 
 <BaseLayout title={title} description={description}>
@@ -17,10 +54,12 @@ const description = "Aşırı terleme (hiperhidroz) sorunları için uygulanan b
     ]}
   />
 
+   <FaqSchema questions={faqQuestions} />
+
   <main id="main-content" class="container mx-auto px-4 py-12">
     <div class="max-w-4xl mx-auto">
       <h1 class="text-4xl font-bold text-primary mb-8">
-        Terleme Tedavisi (Botoks)
+        Terleme Tedavisi (Terleme Botoksu)
       </h1>
       
       <div class="prose prose-lg text-text-primary max-w-none">
@@ -54,9 +93,9 @@ const description = "Aşırı terleme (hiperhidroz) sorunları için uygulanan b
         <p class="mb-6 leading-relaxed">
           Botoks terleme tedavisi işlemi öncesinde hastanın şikayetleri detaylı şekilde 
           alınır ve terleme testi yapılır. İşlem öncesi uygulama bölgesine lokal 
-          anestezik krem uygulanabilir çünkü iğne sayısı daha fazladır. Steril 
+          anestezik krem uygulanır. Steril 
           koşullarda ve tek kullanımlık iğnelerle botoks ter bezlerine belirlenen 
-          noktalara enjekte edilir. Koltuk altı uygulaması 15-20 dakika, el ve ayak 
+          noktalardan enjekte edilir. Koltuk altı uygulaması 15-20 dakika, el ve ayak 
           uygulaması 30-45 dakika sürer. Hastalar işlem sonrası hemen günlük 
           yaşamlarına dönebilirler. Etki genellikle 2-4 gün içinde başlar, 
           maksimum etki 2 hafta içinde görülür.
@@ -86,9 +125,9 @@ const description = "Aşırı terleme (hiperhidroz) sorunları için uygulanan b
             </h3>
             <p class="leading-relaxed">
               Botoks terleme tedavisinde iğne sayısı daha fazla olduğu için hastalar 
-              daha fazla rahatsızlık hissedebilirler. İşlem öncesi lokal anestezik 
+              diğer tedavileri kıyasla daha fazla rahatsızlık hissedebilirler. İşlem öncesi lokal anestezik 
               krem uygulanarak ağrı büyük oranda azaltılabilir. Çoğu hasta işlem 
-              sırasında hafif bir battı hissi yaşar. İşlem kısa sürede tamamlandığı 
+              sırasında hafif bir batma ve yanma hissi yaşar. İşlem kısa sürede tamamlandığı 
               için genellikle kolayca tolere edilir.
             </p>
           </div>
@@ -98,10 +137,9 @@ const description = "Aşırı terleme (hiperhidroz) sorunları için uygulanan b
               Botoks terleme tedavisinin etkisi ne kadar sürer?
             </h3>
             <p class="leading-relaxed">
-              Botoks etkisi genellikle 4-12 ay sürer. Ter bezlerinin yenilenme 
+              Botoks etkisi genellikle 4-6 ay sürer. Ter bezlerinin yenilenme 
               süresine ve bireysel faktörlere bağlı olarak bu süre kişiden kişiye 
-              değişebilir. Koltuk altı uygulamalarında etki genellikle 6-8 ay, 
-              el ve ayak uygulamalarında 4-6 ay sürer. Ortalama olarak 6-8 ayda 
+              değişebilir. Ortalama olarak 6-8 ayda 
               bir tekrar uygulama gerekebilir.
             </p>
           </div>

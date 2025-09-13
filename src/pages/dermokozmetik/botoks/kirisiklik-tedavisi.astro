@@ -1,9 +1,46 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import BreadcrumbSchema from '../../../components/BreadcrumbSchema.astro';
+import FaqSchema from '../../../components/FaqSchema.astro';
 
 const title = "Kırışıklık Tedavisi (Botoks) - Uzm. Dr. Umut Mert Yıldırım";
 const description = "Yüz kırışıklıklarının giderilmesi için uygulanan botoks kırışıklık tedavisi hakkında detaylı bilgi, uygulama süreci ve sıkça sorulan sorular.";
+
+// SSS için soru-cevaplar
+const faqQuestions = [
+  {
+    question: "Botoks kırışıklık tedavisi nedir ve nasıl çalışır?",
+    answer: "Botoks kırışıklık tedavisi, yüz kaslarının kasılmasıyla oluşan dinamik kırışıklıkların giderilmesi amacıyla uygulanan estetik bir işlemdir. Alın, kaş arası ve göz çevresi gibi bölgelerde oluşan kırışıklıklar botoks enjeksiyonları ile geçici olarak düzleştirilebilir. Bu işlem sayesinde daha genç ve dinç bir görünüme kavuşulabilir. Botoks, FDA onaylı güvenli bir uygulamadır ve dünya çapında başarıyla uygulanmaktadır."
+  },
+  {
+    question: "Botoks kırışıklık tedavisi kimler için uygundur?",
+    answer: "Botoks kırışıklık tedavisi, botulinum toksin tip A'nın çok küçük dozların cilt altına enjekte edilmesiyle uygulanan minimal invaziv bir işlemdir. 18 yaşını tamamlamış, genel sağlık durumu iyi olan ve yüzünde dinamik kırışıklıklar olan her yetişkin birey için uygundur. Özellikle alın kırışıkları, kaş arası çizgiler ve göz çevresi kırışıkları için etkili sonuçlar verir. Hamilelik veya emzirme döneminde olan kadınlar için uygun değildir."
+  },
+  {
+    question: "Botoks kırışıklık tedavisi ağrılı bir işlem midir?",
+    answer: "Botoks enjeksiyonları çok ince iğnelerle yapıldığı için hastalar minimal düzeyde rahatsızlık hissederler. Çoğu hasta işlem sırasında hafif bir battı hissi yaşarlar. Dolgu maddesinin içinde de lokal anestezik bulunması ağrıyı daha da azaltır. İşlem kısa sürede tamamlandığı için genellikle kolayca tolere edilir."
+  },
+  {
+    question: "Botoks kırışıklık tedavisinin etkisi ne kadar sürer?",
+    answer: "Botoks etkisi genellikle 3-4 ay sürer. Kas aktivitesine bağlı olarak bu süre kişiden kişiye değişebilir. Düzenli uygulamalar ile etki süresi uzatılabilir. Ortalama olarak 4-6 ayda bir tekrar uygulama gerekebilir. Etkinin uzun sürmesi için sağlıklı yaşam tarzı benimsenmelidir."
+  },
+  {
+    question: "Botoks yüzümü felç eder mi?",
+    answer: "Hayır, botoks yüz felci yapmaz. Doğru dozda ve doğru noktalara uygulandığında sadece hedef alınan kasların aktivitesini geçici olarak azaltır. Yüz ifadesi doğal kalır, sadece kırışıklıklar azalır. Uzman hekimler tarafından uygulandığında çok güvenli bir işlemdir."
+  },
+  {
+    question: "Botoks kırışıklık tedavisinden sonra ne zaman sonuçlar görülebilir?",
+    answer: "Botoks etkisi genellikle 3-7 gün içinde başlar. Maksimum etki 2 hafta içinde görülür. İlk uygulamada etki biraz geç başlayabilir, ancak düzenli uygulamalarla etki süresi uzar ve sonuçlar daha hızlı görünür hale gelir."
+  },
+  {
+    question: "Botoks kırışıklık tedavisi sonrası ne zaman makyaj yapabilirim?",
+    answer: "İşlem sonrası ilk 24 saat içinde makyaj yapılması önerilmez. 24 saat sonra normal makyaj yapabilirsiniz. Ancak ilk birkaç gün boyunca hafif, doğal tonlarda makyaj tercih edilmelidir. Göz ve dudak makyajı yapılabilir."
+  },
+  {
+    question: "Botoks kırışıklık tedavisi diğer işlemlerle birlikte uygulanabilir mi?",
+    answer: "Evet, botoks kırışıklık tedavisi diğer cilt bakım uygulamalarıyla birlikte uygulanabilir. Özellikle lazer tedavileri, mezoterapi ve diğer dolgu uygulamalarıyla kombine edilebilir. Ancak uygulama sırası ve zamanlaması hekim tarafından planlanmalıdır."
+  }
+];
 ---
 
 <BaseLayout title={title} description={description}>
@@ -17,6 +54,8 @@ const description = "Yüz kırışıklıklarının giderilmesi için uygulanan b
     ]}
   />
 
+   <FaqSchema questions={faqQuestions} />
+
   <main id="main-content" class="container mx-auto px-4 py-12">
     <div class="max-w-4xl mx-auto">
       <h1 class="text-4xl font-bold text-primary mb-8">
@@ -29,7 +68,7 @@ const description = "Yüz kırışıklıklarının giderilmesi için uygulanan b
           giderilmesi amacıyla uygulanan estetik bir işlemdir. Alın, kaş arası ve göz çevresi 
           gibi bölgelerde oluşan kırışıklıklar botoks enjeksiyonları ile geçici olarak 
           düzleştirilebilir. Bu işlem sayesinde daha genç ve dinç bir görünüme kavuşulabilir. 
-          Botoks, FDA onaylı güvenli bir uygulamadır ve dünya çapında milyonlarca kez 
+          Botoks, FDA onaylı güvenli bir uygulamadır ve dünya çapında 
           başarıyla uygulanmaktadır.
         </p>
         
@@ -83,7 +122,7 @@ const description = "Yüz kırışıklıklarının giderilmesi için uygulanan b
             <p class="leading-relaxed">
               Botoks enjeksiyonları çok ince iğnelerle yapıldığı için hastalar minimal 
               düzeyde rahatsızlık hissederler. Çoğu hasta işlem sırasında hafif bir 
-              battı hissi yaşar. İşlem çok kısa sürdüğü için genellikle kolayca tolere edilir.
+              batma hissi yaşar. İşlem kısa sürdüğü için genellikle kolayca tolere edilir.
             </p>
           </div>
           

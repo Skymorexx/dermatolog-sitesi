@@ -1,9 +1,46 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import BreadcrumbSchema from '../../../components/BreadcrumbSchema.astro';
+import FaqSchema from '../../../components/FaqSchema.astro';
 
 const title = "Dudak Dolgusu - Uzm. Dr. Umut Mert Yıldırım";
 const description = "Dudaklara hacim kazandırma ve şekillendirme için uygulanan dudak dolgusu işlemi hakkında detaylı bilgi, uygulama süreci ve sıkça sorulan sorular.";
+
+// SSS için soru-cevaplar
+const faqQuestions = [
+  {
+        question: "Dudak dolgusu nedir ve nasıl çalışır?",
+        answer: "Dudak dolgusu, hyaluronik asit bazlı dolgu maddeleri kullanılarak dudaklara hacim kazandırılması ve şekillendirilmesi amacıyla uygulanan estetik bir işlemdir. Doğal bir görünüm elde etmek için dudakların konturları ve iç kısımları belirlenen miktarlarda doldurularak istenen estetik hedefe ulaşılır. Bu işlem sayesinde yaşlanma sonucu hacmini kaybetmiş dudaklar gençleştirilir veya doğuştan ince dudaklara hacim kazandırılır."
+      },
+      {
+        question: "Dudak dolgusu kimler için uygundur?",
+        answer: "Dudak dolgusu, hyaluronik asit içerikli dolgu maddelerinin steril koşullarda ve lokal anestezi altında dudak bölgesine enjekte edilmesiyle uygulanan minimal invaziv bir işlemdir. 18 yaşını tamamlamış, genel sağlık durumu iyi olan ve dudaklarında estetik iyileşme isteyen her yetişkin birey için uygundur. Özellikle yaşlanma sonucu hacmini kaybetmiş, doğuştan ince veya asimetrik dudaklara hacim kazandırılması için tercih edilir. Hamilelik veya emzirme döneminde olan kadınlar için uygun değildir."
+      },
+      {
+        question: "Dudak dolgusu ağrılı bir işlem midir?",
+        answer: "İşlem öncesi lokal anestezik krem uygulandığı için hastalar işlem sırasında herhangi bir ağrı hissetmezler. Anestezi enjeksiyonu sırasında hafif bir battı hissi olabilir. İşlem süresi biraz uzun olabilir ancak genellikle kolayca tolere edilir. Hassas ciltli bireylerde daha fazla rahatsızlık hissedilebilir."
+      },
+      {
+        question: "Dudak dolgusunun etkisi ne kadar sürer?",
+        answer: "Hyaluronik asit bazlı dolgu maddeleri vücut tarafından doğal olarak yıkıldığı için etkisi 6-18 ay arasında sürer. Ortalama süre 12 aydır. Etkinin uzun sürmesi için sağlıklı yaşam tarzı benimsenmelidir. Düzenli uygulamalar ile etki daha kalıcı olur."
+      },
+      {
+        question: "Dudak dolgusu kalıcı mıdır?",
+        answer: "Hayır, dudak dolgusu kalıcı değildir. Hyaluronik asit vücut tarafından zamanla parçalandığı için etkisi kaybolur. Kalıcılık istenirse cerrahi yöntemler tercih edilmelidir. Ancak hyaluronik asit bazlı dolguların avantajı geri alınabilir olmalarıdır."
+      },
+      {
+        question: "Dudak dolgusundan memnun kalmazsam ne olur?",
+        answer: "Hyaluronik asit bazlı dolgulara özel olarak uygulanabilen hyaluronidaz enzimi ile dolgu maddesi vücuttan hızlıca uzaklaştırılabilir. Bu nedenle işlem geri alınabilir niteliktedir. Memnuniyetsizlik durumunda hekiminize başvurmanız yeterlidir."
+      },
+      {
+        question: "Dudak dolgusu sonrası ne zaman makyaj yapabilirim?",
+        answer: "İşlem sonrası ilk 24 saat içinde makyaj yapılması önerilmez. 24 saat sonra normal makyaj yapabilirsiniz. Ancak ilk birkaç gün boyunca hafif, doğal tonlarda makyaj tercih edilmelidir. Göz ve dudak makyajı yapılabilir."
+      },
+      {
+        question: "Dudak dolgusu diğer işlemlerle birlikte uygulanabilir mi?",
+        answer: "Evet, dudak dolgusu diğer cilt bakım uygulamalarıyla birlikte uygulanabilir. Özellikle lazer tedavileri, mezoterapi ve diğer dolgu uygulamalarıyla kombine edilebilir. Ancak uygulama sırası ve zamanlaması hekim tarafından planlanmalıdır."
+      }
+    ];
 ---
 
 <BaseLayout title={title} description={description}>
@@ -16,6 +53,8 @@ const description = "Dudaklara hacim kazandırma ve şekillendirme için uygulan
       { name: "Dudak Dolgusu", url: "/dermokozmetik/dolgu/dudak-dolgusu/" }
     ]}
   />
+
+    <FaqSchema questions={faqQuestions} />
 
   <main id="main-content" class="container mx-auto px-4 py-12">
     <div class="max-w-4xl mx-auto">

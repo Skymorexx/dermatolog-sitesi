@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import IslemKarti from '../../components/IslemKarti.astro';
+import BreadcrumbSchema from '../../components/BreadcrumbSchema.astro';
 // Resim importları
 import KategoriMalign from '../../assets/images/kanser/malign-melanom.jpg';
 import KategoriBazal from '../../assets/images/kanser/bazal-hucreli.jpg';
@@ -13,6 +14,13 @@ const description = "Malign melanom, bazal hücreli karsinom ve skuamöz hücrel
 
 <BaseLayout title={title} description={description}>
   
+  <BreadcrumbSchema 
+    links={[
+      { name: "Ana Sayfa", url: "/" },
+      { name: "Deri Kanserleri", url: "/deri-kanserleri/" },
+    ]}
+  />
+
   <main id="main-content" class="container mx-auto px-4 py-16">
     <div class="max-w-4xl mx-auto mb-12 text-center">
       <h1 class="text-4xl font-bold text-primary mb-6">

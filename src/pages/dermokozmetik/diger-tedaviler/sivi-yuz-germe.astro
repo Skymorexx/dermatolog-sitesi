@@ -1,9 +1,46 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import BreadcrumbSchema from '../../../components/BreadcrumbSchema.astro';
+import FaqSchema from '../../../components/FaqSchema.astro';
 
 const title = "Sıvı Yüz Germe (PLLA) - Uzm. Dr. Umut Mert Yıldırım";
 const description = "Doğal kolajen üretimini uyaran sıvı yüz germe (PLLA) tedavisi hakkında detaylı bilgi, uygulama süreci ve sıkça sorulan sorular.";
+
+// SSS için soru-cevaplar
+const faqQuestions = [
+  {
+    question: "Sıvı yüz germe (PLLA) nedir ve nasıl çalışır?",
+    answer: "Sıvı yüz germe, yüze poli-L-laktik asit (PLLA) içeren özel bir molekül enjekte edilmesiyle yüz konturlarını yeniden tanımlamak ve ciltte sıkılaşma sağlamak için kullanılır. Bu işlem hyaluronik asit bazlı dolguların aksine anında hacim kazandırmaz, bunun yerine doğal kolajen üretimini uyararak zamanla cilt sıkılaşması ve yüz germe etkisi sağlar. Bu nedenle 'sıvı yüz germe' olarak bilinir. Özellikle yanaklarda çöküklük, çene hattında gevşeklik ve genel yüz kontur düşüklüğü için etkilidir."
+  },
+  {
+    question: "Sıvı yüz germe (PLLA) kimler için uygundur?",
+    answer: "Sıvı yüz germe, poli-L-laktik asit maddesinin cilt altına enjekte edilmesiyle uygulanan minimal invaziv bir işlemdir. 30 yaşını geçmiş, genel sağlık durumu iyi olan ve cildinde yaşlanma belirtileri görülen her yetişkin birey için uygundur. Özellikle yüz konturlarında düşüş, yanaklarda çöküklük, çene hattında gevşeklik ve genel cilt matlığı ile uğraşan bireylerde tercih edilir. Hamilelik veya emzirme döneminde olan kadınlar için uygun değildir."
+  },
+  {
+    question: "Sıvı yüz germe ağrılı bir işlem midir?",
+    answer: "İşlem öncesi lokal anestezik krem uygulanabilir. Hastalar hafif bir batma hissi yaşayabilirler. PLLA formülasyonunun içinde lokal anestezik bulunduğu için ağrı büyük oranda azaltılır. İşlem genellikle kolayca tolere edilir. Hassas ciltli bireylerde daha fazla rahatsızlık hissedilebilir."
+  },
+  {
+    question: "Sıvı yüz germe etkisi ne zaman görülür?",
+    answer: "Sıvı yüz germe etkisi genellikle 4-6 hafta sonra görülmeye başlanır. Ancak maksimum etki 3-4 ay içinde ortaya çıkar. Kolajen üretim süreci devam ettiği için etki 6-8 ay boyunca gelişmeye devam eder. Düzenli uygulamalar ile etki daha kalıcı olur."
+  },
+  {
+    question: "Sıvı yüz germe kaç seans yapılır?",
+    answer: "Optimal sonuçlar için genellikle 4-6 haftada bir olmak üzere 2-4 seans önerilir. Cilt durumuna ve tedavi hedeflerine göre hekim tarafından bireysel planlama yapılır. İlk seans sonrası ciltte belirgin bir iyileşme görülür, ancak seri uygulamalar ile etki daha kalıcı hale gelir."
+  },
+  {
+    question: "Sıvı yüz germe kalıcı mıdır?",
+    answer: "Hayır, sıvı yüz germe kalıcı değildir. PLLA maddesi vücut tarafından 18-24 ay içinde doğal olarak parçalanır ve emilir. Ancak bu süreçte kolajen üretimini uyarması sayesinde uzun süreli sonuçlar elde edilir. Etki kaybolduğunda tekrar uygulama yapılabilir."
+  },
+  {
+    question: "Sıvı yüz germe sonrası ne zaman makyaj yapabilirim?",
+    answer: "İşlem sonrası ilk 24 saat içinde makyaj yapılması önerilmez. 24 saat sonra normal makyaj yapabilirsiniz. Ancak ilk birkaç gün boyunca hafif, doğal tonlarda makyaj tercih edilmelidir. Göz ve dudak makyajı yapılabilir."
+  },
+  {
+    question: "Sıvı yüz germe diğer işlemlerle birlikte uygulanabilir mi?",
+    answer: "Evet, sıvı yüz germe diğer cilt bakım uygulamalarıyla birlikte uygulanabilir. Özellikle lazer tedavileri, mezoterapi ve diğer dolgu uygulamalarıyla kombine edilebilir. Ancak uygulama sırası ve zamanlaması hekim tarafından planlanmalıdır."
+  }
+];
 ---
 
 <BaseLayout title={title} description={description}>
@@ -17,6 +54,8 @@ const description = "Doğal kolajen üretimini uyaran sıvı yüz germe (PLLA) t
     ]}
   />
 
+    <FaqSchema questions={faqQuestions} />
+    
   <main id="main-content" class="container mx-auto px-4 py-12">
     <div class="max-w-4xl mx-auto">
       <h1 class="text-4xl font-bold text-primary mb-8">
@@ -25,9 +64,9 @@ const description = "Doğal kolajen üretimini uyaran sıvı yüz germe (PLLA) t
       
       <div class="prose prose-lg text-text-primary max-w-none">
         <p class="mb-8 leading-relaxed">
-          Sıvı yüz germe, poli-L-laktik asit (PLLA) içeren enjeksiyonel 
-          bir tedavidir ve yüz konturlarını yeniden tanımlamak, 
-          cilt sıkılaştırması sağlamak için kullanılır. Bu işlem 
+          Sıvı yüz germe, yüze poli-L-laktik asit (PLLA) içeren özel bir molekül 
+          enjekte edilmesiyle yüz konturlarını yeniden tanımlamak ve 
+          ciltte sıkılaşma sağlamak için kullanılır. Bu işlem 
           hyaluronik asit bazlı dolguların aksine anında hacim 
           kazandırmaz, bunun yerine doğal kolajen üretimini 
           uyararak zamanla cilt sıkılaşması ve yüz 
@@ -112,14 +151,12 @@ const description = "Doğal kolajen üretimini uyaran sıvı yüz germe (PLLA) t
             </h3>
             <p class="leading-relaxed">
               İşlem öncesi lokal anestezik krem 
-              uygulanabilir. İğneler orta 
-              kalınlıkta olduğu için hastalar 
-              hafif bir battı hissi yaşayabilirler. 
+              uygulanabilir. Hastalar 
+              hafif bir batma hissi yaşayabilirler. 
               PLLA formülasyonunun içinde 
               lokal anestezik bulunduğu için 
               ağrı büyük oranda azaltılır. 
-              İşlem süresi biraz uzun 
-              olabilir ancak genellikle 
+              İşlem genellikle 
               kolayca tolere edilir.
             </p>
           </div>
@@ -149,7 +186,7 @@ const description = "Doğal kolajen üretimini uyaran sıvı yüz germe (PLLA) t
             <p class="leading-relaxed">
               Optimal sonuçlar için genellikle 
               4-6 haftada bir olmak üzere 
-              3-4 seans önerilir. Cilt 
+              2-4 seans önerilir. Cilt 
               durumuna ve tedavi 
               hedeflerine göre hekim 
               tarafından bireysel 

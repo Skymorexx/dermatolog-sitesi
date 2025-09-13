@@ -1,9 +1,46 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import BreadcrumbSchema from '../../../components/BreadcrumbSchema.astro';
+import FaqSchema from '../../../components/FaqSchema.astro';
 
 const title = "Fotona Lazer Tedavileri - Uzm. Dr. Umut Mert Yıldırım";
 const description = "Kapsamlı cilt gençleştirme ve yenileme için uygulanan Fotona lazer tedavisi hakkında detaylı bilgi, uygulama süreci ve sıkça sorulan sorular.";
+
+// SSS için soru-cevaplar
+const faqQuestions = [
+  {
+    question: "Fotona lazer tedavisi nedir ve nasıl çalışır?",
+    answer: "Fotona lazer tedavisi, cilt yüzeyindeki çeşitli estetik sorunların giderilmesi amacıyla uygulanan ileri teknoloji lazer sistemidir. 1064 nm ve 532 nm gibi farklı dalga boylarına sahip bu revolutif lazer teknolojisi, ciltteki lekeleri, kırışıklıkları, gözenek genişlemelerini ve damarlanmaları tedavi ederken aynı zamanda cilt yenilenmesini ve sıkılaşmasını sağlar. Fotona, non-ablatif, ablatif ve fraksiyonel lazer teknolojisi sayesinde çok kısa iyileşme süresi ile maksimum sonuç sunar. Bu işlem sayesinde cilt daha parlak, sıkı ve genç bir görünüme kavuşur."
+  },
+  {
+    question: "Fotona lazer tedavisi kimler için uygundur?",
+    answer: "Fotona lazer tedavisi, farklı dalga boylarında çalışan ileri teknoloji lazer sistemlerinin cilt yüzeyine uygulanmasıyla gerçekleştirilen non-invaziv bir işlemdir. 18 yaşını geçmiş, genel sağlık durumu iyi olan ve cildinde yaşlanma belirtileri, lekeler, kırışıklıklar veya genel cilt yorgunluğu görülen her yetişkin birey için uygundur. Özellikle güneş hasarı, cilt matlığı, renk eşitsizlikleri, elastikiyet kaybı ve erken yaşlanma belirtileri ile uğraşan bireylerde tercih edilir. Hamilelik veya emzirme döneminde olan kadınlar için uygun değildir."
+  },
+  {
+    question: "Fotona lazer tedavisi ağrılı bir işlem midir?",
+    answer: "İşlem öncesi lokal anestezik krem uygulanabilir. Lazer ışını ciltte hafif bir batma veya sıcaklık hissi yaratabilir. Çoğu hasta bu hissi tolere edebilir. Hassas ciltli bireylerde daha fazla rahatsızlık hissedilebilir. Soğutma sistemleri ile konfor artırılabilir."
+  },
+  {
+    question: "Fotona lazer tedavisi etkisi ne zaman görülür?",
+    answer: "Ciltteki sıkılaşma ve parlaklık etkisi genellikle işlem sonrası 2-3 hafta içinde görülmeye başlanır. Ancak maksimum etki 2-3 ay içinde ortaya çıkar. Kolajen yenilenmesi süreci devam ettiği için etki 3-6 ay boyunca gelişmeye devam eder. Düzenli uygulamalar ile etki daha kalıcı olur."
+  },
+  {
+    question: "Fotona lazer tedavisi kaç seans yapılır?",
+    answer: "Optimal sonuçlar için genellikle 4-6 haftada bir olmak üzere 3-5 seans önerilir. Cilt durumuna ve tedavi hedeflerine göre hekim tarafından bireysel planlama yapılır. İlk seans sonrası ciltte belirgin bir iyileşme görülür, ancak seri uygulamalar ile etki daha kalıcı hale gelir."
+  },
+  {
+    question: "Fotona lazer tedavisi hangi cilt sorunlarını tedavi eder?",
+    answer: "Fotona çok yönlü bir lazer sistemidir ve çeşitli cilt sorunlarını tedavi edebilir: güneş lekeleri, yaş lekeleri, kırışıklıklar, gözenek genişlemeleri, damarlanmalar, cilt matlığı ve elastikiyet kaybı. Farklı dalga boyları ile kişiselleştirilmiş tedavi planları oluşturulabilir."
+  },
+  {
+    question: "Fotona lazer tedavisi sonrası ne kadar sürede günlük yaşama dönebilirim?",
+    answer: "Hastalar Fotona lazer tedavisi işlemi sonrası hemen günlük yaşamlarına dönebilirler. Ancak işlem yapılan bölgede hafif kızarıklık ve şişlik görülebilir. Bu belirtiler genellikle 1-2 saat içinde geçer. İlk 24 saat içinde makyaj yapılması önerilmez."
+  },
+  {
+    question: "Fotona lazer tedavisi diğer işlemlerle birlikte uygulanabilir mi?",
+    answer: "Evet, Fotona lazer tedavisi diğer cilt bakım uygulamalarıyla birlikte uygulanabilir. Özellikle mezoterapi, kimyasal peeling ve diğer lazer tedavileriyle kombine edilebilir. Ancak uygulama sırası ve zamanlaması hekim tarafından planlanmalıdır."
+  }
+];
 ---
 
 <BaseLayout title={title} description={description}>
@@ -17,6 +54,8 @@ const description = "Kapsamlı cilt gençleştirme ve yenileme için uygulanan F
     ]}
   />
 
+    <FaqSchema questions={faqQuestions} />
+    
   <main id="main-content" class="container mx-auto px-4 py-12">
     <div class="max-w-4xl mx-auto">
       <h1 class="text-4xl font-bold text-primary mb-8">
@@ -30,8 +69,8 @@ const description = "Kapsamlı cilt gençleştirme ve yenileme için uygulanan F
           1064 nm ve 532 nm gibi farklı dalga boylarına sahip bu revolutif 
           lazer teknolojisi, ciltteki lekeleri, kırışıklıkları, gözenek 
           genişlemelerini ve damarlanmaları tedavi ederken aynı zamanda 
-          cilt yenilenmesini ve sıkılaşmasını sağlar. Fotona, non-ablatif 
-          ve fractional lazer teknolojisi sayesinde minimal downtime 
+          cilt yenilenmesini ve sıkılaşmasını sağlar. Fotona, non-ablatif, ablatif
+          ve fraksiyonel lazer teknolojisi sayesinde çok kısa iyileşme süresi 
           ile maksimum sonuç sunar. Bu işlem sayesinde cilt daha 
           parlak, sıkı ve genç bir görünüme kavuşur.
         </p>
@@ -96,7 +135,7 @@ const description = "Kapsamlı cilt gençleştirme ve yenileme için uygulanan F
             </h3>
             <p class="leading-relaxed">
               İşlem öncesi lokal anestezik krem uygulanabilir. 
-              Lazer ışını ciltte hafif bir battı veya sıcaklık 
+              Lazer ışını ciltte hafif bir batma veya sıcaklık 
               hissi yaratabilir. Çoğu hasta bu hissi tolere 
               edebilir. Hassas ciltli bireylerde daha fazla 
               rahatsızlık hissedilebilir. Soğutma sistemleri 

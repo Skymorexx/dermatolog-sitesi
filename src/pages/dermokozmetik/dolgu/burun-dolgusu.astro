@@ -1,9 +1,46 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import BreadcrumbSchema from '../../../components/BreadcrumbSchema.astro';
+import FaqSchema from '../../../components/FaqSchema.astro';
 
 const title = "Burun Dolgusu - Uzm. Dr. Umut Mert Yıldırım";
-const description = "Burun şekillendirme için uygulanan burun dolgusu işlemi hakkında detaylı bilgi, uygulama süreci ve sıkça sorulan sorular.";
+const description = "Burun şekillendirme için uygulanan burun dolgusu (ameliyatsız burun estetiği) işlemi hakkında detaylı bilgi, uygulama süreci ve sıkça sorulan sorular.";
+
+// SSS için soru-cevaplar
+const faqQuestions = [
+  {
+    question: "Burun dolgusu nedir ve nasıl çalışır?",
+    answer: "Burun dolgusu, hyaluronik asit bazlı dolgu maddeleri kullanılarak burun kökünde, sırtında veya burun ucunda istenen şekillendirmelerin yapılmasını sağlayan minimal invaziv bir estetik işlemdir. Cerrahi müdahale gerektiren rinoplasti ameliyatına alternatif olarak tercih edilebilir. Bu işlem ile burun simetrisi sağlanabilir, küçük çukurlar doldurulabilir ve burun profili iyileştirilebilir."
+  },
+  {
+    question: "Burun dolgusu kimler için uygundur?",
+    answer: "Burun dolgusu, hyaluronik asit içerikli dolgu maddelerinin steril koşullarda ve lokal anestezi altında buruna enjekte edilmesiyle uygulanan minimal invaziv bir işlemdir. 18 yaşını tamamlamış, genel sağlık durumu iyi olan ve burunlarında estetik iyileşme isteyen her yetişkin birey için uygundur. Rinoplasti sonrası küçük düzensizliklerin giderilmesi için de tercih edilebilir. Hamilelik veya emzirme döneminde olan kadınlar için uygun değildir."
+  },
+  {
+    question: "Burun dolgusu ağrılı bir işlem midir?",
+    answer: "İşlem öncesi lokal anestezik krem uygulandığı için hastalar minimal düzeyde rahatsızlık hissederler. Dolgu maddesinin içinde de lokal anestezik bulunması ağrıyı daha da azaltır. İşlem süresi kısa olduğu için genellikle kolayca tolere edilir. Hassas ciltli bireylerde daha fazla rahatsızlık hissedilebilir."
+  },
+  {
+    question: "Burun dolgusunun etkisi ne kadar sürer?",
+    answer: "Hyaluronik asit bazlı dolgu maddeleri vücut tarafından doğal olarak yıkıldığı için etkisi 6-18 ay arasında sürer. Ortalama süre 12 aydır. Etkinin uzun sürmesi için sağlıklı yaşam tarzı benimsenmelidir. Düzenli uygulamalar ile etki daha kalıcı hale gelir."
+  },
+  {
+    question: "Burun dolgusu rinoplasti ameliyatını tamamen yerine geçer mi?",
+    answer: "Burun dolgusu, küçük şekillendirme ihtiyaçları için etkili olsa da büyük yapısal değişiklikler için rinoplasti ameliyatı gereklidir. Dolgu işlemi cerrahi müdahaleye alternatif olarak düşünülebilir ancak her zaman tam karşılık veremez. Hekim muayenesi sonrası en uygun tedavi yöntemi belirlenir."
+  },
+  {
+    question: "Burun dolgusundan memnun kalmazsam ne olur?",
+    answer: "Hyaluronik asit bazlı dolgulara özel olarak uygulanabilen hyaluronidaz enzimi ile dolgu maddesi vücuttan hızlıca uzaklaştırılabilir. Bu nedenle işlem geri alınabilir niteliktedir. Memnuniyetsizlik durumunda hekiminize başvurmanız yeterlidir."
+  },
+  {
+    question: "Burun dolgusu sonrası ne zaman makyaj yapabilirim?",
+    answer: "Burun dolgusu sonrası ilk 24 saat içinde makyaj yapılması önerilmez. 24 saat sonra normal makyaj yapabilirsiniz. Ancak ilk birkaç gün boyunca hafif, doğal tonlarda makyaj tercih edilmelidir. Göz ve dudak makyajı yapılabilir."
+  },
+  {
+    question: "Burun dolgusu diğer işlemlerle birlikte uygulanabilir mi?",
+    answer: "Evet, burun dolgusu diğer cilt bakım uygulamalarıyla birlikte uygulanabilir. Özellikle lazer tedavileri, mezoterapi ve diğer non-invaziv prosedürlerle kombine edilebilir. Ancak uygulama sırası ve zamanlaması hekim tarafından planlanmalıdır."
+  }
+];
 ---
 
 <BaseLayout title={title} description={description}>
@@ -17,10 +54,12 @@ const description = "Burun şekillendirme için uygulanan burun dolgusu işlemi 
     ]}
   />
 
+      <FaqSchema questions={faqQuestions} />
+      
   <main id="main-content" class="container mx-auto px-4 py-12">
     <div class="max-w-4xl mx-auto">
       <h1 class="text-4xl font-bold text-primary mb-8">
-        Burun Dolgusu
+        Burun Dolgusu (Ameliyatsız Burun Estetiği)
       </h1>
       
       <div class="prose prose-lg text-text-primary max-w-none">
@@ -87,8 +126,7 @@ const description = "Burun şekillendirme için uygulanan burun dolgusu işlemi 
             </h3>
             <p class="leading-relaxed">
               Hyaluronik asit bazlı dolgu maddeleri vücut tarafından doğal olarak yıkıldığı için 
-              etkisi 6-18 ay arasında sürer. Ortalama süre 12 aydır. Etkinin uzun sürmesi için 
-              sağlıklı yaşam tarzı benimsenmelidir.
+              etkisi 6-18 ay arasında sürer. Ortalama süre 12 aydır.
             </p>
           </div>
           
@@ -124,7 +162,7 @@ const description = "Burun şekillendirme için uygulanan burun dolgusu işlemi 
           📅 Randevu Al
         </a>
         <p class="mt-4 text-text-secondary">
-          Uzman dermatolog gözetiminde burun dolgusu işlemi için randevu alın.
+          Uzman dermatolog gözetiminde burun dolgusu (ameliyatsız burun estetiği) işlemi için randevu alın.
         </p>
       </div>
     </div>

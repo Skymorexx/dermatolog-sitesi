@@ -1,9 +1,34 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import BreadcrumbSchema from '../../components/BreadcrumbSchema.astro';
+import FaqSchema from '../../components/FaqSchema.astro';
 
 const title = "Deri Biyopsisi - Uzm. Dr. Umut Mert Yıldırım";
 const description = "Şüpheli cilt lezyonlarının tanımlanması için deri biyopsisi işlemi. Cerrahi deri biyopsisi nasıl yapılır? İşlem süreci, sonrası bakım ve sonuçların değerlendirilmesi hakkında detaylı bilgi.";
+
+// SSS için soru-cevaplar
+const faqQuestions = [
+  {
+    question: "Deri biyopsisi nedir ve nasıl çalışır?",
+    answer: "Deri biyopsisi, şüpheli görünümlü cilt lezyonlarının tanımlanması amacıyla küçük bir doku örneğinin cerrahi olarak alınması ve patolojik olarak incelenmesi işlemidir. Bu prosedür, melanom, bazal hücreli kanser, skuamöz hücreli kanser gibi cilt kanserlerinin erken teşhisi için ve sebebi anlaşılamayan cilt lezyonlarının tanınması için kritik öneme sahiptir. İşlem lokal anestezi altında ve steril koşullarda güvenli bir şekilde gerçekleştirilir."
+  },
+  {
+    question: "Deri biyopsisi kimler için uygundur?",
+    answer: "Deri biyopsisi, şüpheli cilt lezyonlarının doğrulanması ve tanımlanması amacıyla uygulanan tanısal bir işlemdir. Asimetrik, kenarları düzensiz, renk değişikliği gösteren veya hızlı büyüyen lezyonlar melanom veya diğer cilt kanserleri açısından değerlendirilmelidir. Biyopsi, bu lezyonların iyi huylu mu kötü huylu mu olduğunu kesin olarak belirlemek için gereklidir."
+  },
+  {
+    question: "Deri biyopsisi ağrılı bir işlem midir?",
+    answer: "İşlem lokal anestezi altında yapıldığı için hastalar işlem sırasında herhangi bir ağrı hissetmezler. Anestezi enjeksiyonu sırasında hafif bir battı hissi olabilir. İşlem sonrası ilk birkaç saat hafif ağrı olabilir ancak genellikle kolayca tolere edilir. Gerekli görülmesi halinde ağrı kesici önerilebilir."
+  },
+  {
+    question: "Deri biyopsisi kaç seans yapılır?",
+    answer: "Optimal sonuçlar için genellikle tek seansta yeterlidir. Lezyonun boyutuna, sayısına ve konumuna göre hekim tarafından bireysel planlama yapılır. İlk seans sonrası doku örneği patolojiye gönderilir ve sonuç 10-20 iş günü içinde hazırdır. Gerekli görülmesi halinde tekrar biyopsi yapılabilir."
+  },
+  {
+    question: "Deri biyopsisi kalıcı mıdır?",
+    answer: "Evet, deri biyopsisi kalıcıdır. Alınan doku örneği patoloji laboratuvarında kalıcı olarak muhafaza edilir ve gerektiğinde tekrar incelenebilir. Ancak biyopsi sonrası iz kalıcılığı lezyonun boyutuna ve konumuna bağlıdır. Doğru teknikle uygulandığında minimal iz kalır."
+  }
+];
 ---
 
 <BaseLayout title={title} description={description}>
@@ -15,6 +40,8 @@ const description = "Şüpheli cilt lezyonlarının tanımlanması için deri bi
       { name: "Deri Biyopsisi", url: "/dermatocerrahi/deri-biyopsisi/" },
     ]}
   />
+
+  <FaqSchema questions={faqQuestions} />
 
   <main id="main-content" class="container mx-auto px-4 py-12">
     <div class="max-w-4xl mx-auto">
@@ -33,7 +60,7 @@ const description = "Şüpheli cilt lezyonlarının tanımlanması için deri bi
           hücreli kanser, skuamöz 
           hücreli kanser gibi cilt 
           kanserlerinin erken 
-          teşhisi için kritik 
+          teşhisi için ve sebebi anlaşılamayan cilt lezyonlarının tanınması için kritik 
           öneme sahiptir. 
           İşlem lokal 
           anestezi altında 
@@ -77,16 +104,16 @@ const description = "Şüpheli cilt lezyonlarının tanımlanması için deri bi
           ve lokal anestezik enjekte edilir. 
           Lezyonun boyutuna ve konumuna 
           göre farklı biyopsi teknikleri 
-          uygulanabilir: Çekirdek biyopsi, 
+          uygulanabilir: İnsizyonel biyopsi, 
           punch biyopsi veya eksizyonel 
           biyopsi gibi yöntemler tercih 
           edilebilir. Alınan doku örneği 
           özel solüsyonlar içinde 
           patoloji laboratuvarına 
           gönderilir. İşlem 
-          sonrası gerekli 
+          sonrası 
           pansuman 
-          yapılır.
+          uygulanır.
         </p>
         
         <h2 class="text-2xl font-bold text-primary mt-12 mb-6">
@@ -107,7 +134,7 @@ const description = "Şüpheli cilt lezyonlarının tanımlanması için deri bi
             <li>Güneş koruyucu kullanarak alanı direkt güneş ışığından koruyun</li>
             <li>Doktorunuzun önerdiği antibiyotik veya bakım ürünlerini kullanın</li>
             <li>Herhangi bir anormal durumda (aşırı kızarıklık, ağrı artışı, akıntı) doktorunuza başvurun</li>
-            <li>Dikiş varsa doktorunuzun belirlediği tarihte kontrolde alın</li>
+            <li>Dikiş varsa doktorunuzun belirlediği tarihte dikişi aldırın</li>
             <li>Patoloji sonucu için belirlenen tarihte kontrole gelmeyi unutmayın</li>
           </ul>
         </div>
@@ -128,14 +155,8 @@ const description = "Şüpheli cilt lezyonlarının tanımlanması için deri bi
               uygulandığında bu iz minimum 
               düzeyde olur. Biyopsi alınan 
               alanın boyutu ve konumuna 
-              göre iz kalıcılığı 
-              değişebilir. 
-              İyileşme 
-              süreci 
-              sonrası 
-              izler 
-              zamanla 
-              soler.
+              göre iz boyutu 
+              değişebilir. Çoğu işlem iz kalmadan sonuçlanır.
             </p>
           </div>
           
@@ -167,11 +188,7 @@ const description = "Şüpheli cilt lezyonlarının tanımlanması için deri bi
               işlem süresi değişebilir. 
               İşlem sonrası pansuman 
               ve bakım talimatları 
-              verilir. Patoloji 
-              sonucu genellikle 
-              5-10 iş günü 
-              içinde 
-              hazırdır.
+              verilir.
             </p>
           </div>
           
@@ -180,7 +197,7 @@ const description = "Şüpheli cilt lezyonlarının tanımlanması için deri bi
               Patoloji sonucu ne zaman çıkar?
             </h3>
             <p class="leading-relaxed">
-              Patoloji sonucu genellikle 5-10 iş 
+              Patoloji sonucu genellikle 10-20 iş 
               günü içinde hazır olur. Kompleks 
               vakalarda bu süre uzayabilir. 
               Sonuç hazır olduğunda 

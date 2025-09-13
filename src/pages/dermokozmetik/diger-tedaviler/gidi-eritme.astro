@@ -1,9 +1,46 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import BreadcrumbSchema from '../../../components/BreadcrumbSchema.astro';
+import FaqSchema from '../../../components/FaqSchema.astro';
 
 const title = "Gıdı Eritme (Enzimatik Lipoliz) - Uzm. Dr. Umut Mert Yıldırım";
 const description = "Yerel yağ birikimlerinin giderilmesi için uygulanan gıdı eritme (enzimatik lipoliz) tedavisi hakkında detaylı bilgi, uygulama süreci ve sıkça sorulan sorular.";
+
+// SSS için soru-cevaplar
+const faqQuestions = [
+  {
+    question: "Gıdı eritme (enzimatik lipoliz) nedir ve nasıl çalışır?",
+    answer: "Gıdı eritme, enzimatik lipoliz olarak da bilinen, lokal yağ birikimlerinin giderilmesi amacıyla uygulanan ameliyatsız bir vücut kontur düzenleme yöntemidir. Bu işlemde özel enzim karışımları gıdı bölgesine enjekte edilerek, içeriğindeki enzimlerle bölgedeki yağ depolarını eritir ve içeriğinin vücut tarafından emilmesini sağlar. Bu yöntem ile cerrahi müdahaleye gerek kalmadan bölgesel yağ azaltma sağlanabilir."
+  },
+  {
+    question: "Gıdı eritme (enzimatik lipoliz) kimler için uygundur?",
+    answer: "Gıdı eritme, lipolitik enzimlerin gıdı bölgesindeki yağ dokusuna enjekte edilmesiyle uygulanan minimal invaziv bir işlemdir. 18 yaşını geçmiş, genel sağlık durumu iyi olan ve gıdısında yerel yağ birikimi olan her yetişkin birey için uygundur. Özellikle diyet ve egzersizle bile azaltılamayan gıdı bölgesindeki inatçı yağ birikimleri için tercih edilir. Hamilelik veya emzirme döneminde olan kadınlar için uygun değildir."
+  },
+  {
+    question: "Gıdı eritme ağrılı bir işlem midir?",
+    answer: "İşlem öncesi lokal anestezik krem uygulanabilir. İğneler çok ince olduğu için hastalar hafif bir battı hissi yaşarlar. Enzim enjeksiyonları genellikle iyi tolere edilir. İşlem süresi orta uzunluktadır ve genellikle kolayca tolere edilir. Hassas ciltli bireylerde daha fazla rahatsızlık hissedilebilir."
+  },
+  {
+    question: "Gıdı eritme etkisi ne zaman görülür?",
+    answer: "Gıdı bölgesindeki yağ azalması genellikle işlem sonrası 2-3 hafta sonra görülmeye başlanır. Ancak maksimum etki 6-8 hafta içinde ortaya çıkar. Yağ hücrelerinin parçalanması ve vücut tarafından emilmesi süreci devam ettiği için etki 2-3 ay boyunca gelişmeye devam eder. Düzenli uygulamalar ile etki daha kalıcı olur."
+  },
+  {
+    question: "Gıdı eritme kaç seans yapılır?",
+    answer: "Optimal sonuçlar için genellikle 4-6 haftada bir olmak üzere 2-3 seans önerilir. Gıdı bölgesindeki yağ miktarına ve bireysel metabolizmaya göre hekim tarafından bireysel planlama yapılır. İlk seans sonrası belirgin bir iyileşme görülür, ancak seri uygulamalar ile etki daha kalıcı hale gelir."
+  },
+  {
+    question: "Gıdı eritme kalıcı mıdır?",
+    answer: "Gıdı eritme ile parçalanan yağ hücreleri vücuttan kalıcı olarak uzaklaştırılır. Ancak kalan yağ hücreleri hacim kazanabilir. Bu nedenle sonuçların kalıcılığı için sağlıklı beslenme ve düzenli egzersiz önemlidir. İdeal kiloda kalarak sonuçlar uzun süre korunabilir."
+  },
+  {
+    question: "Gıdı eritme sonrası ne zaman makyaj yapabilirim?",
+    answer: "İşlem sonrası ilk 48 saat içinde makyaj yapılması önerilmez. 48 saat sonra normal makyaj yapabilirsiniz. Ancak ilk 1 hafta boyunca hafif, doğal tonlarda makyaj tercih edilmelidir. Göz ve dudak makyajı yapılabilir."
+  },
+  {
+    question: "Gıdı eritme diğer işlemlerle birlikte uygulanabilir mi?",
+    answer: "Evet, gıdı eritme diğer cilt bakım uygulamalarıyla birlikte uygulanabilir. Özellikle lazer tedavileri, mezoterapi ve diğer lipolitik uygulamalarla kombine edilebilir. Ancak uygulama sırası ve zamanlaması hekim tarafından planlanmalıdır."
+  }
+];
 ---
 
 <BaseLayout title={title} description={description}>
@@ -17,6 +54,8 @@ const description = "Yerel yağ birikimlerinin giderilmesi için uygulanan gıd�
     ]}
   />
 
+      <FaqSchema questions={faqQuestions} />
+
   <main id="main-content" class="container mx-auto px-4 py-12">
     <div class="max-w-4xl mx-auto">
       <h1 class="text-4xl font-bold text-primary mb-8">
@@ -26,12 +65,12 @@ const description = "Yerel yağ birikimlerinin giderilmesi için uygulanan gıd�
       <div class="prose prose-lg text-text-primary max-w-none">
         <p class="mb-8 leading-relaxed">
           Gıdı eritme, enzimatik lipoliz olarak da bilinen, 
-          yerel yağ birikimlerinin giderilmesi amacıyla 
-          uygulanan non-surgical bir vücut kontur 
+          lokal yağ birikimlerinin giderilmesi amacıyla 
+          uygulanan ameliyatsız bir vücut kontur 
           düzenleme yöntemidir. Bu işlemde özel 
-          enzim karışımları, gıdı bölgesindeki 
-          yağ hücrelerine enjekte edilerek 
-          yağ hücrelerinin zarar görmesini 
+          enzim karışımları gıdı bölgesine 
+          enjekte edilerek, içeriğindeki enzimlerle bölgedeki
+          yağ depolarını eritir 
           ve içeriğinin vücut 
           tarafından emilmesini 
           sağlar. Bu yöntem 
@@ -161,7 +200,7 @@ const description = "Yerel yağ birikimlerinin giderilmesi için uygulanan gıd�
             <p class="leading-relaxed">
               Optimal sonuçlar için 
               genellikle 4-6 haftada 
-              bir olmak üzere 3-5 
+              bir olmak üzere 2-3 
               seans önerilir. Gıdı 
               bölgesindeki yağ 
               miktarına ve bireysel 

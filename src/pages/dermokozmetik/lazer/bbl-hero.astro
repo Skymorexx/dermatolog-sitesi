@@ -1,9 +1,46 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import BreadcrumbSchema from '../../../components/BreadcrumbSchema.astro';
+import FaqSchema from '../../../components/FaqSchema.astro';
 
 const title = "Sciton BBL Hero Lazer Tedavileri - Uzm. Dr. Umut Mert Yıldırım";
 const description = "Cilt yenileme ve anti-aging için uygulanan Sciton BBL Hero lazer tedavisi hakkında detaylı bilgi, uygulama süreci ve sıkça sorulan sorular.";
+
+// SSS için soru-cevaplar
+const faqQuestions = [
+  {
+    question: "Sciton BBL Hero lazer tedavisi nedir ve nasıl çalışır?",
+    answer: "Sciton BBL Hero lazer tedavisi, cilt yüzeyindeki çeşitli estetik sorunların giderilmesi amacıyla uygulanan ileri teknoloji BroadBand Light (Geniş Bant Işık) sistemidir. Bu devrimsel lazer teknolojisi, ciltteki lekeleri, damarlanmaları, gözenek genişlemelerini ve ince çizgileri tedavi ederken aynı zamanda cilt yenilenmesini ve sıkılaşmasını sağlar. BBL Hero, farklı dalga boylarında çalışarak kişiselleştirilmiş tedavi planları oluşturur ve ciltte kapsamlı bir gençleşme etkisi sağlar. Bu işlem sayesinde cilt daha parlak, eşit tonlu ve genç bir görünüme kavuşur."
+  },
+  {
+    question: "Sciton BBL Hero lazer tedavisi kimler için uygundur?",
+    answer: "Sciton BBL Hero lazer tedavisi, farklı dalga boylarında çalışan BroadBand Light teknolojisinin cilt yüzeyine uygulanmasıyla gerçekleştirilen non-invaziv bir işlemdir. 18 yaşını geçmiş, genel sağlık durumu iyi olan ve cildinde yaşlanma belirtileri, lekeler, damarlanmalar veya genel cilt yorgunluğu görülen her yetişkin birey için uygundur. Özellikle güneş hasarı, cilt matlığı, renk eşitsizlikleri ve erken yaşlanma belirtileri ile uğraşan bireylerde tercih edilir. Hamilelik veya emzirme döneminde olan kadınlar için uygun değildir."
+  },
+  {
+    question: "Sciton BBL Hero lazer tedavisi ağrılı bir işlem midir?",
+    answer: "İşlem öncesi lokal anestezik krem uygulanabilir. Lazer ışığı ciltte hafif bir batma veya sıcaklık hissi yaratabilir. Çoğu hasta bu hissi tolere edebilir. Hassas ciltli bireylerde daha fazla rahatsızlık hissedilebilir. Soğutma sistemleri ile konfor artırılabilir."
+  },
+  {
+    question: "Sciton BBL Hero lazer tedavisi etkisi ne zaman görülür?",
+    answer: "Ciltteki parlaklık ve eşit ton etkisi genellikle işlem sonrası 1-2 hafta içinde görülmeye başlanır. Ancak maksimum etki 4-6 hafta içinde ortaya çıkar. Cilt yenilenmesi süreci devam ettiği için etki 6-8 hafta boyunca gelişmeye devam eder. Düzenli uygulamalar ile etki daha kalıcı olur."
+  },
+  {
+    question: "Sciton BBL Hero lazer tedavisi kaç seans yapılır?",
+    answer: "Optimal sonuçlar için genellikle 3-4 haftada bir olmak üzere 3-5 seans önerilir. Cilt durumuna göre hekim tarafından bireysel planlama yapılır. İlk seans sonrası ciltte belirgin bir iyileşme görülür, ancak seri uygulamalar ile etki daha kalıcı hale gelir."
+  },
+  {
+    question: "Sciton BBL Hero lazer tedavisi hangi cilt sorunlarını tedavi eder?",
+    answer: "BBL Hero çok yönlü bir lazer sistemidir ve çeşitli cilt sorunlarını tedavi edebilir: güneş lekeleri, yaş lekeleri, damarlanmalar, gözenek genişlemeleri, ince çizgiler, akne izleri ve genel cilt matlığı. Kişisel ihtiyaçlara göre dalga boyları ayarlanarak özel tedavi planları oluşturulur."
+  },
+  {
+    question: "Sciton BBL Hero lazer tedavisi sonrası güneş koruyucu kullanmalı mıyım?",
+    answer: "Evet, lazer tedavisinden sonra güneş koruyucu kullanımı zorunludur. Güneş ışığı lekelerin tekrar oluşmasına neden olabilir. Günlük SPF 30+ koruyucu kullanmak, tedavi sonuçlarının kalıcılığı için çok önemlidir. Özellikle yaz aylarında ekstra dikkat gösterilmelidir."
+  },
+  {
+    question: "Sciton BBL Hero lazer tedavisi diğer işlemlerle birlikte uygulanabilir mi?",
+    answer: "Evet, Sciton BBL Hero lazer tedavisi diğer cilt bakım uygulamalarıyla birlikte uygulanabilir. Özellikle mezoterapi, kimyasal peeling ve diğer lazer tedavileriyle kombine edilebilir. Ancak uygulama sırası ve zamanlaması hekim tarafından planlanmalıdır."
+  }
+];
 ---
 
 <BaseLayout title={title} description={description}>
@@ -17,6 +54,8 @@ const description = "Cilt yenileme ve anti-aging için uygulanan Sciton BBL Hero
     ]}
   />
 
+    <FaqSchema questions={faqQuestions} />
+    
   <main id="main-content" class="container mx-auto px-4 py-12">
     <div class="max-w-4xl mx-auto">
       <h1 class="text-4xl font-bold text-primary mb-8">
@@ -27,7 +66,7 @@ const description = "Cilt yenileme ve anti-aging için uygulanan Sciton BBL Hero
         <p class="mb-8 leading-relaxed">
           Sciton BBL Hero lazer tedavisi, cilt yüzeyindeki çeşitli estetik 
           sorunların giderilmesi amacıyla uygulanan ileri teknoloji 
-          BroadBand Light (Geniş Bant Işık) sistemidir. Bu revolutif 
+          BroadBand Light (Geniş Bant Işık) sistemidir. Bu devrimsel 
           lazer teknolojisi, ciltteki lekeleri, damarlanmaları, 
           gözenek genişlemelerini ve ince çizgileri tedavi ederken 
           aynı zamanda cilt yenilenmesini ve sıkılaşmasını sağlar. 
@@ -96,7 +135,7 @@ const description = "Cilt yenileme ve anti-aging için uygulanan Sciton BBL Hero
             </h3>
             <p class="leading-relaxed">
               İşlem öncesi lokal anestezik krem uygulanabilir. 
-              Lazer ışını ciltte hafif bir battı veya sıcaklık 
+              Lazer ışığı ciltte hafif bir batma veya sıcaklık 
               hissi yaratabilir. Çoğu hasta bu hissi tolere 
               edebilir. Hassas ciltli bireylerde daha fazla 
               rahatsızlık hissedilebilir. Soğutma sistemleri 

@@ -1,9 +1,38 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import BreadcrumbSchema from '../../components/BreadcrumbSchema.astro';
+import FaqSchema from '../../components/FaqSchema.astro';
 
 const title = "Ben Aldırma (Nevüs Eksizyonu) - Uzm. Dr. Umut Mert Yıldırım";
 const description = "Cerrahi yöntemlerle ben aldırma (nevüs eksizyonu) işlemi nasıl yapılır? İşlem süreci, sonrası bakım ve iyileşme süreci hakkında detaylı bilgi.";
+
+// SSS için soru-cevaplar
+const faqQuestions = [
+  {
+    question: "Ben alımı (nevüs eksizyonu) nedir?",
+    answer: "Ben alımı, cilt üzerindeki pigmentli lezyonların cerrahi olarak çıkarılması amacıyla uygulanan minimal invaziv bir işlemdir. Bu işlem hem estetik amaçlı hem de tanısal amaçlarla gerçekleştirilir. Şüpheli görünümlü benlerin biyopsisi için uygulanabileceği gibi, estetik kaygılar nedeniyle görünümü rahatsız edici olan benlerin çıkarılması da mümkündür. İşlem lokal anestezi altında ve steril koşullarda güvenli bir şekilde gerçekleştirilir."
+  },
+  {
+    question: "Ben alımı (nevüs eksizyonu) kimler için uygundur?",
+    answer: "Ben alımı, cilt üzerindeki nevüslerin (benlerin) cerrahi olarak çıkarılması işlemidir. Bu işlem birkaç farklı nedene bağlı olarak uygulanabilir: Şüpheli görünümlü benlerin kanser öncüsü olup olmadığını anlamak için biyopsi amacıyla, estetik kaygılar nedeniyle rahatsız edici olan benlerin çıkarılması için, travmaya uğramış benlerin tedavisi için veya doktorun önerisi üzerine yapılabilir. Genel sağlık durumu iyi olan her yetişkin birey için uygundur."
+  },
+  {
+    question: "Ben alımı (nevüs eksizyonu) ağrılı bir işlem midir?",
+    answer: "İşlem lokal anestezi altında yapıldığı için hastalar işlem sırasında herhangi bir ağrı hissetmezler. Anestezi enjeksiyonu sırasında hafif bir battı hissi olabilir. İşlem süresi biraz uzun olabilir ancak genellikle kolayca tolere edilir. Hassas ciltli bireylerde daha fazla rahatsızlık hissedilebilir."
+  },
+  {
+    question: "Ben alımı (nevüs eksizyonu) etkisi ne zaman görülür?",
+    answer: "Ben alımı sonrası çıkarılan doku hemen ortadan kalkar."
+  },
+  {
+    question: "Ben alımı (nevüs eksizyonu) kaç seans yapılır?",
+    answer: "Genellikle tek seferde 3'ten fazla ben çıkarımı tercih edilmemektedir. Çok sayıda nevüsü olan hastalarda 2-4 hafta ile cerrahi seansları düzenlenir."
+  },
+  {
+    question: "Ben alımı (nevüs eksizyonu) kalıcı mıdır?",
+    answer: "Evet, ben alımı kalıcıdır. Çıkarılan ben tamamen vücuttan uzaklaştırılır. Ancak yeni benler oluşabilir. Bu nedenle düzenli dermatoloji uzman kontrolü önemlidir. Etki kaybolduğunda tekrar uygulama yapılabilir."
+  }
+];
 ---
 
 <BaseLayout title={title} description={description}>
@@ -16,6 +45,8 @@ const description = "Cerrahi yöntemlerle ben aldırma (nevüs eksizyonu) işlem
     ]}
   />
   
+  <FaqSchema questions={faqQuestions} />
+
   <main id="main-content" class="container mx-auto px-4 py-12">
     <div class="max-w-4xl mx-auto">
       <h1 class="text-4xl font-bold text-primary mb-8">
@@ -30,7 +61,7 @@ const description = "Cerrahi yöntemlerle ben aldırma (nevüs eksizyonu) işlem
           estetik amaçlı hem de tanısal amaçlarla 
           gerçekleştirilir. Şüpheli görünümlü benlerin 
           biyopsisi için uygulanabileceği gibi, 
-          estetik kaygılar nedeniyle rahatsız 
+          estetik kaygılar nedeniyle görünümü rahatsız 
           edici olan benlerin çıkarılması 
           da mümkündür. İşlem lokal 
           anestezi altında ve steril 
@@ -70,14 +101,14 @@ const description = "Cerrahi yöntemlerle ben aldırma (nevüs eksizyonu) işlem
           anestezik enjekte edilir. Benin 
           boyutuna ve konumuna göre 
           farklı teknikler uygulanabilir: 
-          Küçük benler doğrudan kesilerek 
+          Küçük benler doğrudan "punch out" yöntemiyle 
           çıkarılabilirken, daha büyük 
-          benler eliptek şekilde 
+          benler eliptik şekilde 
           eksize edilir. Çıkarılan 
           doku patolojik inceleme 
           için laboratuvara 
           gönderilir. Yara 
-          yerine gerekli 
+          yerine  
           dikiş atılır ve 
           pansuman yapılır.
         </p>
@@ -98,7 +129,7 @@ const description = "Cerrahi yöntemlerle ben aldırma (nevüs eksizyonu) işlem
             <li>Güneş koruyucu kullanarak alanı direkt güneş ışığından koruyun</li>
             <li>Doktorunuzun önerdiği antibiyotik veya bakım ürünlerini kullanın</li>
             <li>İlk hafta içinde ağır spor ve fiziksel aktivitelerden kaçının</li>
-            <li>Dikiş tarihinden önce bölgeyi ıslatmamaya özen gösterin</li>
+            <li>Dikiş alım tarihinden önce bölgeyi ıslatmamaya özen gösterin</li>
             <li>Herhangi bir anormal durumda (aşırı kızarıklık, ağrı, akıntı) doktorunuza başvurun</li>
           </ul>
         </div>
@@ -117,11 +148,9 @@ const description = "Cerrahi yöntemlerle ben aldırma (nevüs eksizyonu) işlem
               Ancak deneyimli hekimler tarafından 
               doğru tekniklerle uygulandığında 
               bu iz minimum düzeyde olur. 
-              İzler zamanla solur ve 
-              dokuyla uyum sağlar. 
               Benin boyutu ve 
               konumuna göre 
-              iz kalıcılığı 
+              izin boyutu  
               değişebilir.
             </p>
           </div>
@@ -135,7 +164,7 @@ const description = "Cerrahi yöntemlerle ben aldırma (nevüs eksizyonu) işlem
               için hastalar işlem sırasında 
               herhangi bir ağrı hissetmezler. 
               Anestezi enjeksiyonu sırasında 
-              hafif bir battı hissi 
+              hafif bir batma hissi 
               olabilir. İşlem sonrası 
               ilk birkaç saat 
               hafif ağrı 

@@ -1,9 +1,46 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import BreadcrumbSchema from '../../../components/BreadcrumbSchema.astro';
+import FaqSchema from '../../../components/FaqSchema.astro';
 
 const title = "Leke Mezoterapisi - Uzm. Dr. Umut Mert Yıldırım";
 const description = "Cilt lekelerinin giderilmesi için uygulanan leke mezoterapisi işlemi hakkında detaylı bilgi, uygulama süreci ve sıkça sorulan sorular.";
+
+// SSS için soru-cevaplar
+const faqQuestions = [
+  {
+    question: "Leke mezoterapisi nedir ve nasıl çalışır?",
+    answer: "Leke mezoterapisi, cilt yüzeyindeki kahverengi lekelerinin giderilmesi amacıyla uygulanan özel formüllü mezoterapi uygulamasıdır. Güneş lekeleri, yaşlanma lekeleri, melazma ve diğer pigmentasyon bozuklukları için etkili bir tedavi seçeneğidir. Vitamin C, glutatyon, koenzim Q10 ve diğer leke açıcı ajanların cilt yüzeyine mikro enjeksiyonlarla uygulanmasıyla leke görünümü açılır ve cilt daha eşit bir ton kazanır. Bu işlem sayesinde ciltteki estetik sorunlar giderilir ve daha homojen bir görünüm elde edilir."
+  },
+  {
+    question: "Leke mezoterapisi kimler için uygundur?",
+    answer: "Leke mezoterapisi, kahverengi pigment üreten hücreleri etkileyen özel aktif maddelerin cilt yüzeyine mikro enjeksiyonlarla uygulanan minimal invaziv bir işlemdir. 18 yaşını tamamlamış, genel sağlık durumu iyi olan ve cilt lekeleri şikayeti olan her yetişkin birey için uygundur. Özellikle güneş lekeleri, yaşlanma lekeleri, melazma ve post-inflamatuar hiperpigmentasyon ile uğraşan bireylerde tercih edilir. Hamilelik veya emzirme döneminde olan kadınlar için uygun değildir."
+  },
+  {
+    question: "Leke mezoterapisi ağrılı bir işlem midir?",
+    answer: "İşlem öncesi lokal anestezik krem uygulanabilir. İğneler çok ince olduğu için hastalar genellikle hafif bir battı hissi yaşarlar. İşlem kısa sürede tamamlandığı için genellikle kolayca tolere edilir. Hassas ciltli bireylerde daha fazla rahatsızlık hissedilebilir."
+  },
+  {
+    question: "Leke mezoterapisi etkisi ne zaman görülür?",
+    answer: "Lekede azalma genellikle 2-3 hafta sonra görülmeye başlanır. Ancak maksimum etki 6-8 hafta içinde ortaya çıkar. Lekelerin tipine ve derinliğine bağlı olarak sonuçlar değişebilir. Düzenli uygulamalar ile leke görünümü büyük oranda azaltılabilir."
+  },
+  {
+    question: "Leke mezoterapisi kaç seans yapılır?",
+    answer: "Optimal sonuçlar için genellikle 2-3 haftada bir olmak üzere 4-6 seans önerilir. Lekelerin tipine ve derinliğine göre hekim tarafından bireysel planlama yapılır. Melazma gibi dirençli lekelerde daha fazla seans gerekebilir."
+  },
+  {
+    question: "Leke mezoterapisi sonrası güneş koruyucu kullanmalı mıyım?",
+    answer: "Evet, leke tedavisinden sonra güneş koruyucu kullanımı zorunludur. Güneş ışığı lekelerin tekrar oluşmasına neden olabilir. Günlük SPF 30+ koruyucu kullanmak, tedavi sonuçlarının kalıcılığı için çok önemlidir. Özellikle yaz aylarında ekstra dikkat gösterilmelidir."
+  },
+  {
+    question: "Leke mezoterapisi diğer işlemlerle birlikte uygulanabilir mi?",
+    answer: "Evet, leke mezoterapisi diğer cilt bakım uygulamalarıyla birlikte uygulanabilir. Özellikle lazer tedavileri, kimyasal peeling ve diğer mezoterapi uygulamalarıyla kombine edilebilir. Ancak uygulama sırası ve zamanlaması hekim tarafından planlanmalıdır."
+  },
+  {
+    question: "Leke mezoterapisi tedavisi ne kadar sürer?",
+    answer: "Leke mezoterapisi işlemi genellikle 30-45 dakika sürer. Uygulama alanına göre işlem süresi değişebilir. Hastalar işlem sonrası hemen günlük yaşamlarına dönebilirler. Ancak işlem yapılan bölgede hafif kızarıklık ve şişlik görülebilir, bu belirtiler genellikle 1-2 saat içinde geçer."
+  }
+];
 ---
 
 <BaseLayout title={title} description={description}>
@@ -17,6 +54,8 @@ const description = "Cilt lekelerinin giderilmesi için uygulanan leke mezoterap
     ]}
   />
 
+   <FaqSchema questions={faqQuestions} />
+
   <main id="main-content" class="container mx-auto px-4 py-12">
     <div class="max-w-4xl mx-auto">
       <h1 class="text-4xl font-bold text-primary mb-8">
@@ -25,13 +64,12 @@ const description = "Cilt lekelerinin giderilmesi için uygulanan leke mezoterap
       
       <div class="prose prose-lg text-text-primary max-w-none">
         <p class="mb-8 leading-relaxed">
-          Leke mezoterapisi, cilt yüzeyindeki hiperpigmentasyon lekelerinin giderilmesi 
+          Leke mezoterapisi, cilt yüzeyindeki kahverengi lekelerinin giderilmesi 
           amacıyla uygulanan özel formüllü mezoterapi uygulamasıdır. Güneş lekeleri, 
-          yaş lekeleri, melazma ve diğer pigmentasyon bozuklukları için etkili bir 
-          tedavi seçeneğidir. Vitamin C, glutatyon, koenzim Q10 ve diğer bleaching 
-          ajanların cilt yüzeyine mikro enjeksiyonlarla uygulanmasıyla leke yapısı 
-          bozulur ve cilt daha eşit bir ton kazanır. Bu işlem sayesinde ciltteki 
-          estetik sorunlar giderilir ve daha homojen bir görünüm elde edilir.
+          yaşlanma lekeleri, melazma ve diğer pigmentasyon bozuklukları için etkili bir 
+          tedavi seçeneğidir. Vitamin C, glutatyon, koenzim Q10 ve diğer leke açıcı 
+          ajanların cilt yüzeyine mikro enjeksiyonlarla uygulanmasıyla leke görünümü açılır
+          ve cilt daha eşit bir ton kazanır.
         </p>
         
         <h2 class="text-2xl font-bold text-primary mt-12 mb-6">
@@ -39,11 +77,11 @@ const description = "Cilt lekelerinin giderilmesi için uygulanan leke mezoterap
         </h2>
         
         <p class="mb-6 leading-relaxed">
-          Leke mezoterapisi, pigment yapıcı hücreleri etkileyen özel aktif maddelerin 
+          Leke mezoterapisi, kahverengi pigment üreten hücreleri etkileyen özel aktif maddelerin 
           cilt yüzeyine mikro enjeksiyonlarla uygulanan minimal invaziv bir işlemdir. 
-          18 yaşını tamamlamış, genel sağlık durumu iyi olan ve cilt lekeleri ile 
-          uğraşan her yetişkin birey için uygundur. Özellikle güneş lekeleri, 
-          yaş lekeleri, melazma ve post-inflamatuar hiperpigmentasyon ile 
+          18 yaşını tamamlamış, genel sağlık durumu iyi olan ve cilt lekeleri 
+          şikayeti olan her yetişkin birey için uygundur. Özellikle güneş lekeleri, 
+          yaşlanma lekeleri, melazma ve post-inflamatuar hiperpigmentasyon ile 
           uğraşan bireylerde tercih edilir. Hamilelik veya emzirme döneminde 
           olan kadınlar için uygun değildir.
         </p>
@@ -53,10 +91,10 @@ const description = "Cilt lekelerinin giderilmesi için uygulanan leke mezoterap
         </h2>
         
         <p class="mb-6 leading-relaxed">
-          Leke mezoterapisi işlemi öncesinde cilt temizlenir ve gerekirse yerel 
+          Leke mezoterapisi işlemi öncesinde cilt temizlenir ve lokal 
           anestezik krem uygulanır. Steril koşullarda ve çok ince iğnelerle 
-          özel formüllü leke tedavi maddesi cilt yüzeyine belirlenen desene 
-          göre enjekte edilir. İşlem 30-45 dakika sürer. Hastalar işlem 
+          özel formüllü leke tedavi maddesi cilt yüzeyine 
+          enjekte edilir. İşlem 30-45 dakika sürer. Hastalar işlem 
           sonrası hemen günlük yaşamlarına dönebilirler. Ciltte hafif 
           kızarıklık görülebilir ancak bu genellikle 1-2 saat içinde geçer.
         </p>
@@ -85,7 +123,7 @@ const description = "Cilt lekelerinin giderilmesi için uygulanan leke mezoterap
             </h3>
             <p class="leading-relaxed">
               İşlem öncesi lokal anestezik krem uygulanabilir. İğneler çok 
-              ince olduğu için hastalar genellikle hafif bir battı hissi 
+              ince olduğu için hastalar genellikle hafif bir batma hissi 
               yaşarlar. İşlem kısa sürede tamamlandığı için genellikle 
               kolayca tolere edilir. Hassas ciltli bireylerde daha fazla 
               rahatsızlık hissedilebilir.
@@ -97,10 +135,10 @@ const description = "Cilt lekelerinin giderilmesi için uygulanan leke mezoterap
               Leke mezoterapisi etkisi ne zaman görülür?
             </h3>
             <p class="leading-relaxed">
-              Leke açıklığında azalma genellikle 2-3 hafta sonra görülmeye 
+              Lekede azalma genellikle 2-3 hafta sonra görülmeye 
               başlanır. Ancak maksimum etki 6-8 hafta içinde ortaya çıkar. 
               Lekelerin tipine ve derinliğine bağlı olarak sonuçlar değişebilir. 
-              Düzenli uygulamalar ile leke yapısı büyük oranda azaltılabilir.
+              Düzenli uygulamalar ile leke görünümü büyük oranda azaltılabilir.
             </p>
           </div>
           

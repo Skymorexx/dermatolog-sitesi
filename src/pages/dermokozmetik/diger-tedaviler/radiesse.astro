@@ -1,9 +1,46 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import BreadcrumbSchema from '../../../components/BreadcrumbSchema.astro';
+import FaqSchema from '../../../components/FaqSchema.astro';
 
 const title = "Radiesse (Akıllı Dolgu) - Uzm. Dr. Umut Mert Yıldırım";
 const description = "Uzun süreli hacim kazandırma ve cilt sıkılaştırma için uygulanan Radiesse akıllı dolgu hakkında detaylı bilgi, uygulama süreci ve sıkça sorulan sorular.";
+
+// SSS için soru-cevaplar
+const faqQuestions = [
+  {
+    question: "Radiesse (Akıllı Dolgu) nedir ve nasıl çalışır?",
+    answer: "Radiesse, kalsiyum hidroksiapatit partiküllerinden oluşan uzun etkili bir akıllı dolgudur. Hacim kazandırmanın yanı sıra kolajen üretimini uyararak cilt sıkılaştırması ve gençleştirme etkisi sağlar. Bu nedenle 'akıllı dolgu' olarak da bilinir. Özellikle elmacık kemikleri, çene hattı, yanaklar ve el sırtı gibi bölgelerde hacim kaybını telafi etmek için idealdir. Radiesse, hyaluronik asit bazlı dolgulara göre daha uzun süreli sonuçlar sunar ve doğal bir görünüm sağlar."
+  },
+  {
+    question: "Radiesse (Akıllı Dolgu) kimler için uygundur?",
+    answer: "Radiesse, kalsiyum hidroksiapatit kristallerinin özel bir jel formunda enjekte edilmesiyle uygulanan minimal invaziv bir işlemdir. 25 yaşını geçmiş, genel sağlık durumu iyi olan ve cildinde hacim kaybı görülen her yetişkin birey için uygundur. Özellikle yaşlanma sonucu elmacık bölgesinde çöküklük, çene hattında tanımlanma kaybı ve el sırtında hacim kaybı ile uğraşan bireylerde tercih edilir. Hamilelik veya emzirme döneminde olan kadınlar için uygun değildir."
+  },
+  {
+    question: "Radiesse (Akıllı Dolgu) ağrılı bir işlem midir?",
+    answer: "İşlem öncesi lokal anestezik krem uygulanabilir. Hastalar hafif bir batma hissi yaşayabilirler. Radiesse formülasyonunun içinde lokal anestezik bulunduğu için ağrı büyük oranda azaltılır. İşlem kısa sürede tamamlandığı için genellikle kolayca tolere edilir. Hassas ciltli bireylerde daha fazla rahatsızlık hissedilebilir."
+  },
+  {
+    question: "Radiesse (Akıllı Dolgu) etkisi ne zaman görülür?",
+    answer: "Radiesse etkisi genellikle işlem sonrası hemen görünür olur. Ancak maksimum etki 2-3 hafta içinde ortaya çıkar. Kalsiyum hidroksiapatit partikülleri vücut tarafından doğal olarak yeniden modellenir ve kolajen üretimini uyarır. Bu süreç devam ettiği için etki 12-18 ay boyunca gelişmeye devam eder. Düzenli uygulamalar ile etki daha kalıcı olur."
+  },
+  {
+    question: "Radiesse (Akıllı Dolgu) kaç seans yapılır?",
+    answer: "Optimal sonuçlar için genellikle 4-6 haftada bir olmak üzere 2-3 seans önerilir. Hacim kaybının şiddetine ve uygulama bölgesine göre hekim tarafından bireysel planlama yapılır. İlk seans sonrası ciltte belirgin bir iyileşme görülür, ancak seri uygulamalar ile etki daha kalıcı hale gelir."
+  },
+  {
+    question: "Radiesse (Akıllı Dolgu) kalıcı mıdır?",
+    answer: "Hayır, Radiesse kalıcı değildir. Kalsiyum hidroksiapatit partikülleri vücut tarafından 12-18 ay içinde doğal olarak parçalanır ve emilir. Ancak bu süreçte kolajen üretimini uyarması sayesinde uzun süreli sonuçlar elde edilir. Etki kaybolduğunda tekrar uygulama yapılabilir."
+  },
+  {
+    question: "Radiesse (Akıllı Dolgu) sonrası ne zaman makyaj yapabilirim?",
+    answer: "Radiesse sonrası ilk 24 saat içinde makyaj yapılması önerilmez. 24 saat sonra normal makyaj yapabilirsiniz. Ancak ilk birkaç gün boyunca hafif, doğal tonlarda makyaj tercih edilmelidir. Göz ve dudak makyajı yapılabilir."
+  },
+  {
+    question: "Radiesse (Akıllı Dolgu) diğer işlemlerle birlikte uygulanabilir mi?",
+    answer: "Evet, Radiesse diğer cilt bakım uygulamalarıyla birlikte uygulanabilir. Özellikle lazer tedavileri, mezoterapi ve diğer dolgu uygulamalarıyla kombine edilebilir. Ancak uygulama sırası ve zamanlaması hekim tarafından planlanmalıdır."
+  }
+];
 ---
 
 <BaseLayout title={title} description={description}>
@@ -17,6 +54,8 @@ const description = "Uzun süreli hacim kazandırma ve cilt sıkılaştırma iç
     ]}
   />
 
+    <FaqSchema questions={faqQuestions} />
+
   <main id="main-content" class="container mx-auto px-4 py-12">
     <div class="max-w-4xl mx-auto">
       <h1 class="text-4xl font-bold text-primary mb-8">
@@ -26,7 +65,7 @@ const description = "Uzun süreli hacim kazandırma ve cilt sıkılaştırma iç
       <div class="prose prose-lg text-text-primary max-w-none">
         <p class="mb-8 leading-relaxed">
           Radiesse, kalsiyum hidroksiapatit partiküllerinden oluşan 
-          uzun süreli bir doku dolgusudur. Hacim kazandırmanın 
+          uzun etkili bir akıllı dolgudur. Hacim kazandırmanın 
           yanı sıra kolajen üretimini uyararak cilt sıkılaştırması 
           ve gençleştirme etkisi sağlar. Bu nedenle "akıllı dolgu" 
           olarak da bilinir. Özellikle elmacık kemikleri, çene 
@@ -42,8 +81,8 @@ const description = "Uzun süreli hacim kazandırma ve cilt sıkılaştırma iç
         </h2>
         
         <p class="mb-6 leading-relaxed">
-          Radiesse, kalsiyum hidroksiapatit mikroküreciklerinin 
-          kararlı bir jel matrisi içinde enjekte edilmesiyle 
+          Radiesse, kalsiyum hidroksiapatit kristallerinin 
+          özel bir jel formunda enjekte edilmesiyle 
           uygulanan minimal invaziv bir işlemdir. 25 yaşını 
           geçmiş, genel sağlık durumu iyi olan ve cildinde 
           hacim kaybı görülen her yetişkin birey için 
@@ -62,7 +101,7 @@ const description = "Uzun süreli hacim kazandırma ve cilt sıkılaştırma iç
         
         <p class="mb-6 leading-relaxed">
           Radiesse işlemi öncesinde uygulama bölgesi 
-          temizlenir ve gerekirse yerel anestezik 
+          temizlenir ve gerekirse lokal anestezik 
           krem uygulanır. Steril koşullarda ve tek 
           kullanımlık iğnelerle Radiesse belirlenen 
           noktalara enjekte edilir. İşlem 30-45 
@@ -103,8 +142,7 @@ const description = "Uzun süreli hacim kazandırma ve cilt sıkılaştırma iç
             </h3>
             <p class="leading-relaxed">
               İşlem öncesi lokal anestezik krem 
-              uygulanabilir. İğneler orta kalınlıkta 
-              olduğu için hastalar hafif bir battı 
+              uygulanabilir. Hastalar hafif bir batma 
               hissi yaşayabilirler. Radiesse 
               formülasyonunun içinde lokal 
               anestezik bulunduğu için 

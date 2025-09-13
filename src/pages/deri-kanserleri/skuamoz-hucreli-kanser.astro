@@ -1,9 +1,38 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import BreadcrumbSchema from '../../components/BreadcrumbSchema.astro';
+import FaqSchema from '../../components/FaqSchema.astro';
 
 const title = "Derinin Skuamöz Hücreli Kanseri: Belirtileri, Tanı ve Tedavisi - Uzm. Dr. Umut Mert Yıldırım";
-const description = "İkinci sıklıkta görülen deri kanseri türü olan Skuamöz Hücreli Karsinom'un belirtileri, risk faktörleri, erken tanı ve tedavi yöntemleri hakkında bilimsel bilgiler.";
+const description = "En sık görülen ikinci deri kanseri türü olan Skuamöz Hücreli Karsinom'un belirtileri, risk faktörleri, erken tanı ve tedavi yöntemleri hakkında bilgiler.";
+
+// SSS için soru-cevaplar
+const faqQuestions = [
+  {
+    question: "Skuamöz hücreli kanser nedir ve nasıl oluşur?",
+    answer: "Skuamöz hücreli kanser, deride bulunan yassı hücrelerden gelişen ve dünyada ikinci sıklıkta görülen deri kanseridir. Bu tümörler genellikle güneş maruziyeti yüksek olan bölgelerde gelişir ve bazal hücreli kansere göre daha agresif seyirlidir. Erken dönemde teşhis edildiğinde tedavi başarısı çok yüksektir. İleri evrelerde metastaz yapabilir. Hastalığın gelişiminde en önemli risk faktörü uzun süreli güneş maruziyetidir."
+  },
+  {
+    question: "Skuamöz hücreli kanser kimler için uygundur?",
+    answer: "Skuamöz hücreli kanser, epidermisin skuamöz (yassı) hücrelerinden gelişen kötü huylu bir deri tümörüdür. Bu hastalığın gelişiminde en önemli risk faktörü uzun süreli güneş maruziyetidir. Ayrıca bağışıklık sisteminin baskılanması, insan papilloma virüsü (HPV) enfeksiyonları, kronik yaralar, kimyasal maruziyet ve genetik yatkınlık da risk faktörleri arasında yer alır. 18 yaşını tamamlamış, genel sağlık durumu iyi olan ve cilt kanseri riski taşıyan her yetişkin birey için uygundur."
+  },
+  {
+    question: "Skuamöz hücreli kanser belirtileri nelerdir?",
+    answer: "Skuamöz hücreli kanser çeşitli klinik formlarda görülebilir ve belirtileri değişkenlik gösterebilir: Aktinik keratoz: Kuru, pullu, kızarık lezyonlar (pre-kanseröz aşama), Nodüler tip: Sert, kabuklu, zaman zaman kanayan tümörler, Ülseratif tip: Orta kısmında çökük, kenarları yükselmiş lezyonlar, Verrüköz tip: Siğil gibi kabarık, pütürlü yüzeyli lezyonlar, Müköz membran tutulumu: Dudak, dil ve ağız içi gibi bölgelerde lezyonlar. Bu lezyonlar genellikle yavaş büyür, kanama ve kabuklanma eğilimindedir."
+  },
+  {
+    question: "Skuamöz hücreli kanser nasıl teşhis edilir?",
+    answer: "Skuamöz hücreli kanserin teşhisi, dermatoloğun özel bir cihaz (dermatoskop) kullanarak lezyonları detaylı incelemesini sağlayan dermatoskopik muayene ile yapılır. Bu yöntem, çıplak gözle görülemeyen yapıları göstererek hastalığın erken evrede saptanmasını mümkün kılar. Özellikle aktinik keratoz gibi ön kanseröz lezyonların erken tanısı, invaziv skuamöz hücreli karsinom gelişimini önleyebilir. Kesin tanı biyopsi ile konur."
+  },
+  {
+    question: "Skuamöz hücreli kanser tedavisi nasıldır?",
+    answer: "Skuamöz hücreli kanserin tedavisinde birincil yöntem cerrahi eksizyondur. Lezyonun tamamı ve çevresinden yeterli mesafede sağlıklı doku alınarak çıkarılır. Küçük lezyonlarda elektrokoterizasyon, kriyoterapi, fotodinamik tedavi ve topikal kemoterapötik ajanlar da kullanılabilir. Gelişmiş vakalarda lenf nodu disseksiyonu ve sistemik tedaviler gerekebilir. Erken evre kanserlerde tedavi başarısı çok yüksektir, ancak ileri evrelerde mortalite riski artar."
+  },
+  {
+    question: "Skuamöz hücreli kanser tedavisi kalıcı mıdır?",
+    answer: "Evet, skuamöz hücreli kanser tedavisi erken evrede uygulandığında kalıcıdır. Cerrahi eksizyon ile lezyon tamamen çıkarıldığında tekrarlama riski çok düşüktür. Ancak yeni skuamöz hücreli kanserler gelişebilir, bu nedenle düzenli doktor kontrolü önemlidir. Tedavi edilen bölgede iz kalabilir ancak bu minimal düzeydedir."
+  }
+];
 ---
 
 <BaseLayout title={title} description={description}>
@@ -16,6 +45,8 @@ const description = "İkinci sıklıkta görülen deri kanseri türü olan Skuam
     ]}
   />
 
+  <FaqSchema questions={faqQuestions} />
+
   <main id="main-content" class="container mx-auto px-4 py-12">
     <div class="max-w-4xl mx-auto">
       <h1 class="text-4xl font-bold text-primary mb-8">
@@ -24,24 +55,22 @@ const description = "İkinci sıklıkta görülen deri kanseri türü olan Skuam
       
       <div class="prose prose-lg text-text-primary max-w-none">
         <p class="mb-8 leading-relaxed">
-          Skuamöz hücreli kanser, derinin orta tabakasındaki 
-          skuamöz hücrelerden gelişen ikinci sıklıkta 
+          Skuamöz hücreli kanser, deride bulunan 
+          yassı hücrelerden gelişen ve dünyada ikinci sıklıkta 
           görülen deri kanseridir. Bu tümörler 
           genellikle güneş maruziyeti 
           yüksek olan bölgelerde 
           gelişir ve bazal 
-          hücreli karsinoma 
+          hücreli kansere 
           göre daha agresif 
-          seyreden bir 
-          karaktere sahiptir. 
+          seyirlidir. 
           Erken dönemde 
           teşhis edildiğinde 
           tedavi başarısı 
           çok yüksektir. 
-          Ancak ileri 
-          evrelere 
-          ulaşabilir 
-          ve metastaz 
+          İleri 
+          evrelerde 
+          metastaz 
           yapabilir.
         </p>
         
@@ -55,9 +84,9 @@ const description = "İkinci sıklıkta görülen deri kanseri türü olan Skuam
           huylu bir deri tümörüdür. Bu 
           hastalığın gelişiminde en 
           önemli risk faktörü 
-          ultraviyole ışın 
+          uzun süreli güneş 
           maruziyetidir. Ayrıca 
-          immün sistemin 
+          bağışıklık sisteminin 
           baskılanması, 
           insan papilloma 
           virüsü (HPV) 
@@ -83,7 +112,7 @@ const description = "İkinci sıklıkta görülen deri kanseri türü olan Skuam
             değişkenlik gösterebilir:
           </p>
           <ul class="list-disc list-inside space-y-3">
-            <li><strong>Aktinik keratoz:</strong> Kuru, pullu, kızarık lezyonlar (ön kanseröz aşama)</li>
+            <li><strong>Aktinik keratoz:</strong> Kuru, pullu, kızarık lezyonlar (pre-kanseröz aşama)</li>
             <li><strong>Nodüler tip:</strong> Sert, kabuklu, zaman zaman kanayan tümörler</li>
             <li><strong>Ülseratif tip:</strong> Orta kısmında çökük, kenarları yükselmiş lezyonlar</li>
             <li><strong>Verrüköz tip:</strong> Siğil gibi kabarık, pütürlü yüzeyli lezyonlar</li>
@@ -109,7 +138,7 @@ const description = "İkinci sıklıkta görülen deri kanseri türü olan Skuam
           Skuamöz hücreli kanserin erken teşhisi, 
           tedavi başarısını doğrudan etkiler. 
           Dermatoskopik muayene, dermatoloğun 
-          özel bir alet (dermatoskop) 
+          özel bir cihaz (dermatoskop) 
           kullanarak lezyonları detaylı 
           incelemesini sağlar. Bu 
           yöntem, çıplak gözle 
@@ -149,9 +178,8 @@ const description = "İkinci sıklıkta görülen deri kanseri türü olan Skuam
           lenf nodu disseksiyonu 
           ve sistemik tedaviler 
           gerekebilir. Erken 
-          evre skuamöz 
-          hücreli 
-          karsinomlarda 
+          evre  
+          kanserlerde 
           tedavi 
           başarısı çok 
           yüksektir, 

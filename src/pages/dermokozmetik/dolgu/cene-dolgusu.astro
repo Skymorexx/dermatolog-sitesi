@@ -1,9 +1,46 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import BreadcrumbSchema from '../../../components/BreadcrumbSchema.astro';
+import FaqSchema from '../../../components/FaqSchema.astro';
 
 const title = "Çene Dolgusu - Uzm. Dr. Umut Mert Yıldırım";
-const description = "Çene bölgesine hacim kazandırma ve şekillendirme için uygulanan çene dolgusu işlemi hakkında detaylı bilgi, uygulama süreci ve sıkça sorulan sorular.";
+const description = "Çene bölgesine hacim kazandırma ve şekillendirme için uygulanan çene dolgusu (Jawline) işlemi hakkında detaylı bilgi, uygulama süreci ve sıkça sorulan sorular.";
+
+// SSS için soru-cevaplar
+const faqQuestions = [
+  {
+    question: "Çene dolgusu nedir ve nasıl çalışır?",
+    answer: "Çene dolgusu, hyaluronik asit bazlı dolgu maddeleri kullanılarak çene bölgesine hacim kazandırılması ve şekillendirilmesi amacıyla uygulanan estetik bir işlemdir. Çene hattının belirgin olmaması, geride görünüm veya simetri bozuklukları olan bireylerde yüz konturlarının belirginleştirilmesini sağlar. Bu işlem ile daha güçlü ve dengeli bir yüz profili oluşturulabilir."
+  },
+  {
+    question: "Çene dolgusu kimler için uygundur?",
+    answer: "Çene dolgusu, hyaluronik asit içerikli dolgu maddelerinin steril koşullarda ve lokal anestezi altında çene bölgesine enjekte edilmesiyle uygulanan minimal invaziv bir işlemdir. 18 yaşını tamamlamış, genel sağlık durumu iyi olan ve çenesinde estetik iyileşme isteyen her yetişkin birey için uygundur. Özellikle çene hattı zayıf, geri kaçık veya asimetrik olan bireylerde tercih edilir. Hamilelik veya emzirme döneminde olan kadınlar için uygun değildir."
+  },
+  {
+    question: "Çene dolgusu ağrılı bir işlem midir?",
+    answer: "İşlem öncesi lokal anestezik krem uygulandığı için hastalar minimal düzeyde rahatsızlık hissederler. Dolgu maddesinin içinde de lokal anestezik bulunması ağrıyı daha da azaltır. İşlem süresi biraz uzun olabilir ancak genellikle kolayca tolere edilir. Hassas ciltli bireylerde daha fazla rahatsızlık hissedilebilir."
+  },
+  {
+    question: "Çene dolgusunun etkisi ne kadar sürer?",
+    answer: "Hyaluronik asit bazlı dolgu maddeleri vücut tarafından doğal olarak yıkıldığı için etkisi 6-18 ay arasında sürer. Ortalama süre 12 aydır. Etkinin uzun sürmesi için sağlıklı yaşam tarzı benimsenmelidir. Düzenli uygulamalar ile etki daha kalıcı olur."
+  },
+  {
+    question: "Çene dolgusu yüzümde doğal bir görünüm sağlar mı?",
+    answer: "Çene dolgusu, doğru teknik ve doğru miktarda uygulandığında çok doğal sonuçlar verir. Uzman hekimler tarafından bireysel yüz yapısına uygun planlanan uygulamalarla yüz dengesi sağlanır ve daha güçlü bir çene hattı oluşturulur. Aşırı dozda uygulama doğal olmayan sonuçlara neden olabilir."
+  },
+  {
+    question: "Çene dolgusundan memnun kalmazsam ne olur?",
+    answer: "Hyaluronik asit bazlı dolgulara özel olarak uygulanabilen hyaluronidaz enzimi ile dolgu maddesi vücuttan hızlıca uzaklaştırılabilir. Bu nedenle işlem geri alınabilir niteliktedir. Memnuniyetsizlik durumunda hekiminize başvurmanız yeterlidir."
+  },
+  {
+    question: "Çene dolgusu sonrası ne zaman makyaj yapabilirim?",
+    answer: "Çene dolgusu sonrası ilk 24 saat içinde makyaj yapılması önerilmez. 24 saat sonra normal makyaj yapabilirsiniz. Ancak ilk birkaç gün boyunca hafif, doğal tonlarda makyaj tercih edilmelidir. Göz ve dudak makyajı yapılabilir."
+  },
+  {
+    question: "Çene dolgusu diğer işlemlerle birlikte uygulanabilir mi?",
+    answer: "Evet, çene dolgusu diğer cilt bakım uygulamalarıyla birlikte uygulanabilir. Özellikle lazer tedavileri, mezoterapi ve diğer dolgu uygulamalarıyla kombine edilebilir. Ancak uygulama sırası ve zamanlaması hekim tarafından planlanmalıdır."
+  }
+];
 ---
 
 <BaseLayout title={title} description={description}>
@@ -17,17 +54,19 @@ const description = "Çene bölgesine hacim kazandırma ve şekillendirme için 
     ]}
   />
 
+    <FaqSchema questions={faqQuestions} />
+  
   <main id="main-content" class="container mx-auto px-4 py-12">
     <div class="max-w-4xl mx-auto">
       <h1 class="text-4xl font-bold text-primary mb-8">
-        Çene Dolgusu
+        Çene (Jawline) Dolgusu
       </h1>
       
       <div class="prose prose-lg text-text-primary max-w-none">
         <p class="mb-8 leading-relaxed">
           Çene dolgusu, hyaluronik asit bazlı dolgu maddeleri kullanılarak çene bölgesine hacim kazandırılması 
-          ve şekillendirilmesi amacıyla uygulanan estetik bir işlemdir. Çenede yetersiz tanımlanma, 
-          geri kaçık görünüm veya simetri bozuklukları olan bireylerde yüz konturlarının belirginleştirilmesini 
+          ve şekillendirilmesi amacıyla uygulanan estetik bir işlemdir. Çene hattının belirgin olmaması, 
+          geride görünüm veya simetri bozuklukları olan bireylerde yüz konturlarının belirginleştirilmesini 
           sağlar. Bu işlem ile daha güçlü ve dengeli bir yüz profili oluşturulabilir.
         </p>
         
@@ -124,7 +163,7 @@ const description = "Çene bölgesine hacim kazandırma ve şekillendirme için 
           📅 Randevu Al
         </a>
         <p class="mt-4 text-text-secondary">
-          Uzman dermatolog gözetiminde çene dolgusu işlemi için randevu alın.
+          Uzman dermatolog gözetiminde çene dolgusu (jawline) işlemi için randevu alın.
         </p>
       </div>
     </div>

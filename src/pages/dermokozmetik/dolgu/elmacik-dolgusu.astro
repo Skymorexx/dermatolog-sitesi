@@ -1,9 +1,46 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import BreadcrumbSchema from '../../../components/BreadcrumbSchema.astro';
+import FaqSchema from '../../../components/FaqSchema.astro';
 
 const title = "Elmacık Dolgusu - Uzm. Dr. Umut Mert Yıldırım";
 const description = "Elmacık kemiklerine hacim kazandırma için uygulanan elmacık dolgusu işlemi hakkında detaylı bilgi, uygulama süreci ve sıkça sorulan sorular.";
+
+// SSS için soru-cevaplar
+const faqQuestions = [
+  {
+    question: "Elmacık dolgusu nedir ve nasıl çalışır?",
+    answer: "Elmacık dolgusu, hyaluronik asit bazlı dolgu maddeleri kullanılarak elmacık kemiklerine hacim kazandırılması amacıyla uygulanan estetik bir işlemdir. Yaşlanma sonucu elmacık bölgesinde hacim kaybı yaşayan bireylerde yüzün genç ve dinamik bir görünümü elde edilmesini sağlar. Bu işlem sayesinde yüz konturları belirginleştirilir ve daha çekici bir yüz silueti oluşturulur."
+  },
+  {
+    question: "Elmacık dolgusu kimler için uygundur?",
+    answer: "Elmacık dolgusu, hyaluronik asit içerikli dolgu maddelerinin steril koşullarda ve lokal anestezi altında elmacık kemiklerine enjekte edilmesiyle uygulanan minimal invaziv bir işlemdir. 18 yaşını tamamlamış, genel sağlık durumu iyi olan ve yüzünde hacim kaybı yaşayan her yetişkin birey için uygundur. Özellikle yaşlanma sonucu elmacık bölgesinde çöküklük gelişen bireylerde tercih edilir. Hamilelik veya emzirme döneminde olan kadınlar için uygun değildir."
+  },
+  {
+    question: "Elmacık dolgusu ağrılı bir işlem midir?",
+    answer: "İşlem öncesi lokal anestezik krem uygulandığı için hastalar minimal düzeyde rahatsızlık hissederler. Dolgu maddesinin içinde de lokal anestezik bulunması ağrıyı daha da azaltır. İşlem süresi biraz uzun olabilir ancak genellikle kolayca tolere edilir. Hassas ciltli bireylerde daha fazla rahatsızlık hissedilebilir."
+  },
+  {
+    question: "Elmacık dolgusunun etkisi ne kadar sürer?",
+    answer: "Hyaluronik asit bazlı dolgu maddeleri vücut tarafından doğal olarak yıkıldığı için etkisi 6-18 ay arasında sürer. Ortalama süre 12 aydır. Etkinin uzun sürmesi için sağlıklı yaşam tarzı benimsenmelidir. Düzenli uygulamalar ile etki daha kalıcı olur."
+  },
+  {
+    question: "Elmacık dolgusu yüzümü doğal görünür mü yapar?",
+    answer: "Elmacık dolgusu, doğru teknik ve doğru miktarda uygulandığında çok doğal sonuçlar verir. Uzman hekimler tarafından bireysel yüz yapısına uygun planlanan uygulamalarla yüz simetrisi sağlanır ve genç bir görünüm elde edilir. Aşırı dozda uygulama doğal olmayan sonuçlara neden olabilir."
+  },
+  {
+    question: "Elmacık dolgusundan memnun kalmazsam ne olur?",
+    answer: "Hyaluronik asit bazlı dolgulara özel olarak uygulanabilen hyaluronidaz enzimi ile dolgu maddesi vücuttan hızlıca uzaklaştırılabilir. Bu nedenle işlem geri alınabilir niteliktedir. Memnuniyetsizlik durumunda hekiminize başvurmanız yeterlidir."
+  },
+  {
+    question: "Elmacık dolgusu sonrası ne zaman makyaj yapabilirim?",
+    answer: "İşlem sonrası ilk 24 saat içinde makyaj yapılması önerilmez. 24 saat sonra normal makyaj yapabilirsiniz. Ancak ilk birkaç gün boyunca hafif, doğal tonlarda makyaj tercih edilmelidir. Göz ve dudak makyajı yapılabilir."
+  },
+  {
+    question: "Elmacık dolgusu diğer işlemlerle birlikte uygulanabilir mi?",
+    answer: "Evet, elmacık dolgusu diğer cilt bakım uygulamalarıyla birlikte uygulanabilir. Özellikle lazer tedavileri, mezoterapi ve diğer dolgu uygulamalarıyla kombine edilebilir. Ancak uygulama sırası ve zamanlaması hekim tarafından planlanmalıdır."
+  }
+];
 ---
 
 <BaseLayout title={title} description={description}>
@@ -17,6 +54,8 @@ const description = "Elmacık kemiklerine hacim kazandırma için uygulanan elma
     ]}
   />
   
+  <FaqSchema questions={faqQuestions} />
+
   <main id="main-content" class="container mx-auto px-4 py-12">
     <div class="max-w-4xl mx-auto">
       <h1 class="text-4xl font-bold text-primary mb-8">

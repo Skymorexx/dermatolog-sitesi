@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import BreadcrumbSchema from '../../components/BreadcrumbSchema.astro';
 import IslemKarti from '../../components/IslemKarti.astro';
 import KategoriDolgu from '../../assets/images/islemler/kategori-dolgu.jpg';
 import KategoriBotoks from '../../assets/images/islemler/kategori-botoks.jpg';
@@ -13,6 +14,13 @@ const description = "Modern estetik dermatoloji uygulamaları. Dolgu, botoks, me
 
 <BaseLayout title={title} description={description}>
   
+    <BreadcrumbSchema 
+    links={[
+      { name: "Ana Sayfa", url: "/" },
+      { name: "Dermokozmetik İşlemler", url: "/dermokozmetik/" },
+    ]}
+  />
+
   <main id="main-content" class="container mx-auto px-4 py-16">
     <div class="max-w-4xl mx-auto mb-12 text-center">
       <h1 class="text-4xl font-bold text-primary mb-6">

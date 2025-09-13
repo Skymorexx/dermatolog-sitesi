@@ -1,9 +1,46 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import BreadcrumbSchema from '../../../components/BreadcrumbSchema.astro';
+import FaqSchema from '../../../components/FaqSchema.astro';
 
 const title = "Paris Işıltısı (Mezoterapi) - Uzm. Dr. Umut Mert Yıldırım";
 const description = "Cildinize doğal ışıltı kazandırmak için uygulanan Paris Işıltısı mezoterapi işlemi hakkında detaylı bilgi, uygulama süreci ve sıkça sorulan sorular.";
+
+// SSS için soru-cevaplar
+const faqQuestions = [
+  {
+    question: "Paris Işıltısı nedir ve nasıl çalışır?",
+    answer: "Paris Işıltısı, cilde canlılık ve parlaklık kazandırmak amacıyla uygulanan özel formüllü mezoterapi uygulamasıdır. Vitaminler, aminoasitler, antioksidanlar ve hyaluronik asit gibi aktif maddelerin cilt yüzeyine çok ince iğnelerle enjekte edilmesiyle gerçekleştirilir. Bu işlem sayesinde cilt yenilenir, matlık giderilir ve daha genç, parlak bir görünüme kavuşulur. Özellikle yorgun ve donuk görünümlü ciltler için etkili bir çözüm sunar."
+  },
+  {
+    question: "Paris Işıltısı kimler için uygundur?",
+    answer: "Paris Işıltısı, özel vitamin ve mineral karışımlarının cilt yüzeyine mikro enjeksiyonlarla uygulanan minimal invaziv bir işlemdir. 18 yaşını tamamlamış, genel sağlık durumu iyi olan ve cildinde matlık, cansızlık problemi yaşayan her yetişkin birey için uygundur. Özellikle stres, yorgunluk, çevresel faktörler veya yaşlanma sonucu cildi donuklaşan bireylerde tercih edilir. Hamilelik veya emzirme döneminde olan kadınlar için uygun değildir."
+  },
+  {
+    question: "Paris Işıltısı ağrılı bir işlem midir?",
+    answer: "İşlem öncesi lokal anestezik krem uygulanabilir. İğneler çok ince olduğu için hastalar genellikle hafif bir battı hissi yaşarlar. İşlem kısa sürede tamamlandığı için genellikle kolayca tolere edilir. Hassas ciltli bireylerde daha fazla rahatsızlık hissedilebilir."
+  },
+  {
+    question: "Paris Işıltısı etkisi ne zaman görülür?",
+    answer: "Ciltteki ışıltı ve parlaklık etkisi genellikle işlem sonrası 1-2 hafta içinde ortaya çıkar. Ancak maksimum etki 3-4 hafta içinde görülür. Cilt yenilenmesi süreci devam ettiği için etki 4-6 hafta boyunca gelişmeye devam eder. Düzenli uygulamalar ile etki daha kalıcı ve belirgin hale gelir."
+  },
+  {
+    question: "Paris Işıltısı kaç seans yapılır?",
+    answer: "Optimal sonuçlar için genellikle 2-3 haftada bir olmak üzere 3-6 seans önerilir. Cilt durumuna göre hekim tarafından bireysel planlama yapılır. İlk seans sonrası ciltte belirgin bir iyileşme görülür, ancak seri uygulamalar ile etki daha kalıcı hale gelir."
+  },
+  {
+    question: "Paris Işıltısı sonrası ne zaman makyaj yapabilirim?",
+    answer: "İşlem sonrası ilk 24 saat içinde makyaj yapılması önerilmez. 24 saat sonra normal makyaj yapabilirsiniz. Ancak ilk birkaç gün boyunca hafif, doğal tonlarda makyaj tercih edilmelidir. Göz ve dudak makyajı yapılabilir."
+  },
+  {
+    question: "Paris Işıltısı diğer işlemlerle birlikte uygulanabilir mi?",
+    answer: "Evet, Paris Işıltısı diğer cilt bakım uygulamalarıyla birlikte uygulanabilir. Özellikle lazer tedavileri, kimyasal peeling ve diğer mezoterapi uygulamalarıyla kombine edilebilir. Ancak uygulama sırası ve zamanlaması hekim tarafından planlanmalıdır."
+  },
+  {
+    question: "Paris Işıltısı tedavisi ne kadar sürer?",
+    answer: "Paris Işıltısı işlemi genellikle 30-45 dakika sürer. Uygulama alanına göre işlem süresi değişebilir. Hastalar işlem sonrası hemen günlük yaşamlarına dönebilirler. Ancak işlem yapılan bölgede hafif kızarıklık ve şişlik görülebilir, bu belirtiler genellikle 1-2 saat içinde geçer."
+  }
+];
 ---
 
 <BaseLayout title={title} description={description}>
@@ -17,6 +54,8 @@ const description = "Cildinize doğal ışıltı kazandırmak için uygulanan Pa
     ]}
   />
 
+  <FaqSchema questions={faqQuestions} />
+
   <main id="main-content" class="container mx-auto px-4 py-12">
     <div class="max-w-4xl mx-auto">
       <h1 class="text-4xl font-bold text-primary mb-8">
@@ -25,12 +64,12 @@ const description = "Cildinize doğal ışıltı kazandırmak için uygulanan Pa
       
       <div class="prose prose-lg text-text-primary max-w-none">
         <p class="mb-8 leading-relaxed">
-          Paris Işıltısı, cilde canlılık ve ışıltı kazandırmak amacıyla uygulanan özel 
+          Paris Işıltısı, cilde canlılık ve parlaklık kazandırmak amacıyla uygulanan özel 
           formüllü mezoterapi uygulamasıdır. Vitaminler, aminoasitler, antioksidanlar 
           ve hyaluronik asit gibi aktif maddelerin cilt yüzeyine çok ince iğnelerle 
           enjekte edilmesiyle gerçekleştirilir. Bu işlem sayesinde cilt yenilenir, 
           matlık giderilir ve daha genç, parlak bir görünüme kavuşulur. Özellikle 
-          yorgun ve donuk ciltler için etkili bir çözüm sunar.
+          yorgun ve donuk görünümlü ciltler için etkili bir çözüm sunar.
         </p>
         
         <h2 class="text-2xl font-bold text-primary mt-12 mb-6">
@@ -52,7 +91,7 @@ const description = "Cildinize doğal ışıltı kazandırmak için uygulanan Pa
         </h2>
         
         <p class="mb-6 leading-relaxed">
-          Paris Işıltısı işlemi öncesinde cilt temizlenir ve gerekirse yerel 
+          Paris Işıltısı işlemi öncesinde cilt temizlenir ve lokal 
           anestezik krem uygulanır. Steril koşullarda ve çok ince iğnelerle 
           özel formül mezoterapi maddesi cilt yüzeyine belirlenen desene göre 
           enjekte edilir. İşlem 30-45 dakika sürer. Hastalar işlem sonrası 
@@ -84,7 +123,7 @@ const description = "Cildinize doğal ışıltı kazandırmak için uygulanan Pa
             </h3>
             <p class="leading-relaxed">
               İşlem öncesi lokal anestezik krem uygulanabilir. İğneler çok ince 
-              olduğu için hastalar genellikle hafif bir battı hissi yaşarlar. 
+              olduğu için hastalar genellikle hafif bir batma hissi yaşarlar. 
               İşlem kısa sürede tamamlandığı için genellikle kolayca tolere edilir. 
               Hassas ciltli bireylerde daha fazla rahatsızlık hissedilebilir.
             </p>
@@ -96,9 +135,9 @@ const description = "Cildinize doğal ışıltı kazandırmak için uygulanan Pa
             </h3>
             <p class="leading-relaxed">
               Ciltteki ışıltı ve parlaklık etkisi genellikle işlem sonrası 
-              hemen görülür. Ancak maksimum etki 1-2 hafta içinde ortaya çıkar. 
+              1-2 hafta içinde ortaya çıkar. 
               Cilt yenilenmesi süreci devam ettiği için etki 3-4 hafta boyunca 
-              gelişmeye devam eder. Düzenli uygulamalar ile etki daha uzun süreli olur.
+              artmaya devam eder. Düzenli uygulamalar ile etki daha uzun süreli olur.
             </p>
           </div>
           
@@ -107,8 +146,8 @@ const description = "Cildinize doğal ışıltı kazandırmak için uygulanan Pa
               Paris Işıltısı kaç seans yapılır?
             </h3>
             <p class="leading-relaxed">
-              Optimal sonuçlar için genellikle 4-6 haftada bir olmak üzere 
-              4-6 seans önerilir. Cilt durumuna göre hekim tarafından 
+              Optimal sonuçlar için genellikle 2-3 haftada bir olmak üzere 
+              3-6 seans önerilir. Cilt durumuna göre hekim tarafından 
               bireysel planlama yapılır. İlk seans sonrası ciltte belirgin 
               bir iyileşme görülür, ancak seri uygulamalar ile etki 
               daha kalıcı ve belirgin hale gelir.

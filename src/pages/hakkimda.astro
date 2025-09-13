@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import BreadcrumbSchema from '../components/BreadcrumbSchema.astro';
 import { Image } from 'astro:assets';
 // Profil resmini import et
 import ProfilResmi from '../assets/images/dr-umut-mert-yildirim-profil.jpg';
@@ -15,6 +16,13 @@ const description = "Uzm. Dr. Umut Mert Yıldırım hakkında detaylı bilgiler,
 
 <BaseLayout title={title} description={description}>
   
+  <BreadcrumbSchema 
+    links={[
+      { name: "Ana Sayfa", url: "/" },
+      { name: "Hakkımda", url: "/hakkimda/" },
+    ]}
+  />
+
   <main id="main-content" class="container mx-auto px-4 py-12">
     <div class="max-w-4xl mx-auto">
       <h1 class="text-4xl font-bold text-primary mb-8">
