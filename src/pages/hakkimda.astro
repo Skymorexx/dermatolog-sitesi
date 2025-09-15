@@ -30,14 +30,17 @@ const description = "Uzm. Dr. Umut Mert Yıldırım hakkında detaylı bilgiler,
       </h1>
       
       <div class="prose prose-lg text-text-primary max-w-none">
-         <div class="bg-white rounded-lg shadow-md p-8 mb-12">
-      <Image 
+  <div class="bg-white rounded-lg shadow-md p-8 mb-12 not-prose">
+    <Image
       src={ProfilResmi}
       alt="Uzm. Dr. Umut Mert Yıldırım"
-      class="rounded-lg shadow-xl w-full max-w-md h-auto"
+      class="block mx-auto rounded-lg shadow-xl w-full max-w-md h-auto"
       widths={[400, 800]}
-      sizes="(max-width: 768px) 100vw, 50vw"
-    />"
+      sizes="(max-width: 768px) 100vw, 448px"
+      loading="eager"
+    />
+  </div>
+</div>
           
           <div class="text-left">
             <p class="text-xl leading-relaxed mb-6">
