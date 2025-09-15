@@ -1,9 +1,42 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import BreadcrumbSchema from '../../components/BreadcrumbSchema.astro';
+import FaqSchema from '../../components/FaqSchema.astro';
 
 const title = "Liken Planus Hastalığı Tedavisi - Uzm. Dr. Umut Mert Yıldırım";
-const description = "Kronik iltihabi deri hastalığı liken planus belirtileri, nedenleri ve Uzm. Dr. Umut Mert Yıldırım tarafından uygulanan modern tedavi yöntemleri hakkında bilgi alın.";
+const description = "Liken planus belirtileri, nedenleri ve Uzm. Dr. Umut Mert Yıldırım tarafından uygulanan modern tedavi yöntemleri hakkında bilgi alın.";
+
+// SSS için soru-cevaplar
+const faqQuestions = [
+{
+question: "Liken planus hastalığı nedir ve nasıl oluşur?",
+answer: "Liken planus, kronik iltihabi bir deri hastalığıdır ve karakteristik morumsu, düz yüzeyli, yuvarlak şeklindeki lezyonlarla kendini gösterir. Hastalığın tam nedeni bilinmemekle birlikte otoimmün bir süreç olduğu düşünülmektedir. Stres, bazı ilaçlar ve viral enfeksiyonlar tetikleyici faktör olabilir. Hastalık genellikle 6 ay ile 2 yıl arasında kendiliğinden iyileşebilir, ancak bazı olgularda kronik seyir gösterebilir. Liken planus, deri, tırnaklar, ağız içi mukozası ve genital bölgede görülebilen kronik iltihabi bir hastalıktır. Deride karakteristik morumsu, parlak, düz, çokgen şeklinde lezyonlar görülür. Bu lezyonlar genellikle bileklerde, ön kol iç yüzünde, ayak bileklerinde ve bel bölgesinde lokalizedir. Lezyonlar genellikle kaşıntılıdır."
+},
+{
+question: "Liken planus tedavisi kimler için uygundur?",
+answer: "Liken planus, deri, tırnaklar, ağız içi mukozası ve genital bölgede görülebilen kronik iltihabi bir hastalıktır. 30-60 yaş aralığında daha sık görülür. Genel sağlık durumu iyi olan ve cildinde liken planus lezyonları görülen her birey için kişiye özgü tedavi modalitesi seçilir."
+},
+{
+question: "Liken planus hastalığı tedavisi ağrılı bir işlem midir?",
+answer: "Liken planus tedavisi genellikle ağrılı bir işlem değildir. Tedavi yaklaşımı hastalığın şiddetine göre değişir. Hafif olgularda sadece gözlem yapılabilir. Kaşıntıyı azaltmak için topikal kortikosteroidler, sistemik ilaçlar ve immünsüpresif ajanlar kullanılır.Ağız içi lezyonlarda eğer enjeksiyon tedavisi tercih edilecekse işlem hafif ağrılıdır."
+},
+{
+question: "Liken planus hastalığı tedavisi etkisi ne zaman görülür?",
+answer: "Liken planus tedavisi etkisi genellikle 2-6 ay sonra görülmeye başlanır. Ancak maksimum etki 6-12 ay içinde ortaya çıkar. Hastalığın süresi kişiden kişiye değişir, genellikle 6 ay ile 2 yıl arasında sürer. Hafif olgularda sadece gözlem yeterli olabilir. Topikal tedaviler 2-3 ay uygulanır. Sistemik tedavi gerektiren olgularda tedavi süresi uzun olabilir. Ağız içi lezyonlar daha uzun süreli takip gerektirir. Düzenli uygulamalar ile etki daha kalıcı olur."
+},
+{
+question: "Liken planus hastalığı tedavisi kaç seans yapılır?",
+answer: "Liken planus tedavisi genellikle 2-6 ay sürer. Hafif olgularda sadece gözlem yeterli olabilir. Topikal tedaviler 2-3 ay uygulanır. Sistemik tedavi gerektiren olgularda tedavi süresi uzun olabilir. Ağız içi lezyonlar daha uzun süreli takip gerektirir. Tedavi süresi hastalığın şiddetine göre değişir. İlk seans sonrası ciltte belirgin bir iyileşme görülür, ancak seri uygulamalar ile etki daha kalıcı hale gelir."
+},
+{
+question: "Liken planus hastalığı kalıcı mıdır?",
+answer: "Hayır, liken planus hastalığı kalıcı değildir. Liken planus genellikle kendiliğinden iyileşen bir hastalıktır. Tedavi ile semptomlar kontrol altına alınabilir ve iyileşme süreci hızlandırılabilir. Hastalığın süresi kişiden kişiye değişir, genellikle 6 ay ile 2 yıl arasında sürer. Bazı olgularda tekrarlama olabilir. Etki kaybolduğunda tekrar uygulama yapılabilir. Düzenli takip ile hastalık süreci yönetilebilir."
+},
+{
+question: "Liken planus hastalığı diğer işlemlerle birlikte uygulanabilir mi?",
+answer: "Evet, liken planus hastalığı tedavisi diğer cilt  uygulamalarıyla birlikte uygulanabilir. Özellikle lazer tedavileri, mezoterapi ve diğer non-invaziv prosedürlerle kombine edilebilir. Ancak uygulama sırası ve zamanlaması hekim tarafından planlanmalıdır."
+}
+];
 ---
 
 <BaseLayout title={title} description={description}>
@@ -16,6 +49,8 @@ const description = "Kronik iltihabi deri hastalığı liken planus belirtileri,
     ]}
   />
 
+  <FaqSchema questions={faqQuestions} />
+
   <main id="main-content" class="container mx-auto px-4 py-12">
     <div class="max-w-4xl mx-auto">
       <h1 class="text-4xl font-bold text-primary mb-8">
@@ -26,7 +61,7 @@ const description = "Kronik iltihabi deri hastalığı liken planus belirtileri,
         <p class="mb-8 leading-relaxed">
           Liken planus, kronik iltihabi bir deri 
           hastalığıdır ve karakteristik morumsu, 
-          düz, çokgen şeklindeki lezyonlarla 
+          düz yüzeyli, yuvarlak şeklindeki lezyonlarla 
           kendini gösterir. Hastalığın tam 
           nedeni bilinmemekle birlikte 
           otoimmün bir süreç 
@@ -62,12 +97,8 @@ const description = "Kronik iltihabi deri hastalığı liken planus belirtileri,
           ön kol iç yüzünde, 
           ayak bileklerinde 
           ve bel bölgesinde 
-          lokalizedir. Lezyonlar 
-          kaşıntılıdır ve 
-          dokunulduğunda 
-          karakteristik bir 
-          his (Wickham striae) 
-          verir.
+          lokalizedir. Lezyonlar genellikle 
+          kaşıntılıdır.
         </p>
         
         <h2 class="text-2xl font-bold text-primary mt-12 mb-6">
@@ -81,7 +112,7 @@ const description = "Kronik iltihabi deri hastalığı liken planus belirtileri,
           iyileşme eğilimi olduğu 
           için hafif olgularda 
           sadece gözlem yapılabilir. 
-          Kaşıntı ve iltihabı 
+          Kaşıntıyı 
           azaltmak için topikal 
           kortikosteroidler, sistemik 
           antimalaryal ilaçlar ve 
@@ -99,7 +130,7 @@ const description = "Kronik iltihabi deri hastalığı liken planus belirtileri,
           <li>Antimalaryal ilaçlar (hidroksiklorokin)</li>
           <li>İmmünsüpresif ajanlar (siklosporin, metotreksat)</li>
           <li>Retinoidler (tretinoin krem)</li>
-          <li>Fototerapi (UVB narrowband)</li>
+          <li>Fototerapi (Darband UVB)</li>
           <li>Ağız içi lezyonlarda özel bakım ve düzenli takip</li>
         </ul>
         

@@ -1,9 +1,38 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import BreadcrumbSchema from '../../components/BreadcrumbSchema.astro';
+import FaqSchema from '../../components/FaqSchema.astro';
 
 const title = "Vitiligo Tedavisi - Uzm. Dr. Umut Mert Yıldırım";
 const description = "Ciltte beyaz lekelere neden olan vitiligo hastalığı, tanı ve tedavi süreçleri hakkında detaylı bilgilendirme.";
+
+// SSS için soru-cevaplar
+const faqQuestions = [
+{
+question: "Vitiligo nedir ve nasıl oluşur?",
+answer: "Vitiligo, ciltte melanin üretimini yapan pigment hücrelerinin (melanositlerin) kaybı sonucu ortaya çıkan, beyaz lekelerle karakterize edilen kronik bir deri hastalığıdır. Hastalık her yaşta görülebilir ve özellikle yüz, el, ayak ve genital bölgede estetik sorunlara neden olur. Vitiligo, melanositlerin otoimmün bir süreçle tahrip edilmesi sonucu ciltte pigment kaybıyla karakterize edilir. Tam olarak neden olduğu tam olarak bilinmese de, genetik yatkınlık, otoimmün hastalıklar, stres ve çevresel faktörlerin rolü olduğu düşünülmektedir. İki ana tipi vardır: non-segmental vitiligo (yaygın tip) ve segmental vitiligo (sınırlı tip)."
+},
+{
+question: "Vitiligo tedavisi kimler için uygundur?",
+answer: "Vitiligo, melanin pigmentini üreten melanosit hücrelerinin kaybı sonucu ciltte beyaz lekelerle karakterize edilen kronik bir deri hastalığıdır. Vitiligo teşhisi alan her birey için uygun bir tedavi yöntemi belirlenir."
+},
+{
+question: "Vitiligo tedavisi ağrılı bir işlem midir?",
+answer: "Vitiligo tedavisi genellikle ağrılı bir işlem değildir. Topikal tedaviler, fototerapi ve cerrahi yöntemler uygulanırken hastalar minimal düzeyde rahatsızlık hissederler. Narrowband UVB fototerapisi sırasında hafif bir sıcaklık hissi olabilir. Topikal kortikosteroidler ve kalsinörin inhibitörleri uygulanırken hafif bir yanma hissi yaşanabilir. İşlem kısa sürede tamamlandığı için genellikle kolayca tolere edilir."
+},
+{
+question: "Vitiligo tedavisi etkisi ne zaman görülür?",
+answer: "Vitiligo tedavisi etkisi genellikle 3-6 ay sonra görülmeye başlanır.Tedavi süresi lezyonların yaygınlığı ve lokalizasyonuna göre değişir. İlk yanıt genellikle 3-6 ay içinde görülür, ancak cilt yenilenmesi süreci nedeniyle tam sonuç 12-24 ayda ortaya çıkar. Düzenli uygulamalar ile etki daha kalıcı olur."
+},
+{
+question: "Vitiligo tamamen iyileşir mi?",
+answer: "Günümüzde vitiligo hastalığını tamamen iyileştiren bir tedavi mevcut olmamakla birlikte, modern tedavi yöntemleri ile pigment kaybı büyük ölçüde düzeltilebilir. Tedavi amacı pigmentin geri kazanılmasıdır. Kullanılan yöntemler topikal tedaviler, fototerapi ve cerrahi yöntemler olmak üzere üç ana grupta toplanır. Erken dönemde başlayan ve yüz bölgesinde lokalize olgularda tedavi başarısı daha yüksektir."
+},
+{
+question: "Vitiligo tedavisi diğer işlemlerle birlikte uygulanabilir mi?",
+answer: "Evet, vitiligo tedavisi diğer cilt bakım uygulamalarıyla birlikte uygulanabilir. Özellikle lazer tedavileri, mezoterapi ve diğer non-invaziv prosedürlerle kombine edilebilir. Ancak uygulama sırası ve zamanlaması hekim tarafından planlanmalıdır."
+}
+];
 ---
 
 <BaseLayout title={title} description={description}>
@@ -16,6 +45,8 @@ const description = "Ciltte beyaz lekelere neden olan vitiligo hastalığı, tan
     ]}
   />
 
+<FaqSchema questions={faqQuestions} />
+
   <main id="main-content" class="container mx-auto px-4 py-12">
     <div class="max-w-4xl mx-auto">
       <h1 class="text-4xl font-bold text-primary mb-8">
@@ -27,7 +58,6 @@ const description = "Ciltte beyaz lekelere neden olan vitiligo hastalığı, tan
           Vitiligo, ciltte melanin üretimini yapan pigment hücrelerinin (melanositlerin) kaybı sonucu 
           ortaya çıkan, beyaz lekelerle karakterize edilen kronik bir deri hastalığıdır. Hastalık 
           her yaşta görülebilir ve özellikle yüz, el, ayak ve genital bölgede estetik sorunlara neden olur. 
-          Psikolojik etkileri de önemli olabilir ve hastaların yaşam kalitesini ciddi şekilde etkileyebilir.
         </p>
         
         <h2 class="text-2xl font-bold text-primary mt-12 mb-6">
@@ -81,9 +111,8 @@ const description = "Ciltte beyaz lekelere neden olan vitiligo hastalığı, tan
               Vitiligo tamamen iyileşir mi?
             </h3>
             <p class="leading-relaxed">
-              Vitiligo şu anda tamamen iyileştiren bir tedavisi olmamakla birlikte, modern tedavi 
-              yöntemleri ile pigment kaybı büyük ölçüde düzeltilebilir. Özellikle erken dönemde 
-              başlayan ve yüz bölgesinde lokalize olgularda tedavi başarısı yüksektir.
+              Günümüzde Vitiligo hastaığını tamamen iyileştiren bir tedavi mevcut olmamakla birlikte, modern tedavi 
+              yöntemleri ile pigment kaybı büyük ölçüde düzeltilebilir.
             </p>
           </div>
           
@@ -94,7 +123,6 @@ const description = "Ciltte beyaz lekelere neden olan vitiligo hastalığı, tan
             <p class="leading-relaxed">
               Tedavi süresi lezyonların yaygınlığı ve lokalizasyonuna göre değişir. İlk yanıt genellikle 
               3-6 ay içinde görülür, ancak optimal sonuçlar için 12-24 aylık tedavi gerekebilir. 
-              Fototerapide haftada 2-3 seans uygulanır ve tedavi uzun vadeli planlanır.
             </p>
           </div>
         </div>

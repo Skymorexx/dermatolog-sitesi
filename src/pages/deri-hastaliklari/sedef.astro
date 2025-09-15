@@ -1,9 +1,42 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import BreadcrumbSchema from '../../components/BreadcrumbSchema.astro';
+import FaqSchema from '../../components/FaqSchema.astro';
 
-const title = "Sedef Hastalığı (Psoriasis) Tedavisi - Uzm. Dr. Umut Mert Yıldırım";
-const description = "Sedef hastalığı (psoriasis) hakkında bilgi, belirtileri ve kliniğimizde uygulanan güncel tedavi seçenekleri.";
+const title = "Sedef Hastalığı (Psöriyazis) Tedavisi - Uzm. Dr. Umut Mert Yıldırım";
+const description = "Sedef hastalığı (psöriyazis) hakkında bilgi, klinik belirtileri ve kliniğimizde uygulanan güncel tedavi seçenekleri.";
+
+// SSS için soru-cevaplar
+const faqQuestions = [
+{
+question: "Sedef hastalığı (psöriyazis) nedir ve nasıl oluşur?",
+answer: "Sedef hastalığı, cilt hücrelerinin normalden çok daha hızlı yenilenmesi sonucu ortaya çıkan kronik iltihabi bir deri hastalığıdır. Genellikle kırmızı, pullu plaklar şeklinde kendini gösterir ve şiddetine göre hastaların yaşam kalitesini önemli ölçüde etkileyebilir. Hastalık, genetik yatkınlık ve çevresel faktörlerin etkileşimi sonucu gelişir. Sedef hastalığı, bağışıklık sistemindeki bozukluk nedeniyle cilt hücrelerinin normal döngüsünden çok daha hızlı yenilenmesiyle karakterize edilir. Normalde cilt hücreleri 28-30 günde yenilenirken, sedef hastalığında bu süreç 3-4 güne iner. Bu hızlı hücre yenilenmesi, ciltte kalın, pullu ve kızarıklıklarla sonuçlanır. En sık görülen tipi plak tipi sedef hastalığıdır."
+},
+{
+question: "Sedef hastalığı (psöriyazis) tedavisi kimler için uygundur?",
+answer: "Sedef hastalığı, bağışıklık sistemindeki bozukluk nedeniyle cilt hücrelerinin normal döngüsünden çok daha hızlı yenilenmesiyle karakterize edilen kronik iltihabi bir deri hastalığıdır. Genellikle kırmızı, pullu plaklar şeklinde kendini gösterir ve şiddetine göre hastaların yaşam kalitesini önemli ölçüde etkileyebilir. Özellikle plak tipi sedef hastalığı, guttat psöriyazis, invers psöriyazis, püstüler psöriyazis ve eritrodermik psöriyazis gibi tanıları olan bireylerde tercih edilir."
+},
+{
+question: "Sedef hastalığı (psöriyazis) tedavisi ağrılı bir işlem midir?",
+answer: "Sedef hastalığı tedavisi genellikle ağrılı bir işlem değildir. Tedavi seçenekleri topikal tedaviler, fototerapi ve sistemik ilaç tedavileri olmak üzere üç ana grupta toplanır. Hafif olgularda topikal tedaviler yeterli olabilirken, orta-ağır olgularda biyolojik ilaçlar ve diğer sistemik tedaviler gerekebilir."
+},
+{
+question: "Sedef hastalığı (psöriyazis) tedavisi etkisi ne zaman görülür?",
+answer: "Sedef hastalığı tedavisi etkisi genellikle 4-8 hafta sonra görülmeye başlanır. Ancak maksimum etki 2-3 ay içinde ortaya çıkar. Tedavi süresi hastalığın şiddeti, yaygınlığı ve bireysel yanıta göre değişir. İlk iyileşme genellikle 4-8 hafta içinde görülür, ancak uzun vadeli bakım ve takip gereklidir. Biyolojik tedavilerde etki genellikle 2-3 ay içinde maksimum düzeye ulaşır."
+},
+{
+question: "Sedef hastalığı (psöriyazis) tedavisi kaç seans yapılır?",
+answer: " Tedavi süresi hastalığın şiddeti, yaygınlığı ve bireysel yanıta göre değişir. Hafif olgularda topikal tedaviler yeterli olabilirken, orta-ağır olgularda biyolojik ilaçlar ve diğer sistemik tedaviler gerekebilir."
+},
+{
+question: "Sedef hastalığı (psöriyazis) tamamen iyileşir mi?",
+answer: "Sedef hastalığının günümüzde kalıcı iyileşme sağlayan bir tedavisi olmamakla birlikte, modern tedavi yöntemleri ile semptomlar büyük ölçüde kontrol altına alınabilir ve hastalar normal yaşam kalitesine kavuşabilirler. Bazı hastalarda uzun süreli remisyonlar da mümkündür. Tedavi seçenekleri topikal tedaviler, fototerapi ve sistemik ilaç tedavileri olmak üzere üç ana grupta toplanır. Hafif olgularda topikal tedaviler yeterli olabilirken, orta-ağır olgularda biyolojik ilaçlar ve diğer sistemik tedaviler gerekebilir. Etki kaybolduğunda tekrar uygulama yapılabilir."
+},
+{
+question: "Sedef hastalığı (psöriyazis) diğer işlemlerle birlikte uygulanabilir mi?",
+answer: "Evet, sedef hastalığı tedavisi diğer cilt bakım uygulamalarıyla birlikte uygulanabilir. Özellikle lazer tedavileri, mezoterapi ve diğer non-invaziv prosedürlerle kombine edilebilir. Ancak uygulama sırası ve zamanlaması hekim tarafından planlanmalıdır."
+}
+];
 ---
 
 <BaseLayout title={title} description={description}>
@@ -12,21 +45,23 @@ const description = "Sedef hastalığı (psoriasis) hakkında bilgi, belirtileri
     links={[
       { name: "Ana Sayfa", url: "/" },
       { name: "Deri Hastalıkları", url: "/deri-hastaliklari/" },
-      { name: "Sedef Hastalığı (Psöriyasis) Tedavisi", url: "/deri-hastaliklari/sedef/" },
+      { name: "Sedef Hastalığı (Psöriyazis) Tedavisi", url: "/deri-hastaliklari/sedef/" },
     ]}
   />
   
+  <FaqSchema questions={faqQuestions} />
+
   <main id="main-content" class="container mx-auto px-4 py-12">
     <div class="max-w-4xl mx-auto">
       <h1 class="text-4xl font-bold text-primary mb-8">
-        Sedef Hastalığı (Psöriyasis) ve Tedavi Yöntemleri
+        Sedef Hastalığı (Psöriyazis) ve Tedavi Yöntemleri
       </h1>
       
       <div class="prose prose-lg text-text-primary max-w-none">
         <p class="mb-8 leading-relaxed">
           Sedef hastalığı, cilt hücrelerinin normalden çok daha hızlı yenilenmesi sonucu ortaya çıkan 
           kronik iltihabi bir deri hastalığıdır. Genellikle kırmızı, pullu plaklar şeklinde kendini gösterir 
-          ve hastaların yaşam kalitesini önemli ölçüde etkileyebilir. Hastalık genetik yatkınlık ve 
+          ve şiddetine göre hastaların yaşam kalitesini önemli ölçüde etkileyebilir. Hastalık, genetik yatkınlık ve 
           çevresel faktörlerin etkileşimi sonucu gelişir.
         </p>
         

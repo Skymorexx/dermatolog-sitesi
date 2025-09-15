@@ -1,8 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import JsonLD from '../components/JsonLD.astro';
-import { Image } from 'astro:assets';
-import heroImage from '../assets/images/dr-umut-mert-yildirim-ofis.jpg';
 
 const title = "Uzm. Dr. Umut Mert Yıldırım - Dermatoloji Uzmanı";
 const description = "İstanbulda dermatoloji uzmanı; Deri hastalıkları, dermokozmetik uygulamalar ve dermocerrahi konularında uzman hekim hizmeti.";
@@ -76,34 +74,18 @@ const schema = {
 >
   <JsonLD schema={schema} />
   
-    <!-- Hero Section -->
-  <section class="bg-background-soft">
-    <div class="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center py-12 px-6">
-      
-      <!-- Metin Sütunu -->
-      <div class="text-center md:text-left">
-        <h1 class="text-4xl md:text-5xl font-bold text-primary mb-6">
-          Uzm. Dr. Umut Mert Yıldırım
-        </h1>
-        <p class="text-xl text-text-secondary mb-10">
-          Deri ve Zührevi Hastalıklar uzmanı olarak Medikal Dermatoloji, Dermokozmetik İşlemler ve Dermatocerrahi alanlarında hizmet vermektedir.
-        </p>
-        <a href="/iletisim" class="inline-block bg-accent hover:bg-orange-600 text-white font-semibold py-3 px-8 rounded-lg transition-colors duration-300 transform hover:scale-105 shadow-lg">
-          Randevu Alın
-        </a>
-      </div>
-
-      <!-- Görüntü Sütunu -->
-      <div class="flex justify-center md:justify-end">
-        <Image 
-          src={heroImage}
-          alt="Uzm. Dr. Umut Mert Yıldırım ofisinde hastalarını bekliyor"
-          class="rounded-lg shadow-xl w-full max-w-md h-auto"
-          widths={[400, 800]}
-          sizes="(max-width: 768px) 100vw, 50vw"
-        />
-      </div>
-
+  <!-- Hero Section -->
+  <section class="bg-background-soft py-16 px-6">
+    <div class="max-w-4xl mx-auto text-center">
+      <h1 class="text-4xl md:text-5xl font-bold text-primary mb-6">
+        Uzm. Dr. Umut Mert Yıldırım
+      </h1>
+      <p class="text-xl text-text-secondary mb-10 max-w-2xl mx-auto">
+        Deri ve Zührevi Hastalıklar uzmanı olarak Medikal Dermatoloji, Dermokozmetik İşlemler ve Dermatocerrahi alanlarında hizmet vermektedir.
+      </p>
+      <button class="bg-accent hover:bg-orange-600 text-white font-semibold py-3 px-8 rounded-lg transition-colors duration-300 transform hover:scale-105">
+        Randevu Alın
+      </button>
     </div>
   </section>
 

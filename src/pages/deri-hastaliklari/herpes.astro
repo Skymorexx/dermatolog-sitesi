@@ -1,9 +1,27 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import BreadcrumbSchema from '../../components/BreadcrumbSchema.astro';
+import FaqSchema from '../../components/FaqSchema.astro';
 
 const title = "Herpes (Uçuk) Hastalığı Tedavisi - Uzm. Dr. Umut Mert Yıldırım";
 const description = "Herpes simplex virüs (HSV) nedeniyle oluşan uçuk hastalığı belirtileri, nedenleri ve Uzm. Dr. Umut Mert Yıldırım tarafından uygulanan modern tedavi yöntemleri hakkında bilgi alın.";
+
+// SSS için soru-cevaplar
+const faqQuestions = [
+  {
+    question: "Herpes (uçuk) hastalığı bulaşıcı mıdır?",
+    answer: "Evet, herpes (uçuk) hastalığı oldukça bulaşıcıdır. Direkt cilt teması, öpüşme, ortak eşyalar (bardak, havlu) yoluyla bulaşabilir. Kabarcıklar patladığında salgın dönemidir ve bulaşıcılık en yüksektir. Ancak kabuklandığında da bulaşabilir. Virüsün latent döneminde bulaşma riski düşüktür."
+  },
+  {
+    question: "Herpes tedavisi kalıcı iyileşme sağlar mı?",
+    answer: "Maalesef herpes virüs vücuttan tamamen temizlenemez. Virüs sinir uçlarında latent olarak kalır ve bağışıklık sistemi zayıfladığında tekrar aktivite olabilir. Ancak uygun tedavi ile semptomların süresi kısaltılabilir ve tekrarlayan ataklar azaltılabilir. Supresif tedavi ile atak sıklığı büyük ölçüde azaltılabilir."
+  },
+  {
+    question: "Herpes tedavisi ne kadar sürer?",
+    answer: "Akut atak tedavisi genellikle 5-10 gün sürer. Sistemik antiviral tedavi 5-7 gün, topikal tedavi 7-10 gün uygulanır. Tedavi erken dönemde (ilk 24-48 saat) başlandığında daha etkili olur. Supresif tedavide ilaçlar aylarca düzenli kullanılır."
+  }
+];
+
 ---
 
 <BaseLayout title={title} description={description}>
@@ -16,6 +34,8 @@ const description = "Herpes simplex virüs (HSV) nedeniyle oluşan uçuk hastal�
     ]}
   />
 
+  <FaqSchema questions={faqQuestions} />
+  
   <main id="main-content" class="container mx-auto px-4 py-12">
     <div class="max-w-4xl mx-auto">
       <h1 class="text-4xl font-bold text-primary mb-8">

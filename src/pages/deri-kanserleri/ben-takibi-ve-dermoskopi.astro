@@ -1,9 +1,34 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import BreadcrumbSchema from '../../components/BreadcrumbSchema.astro';
+import FaqSchema from '../../components/FaqSchema.astro';
 
 const title = "Ben (Nevüs) Takibi ve Dermoskopi - Uzm. Dr. Umut Mert Yıldırım";
 const description = "Kişisel ben takibi ve profesyonel dermoskopik muayene ile deri kanserlerinin erken teşhisi. ABCDE kuralı ve dermatoskopik değerlendirme yöntemleri hakkında bilgiler.";
+
+// SSS için soru-cevaplar
+const faqQuestions = [
+  {
+    question: "Ben (nevüs) takibi ve dermoskopi nedir ve nasıl çalışır?",
+    answer: "Ben (nevüs) takibi ve dermoskopik muayene, deri kanserlerinin özellikle malign melanomun erken teşhisinde hayati öneme sahip koruyucu yöntemlerdir. Kişisel gözlem ve profesyonel dermatolojik değerlendirme ile şüpheli lezyonlar zamanında saptanabilir. Düzenli ben takibi, risk faktörlerine sahip bireylerde riskli benleri erken aşamada tanımak ve tedavisini düzenlemek için önemli bir yaklaşımdır. Dermoskopi sayesinde çıplak gözle görülemeyen yapılar detaylı olarak değerlendirilebilir ve risk düzeyleri belirlenebilir."
+  },
+  {
+    question: "Ben (nevüs) takibi ve dermoskopi kimler için uygundur?",
+    answer: "Ben takibi, bireylerin kendi cilt lezyonlarını düzenli olarak gözlemesi ve herhangi bir büyüme ve değişiklik, yeni ben oluşması gibi durumlarda uzman bir dermatoloğa başvurmasıdır. Bu yöntem özellikle aşağıdaki risk faktörlerine sahip bireyler için çok önemlidir: Açık ten rengi, çok sayıda ben veya çil, ailede deri kanseri öyküsü, çocukluk çağından itibaren yoğun güneş maruziyeti, geçmiş melanom öyküsü veya bağışıklık sisteminin baskılanmış olması. 18 yaşını tamamlamış, genel sağlık durumu iyi olan her yetişkin birey için uygundur."
+  },
+  {
+    question: "Ben (nevüs) takibi ve dermoskopi ağrılı bir işlem midir?",
+    answer: "Ben takibi kişisel gözlemle yapılır ve ağrılı değildir. Dermatoskop özel bir alet (dermatoskop) kullanarak cilt lezyonlarını 10-70 kat büyütmek suretiyle detaylı inceler."
+  },
+  {
+    question: "Ben (nevüs) takibi ve dermoskopi ile şüpheli lezyonlar hemen saptanabilir mi?",
+    answer: "Dermatoskopi cihazı ile ve kişisel gözlemle şüpheli lezyonlar hemen saptanabilir. Şüpheli lezyonların histopatolojik olarak incelenebilmesi için cerrahi çıkarımı hemen yapılabilir."
+  },
+  {
+    question: "Ben (nevüs) takibi ve dermoskopi kaç ayda bir yapılmalıdır?",
+    answer: "Genellikle 3-6 ayda bir olmak üzere kontoller önerilir. Cilt durumuna ve risk faktörlerine göre hekim tarafından bireysel planlama yapılır. Yüksek riskli bireylerde daha sık takip önerilebilir."
+  }
+];
 ---
 
 <BaseLayout title={title} description={description}>
@@ -15,6 +40,8 @@ const description = "Kişisel ben takibi ve profesyonel dermoskopik muayene ile 
       { name: "Ben (Nevüs) Takibi ve Dermoskopi", url: "/deri-kanserleri/ben-takibi-ve-dermoskopi/" },
     ]}
   />
+
+  <FaqSchema questions={faqQuestions} />
 
   <main id="main-content" class="container mx-auto px-4 py-12">
     <div class="max-w-4xl mx-auto">
@@ -35,15 +62,15 @@ const description = "Kişisel ben takibi ve profesyonel dermoskopik muayene ile 
           zamanında saptanabilir. 
           Düzenli ben takibi, 
           risk faktörlerine sahip 
-          bireylerde kanser 
-          gelişimini önleyici 
-          bir yaklaşım 
-          sunar. Dermoskopi 
+          bireylerde riskli benleri  
+          erken aşamada tanımak ve tedavisini düzenlemek için
+          önemli bir yaklaşımdır. 
+          Dermoskopi 
           sayesinde çıplak 
           gözle görülemeyen 
           yapılar detaylı 
           olarak 
-          değerlendirilebilir.
+          değerlendirilebilir ve risk düzeyleri belirlenebilir.
         </p>
         
         <h2 class="text-2xl font-bold text-primary mt-12 mb-6">
@@ -54,7 +81,7 @@ const description = "Kişisel ben takibi ve profesyonel dermoskopik muayene ile 
           Ben takibi, bireylerin kendi cilt 
           lezyonlarını düzenli olarak 
           gözlemesi ve herhangi bir 
-          değişiklik durumunda 
+          büyüme ve değişiklik, yeni ben oluşması gibi durumlarda 
           uzman bir dermatoloğa 
           başvurmasıdır. Bu 
           yöntem özellikle 
@@ -64,14 +91,14 @@ const description = "Kişisel ben takibi ve profesyonel dermoskopik muayene ile 
           çok önemlidir: 
           Açık ten rengi, 
           çok sayıda ben 
-          veya freknek, ailede 
-          melanom öyküsü, 
+          veya çil, ailede 
+          deri kanseri öyküsü, 
           çocukluk çağından 
           itibaren yoğun 
           güneş maruziyeti, 
-          önceki melanom 
+          geçmiş melanom 
           öyküsü veya 
-          immün sistemin 
+          bağışıklık sisteminin 
           baskılanmış 
           olması.
         </p>
@@ -97,11 +124,7 @@ const description = "Kişisel ben takibi ve profesyonel dermoskopik muayene ile 
             Bu özelliklere sahip bir lezyon 
             fark edildiğinde derhal bir 
             dermatoloji uzmanına 
-            başvurulmalıdır. Kendi 
-            başınıza tanı 
-            koymamalı veya 
-            tedavi 
-            uygulamamalısınız.
+            başvurulmalıdır..
           </p>
         </div>
         

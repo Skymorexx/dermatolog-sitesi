@@ -1,9 +1,46 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import BreadcrumbSchema from '../../components/BreadcrumbSchema.astro';
+import FaqSchema from '../../components/FaqSchema.astro';
 
 const title = "Saç Dökülmesi (Telogen Effluvium ve Androgenetik Alopesi) Tedavisi - Uzm. Dr. Umut Mert Yıldırım";
 const description = "Ani saç dökülmesi (telogen effluvium) ve kalıtsal saç kaybı (androgenetik alopesi) belirtileri, nedenleri ve Uzm. Dr. Umut Mert Yıldırım tarafından uygulanan modern tedavi yöntemleri hakkında bilgi alın.";
+
+// SSS için soru-cevaplar
+const faqQuestions = [
+{
+question: "Saç dökülmesi (telogen effluvium ve androgenetik alopesi) nedir ve nasıl oluşur?",
+answer: "Saç dökülmesi, günümüzde hem kadın hem erkek bireylerin karşılaşabileceği yaygın bir problemdir. İki ana tip saç dökülmesi vardır: Ani saç dökülmesi (telogen effluvium) ve kalıtsal saç kaybı (androgenetik alopesi). Telogen effluvium genellikle stres, doğum, cerrahi müdahale, diyet değişiklikleri veya bazı ilaçlar sonrası 2-3 ay içinde başlar ve genellikle geçicidir. Androgenetik alopesi ise genetik yatkınlık ve hormonlara bağlı gelişen ilerleyici bir saç kaybıdır. Her iki tip de uygun tedavi ile kontrol altına alınabilir. Saç dökülmesi, saç foliküllerinin normal döngüsünden sapma sonucu ortaya çıkar. Normalde günlük 50-100 tel saç dökülmesi fizyolojik olarak kabul edilir. Telogen effluviumda bu rakam 300-500 teline kadar çıkabilir. Telogen effluvium genellikle saçın her yerinden eşit şekilde dökülmesiyle karakterizedir. Androgenetik alopeside ise saç çizgisi geri çekilir, tepe kısmı incelir ve zamanla saçsız alanlar gelişir. Kadınlarda genellikle tepe bölgesinde yayvan bir incelme, erkeklerde ise belirgin şemalar görülür."
+},
+{
+question: "Saç dökülmesi (telogen effluvium ve androgenetik alopesi) kimler için uygundur?",
+answer: "Saç dökülmesi, saç foliküllerinin normal döngüsünden sapma sonucu ortaya çıkan yaygın bir problemdir. Normalde günlük 50-100 tel saç dökülmesi fizyolojik olarak kabul edilir. 18 yaşını tamamlamış, genel sağlık durumu iyi olan ve saçında dökülme problemi yaşayan her yetişkin birey için uygundur. Özellikle telogen effluvium (ani saç dökülmesi) ve androgenetik alopesi (kalıtsal saç kaybı) ile uğraşan bireylerde tercih edilir. Kadınlarda genellikle tepe bölgesinde yayvan bir incelme, erkeklerde ise belirgin şemalar görülür."
+},
+{
+question: "Saç dökülmesi (telogen effluvium ve androgenetik alopesi) tedavisi ağrılı bir işlem midir?",
+answer: "Saç dökülmesi tedavisi genellikle ağrılı bir işlem değildir. Tedavi süreci sabır gerektirir çünkü saç foliküllerinin yeniden canlanması ve saç uzaması zaman alır. Topikal minoxidil tedavisi (kadın ve erkeklerde), oral finasterid tedavisi (erkeklerde) ve yeni nesil tedaviler uygulanabilir. PRP (trombositten zengin plazma) tedavisi, hastanın kendi kanından hazırlanan plazmayla saç foliküllerinin uyarılması prensibine dayanır. İşlem sırasında hafif bir battı hissi olabilir ancak genellikle kolayca tolere edilir."
+},
+{
+question: "Saç dökülmesi (telogen effluvium ve androgenetik alopesi) tedavisi etkisi ne zaman görülür?",
+answer: "Saç dökülmesi tedavi süresi nedenine göre değişir. Telogen effluviumda 6-12 ayda düzelme olur. Androgenetik alopeside tedavi etkisi genellikle 3-6 ay sonra görünür hale gelir. Belirgin sonuçlar için 6-12 ay tedavi gerekebilir. Minoxidil tedavisi en az 4-6 ay uygulanır, genellikle uzun yıllar kullanılır. PRP tedavilerinde 3-6 seanstan oluşan bir program uygulanır. Tedavi süresince düzenli takip gerekir. Saç foliküllerinin yeniden canlanması ve saç uzaması zaman aldığı için sabır çok önemlidir."
+},
+{
+question: "Saç dökülmesi (telogen effluvium ve androgenetik alopesi) tedavisi kaç seans yapılır?",
+answer: "Optimal sonuçlar için genellikle 4-6 haftada bir olmak üzere 3-6 seans önerilir. Saç dökülmesi tedavi süresi nedenine göre değişir. Telogen effluviumda 6-12 ayda düzelme olur. Androgenetik alopeside tedavi etkisi genellikle 3-6 ay sonra görünür hale gelir. Belirgin sonuçlar için 6-12 ay tedavi gerekebilir. Minoxidil tedavisi en az 4-6 ay uygulanır, genellikle uzun yıllar kullanılır. PRP tedavilerinde 3-6 seanstan oluşan bir program uygulanır. Tedavi süresince düzenli takip gerekir."
+},
+{
+question: "Saç dökülmesi (telogen effluvium ve androgenetik alopesi) kalıcı mıdır?",
+answer: "Hayır, saç dökülmesi tedavisi kalıcı değildir. Saç dökülmesi tedavisinin kalıcılığı nedenine bağlıdır. Telogen effluvium genellikle geçicidir ve 6-12 ayda kendiliğinden düzelir. Tetikleyici faktör ortadan kalkarsa tekrar olmaz. Androgenetik alopesi ise ilerleyici bir durumdur ve ömür boyu tedavi gerektirir. Tedavi kesilirse dökülme tekrar başlar. Ancak uygun tedavi ile saç kaybı büyük ölçüde yavaşlatılabilir ve bazı alanlarda saç yoğunluğu artırılabilir. Etki kaybolduğunda tekrar uygulama yapılabilir."
+},
+{
+question: "Saç dökülmesi (telogen effluvium ve androgenetik alopesi) tedavisi sonrası ne zaman makyaj yapabilirim?",
+answer: "Saç dökülmesi tedavisi sonrası ilk 24-48 saat içinde makyaj yapılması önerilmez. 48 saat sonra normal makyaj yapabilirsiniz. Ancak ilk birkaç gün boyunca hafif, doğal tonlarda makyaj tercih edilmelidir. Göz ve dudak makyajı yapılabilir. Uygulama bölgesine baskı uygulanmamalıdır. Tedavi süreci sabır gerektirir çünkü saç foliküllerinin yeniden canlanması ve saç uzaması zaman alır."
+},
+{
+question: "Saç dökülmesi (telogen effluvium ve androgenetik alopesi) diğer işlemlerle birlikte uygulanabilir mi?",
+answer: "Evet, saç dökülmesi tedavisi diğer cilt bakım uygulamalarıyla birlikte uygulanabilir. Özellikle lazer tedavileri, mezoterapi ve diğer non-invaziv prosedürlerle kombine edilebilir. PRP (trombositten zengin plazma) tedavisi, hastanın kendi kanından hazırlanan plazmayla saç foliküllerinin uyarılması prensibine dayanır. Kök hücre tedavileri, lazer tedavileri, eksozom tedavisi gibi yöntemler de uygulanmaktadır. Ancak uygulama sırası ve zamanlaması hekim tarafından planlanmalıdır."
+}
+];
 ---
 
 <BaseLayout title={title} description={description}>
@@ -16,6 +53,8 @@ const description = "Ani saç dökülmesi (telogen effluvium) ve kalıtsal saç 
     ]}
   />
   
+  <FaqSchema questions={faqQuestions} />
+
   <main id="main-content" class="container mx-auto px-4 py-12">
     <div class="max-w-4xl mx-auto">
       <h1 class="text-4xl font-bold text-primary mb-8">
@@ -145,10 +184,11 @@ const description = "Ani saç dökülmesi (telogen effluvium) ve kalıtsal saç 
         <ul class="list-disc list-inside mb-8 space-y-2">
           <li>Topikal minoxidil tedavisi (kadın ve erkeklerde)</li>
           <li>Oral finasterid tedavisi (erkeklerde)</li>
-          <li>Düvit vitamin ve mineral takviyeleri</li>
+          <li>Vitamin ve mineral takviyeleri</li>
           <li>Mezoterapi (vitamin enjeksiyonları)</li>
           <li>PRP (trombositten zengin plazma) tedavisi</li>
-          <li>Lazer tedavileri (low level laser therapy)</li>
+          <li>Kök hücre tedavisi</li>
+          <li>Lazer tedavileri</li>
           <li>Stres yönetimi ve yaşam tarzı değişiklikleri</li>
           <li>Uygun saç bakım ürünleri ve teknikleri</li>
         </ul>
@@ -177,12 +217,12 @@ const description = "Ani saç dökülmesi (telogen effluvium) ve kalıtsal saç 
               Başka kişilerle 
               temas yoluyla 
               geçmez. Ancak 
-              bazı enfeksiyöz 
+              çocuklarda görülen bazı enfeksiyöz 
               nedenlerle 
               (mantar gibi) 
               oluşan saç 
               dökülmeleri 
-              bulaşabilir.
+              bulaşıcı olabilir.
             </p>
           </div>
           
@@ -245,9 +285,8 @@ const description = "Ani saç dökülmesi (telogen effluvium) ve kalıtsal saç 
               6-12 ay 
               tedavi gerekebilir. 
               Minoxidil tedavisi 
-              4-6 ay uygulanır, 
-              finasterid tedavisi 
-              6-12 ay sürer. 
+              en az 4-6 ay uygulanır, 
+              genellikle uzun yıllar kullanılır. 
               PRP tedavilerinde 
               3-6 seanstan 
               oluşan bir 
@@ -280,22 +319,11 @@ const description = "Ani saç dökülmesi (telogen effluvium) ve kalıtsal saç 
               foliküllerinin 
               uyarılması 
               prensibine 
-              dayanır. Stem 
+              dayanır. Kök 
               hücre tedavileri, 
-              low level 
-              laser therapy 
-              (LLLT), mikroiğneleme 
+              lazer tedavileri, eksozom tedavisi 
               gibi yöntemler 
-              de uygulanmaktadır. 
-              Yeni nesil 
-              ürünlerle 
-              saç maskeleri, 
-              özel şampuanlar 
-              ve bakım 
-              ürünleri 
-              de tedavinin 
-              destekleyici 
-              unsurlarıdır. 
+              de uygulanmaktadır.  
               Bu yöntemlerin 
               tek başına 
               değil, klasik 

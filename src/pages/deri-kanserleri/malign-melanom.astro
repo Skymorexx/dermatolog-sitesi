@@ -1,9 +1,38 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import BreadcrumbSchema from '../../components/BreadcrumbSchema.astro';
+import FaqSchema from '../../components/FaqSchema.astro';
 
 const title = "Malign Melanom: Belirtileri, Tanı ve Tedavisi - Uzm. Dr. Umut Mert Yıldırım";
 const description = "En ciddi deri kanseri türü olan Malign Melanom'un belirtileri (ABCDE kuralı), risk faktörleri, erken tanı ve tedavi yöntemleri hakkında bilimsel bilgiler.";
+
+// SSS için soru-cevaplar
+const faqQuestions = [
+  {
+    question: "Malign melanom nedir ve nasıl oluşur?",
+    answer: "Malign melanom, ciltteki melanin üreten hücrelerden (melanositlerden) kaynaklanan en tehlikeli deri kanseridir. Diğer deri kanserlerine kıyasla daha agresif seyreden bu hastalık, erken dönemde teşhisi yapıldığında tedavi şansı çok yüksektir. Ancak ileri evrelere ulaştığında lenf bezleri ve diğer organlara yayılabilir. Bu nedenle melanomun erken tanısı hayati öneme sahiptir. Hastalığın gelişiminde birçok risk faktörü rol oynar: Aşırı ultraviyole ışın maruziyeti (güneş yanığı öyküsü), açık ten rengi, çok sayıda ben veya freknek, ailede melanom öyküsü, bağışıklık sisteminin baskılanması gibi faktörler melanom riskini artırır."
+  },
+  {
+    question: "Malign melanom belirtileri nelerdir?",
+    answer: "Malign melanomun erken tanısı için ABCDE kuralı çok önemlidir. Cildinizde bu özelliklere sahip bir lezyon fark ederseniz bir dermatoloğa başvurmalısınız: Asimetri (Asymmetry): Lezyonun bir yarısı diğer yarısına tam olarak benzemiyorsa, Kenar (Border): Lezyonun kenarları düzensiz, girintili, çıkıntılı veya belirsizse, Renk (Color): Lezyon içinde farklı renkler varsa (siyah, kahverengi, kırmızı, beyaz, mavi), Çap (Diameter): Lezyon 6 mm'den büyükse, Değişim (Evolving): Lezyonun boyut, şekil, renk veya his açısından değişimi varsa. Bu özelliklere sahip lezyonlar melanom açısından şüpheli olabilir."
+  },
+  {
+    question: "Malign melanom nasıl teşhis edilir?",
+    answer: "Malign melanomun teşhisi, dermatoloğun özel bir cihaz (dermatoskop) kullanarak lezyonları detaylı incelemesini sağlayan dermatoskopik muayene ile yapılır. Bu yöntem, çıplak gözle görülemeyen yapıları göstererek melanomun erken evrede saptanmasını mümkün kılar. Koruyucu dermatolojik muayeneler, özellikle yüksek riskli bireylerde hayat kurtarıcı olabilir. Kesin tanı biyopsi ile konur. Şüpheli lezyonlar çıkarılarak patolojik olarak incelenir."
+  },
+  {
+    question: "Malign melanom tedavisi nasıldır?",
+    answer: "Malign melanomun tedavisinde birincil yöntem cerrahi tedavidir. Lezyonun tamamı ve çevresinden yeterli mesafede sağlıklı doku alınarak çıkarılır. Evre ilerledikçe lenf nodu disseksiyonu, immünoterapi, hedefe yönelik tedaviler ve kemoterapi gibi diğer tedavi yöntemleri de kullanılır. Erken evre melanomlarda cerrahi tedavi başarısı %90'ın üzerindedir. Bu nedenle şüpheli lezyonların zamanında değerlendirilmesi çok önemlidir."
+  },
+  {
+    question: "Malign melanom tedavisi kalıcı mıdır?",
+    answer: "Evet, malign melanom tedavisi erken evrede uygulandığında kalıcıdır. Cerrahi tedavi ile lezyon tamamen çıkarıldığında tekrarlama riski çok düşüktür. Ancak yeni melanomlar gelişebilir, bu nedenle düzenli dermatolojik kontroller önemlidir. Tedavi edilen bölgede iz kalabilir ancak bu minimal düzeydedir. İleri evrelerde tedavi başarısı düşebilir ancak modern immünoterapi yöntemleri ile umut verici sonuçlar alınabilmektedir."
+  },
+  {
+    question: "Malign melanom risk faktörleri nelerdir?",
+    answer: "Malign melanomun gelişiminde birçok risk faktörü rol oynar: Aşırı ultraviyole ışın maruziyeti (güneş yanığı öyküsü), açık ten rengi, çok sayıda ben veya freknek, ailede melanom öyküsü, bağışıklık sisteminin baskılanması, yaşlılık ve genetik yatkınlık gibi faktörler melanom riskini artırır. Bu nedenle yüksek riskli bireylerde koruyucu dermatolojik muayeneler hayat kurtarabilir."
+  }
+];
 ---
 
 <BaseLayout title={title} description={description}>
@@ -16,6 +45,8 @@ const description = "En ciddi deri kanseri türü olan Malign Melanom'un belirti
     ]}
   />
 
+  <FaqSchema questions={faqQuestions} />
+  
   <main id="main-content" class="container mx-auto px-4 py-12">
     <div class="max-w-4xl mx-auto">
       <h1 class="text-4xl font-bold text-primary mb-8">
@@ -93,7 +124,7 @@ const description = "En ciddi deri kanseri türü olan Malign Melanom'un belirti
           Malign melanomun erken teşhisi, hastalığın 
           tedavi başarısını doğrudan etkiler. 
           Dermatoskopik muayene, dermatoloğun 
-          özel bir alet (dermatoskop) 
+          özel bir cihaz (dermatoskop) 
           kullanarak lezyonları detaylı 
           incelemesini sağlar. Bu 
           yöntem, çıplak gözle 
@@ -115,7 +146,7 @@ const description = "En ciddi deri kanseri türü olan Malign Melanom'un belirti
         
         <p class="mb-6 leading-relaxed">
           Malign melanomun tedavisinde birincil 
-          yöntem cerrahi eksizyondur. 
+          yöntem cerrahi tedavidir. 
           Lezyonun tamamı ve 
           çevresinden yeterli 
           mesafede sağlıklı 
@@ -129,7 +160,7 @@ const description = "En ciddi deri kanseri türü olan Malign Melanom'un belirti
           kullanılır. Erken 
           evre melanomlarda 
           cerrahi tedavi 
-         成功率 %90'ın 
+          başarısı %90'ın 
           üzerindedir. Bu 
           nedenle şüpheli 
           lezyonların 

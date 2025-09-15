@@ -1,9 +1,42 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import BreadcrumbSchema from '../../components/BreadcrumbSchema.astro';
+import FaqSchema from '../../components/FaqSchema.astro';
 
 const title = "Deri Mantarı (Dermatofitoz) Tedavisi - Uzm. Dr. Umut Mert Yıldırım";
 const description = "Cilt, tırnak ve saçta mantar enfeksiyonları nedeniyle oluşan dermatofitoz belirtileri, nedenleri ve Uzm. Dr. Umut Mert Yıldırım tarafından uygulanan modern tedavi yöntemleri hakkında bilgi alın.";
+
+// SSS için soru-cevaplar
+const faqQuestions = [
+{
+question: "Deri mantarı (dermatofitoz) nedir ve nasıl oluşur?",
+answer: "Deri mantarı, dermatofit adı verilen mantar türlerinin cilt, tırnak ve saçta neden olduğu enfeksiyonlara verilen genel isimdir. Bu mantarlar deri, saç ve tırnakta bulunan keratin adı verilen proteinleri sindirerek ürerler. Sporcularda, havuzlarda ve ortak kullanılan alanlarda sık görülür. Bulaşıcı bir hastalıktır ve doğrudan temasla veya kontamine yüzeyler yoluyla bulaşabilir. Erken teşhis ve uygun tedavi ile tam iyileşme sağlanabilir. Deri mantarı, dermatofitler adı verilen mantarların neden olduğu fungal enfeksiyonlardır. En sık görülen tipleri arasında ayak mantarı (tinea pedis), saç mantarı (tinea capitis), kasık mantarı (tinea cruris) ve halka şeklindeki deri mantarı (tinea corporis) sayılabilir. Tipik belirtiler kaşıntı, kızarıklık, pullanma, kabuklanma ve karakteristik döküntülerdir. Tanı, klinik bulgular ve laboratuvar tetkikleri ile konur."
+},
+{
+question: "Deri mantarı (dermatofitoz) kimler için uygundur?",
+answer: "Deri mantarı, dermatofitler adı verilen mantarların neden olduğu fungal enfeksiyonlardır. 18 yaşını tamamlamış, genel sağlık durumu iyi olan ve cildinde mantar enfeksiyonu belirtileri görülen her yetişkin birey için uygundur. Özellikle sporcularda, havuzlarda ve ortak kullanılan alanlarda sık görülen bulaşıcı bir hastalıktır. Doğrudan temasla veya kontamine yüzeyler yoluyla bulaşabilir. Erken teşhis ve uygun tedavi ile tam iyileşme sağlanabilir. Hamilelik veya emzirme döneminde olan kadınlar için uygun değildir."
+},
+{
+question: "Deri mantarı (dermatofitoz) tedavisi ağrılı bir işlem midir?",
+answer: "Deri mantarı tedavisi genellikle ağrılı bir işlem değildir. Antifungal ilaçlar birinci sıradadır. Tedavi yöntemi lezyonun lokalizasyonu, yaygınlığı ve hastanın genel durumuna göre değişir. Yüzeyel mantar enfeksiyonları için topikal antifungal tedaviler yeterli olabilirken, yaygın veya dirençli olgularda sistemik antifungal ilaçlar gerekebilir. Tedavi süresi enfeksiyon tipine göre değişir ve tamamlanması çok önemlidir. İşlem sırasında hafif bir battı hissi olabilir ancak genellikle kolayca tolere edilir."
+},
+{
+question: "Deri mantarı (dermatofitoz) tedavisi etkisi ne zaman görülür?",
+answer: "Deri mantarı tedavi etkisi genellikle 2-4 hafta sonra görülmeye başlanır. Ancak maksimum etki 6-12 ay içinde ortaya çıkar. Tedavi süresi enfeksiyon tipine göre değişir: Yüzeyel mantarlar için topikal tedavi 2-4 hafta sürer. Tırnak mantarı için sistemik tedavi 6-12 ay sürebilir. Kasık ve ayak mantarları için 2-6 hafta sistemik tedavi yeterli olabilir. Tedavi süreci devam ettiği için etki 3-6 ay boyunca gelişmeye devam eder. Düzenli uygulamalar ile etki daha kalıcı olur."
+},
+{
+question: "Deri mantarı (dermatofitoz) kaç seans yapılır?",
+answer: "Tedavi süresi enfeksiyon tipine göre değişir: Yüzeyel mantarlar için topikal tedavi 2-4 hafta sürer. Tırnak mantarı için sistemik tedavi 6-12 ay sürebilir. Kasık ve ayak mantarları için 2-6 hafta sistemik tedavi yeterli olabilir. Tedavi süreci devam ettiği için etki 3-6 ay boyunca gelişmeye devam eder. Düzenli uygulamalar ile etki daha kalıcı olur."
+},
+{
+question: "Deri mantarı (dermatofitoz) kalıcı mıdır?",
+answer: "Evet, uygun tedavi ile deri mantarı tamamen iyileşebilir. Ancak tedavinin yeterli süre uygulanması çok önemlidir. Tedavi yarıda bırakılırsa dirençli hale gelebilir ve tekrarlaması daha zor olabilir. Kişisel hijyen önlemleri alınmazsa tekrar bulaşma riski vardır. Deri mantarı oldukça bulaşıcıdır. Doğrudan cilt teması, kontamine yüzeyler (havlu, ayakkabı, havuz kenarı) yoluyla bulaşabilir. Sporcularda, hamamlarda, havuzlarda ve ortak kullanılan alanlarda sık görülür. Bulaşmayı önlemek için kişisel hijyen çok önemlidir."
+},
+{
+question: "Deri mantarı (dermatofitoz) diğer işlemlerle birlikte uygulanabilir mi?",
+answer: "Evet, deri mantarı tedavisi diğer cilt uygulamalarıyla birlikte uygulanabilir. Özellikle lazer tedavileri, diğer antifungal uygulamalarla kombine edilebilir. Ancak uygulama sırası ve zamanlaması hekim tarafından planlanmalıdır."
+}
+];
 ---
 
 <BaseLayout title={title} description={description}>
@@ -16,6 +49,8 @@ const description = "Cilt, tırnak ve saçta mantar enfeksiyonları nedeniyle ol
     ]}
   />
 
+  <FaqSchema questions={faqQuestions} />
+
   <main id="main-content" class="container mx-auto px-4 py-12">
     <div class="max-w-4xl mx-auto">
       <h1 class="text-4xl font-bold text-primary mb-8">
@@ -27,8 +62,8 @@ const description = "Cilt, tırnak ve saçta mantar enfeksiyonları nedeniyle ol
           Deri mantarı, dermatofit adı verilen 
           mantar türlerinin cilt, tırnak ve 
           saçta neden olduğu enfeksiyonlara 
-          verilen addır. Bu mantarlar 
-          keratin adı verilen 
+          verilen genel isimdir. Bu mantarlar 
+          deri, saç ve tırnakta bulunan keratin adı verilen 
           proteinleri sindirerek 
           ürerler. Sporcularda, 
           havuzlarda ve 
@@ -56,8 +91,8 @@ const description = "Cilt, tırnak ve saçta mantar enfeksiyonları nedeniyle ol
           verilen mantarların neden 
           olduğu fungal enfeksiyonlardır. 
           En sık görülen tipleri 
-          arasında spor sirkesi 
-          (tinea pedis), kulp 
+          arasında ayak mantarı 
+          (tinea pedis), saç 
           mantarı (tinea capitis), 
           kasık mantarı (tinea 
           cruris) ve halka 

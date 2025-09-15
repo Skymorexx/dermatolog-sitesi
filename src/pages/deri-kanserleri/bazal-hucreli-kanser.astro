@@ -1,9 +1,38 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import BreadcrumbSchema from '../../components/BreadcrumbSchema.astro';
+import FaqSchema from '../../components/FaqSchema.astro';
 
 const title = "Bazal Hücreli Kanser: Belirtileri, Tanı ve Tedavisi - Uzm. Dr. Umut Mert Yıldırım";
-const description = "En sık görülen deri kanseri türü olan Bazal Hücreli Karsinom'un belirtileri, risk faktörleri, erken tanı ve tedavi yöntemleri hakkında bilimsel bilgiler.";
+const description = "En sık görülen deri kanseri türü olan Bazal Hücreli Kanser'in belirtileri, risk faktörleri, erken tanı ve tedavi yöntemleri hakkında bilimsel bilgiler.";
+
+// SSS için soru-cevaplar
+const faqQuestions = [
+  {
+    question: "Bazal hücreli kanser nedir ve nasıl oluşur?",
+    answer: "Bazal hücreli kanser, epidermisin en alt tabakasındaki bazal hücrelerden gelişen iyi huylu kabul edilebilecek ancak lokal invaziv potansiyele sahip bir deri tümörüdür. Bu hastalığın gelişiminde en önemli risk faktörü kronik güneş maruziyetidir. Açık ten rengi, güneş yanığı öyküsü, yaşlılık, radyasyon maruziyeti ve bazı genetik sendromlar risk faktörleri arasında yer alır. Bu tümörler genellikle yavaş büyür ve metastaz yapma eğilimi çok düşüktür. Ancak tedavi edilmezse lokal invaziv özellik kazanabilir ve çevre dokularda yıkıcı değişikliklere neden olabilir."
+  },
+  {
+    question: "Bazal hücreli kanser kimler için uygundur?",
+    answer: "Bazal hücreli kanser, epidermisin bazal hücrelerinden gelişen iyi huylu kabul edilebilecek ancak lokal invaziv potansiyele sahip bir deri tümörüdür. Özellikle açık ten rengi, güneş yanığı öyküsü, yaşlılık, radyasyon maruziyeti ve bazı genetik sendromlar risk faktörleri arasında yer alır."
+  },
+  {
+    question: "Bazal hücreli kanser ağrılı bir işlem midir?",
+    answer: "İşlem öncesi mutlaka lokal aneztezik enjeksiyonu uygulanır. İşlem sırasında minimal yanma ve batma hissedilebilir."
+  },
+  {
+    question: "Bazal hücreli kanser tedavisini etkisi ne zaman görülür?",
+    answer: "Bazal hücreli kanser tedavisinde uygulanan cerrahi işlemin etkisi genellikle işlem sonrası hemen görülür. Tümör sağlam bir sınırla tamamen çıkarılır."
+  },
+  {
+    question: "Bazal hücreli kanser tedavisi kaç seans yapılır?",
+    answer: "Cerrahi çıkarım ile genellikle tek seansta kanser çıkarılır. Patolojik inceleme sonucuna göre genişletme cerrahisi gerekebilir."
+  },
+  {
+    question: "Bazal hücreli kanser tedavisi kalıcı mıdır?",
+    answer: "Evet, bazal hücreli kanser tedavisi kalıcıdır. Lezyonun tamamı ve çevresinden yeterli mesafede sağlıklı doku alınarak çıkarılır. Tedavi edilen bölgede minimal bir iz kalabilir. Tedavi sonrası mutlaka klinik takip ve yeni oluşabilecek deri tümörlerine karşı kontrol muayenesi önerilir."
+  }
+];
 ---
 
 <BaseLayout title={title} description={description}>
@@ -16,6 +45,8 @@ const description = "En sık görülen deri kanseri türü olan Bazal Hücreli K
     ]}
   />
 
+  <FaqSchema questions={faqQuestions} />
+
   <main id="main-content" class="container mx-auto px-4 py-12">
     <div class="max-w-4xl mx-auto">
       <h1 class="text-4xl font-bold text-primary mb-8">
@@ -24,7 +55,7 @@ const description = "En sık görülen deri kanseri türü olan Bazal Hücreli K
       
       <div class="prose prose-lg text-text-primary max-w-none">
         <p class="mb-8 leading-relaxed">
-          Bazal hücreli kanser, en sık görülen deri 
+          Bazal hücreli deri kanseri, en sık görülen deri 
           kanseri türüdür ve genellikle güneş 
           maruziyeti yüksek olan vücut 
           bölgelerinde gelişir. Bu 
@@ -32,7 +63,7 @@ const description = "En sık görülen deri kanseri türü olan Bazal Hücreli K
           büyür ve metastaz yapma 
           eğilimi çok düşüktür. 
           Ancak tedavi edilmezse 
-          lokal invazif özellik 
+          lokal invaziv özellik 
           kazanabilir ve çevre 
           dokularda yıkıcı 
           değişikliklere 
@@ -51,11 +82,11 @@ const description = "En sık görülen deri kanseri türü olan Bazal Hücreli K
           Bazal hücreli kanser, epidermisin en 
           alt tabakasındaki bazal hücrelerden 
           gelişen iyi huylu kabul edilebilecek 
-          ancak lokal invazif potansiyele 
+          ancak lokal invaziv potansiyele 
           sahip bir deri tümörüdür. 
           Bu hastalığın gelişiminde 
-          en önemli risk faktörü 
-          ultraviyole ışın 
+          en önemli risk faktörü kronik 
+          güneş 
           maruziyetidir. Açık 
           ten rengi, güneş 
           yanığı öyküsü, 
@@ -74,7 +105,7 @@ const description = "En sık görülen deri kanseri türü olan Bazal Hücreli K
         
         <div class="mb-6">
           <p class="leading-relaxed mb-4">
-            Bazal hücreli karsinom çeşitli klinik 
+            Bazal hücreli deri kanseri çeşitli klinik 
             formlarda görülebilir ve belirtileri 
             değişkenlik gösterebilir:
           </p>
@@ -86,8 +117,7 @@ const description = "En sık görülen deri kanseri türü olan Bazal Hücreli K
             <li><strong>Pigmente tip:</strong> Koyu renkli, melanomu andıran lezyonlar</li>
           </ul>
           <p class="mt-4 leading-relaxed">
-            Bu lezyonlar genellikle yavaş büyür, 
-            kanama ve kabuklanma eğilimindedir. 
+            Bu lezyonlar genellikle yavaş büyür,  
             Özellikle güneş maruziyeti 
             yüksek olan yüz, kulak, 
             boyun ve el sırtı 
@@ -101,7 +131,7 @@ const description = "En sık görülen deri kanseri türü olan Bazal Hücreli K
         </h2>
         
         <p class="mb-6 leading-relaxed">
-          Bazal hücreli kanser erken teşhisi, 
+          Bazal hücreli deri kanserinin erken teşhisi, 
           tedavi başarısını doğrudan etkiler. 
           Dermatoskopik muayene, dermatoloğun 
           özel bir alet (dermatoskop) 
@@ -146,7 +176,7 @@ const description = "En sık görülen deri kanseri türü olan Bazal Hücreli K
           hücreli 
           karsinomlarda 
           tedavi 
-         成功率 çok 
+          başarısı çok 
           yüksektir.
         </p>
       </div>

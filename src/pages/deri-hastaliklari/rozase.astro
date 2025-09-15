@@ -1,9 +1,38 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import BreadcrumbSchema from '../../components/BreadcrumbSchema.astro';
+import FaqSchema from '../../components/FaqSchema.astro';
 
 const title = "Rozasea (Gül Hastalığı) Tedavisi - Uzm. Dr. Umut Mert Yıldırım";
 const description = "Kronik iltihabi cilt hastalığı rozasea (gül hastalığı) belirtileri, tetikleyici faktörler ve Uzm. Dr. Umut Mert Yıldırım tarafından uygulanan modern tedavi yöntemleri hakkında bilgi alın.";
+
+// SSS için soru-cevaplar
+const faqQuestions = [
+{
+question: "Rozasea (gül hastalığı) nedir ve nasıl oluşur?",
+answer: "Rozasea (gül hastalığı), genellikle yüzde ortaya çıkan kronik iltihabi bir cilt hastalığıdır. Özellikle burun, yanaklar, alın ve çene bölgesinde kalıcı kızarıklık, damar genişlemeleri ve sivilce benzeri lezyonlarla kendini gösterir. Kadınlarda daha sık görülür ve genellikle 30-50 yaş aralığında başlar. Hastalık dört ana tipte seyredebilir: Eritematotelanjektatik tip (kalıcı kızarıklık ve damarlanma), papülopüstüler tip (sivilce benzeri lezyonlar), fimatöz tip (burunta kalınlaşma) ve oküler tip (göz bulguları). Rozasea, yüzün merkezi bölgesinde kronik olarak tekrarlayan kızarıklık, damar genişlemeleri ve iltihabi lezyonlarla karakterizedir. Hastalığın nedeni tam olarak bilinmese de genetik yatkınlık, damar duyarlılığı ve immün sistem bozuklukları rol oynar."
+},
+{
+question: "Rozasea (gül hastalığı) tedavisi kimler için uygundur?",
+answer: "Rozasea, yüzün merkezi bölgesinde kronik olarak tekrarlayan kızarıklık, damar genişlemeleri ve iltihabi lezyonlarla karakterize edilen iltihabi bir cilt hastalığıdır. 30-50 yaş aralığında başlar ve kadınlarda daha sık görülür. Özellikle açık tenli, kolay kızaran bireylerde daha yaygındır. Rozasea tanısı almış her birey için uygun tedavi seçenekleri değerlendirilerek kişiye en uygun tedavi başlanır."
+},
+{
+question: "Rozasea (gül hastalığı) tedavisi etkisi ne zaman görülür?",
+answer: "Rozasea tedavisi etkisi genellikle 4-8 hafta sonra görülmeye başlanır. Ancak maksimum etki 2-3 ay içinde ortaya çıkar. Topikal antibakteriyel tedavilerin (metronidazol, ivermektin krem) etkisi genellikle 4-8 hafta içinde görünür hale gelir. Sistemik antibiyotik tedaviler (doksisiklin, tetrasiklin) 2-3 hafta içinde etki gösterir. Lazer ve geniş bant ışık tedavileri (BBL Lazer) ise 3-6 hafta içinde maksimum etkiyi gösterir."
+},
+{
+question: "Rozasea (gül hastalığı) tedavisi kaç seans yapılır?",
+answer: "Rozasea tedavisi genellikle 6-12 hafta sürer. Topikal tedavilerin etkisi genellikle 4-8 hafta içinde görünür hale gelir. Sistemik tedavi gerektiren olgularda antibiyotik tedavisi 8-12 hafta uygulanır. Lazer tedavilerinde 3-6 seanstan oluşan bir program uygulanır. Tedavi süresince düzenli takip gerekir."
+},
+{
+question: "Rozasea (gül hastalığı) kalıcı mıdır?",
+answer: "Rozasea kronik seyir gösteren bir hastalıktır ve kesin bir tedavisi yoktur. Ancak uygun tedavi ile semptomlar kontrol altına alınabilir ve yaşam kalitesi büyük ölçüde artar. Tedavinin düzenli sürdürülmesi ve tetikleyici faktörlerin önlenmesi çok önemlidir. Erken dönemde tanı ve tedavi ile ilerlemesi önlenebilir. Etki kaybolduğunda tekrar tedavi uygulanabilir."
+},
+{
+question: "Rozasea (gül hastalığı) diğer işlemlerle birlikte uygulanabilir mi?",
+answer: "Evet, rozasea (gül hastalığı) tedavisi diğer cilt bakım uygulamalarıyla birlikte uygulanabilir. Özellikle lazer tedavileri, mezoterapi ve diğer non-invaziv prosedürlerle kombine edilebilir. Ancak uygulama sırası ve zamanlaması hekim tarafından planlanmalıdır. Bu konuda detaylı danışmanlık alınmalıdır. Topikal tedaviler, sistemik ilaçlar, lazer tedavileri ve yaşam tarzı değişiklikleri kombinasyonu ile etkili sonuçlar elde edilir."
+}
+];
 ---
 
 <BaseLayout title={title} description={description}>
@@ -15,6 +44,8 @@ const description = "Kronik iltihabi cilt hastalığı rozasea (gül hastalığ�
       { name: "Rozasea (Gül Hastalığı) Tedavisi", url: "/deri-hastaliklari/rozase/" },
     ]}
   />
+
+  <FaqSchema questions={faqQuestions} />
 
   <main id="main-content" class="container mx-auto px-4 py-12">
     <div class="max-w-4xl mx-auto">
@@ -119,7 +150,7 @@ const description = "Kronik iltihabi cilt hastalığı rozasea (gül hastalığ�
           <li>Topikal antibakteriyel tedaviler (metronidazol, ivermektin krem)</li>
           <li>Sistemik antibiyotik tedaviler (doksisiklin, tetrasiklin)</li>
           <li>Topikal alfa agonistler (brimonidin jel)</li>
-          <li>Lazer ve yoğun pulslu ışık tedavileri (damar lezyonları için)</li>
+          <li>Lazer ve yoğun pulslu ışık tedavileri (BBL Lazer) (damar lezyonları için)</li>
           <li>İzotretinoin (ağır olgularda)</li>
           <li>Güneş koruyucu kullanımı (SPF 30+)</li>
           <li>Tetikleyici faktörlerin belirlenmesi ve önlenmesi</li>

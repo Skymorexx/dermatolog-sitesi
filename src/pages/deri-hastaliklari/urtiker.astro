@@ -1,9 +1,42 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import BreadcrumbSchema from '../../components/BreadcrumbSchema.astro';
+import FaqSchema from '../../components/FaqSchema.astro';
 
 const title = "Ürtiker (Kurdeşen) Hastalığı Tedavisi - Uzm. Dr. Umut Mert Yıldırım";
 const description = "Alerjik cilt reaksiyonu ürtiker (kurdeşen) belirtileri, tetikleyici faktörler ve Uzm. Dr. Umut Mert Yıldırım tarafından uygulanan modern tedavi yöntemleri hakkında bilgi alın.";
+
+// SSS için soru-cevaplar
+const faqQuestions = [
+{
+question: "Ürtiker (kurdeşen) hastalığı nedir ve nasıl oluşur?",
+answer: "Ürtiker (kurdeşen), ciltte ani olarak ortaya çıkan, kaşıntılı, kızarık ve kabarık lezyonlarla karakterize olan alerjik bir cilt reaksiyonudur. Lezyonlar genellikle birkaç saat içinde kaybolur ancak yeni lezyonlar sürekli olarak ortaya çıkabilir. Hastalık akut (6 haftadan az) veya kronik (6 haftadan fazla) olabilir. Ürtiker, mast hücrelerinden histamin salınımı sonucu gelişen bir hipersensitivite reaksiyonudur. Ciltte ani olarak ortaya çıkan, değişken boyutlarda, kızarık, kabarık ve kaşıntılı lezyonlarla kendini gösterir. Lezyonlar genellikle 2-24 saat içinde kaybolur ve iz bırakmaz. Ancak sürekli yeni lezyonlar ortaya çıkabilir. Hastalar genellikle şiddetli kaşıntıdan şikayet eder."
+},
+{
+question: "Ürtiker (kurdeşen) hastalığı tedavisi kimler için uygundur?",
+answer: "Ürtiker (kurdeşen) hastalığı tedavisi, bu teşhis konan her birey için uygundur. Tedavi modalitesi seçimi doktorunuz tarafından yapılarak en uygun tedaviyi almanız sağlanır."
+},
+{
+question: "Ürtiker (kurdeşen) hastalığı tedavisi ağrılı bir işlem midir?",
+answer: "Ürtiker (kurdeşen) hastalığı tedavisi genellikle ağrılı bir işlem değildir. Tedavi yaklaşımı hastalığın süresine ve şiddetine göre değişir. Akut ürtikerde tetikleyici faktör varsa ortadan kaldırılmalıdır. Birinci basamak tedavi olarak antihistaminik ilaçlar kullanılır. İkinci ve üçüncü basamak tedavilerde doz artışı, farklı antihistaminiklerin kombinasyonu ve immünsüpresif ajanlar uygulanabilir."
+},
+{
+question: "Ürtiker (kurdeşen) hastalığı tedavisi etkisi ne zaman görülür?",
+answer: "Ürtiker (kurdeşen) hastalığı tedavisi etkisi genellikle aynı gün görülmeye başlanır. Tedavi yaklaşımı hastalığın süresine ve şiddetine göre değişir. Akut ürtiker genellikle 1-2 hafta içinde kendiliğinden geçebilir. Bazı olgularda daha uzun süreli tedavi gerekebilir. Tetikleyici faktörlerin belirlenmesi ve önlenmesi tedavinin önemli bir parçasıdır."
+},
+{
+question: "Ürtiker (kurdeşen) hastalığı kaç seans yapılır?",
+answer: "Optimal sonuçlar için genellikle 2-4 haftada bir olmak üzere 3-6 seans önerilir. Tedavi yaklaşımı hastalığın süresine ve şiddetine göre değişir. Akut ürtikerde 1-2 hafta antihistaminik tedavi yeterli olabilir. Kronik ürtikerde tedavi aylar sürebilir. Antihistaminik tedavi etkisiz kalırsa doz artırımı veya farklı ilaçlar eklenebilir. İleri tedavilerde kortikosteroid veya immünsüpresif ajanlar 1-3 ay uygulanabilir."
+},
+{
+question: "Ürtiker (kurdeşen) hastalığı kalıcı mıdır?",
+answer: "Hayır, ürtiker (kurdeşen) hastalığı kalıcı değildir. Hastalığın nedeni alerjik reaksiyon veya otoimmün mekanizmalardır. Başka kişilerle temas yoluyla geçmez. Ancak ailevi yatkınlık olabilir. Tetikleyici faktörlerin belirlenmesi ve önlenmesi ile hastalık tekrarlamaz. Tedavinin düzenli sürdürülmesi çok önemlidir. Akut ürtiker genellikle 4-6 hafta içinde geçerken, kronik ürtikerde tedavi aylar sürebilir."
+},
+{
+question: "Ürtiker (kurdeşen) hastalığı tedavisi diğer işlemlerle birlikte uygulanabilir mi?",
+answer: "Evet, ürtiker (kurdeşen) hastalığı tedavisi diğer cilt bakım uygulamalarıyla birlikte uygulanabilir. Özellikle lazer tedavileri, mezoterapi ve diğer non-invaziv prosedürlerle kombine edilebilir. Ancak uygulama sırası ve zamanlaması hekim tarafından planlanmalıdır. Bu konuda detaylı danışmanlık alınmalıdır."
+}
+];
 ---
 
 <BaseLayout title={title} description={description}>
@@ -15,6 +48,8 @@ const description = "Alerjik cilt reaksiyonu ürtiker (kurdeşen) belirtileri, t
       { name: "Ürtiker (Kurdeşen) Tedavisi", url: "/deri-hastaliklari/urtiker/" },
     ]}
   />
+
+  <FaqSchema questions={faqQuestions} />
 
   <main id="main-content" class="container mx-auto px-4 py-12">
     <div class="max-w-4xl mx-auto">
@@ -78,8 +113,7 @@ const description = "Alerjik cilt reaksiyonu ürtiker (kurdeşen) belirtileri, t
           şiddetli kaşıntıdan 
           şikayet eder. 
           Kronik ürtikerde 
-          lezyonlar her 
-          gün veya neredeyse 
+          lezyonlar neredeyse 
           her gün 6 
           haftadan uzun 
           süre devam eder. 
@@ -210,7 +244,7 @@ const description = "Alerjik cilt reaksiyonu ürtiker (kurdeşen) belirtileri, t
               tedavi yeterli 
               olabilir. Kronik 
               ürtikerde tedavi 
-              3-6 ay sürebilir. 
+              aylar sürebilir. 
               Antihistaminik 
               tedavi etkisiz 
               kalırsa doz 
