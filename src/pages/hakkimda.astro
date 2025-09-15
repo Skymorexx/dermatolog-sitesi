@@ -3,7 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import BreadcrumbSchema from '../components/BreadcrumbSchema.astro';
 import { Image } from 'astro:assets';
 // Profil resmini import et
-import ProfilResmi from '../assets/images/dr-umut-mert-yildirim-profil.jpg';
+import ProfilResmi from '../assets/images/dr-umut-mert-yildirim.jpg';
 // Logoları import et
 import IstanbulUniversitesiLogo from '../assets/images/logos/istanbul-universitesi-logo.jpg';
 import AcibademLogo from '../assets/images/logos/acibadem-logo.jpg';
@@ -30,14 +30,14 @@ const description = "Uzm. Dr. Umut Mert Yıldırım hakkında detaylı bilgiler,
       </h1>
       
       <div class="prose prose-lg text-text-primary max-w-none">
-        <div class="bg-white rounded-lg shadow-md p-8 mb-12 flex justify-center">
-          <Image 
-          src={ProfilResmi}
-          alt="Uzm. Dr. Umut Mert Yıldırım"
-          class="rounded-lg shadow-xl w-full max-w-md h-auto"
-          widths={[400, 800]}
-          sizes="(max-width: 768px) 100vw, 50vw"
-        />
+         <div class="bg-white rounded-lg shadow-md p-8 mb-12">
+      <Image 
+      src={ProfilResmi}
+      alt="Uzm. Dr. Umut Mert Yıldırım"
+      class="rounded-lg shadow-xl w-full max-w-md h-auto"
+      widths={[400, 800]}
+      sizes="(max-width: 768px) 100vw, 50vw"
+    />"
           
           <div class="text-left">
             <p class="text-xl leading-relaxed mb-6">
