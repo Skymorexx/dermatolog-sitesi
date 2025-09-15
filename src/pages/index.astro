@@ -2,7 +2,8 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import JsonLD from '../components/JsonLD.astro';
 import { Image } from 'astro:assets';
-import heroImage from '../assets/images/dr-umut-mert-yildirim.jpg';
+// Profil resmini import et
+import ProfilResmi from '../assets/images/dr-umut-mert-yildirim-profil.jpg';
 
 const title = "Uzm. Dr. Umut Mert Yıldırım - Dermatoloji Uzmanı";
 const description = "İstanbulda dermatoloji uzmanı; Deri hastalıkları, dermokozmetik uygulamalar ve dermocerrahi konularında uzman hekim hizmeti.";
@@ -96,7 +97,7 @@ const schema = {
       <!-- Görüntü Sütunu -->
       <div class="flex justify-center md:justify-end">
         <Image 
-          src={heroImage}
+          src={ProfilResmi}
           alt="Uzm. Dr. Umut Mert Yıldırım ofisinde hastalarını bekliyor"
           class="rounded-lg shadow-xl w-full max-w-md h-auto"
           widths={[400, 800]}
